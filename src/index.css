@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Neutral industrial palette */
+    --background: 30 10% 97%; /* Off-white #F7F7F6 */
+    --foreground: 210 11% 14%; /* Charcoal #222425 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 14%;
+
+    /* Primary - Charcoal for emphasis */
+    --primary: 210 11% 14%;
+    --primary-foreground: 30 10% 97%;
+
+    /* Secondary - Warm gray surface */
+    --secondary: 40 4% 90%; /* #E6E6E2 */
+    --secondary-foreground: 210 11% 14%;
+
+    /* Muted - Mid gray */
+    --muted: 40 3% 74%; /* #BDBDB7 */
+    --muted-foreground: 210 11% 25%;
+
+    /* Accent - Steel gray for CTAs */
+    --accent: 220 13% 46%; /* #6B7280 */
+    --accent-foreground: 0 0% 100%;
+
+    /* Warm accent - Soft warm */
+    --warm-accent: 30 22% 54%; /* #A78B6B */
+    --warm-accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 40 4% 88%;
+    --input: 40 4% 88%;
+    --ring: 210 11% 14%;
+
+    --radius: 0.75rem;
+
+    /* Shadows for depth */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.08);
+    --shadow-md: 0 8px 12px -2px rgb(0 0 0 / 0.12);
+    --shadow-lg: 0 12px 20px -4px rgb(0 0 0 / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 210 11% 14%;
+    --foreground: 30 10% 97%;
+
+    --card: 210 11% 18%;
+    --card-foreground: 30 10% 97%;
+
+    --popover: 210 11% 18%;
+    --popover-foreground: 30 10% 97%;
+
+    --primary: 30 10% 97%;
+    --primary-foreground: 210 11% 14%;
+
+    --secondary: 210 11% 22%;
+    --secondary-foreground: 30 10% 97%;
+
+    --muted: 210 11% 28%;
+    --muted-foreground: 40 4% 74%;
+
+    --accent: 220 13% 46%;
+    --accent-foreground: 0 0% 100%;
+
+    --warm-accent: 30 22% 54%;
+    --warm-accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 11% 24%;
+    --input: 210 11% 24%;
+    --ring: 30 10% 97%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+}
+
+@layer components {
+  /* Hover lift effect for cards */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+
+  /* Focus visible styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  /* Product card styles */
+  .product-card {
+    @apply bg-card rounded-lg border border-border overflow-hidden hover-lift;
+  }
+
+  /* Smooth transitions */
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+}

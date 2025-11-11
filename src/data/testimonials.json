@@ -1,0 +1,28 @@
+{
+  "testimonials": [
+    {
+      "id": "test-01",
+      "text": "We've been sourcing containers from this manufacturer for 5 years. Quality is consistent, lead times are reliable, and their custom molding service helped us create unique packaging for our premium line.",
+      "author": "Rajesh Kumar",
+      "position": "Procurement Manager",
+      "company": "FoodCorp Industries",
+      "rating": 5
+    },
+    {
+      "id": "test-02",
+      "text": "Excellent product range and responsive sales team. When we needed modifications to the standard crate design, they delivered prototypes within 2 weeks. Very impressed.",
+      "author": "Priya Sharma",
+      "position": "Operations Director",
+      "company": "LogiFreight Systems",
+      "rating": 5
+    },
+    {
+      "id": "test-03",
+      "text": "Their HDPE bottles meet all our food safety requirements. The clarity of PET bottles is exceptional and our customers appreciate the premium feel.",
+      "author": "Anil Desai",
+      "position": "Quality Assurance Lead",
+      "company": "PharmaPack Ltd",
+      "rating": 5
+    }
+  ]
+}

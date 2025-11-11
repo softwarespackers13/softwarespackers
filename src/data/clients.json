@@ -1,0 +1,40 @@
+{
+  "clients": [
+    {
+      "id": "client-01",
+      "name": "FoodCorp Industries",
+      "logo": "/assets/logos/client-01.svg",
+      "industry": "Food & Beverage"
+    },
+    {
+      "id": "client-02",
+      "name": "ChemTech Solutions",
+      "logo": "/assets/logos/client-02.svg",
+      "industry": "Chemical"
+    },
+    {
+      "id": "client-03",
+      "name": "PharmaPack Ltd",
+      "logo": "/assets/logos/client-03.svg",
+      "industry": "Pharmaceutical"
+    },
+    {
+      "id": "client-04",
+      "name": "AgriStore Co",
+      "logo": "/assets/logos/client-04.svg",
+      "industry": "Agriculture"
+    },
+    {
+      "id": "client-05",
+      "name": "HomeGoods Plus",
+      "logo": "/assets/logos/client-05.svg",
+      "industry": "Retail"
+    },
+    {
+      "id": "client-06",
+      "name": "LogiFreight Systems",
+      "logo": "/assets/logos/client-06.svg",
+      "industry": "Logistics"
+    }
+  ]
+}

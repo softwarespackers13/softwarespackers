@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "id": "food-jars",
+      "name": "Food Jars",
+      "slug": "food-jars",
+      "description": "BPA-free, food-grade jars for dry goods, spices, and kitchen storage.",
+      "icon": "jar",
+      "product_count": 15,
+      "image": "/assets/images/category-food-jars.jpg"
+    },
+    {
+      "id": "storage-tubs",
+      "name": "Storage Tubs",
+      "slug": "storage-tubs",
+      "description": "Durable tubs for household and industrial storage needs.",
+      "icon": "box",
+      "product_count": 22,
+      "image": "/assets/images/category-storage-tubs.jpg"
+    },
+    {
+      "id": "industrial-crates",
+      "name": "Industrial Crates",
+      "slug": "industrial-crates",
+      "description": "Heavy-duty stackable crates for warehouse and logistics.",
+      "icon": "crate",
+      "product_count": 12,
+      "image": "/assets/images/category-industrial-crates.jpg"
+    },
+    {
+      "id": "bottles",
+      "name": "Bottles",
+      "slug": "bottles",
+      "description": "PET and HDPE bottles for beverages, oils, and liquid products.",
+      "icon": "bottle",
+      "product_count": 28,
+      "image": "/assets/images/category-bottles.jpg"
+    },
+    {
+      "id": "caps-accessories",
+      "name": "Caps & Accessories",
+      "slug": "caps-accessories",
+      "description": "Closures, caps, and accessories for all container types.",
+      "icon": "cap",
+      "product_count": 45,
+      "image": "/assets/images/category-caps.jpg"
+    }
+  ]
+}
