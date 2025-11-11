@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-primary rounded" />
-              <span className="text-lg font-bold">ContainerPro</span>
+              <span className="text-lg font-bold">Software Packers</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               Quality plastic containers for food, storage, and industrial applications. Over 20 years of manufacturing excellence.
@@ -24,7 +24,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>sales@containerpro.com</span>
+                <span>sales@softwarepackers.com</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4" />
@@ -112,7 +112,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>© 2024 ContainerPro. All rights reserved.</p>
+          <p>© 2024 Software Packers. All rights reserved.</p>
           <div className="flex gap-6 mt-4 sm:mt-0">
             <Link to="/terms" className="hover:text-foreground smooth-transition">
               Terms

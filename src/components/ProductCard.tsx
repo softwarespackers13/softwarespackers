@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Eye } from "lucide-react";
+import OptimizedImage from "./OptimizedImage";
 
 interface ProductCardProps {
   product: {
@@ -24,14 +25,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Card className="product-card group">
       <Link to={`/products/${product.slug}`}>
-        <div className="aspect-square overflow-hidden bg-secondary">
-          <img
-            src={product.images[0]}
-            alt={`${product.name} - ${product.material} container`}
-            className="w-full h-full object-cover group-hover:scale-105 smooth-transition"
-            loading="lazy"
-          />
-        </div>
+        <OptimizedImage
+          src={product.images[0]}
+          alt={`${product.name} - ${product.material} container`}
+          className="aspect-square overflow-hidden bg-secondary"
+          loading="lazy"
+        />
       </Link>
       
       <CardContent className="p-4">

@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, Download, Package, Ruler, CheckCircle } from "lucide-react";
 import productsData from "@/data/products.json";
 import ProductCard from "@/components/ProductCard";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -50,13 +51,12 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Images */}
           <div>
-            <div className="aspect-square bg-secondary rounded-lg overflow-hidden mb-4">
-              <img
-                src={product.images[selectedImage]}
-                alt={`${product.name} - view ${selectedImage + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <OptimizedImage
+              src={product.images[selectedImage]}
+              alt={`${product.name} - view ${selectedImage + 1}`}
+              className="aspect-square bg-secondary rounded-lg overflow-hidden mb-4"
+              loading="eager"
+            />
             {product.images.length > 1 && (
               <div className="flex gap-2">
                 {product.images.map((img, idx) => (
@@ -66,8 +66,13 @@ const ProductDetail = () => {
                     className={`w-20 h-20 rounded border-2 overflow-hidden focus-ring ${
                       selectedImage === idx ? "border-primary" : "border-border"
                     }`}
+                    aria-label={`View image ${idx + 1}`}
                   >
-                    <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                    <OptimizedImage 
+                      src={img} 
+                      alt={`Thumbnail ${idx + 1}`} 
+                      className="w-20 h-20"
+                    />
                   </button>
                 ))}
               </div>

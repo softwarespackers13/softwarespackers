@@ -9,6 +9,7 @@ import { Search, SlidersHorizontal } from "lucide-react";
 import productsData from "@/data/products.json";
 import categoriesData from "@/data/categories.json";
 import ProductCard from "@/components/ProductCard";
+import { sanitizeInput } from "@/lib/validation";
 
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,13 +25,14 @@ const Products = () => {
   const filteredProducts = useMemo(() => {
     let filtered = [...productsData.products];
 
-    // Search filter
+    // Search filter with sanitization
     if (searchQuery) {
+      const sanitizedQuery = sanitizeInput(searchQuery).toLowerCase();
       filtered = filtered.filter(
         (p) =>
-          p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          p.sku.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          p.category.toLowerCase().includes(searchQuery.toLowerCase())
+          p.name.toLowerCase().includes(sanitizedQuery) ||
+          p.sku.toLowerCase().includes(sanitizedQuery) ||
+          p.category.toLowerCase().includes(sanitizedQuery)
       );
     }
 
@@ -92,12 +94,15 @@ const Products = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
             {/* Search */}
             <div className="md:col-span-4 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
                 placeholder="Search products, SKU..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9 focus-ring"
+                aria-label="Search products"
+                type="search"
+                autoComplete="off"
               />
             </div>
 

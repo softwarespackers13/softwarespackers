@@ -1,4 +1,4 @@
-# ContainerPro - Plastic Containers Showcase Website
+# Software Packers - Plastic Containers Showcase Website
 
 A modern, responsive frontend website showcasing a comprehensive product range of plastic containers. Built with React, TypeScript, Tailwind CSS, and Vite.
 
