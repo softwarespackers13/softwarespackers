@@ -15,7 +15,7 @@ export interface ErrorContext {
     component?: string;
     action?: string;
     userId?: string;
-    [key: string]: any;
+    [key: string]: string | number | boolean | undefined;
 }
 
 /**
@@ -91,7 +91,7 @@ export class ErrorLogger {
     /**
      * Get appropriate console method for severity
      */
-    private static getConsoleMethod(severity: ErrorSeverity): Function {
+    private static getConsoleMethod(severity: ErrorSeverity): typeof console.log {
         switch (severity) {
             case ErrorSeverity.INFO:
                 return console.info;
@@ -118,19 +118,35 @@ export function logError(
 }
 
 /**
+ * API Error interface
+ */
+interface ApiError {
+    response?: {
+        status?: number;
+        data?: {
+            message?: string;
+        };
+    };
+    message?: string;
+}
+
+/**
  * Handle API errors and return user-friendly messages
  */
-export function handleApiError(error: any): string {
+export function handleApiError(error: ApiError | Error | unknown): string {
     // Log the error
-    logError(error, { source: 'API' });
+    logError(error as Error, { source: 'API' });
+
+    // Type guard for API error
+    const apiError = error as ApiError;
 
     // Network error
-    if (!error.response) {
+    if (!apiError.response) {
         return 'Network error. Please check your internet connection and try again.';
     }
 
-    const status = error.response?.status;
-    const customMessage = error.response?.data?.message;
+    const status = apiError.response?.status;
+    const customMessage = apiError.response?.data?.message;
 
     // Return custom message if available
     if (customMessage) {

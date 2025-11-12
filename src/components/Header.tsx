@@ -21,9 +21,13 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded" />
-              <span className="text-xl font-bold text-foreground">Software Packers</span>
+            <Link to="/" className="flex items-center space-x-3">
+              <img 
+                src="/assets/logos/swp-logo.png" 
+                alt="Software Packers" 
+                className="h-10 w-auto"
+              />
+              <span className="text-xl font-bold text-foreground hidden sm:inline">Software Packers</span>
             </Link>
           </div>
 

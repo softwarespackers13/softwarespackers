@@ -5,9 +5,11 @@
  * It's designed to work with multiple analytics providers like Google Analytics, Plausible, etc.
  */
 
+import * as React from 'react';
+
 export interface AnalyticsEvent {
     name: string;
-    properties?: Record<string, any>;
+    properties?: Record<string, string | number | boolean>;
 }
 
 export interface PageViewData {
@@ -117,13 +119,18 @@ class Analytics {
         const errorMessage = error instanceof Error ? error.message : error;
         const errorStack = error instanceof Error ? error.stack : undefined;
 
+        const properties: Record<string, string | number | boolean> = {
+            message: errorMessage,
+            ...context,
+        };
+        
+        if (errorStack) {
+            properties.stack = errorStack;
+        }
+
         this.track({
             name: 'error',
-            properties: {
-                message: errorMessage,
-                stack: errorStack,
-                ...context,
-            },
+            properties,
         });
     }
 
@@ -134,13 +141,18 @@ class Analytics {
      * @param value - Optional numeric value
      */
     trackInteraction(action: string, label: string, value?: number): void {
+        const properties: Record<string, string | number | boolean> = {
+            action,
+            label,
+        };
+        
+        if (value !== undefined) {
+            properties.value = value;
+        }
+
         this.track({
             name: 'interaction',
-            properties: {
-                action,
-                label,
-                value,
-            },
+            properties,
         });
     }
 
@@ -184,7 +196,7 @@ export function withPageTracking<P extends object>(
 ): React.ComponentType<P> {
     return (props: P) => {
         usePageTracking();
-        return <Component { ...props } />;
+        return <Component {...props} />;
     };
 }
 

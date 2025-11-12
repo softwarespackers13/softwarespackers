@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { sanitizeInput, stripHtml } from './validation';
+import { sanitizeInput, stripHtml } from '../validation';
 
 describe('sanitizeInput', () => {
     it('should remove dangerous script tags', () => {
@@ -22,8 +22,8 @@ describe('sanitizeInput', () => {
     });
 
     it('should handle null and undefined', () => {
-        expect(sanitizeInput(null as any)).toBe('');
-        expect(sanitizeInput(undefined as any)).toBe('');
+        expect(sanitizeInput(null as unknown as string)).toBe('');
+        expect(sanitizeInput(undefined as unknown as string)).toBe('');
     });
 
     it('should preserve normal text', () => {

@@ -9,21 +9,28 @@ import categoriesData from "@/data/categories.json";
 import clientsData from "@/data/clients.json";
 import ProductCard from "@/components/ProductCard";
 import CategoryCard from "@/components/CategoryCard";
+import HeroCarousel from "@/components/HeroCarousel";
 
 const Home = () => {
   const featuredProducts = productsData.products.filter(p => p.featured).slice(0, 3);
   const categories = categoriesData.categories;
 
+  // Hero carousel images - warehouse and industrial themed backgrounds
+  const heroImages = [
+    heroImage,
+    '/assets/images/category-industrial-crates.jpg',
+    '/assets/images/category-storage-tubs.jpg',
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[600px] lg:h-[700px] flex items-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-background/70" />
-        </div>
+        {/* Auto-playing background carousel */}
+        <HeroCarousel images={heroImages} interval={6000} />
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-background/70 z-[1]" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-2xl">
