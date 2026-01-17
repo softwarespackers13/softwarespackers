@@ -1,49 +1,202 @@
 {
   "categories": [
     {
-      "id": "food-jars",
-      "name": "Food Jars",
-      "slug": "food-jars",
-      "description": "BPA-free, food-grade jars for dry goods, spices, and kitchen storage.",
-      "icon": "jar",
-      "product_count": 15,
-      "image": "/assets/images/category-food-jars.jpg"
-    },
-    {
-      "id": "storage-tubs",
-      "name": "Storage Tubs",
-      "slug": "storage-tubs",
-      "description": "Durable tubs for household and industrial storage needs.",
-      "icon": "box",
-      "product_count": 22,
-      "image": "/assets/images/category-storage-tubs.jpg"
-    },
-    {
-      "id": "industrial-crates",
-      "name": "Industrial Crates",
-      "slug": "industrial-crates",
-      "description": "Heavy-duty stackable crates for warehouse and logistics.",
-      "icon": "crate",
+      "id": "round-container",
+      "name": "Round Container",
+      "slug": "round-container",
+      "description": "This see-through container lets you easily view the meal inside while keeping them safe and organized. A perfect fit to store all your delectables in style.",
+      "icon": "container",
       "product_count": 12,
-      "image": "/assets/images/category-industrial-crates.jpg"
+      "image": "/assets/images/category-round-container.jpg"
     },
     {
-      "id": "bottles",
-      "name": "Bottles",
-      "slug": "bottles",
-      "description": "PET and HDPE bottles for beverages, oils, and liquid products.",
-      "icon": "bottle",
-      "product_count": 28,
-      "image": "/assets/images/category-bottles.jpg"
+      "id": "partition-box",
+      "name": "Partition Box",
+      "slug": "partition-box",
+      "description": "Multi-compartment containers perfect for organizing different food items separately.",
+      "icon": "box",
+      "product_count": 3,
+      "image": "/assets/images/category-partition-box.jpg"
     },
     {
-      "id": "caps-accessories",
-      "name": "Caps & Accessories",
-      "slug": "caps-accessories",
-      "description": "Closures, caps, and accessories for all container types.",
+      "id": "pasta-box",
+      "name": "Pasta Box",
+      "slug": "pasta-box",
+      "description": "Specialized containers designed for pasta and similar food items with different depth options.",
+      "icon": "box",
+      "product_count": 3,
+      "image": "/assets/images/category-pasta-box.jpg"
+    },
+    {
+      "id": "sweet-box",
+      "name": "Sweet Box",
+      "slug": "sweet-box",
+      "description": "The Sweet Box container is the perfect solution available in a wide range of sizes and shapes for anyone who wants to keep their sweet treats fresh and organized. Its secure lid keeps out air and moisture.",
+      "icon": "box",
+      "product_count": 16,
+      "image": "/assets/images/category-sweet-box.jpg"
+    },
+    {
+      "id": "boxes-with-lid",
+      "name": "Boxes with Lid",
+      "slug": "boxes-with-lid",
+      "description": "Our PET boxes with lids are the ideal storage solution for a wide range of food items because of their spacious storage design and tight-fitting lids. And since it's designed with a hinged lid, storage is a breeze.",
+      "icon": "box",
+      "product_count": 5,
+      "image": "/assets/images/category-boxes-with-lid.jpg"
+    },
+    {
+      "id": "meal-box",
+      "name": "Meal Box",
+      "slug": "meal-box",
+      "description": "Our meal boxes let you preserve all types of food. These trays provide a sleek and professional look to your food packaging.",
+      "icon": "box",
+      "product_count": 4,
+      "image": "/assets/images/category-meal-box.jpg"
+    },
+    {
+      "id": "sauce-dip-container",
+      "name": "Sauce Dip Container",
+      "slug": "sauce-dip-container",
+      "description": "Whether you're dipping chips into salsa or veggies into hummus, our sauce dip container offers a convenient and mess-free way to serve and enjoy dips and sauces alongside your favorite foods.",
+      "icon": "container",
+      "product_count": 3,
+      "image": "/assets/images/category-sauce-dip-container.jpg"
+    },
+    {
+      "id": "leak-proof-container",
+      "name": "Leak Proof Container",
+      "slug": "leak-proof-container",
+      "description": "Say goodbye to messy spills and soggy lunches with our leak-proof containers! Our containers are the best option for busy days, and on-the-go meals, as they are made of sturdy materials and are designed to keep your food healthy and delicious.",
+      "icon": "container",
+      "product_count": 4,
+      "image": "/assets/images/category-leak-proof-container.jpg"
+    },
+    {
+      "id": "new-hinged-additions",
+      "name": "New Hinged Additions",
+      "slug": "new-hinged-additions",
+      "description": "Our disposable sweet boxes are specially designed and manufactured keeping in mind Indian sweets, which mostly contain ghee, milk, etc. Foodsafe and hygienic, ensure your sweets remain fresh with these disposable boxes. These plastic boxes are also convenient to use as disposable lunch boxes for meals on the go.",
+      "icon": "box",
+      "product_count": 3,
+      "image": "/assets/images/category-new-hinged-additions.jpg"
+    },
+    {
+      "id": "cake-packaging",
+      "name": "Cake Packaging",
+      "slug": "cake-packaging",
+      "description": "Products are securely packaged to ensure safe delivery. Food-safe materials used; eco-friendly certifications available. Ideal for bakeries, catering businesses, parties, and events.",
+      "icon": "box",
+      "product_count": 10,
+      "image": "/assets/images/category-cake-packaging.jpg"
+    },
+    {
+      "id": "ice-cream-cups-glasses",
+      "name": "Ice Cream Cups & Glasses",
+      "slug": "ice-cream-cups-glasses",
+      "description": "Reliable containers for ice cream shops, catering events, and food trucks. Perfect for takeout and outdoor service.",
+      "icon": "cup",
+      "product_count": 5,
+      "image": "/assets/images/category-ice-cream-cups.jpg"
+    },
+    {
+      "id": "bakery-muffin-containers",
+      "name": "Bakery & Muffin Containers",
+      "slug": "bakery-muffin-containers",
+      "description": "These storage containers are the definite answer for all your muffins and bakery items. These easy to open and close containers offer excellent protection that keeps foods safe during transport. Composed entirely of recyclable packaging, they create enticing displays that highlight delectable delights from every angle.",
+      "icon": "box",
+      "product_count": 4,
+      "image": "/assets/images/category-bakery-muffin.jpg"
+    },
+    {
+      "id": "round-hinged-containers",
+      "name": "Round Hinged Containers",
+      "slug": "round-hinged-containers",
+      "description": "Experience the ultimate freshness, simplicity, and style with our round hinge containers designed from the finest quality material. Our clear view containers keep your food fresh and crispy for longer and look organized, used and sharp when you're packing away your food items.",
+      "icon": "container",
+      "product_count": 7,
+      "image": "/assets/images/category-round-hinged.jpg"
+    },
+    {
+      "id": "round-pet",
+      "name": "Round PET",
+      "slug": "round-pet",
+      "description": "Every occasion or festival is incomplete without a sweet. Our disposable sweet boxes are specially designed and manufactured keeping in mind Indian sweets, which mostly contain ghee, milk, etc. Foodsafe and hygienic, ensure your sweets remain fresh with these disposable boxes.",
+      "icon": "container",
+      "product_count": 4,
+      "image": "/assets/images/category-round-pet.jpg"
+    },
+    {
+      "id": "round-food-packaging",
+      "name": "Round Food Packaging Containers",
+      "slug": "round-food-packaging",
+      "description": "Top-quality custom disposable food containers suitable for a variety of food and dessert items such as lassi cup, dhai cup, rasgula containers. Can be printed with your company logo.",
+      "icon": "container",
+      "product_count": 12,
+      "image": "/assets/images/category-round-food-packaging.jpg"
+    },
+    {
+      "id": "hinged-containers",
+      "name": "Hinged Containers",
+      "slug": "hinged-containers",
+      "description": "Our Hinged Containers the ultimate choice to keep your fruits, salads and nuts crisp and fresh! These PET material delivers superior clarity for optimal product visibility, fitting perfectly in your fridge. And thanks to a tight seal from base to lid, you can rest assured that your food will stay delectably tasty for a longer period of time.",
+      "icon": "container",
+      "product_count": 12,
+      "image": "/assets/images/category-hinged-containers.jpg"
+    },
+    {
+      "id": "cookies-container",
+      "name": "Cookies Container",
+      "slug": "cookies-container",
+      "description": "Made from high-grade polypropylene material, this Round Octa Container can be used to pack Biscuits, sweets or other food products. It can be reused and recycled. Suitable for the hotel industry.",
+      "icon": "box",
+      "product_count": 4,
+      "image": "/assets/images/category-cookies-container.jpg"
+    },
+    {
+      "id": "disposable-lids",
+      "name": "Disposable Lids",
+      "slug": "disposable-lids",
+      "description": "Say goodbye to messy spills with our reusable lids! Our lids are the best option for busy days, and on-the-go drinks, as they are made of sturdy materials that are designed to avoid the messy stress!",
       "icon": "cap",
-      "product_count": 45,
-      "image": "/assets/images/category-caps.jpg"
+      "product_count": 0,
+      "image": "/assets/images/category-disposable-lids.jpg"
+    },
+    {
+      "id": "dry-cakes-cookies-packaging",
+      "name": "Dry Cakes & Cookies Packaging",
+      "slug": "dry-cakes-cookies-packaging",
+      "description": "Ideal for storing and packaging food products in a hotel, this Round Container comes with a clear and robust body. It can be reused and recycled thanks to the polypropylene make.",
+      "icon": "box",
+      "product_count": 5,
+      "image": "/assets/images/category-dry-cakes.jpg"
+    },
+    {
+      "id": "rectangle-cookies-containers",
+      "name": "Rectangle Cookies Containers",
+      "slug": "rectangle-cookies-containers",
+      "description": "This Biscuit Tray with three compartments allows you to store assortments of cookies, biscuits and other food products. The polypropylene material ensures tensile strength and protects its delicate parts from getting scratched. It is reusable and recyclable.",
+      "icon": "box",
+      "product_count": 6,
+      "image": "/assets/images/category-rectangle-cookies.jpg"
+    },
+    {
+      "id": "platters",
+      "name": "Platters",
+      "slug": "platters",
+      "description": "Multi-compartment platters designed for superior stacking and consistent portion control. Perfect for food delivery and presentation.",
+      "icon": "box",
+      "product_count": 2,
+      "image": "/assets/images/category-platters.jpg"
+    },
+    {
+      "id": "portion-trays",
+      "name": "Portion Trays",
+      "slug": "portion-trays",
+      "description": "Portion trays designed for consistent serving sizes and easy organization.",
+      "icon": "box",
+      "product_count": 1,
+      "image": "/assets/images/category-portion-trays.jpg"
     }
   ]
 }

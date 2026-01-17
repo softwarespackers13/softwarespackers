@@ -4,9 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import ErrorBoundary from "@/components/common/ErrorBoundary";
+import Header from "@/components/layout/Header/Header";
+import Footer from "@/components/layout/Footer/Footer";
 import AppRoutes from "@/routes/AppRoutes";
 
 const queryClient = new QueryClient();

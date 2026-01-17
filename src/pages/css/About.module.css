@@ -1,0 +1,338 @@
+/* About Page Styles */
+
+.pageContainer {
+  min-height: 100vh;
+  padding: 3rem 0;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badge {
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.7;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.statCard {
+  text-align: center;
+  border: 1px solid hsl(var(--border));
+}
+
+.statContent {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: hsl(var(--accent));
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+.statLabel {
+  font-size: 0.9375rem;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.storySection {
+  margin-bottom: 5rem;
+}
+
+.storyContent {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.storyText p {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+}
+
+.valuesSection {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.valueCard {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.valueContent {
+  padding: 2rem;
+  text-align: center;
+}
+
+.valueIconWrapper {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  background: hsl(var(--accent) / 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.valueIcon {
+  width: 2rem;
+  height: 2rem;
+  color: hsl(var(--accent));
+}
+
+.valueTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.valueDescription {
+  font-size: 0.9375rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+}
+
+.milestonesSection {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.milestonesTimeline {
+  max-width: 42rem;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.milestonesTimeline::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: hsl(var(--border));
+}
+
+.milestoneItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  text-align: left;
+}
+
+.milestoneYear {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--primary));
+  min-width: 4rem;
+  text-align: right;
+}
+
+.milestoneEvent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: hsl(var(--accent) / 0.05);
+  border-radius: 0.5rem;
+  flex: 1;
+  font-size: 1rem;
+  color: hsl(var(--foreground));
+}
+
+.milestoneIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: hsl(var(--accent));
+  flex-shrink: 0;
+}
+
+.missionCard {
+  background: hsl(var(--accent) / 0.05);
+  border: 1px solid hsl(var(--border));
+}
+
+.missionContent {
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.missionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.missionText {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .milestonesTimeline::before {
+    left: 2rem;
+  }
+
+  .milestoneItem {
+    gap: 3rem;
+  }
+
+  .milestoneYear {
+    min-width: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageContainer {
+    padding: 4rem 0;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .milestonesTimeline {
+    max-width: 56rem;
+  }
+}
+

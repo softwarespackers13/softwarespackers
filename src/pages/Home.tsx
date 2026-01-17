@@ -1,106 +1,251 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Clock, Award, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-warehouse.jpg";
+import {
+  CheckCircle,
+  Clock,
+  Award,
+  ArrowRight,
+  Truck,
+  Factory,
+  Users,
+  Phone,
+  MapPin
+} from "lucide-react";
 import productsData from "@/data/products.json";
 import categoriesData from "@/data/categories.json";
 import clientsData from "@/data/clients.json";
-import ProductCard from "@/components/ProductCard";
-import CategoryCard from "@/components/CategoryCard";
-import HeroCarousel from "@/components/HeroCarousel";
+import faqData from "@/data/faq.json";
+import ProductCard from "@/components/common/ProductCard";
+import CategoryCard from "@/components/common/CategoryCard";
+import ProductCarouselCard from "@/components/common/ProductCarouselCard";
+import BrandCarousel from "@/components/common/BrandCarousel";
+import FAQ from "@/components/common/FAQ";
+import HowItWorks from "@/components/common/HowItWorks";
+import WhatsAppButton from "@/components/common/WhatsAppButton";
+import styles from "./css/Home.module.css";
+import { cn } from "@/lib/utils";
+
+// Import company constants from config
+import { COMPANY_PHONE, COMPANY_WHATSAPP } from "@/config/constants";
 
 const Home = () => {
-  const featuredProducts = productsData.products.filter(p => p.featured).slice(0, 3);
-  const categories = categoriesData.categories;
+  const featuredProducts = useMemo(
+    () => productsData.products.filter(p => p.featured).slice(0, 6),
+    [] // Static data - safe to use empty array
+  );
 
-  // Hero carousel images - warehouse and industrial themed backgrounds
-  const heroImages = [
-    heroImage,
-    '/assets/images/category-industrial-crates.jpg',
-    '/assets/images/category-storage-tubs.jpg',
-  ];
+  // Memoize hero products - split into 3 groups for different carousel positions
+  // Note: Empty dependency array is safe here because productsData is imported statically
+  const allProducts = useMemo(
+    () => productsData.products.filter(p => p.featured),
+    [] // Static data - safe to use empty array
+  );
+
+  // Helper function to distribute products evenly across 3 carousels
+  // Each carousel needs at least 2 products to rotate
+  const distributeProducts = useMemo(() => {
+    if (allProducts.length === 0) return { large: [], small1: [], small2: [] };
+
+    // If we have 3 or more products, distribute them with overlap to ensure rotation
+    if (allProducts.length >= 3) {
+      // Each carousel gets 2+ products in different orders for variety
+      return {
+        large: [allProducts[0], allProducts[1], allProducts[2]],
+        small1: [allProducts[1], allProducts[2], allProducts[0]],
+        small2: [allProducts[2], allProducts[0], allProducts[1]],
+      };
+    }
+
+    // If we have 2 products, duplicate them in different orders
+    if (allProducts.length === 2) {
+      return {
+        large: [allProducts[0], allProducts[1]],
+        small1: [allProducts[1], allProducts[0]],
+        small2: [allProducts[0], allProducts[1]],
+      };
+    }
+
+    // If we only have 1 product, duplicate it for all carousels
+    return {
+      large: [allProducts[0], allProducts[0]],
+      small1: [allProducts[0], allProducts[0]],
+      small2: [allProducts[0], allProducts[0]],
+    };
+  }, [allProducts]);
+
+  // Large card products (first position)
+  const largeCardProducts = useMemo(
+    () => distributeProducts.large.length > 0 ? distributeProducts.large : allProducts,
+    [distributeProducts, allProducts]
+  );
+
+  // Small card products (second position)
+  const smallCardProducts1 = useMemo(
+    () => distributeProducts.small1.length > 0 ? distributeProducts.small1 : allProducts,
+    [distributeProducts, allProducts]
+  );
+
+  // Small card products (third position)
+  const smallCardProducts2 = useMemo(
+    () => distributeProducts.small2.length > 0 ? distributeProducts.small2 : allProducts,
+    [distributeProducts, allProducts]
+  );
+
+  // Memoize categories for consistency
+  // Note: Empty dependency array is safe here because categoriesData is imported statically
+  const categories = useMemo(() => categoriesData.categories, []); // Static data - safe to use empty array
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[600px] lg:h-[700px] flex items-center">
-        {/* Auto-playing background carousel */}
-        <HeroCarousel images={heroImages} interval={6000} />
-        
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-background/70 z-[1]" />
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Plastic containers engineered for durability & design
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Food-grade jars, storage tubs, crates and custom packaging — large catalogue, fast lead times.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="focus-ring">
-                <Link to="/products">
-                  View Products
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="focus-ring">
-                <Link to="/quote">Request a Quote</Link>
-              </Button>
+    <div className={styles.pageContainer}>
+      {/* Hero Section - Product-Focused Redesign */}
+      <section className={styles.heroSection} aria-label="Hero section">
+        <div className={cn(styles.container, styles.heroContainer)}>
+          <div className={styles.heroGrid}>
+            {/* Left Column - Content */}
+            <div className={styles.heroContent}>
+              {/* Regional Badge */}
+              <Badge
+                variant="secondary"
+                className={styles.regionalBadge}
+              >
+                <MapPin className={styles.iconSmall} aria-hidden="true" />
+                Proudly Made in India
+              </Badge>
+
+              {/* Main Heading */}
+              <h1 className={styles.mainHeading}>
+                <span className={styles.mainHeadingBlock}>
+                  Premium Plastic Containers
+                </span>
+                <span className={styles.mainHeadingGradient}>
+                  That Keep Your Products Fresh & Safe
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className={styles.subtitle}>
+                Quality containers for food, storage, and industry. Custom sizes, bulk pricing, and fast delivery across North India.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className={styles.ctaButtons}>
+                <Button
+                  asChild
+                  size="lg"
+                  className={styles.primaryButton}
+                  aria-label="Explore our product catalog"
+                >
+                  <Link to="/categories">
+                    Explore Our Products
+                    <ArrowRight className={styles.iconLarge} aria-hidden="true" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className={styles.outlineButton}
+                  aria-label="Request a custom quote"
+                >
+                  <Link to="/quote">Get Custom Quote</Link>
+                </Button>
+              </div>
             </div>
+
+            {/* Right Column - Product Showcase with Carousels */}
+            <div className={styles.heroProducts}>
+              <div className={styles.productGrid}>
+                {/* Large Card Carousel */}
+                <div className={styles.productCardLarge}>
+                  <ProductCarouselCard
+                    products={largeCardProducts}
+                    cardSize="large"
+                    interval={4500}
+                    startDelay={0}
+                  />
+                </div>
+                {/* Small Card Carousel - First */}
+                <div className={styles.productCardSmall}>
+                  <ProductCarouselCard
+                    products={smallCardProducts1}
+                    cardSize="small"
+                    interval={4000}
+                    startDelay={1500}
+                  />
+                </div>
+                {/* Small Card Carousel - Second */}
+                <div className={styles.productCardSmall}>
+                  <ProductCarouselCard
+                    products={smallCardProducts2}
+                    cardSize="small"
+                    interval={4200}
+                    startDelay={3000}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className={styles.scrollIndicator}>
+          <div className={styles.scrollIndicatorInner}>
+            <div className={styles.scrollIndicatorDot}></div>
           </div>
         </div>
       </section>
 
-      {/* Quick Categories */}
-      <section className="py-12 bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+      {/* Brand Carousel Section */}
+      <BrandCarousel clients={clientsData.clients} />
+
+      {/* Categories Section */}
+      <section className={styles.categoriesSection} aria-label="Product categories">
+        <div className={styles.container}>
+          <div className={styles.categoriesHeader}>
+            <Badge variant="outline" className={styles.badge}>
+              Our Product Range
+            </Badge>
+            <h2 className={styles.categoriesTitle}>
+              Explore by Category
+            </h2>
+            <p className={styles.categoriesSubtitle}>
+              Discover our comprehensive range of packaging solutions for every need
+            </p>
+          </div>
+
+          <div className={styles.categoriesGrid}>
             {categories.map((category) => (
-              <Link
-                key={category.id}
-                to={`/products?category=${category.slug}`}
-                className="flex-shrink-0 group"
-              >
-                <Card className="w-48 hover-lift">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-16 h-16 mx-auto mb-3 rounded-lg bg-muted flex items-center justify-center">
-                      <span className="text-2xl">{category.icon}</span>
-                    </div>
-                    <h3 className="font-semibold text-sm mb-1 group-hover:text-accent smooth-transition">
-                      {category.name}
-                    </h3>
-                    <p className="text-xs text-muted-foreground">
-                      {category.product_count} items
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
+              <CategoryCard key={category.id} category={category} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Featured Products */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-8">
+      <section className={styles.featuredSection} aria-label="Featured products">
+        <div className={styles.container}>
+          <div className={styles.featuredHeader}>
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-2">Featured Products</h2>
-              <p className="text-muted-foreground">Popular choices for various industries</p>
+              <Badge variant="outline" className={styles.badge}>
+                Best Sellers
+              </Badge>
+              <h2 className={styles.featuredTitle}>Featured Products</h2>
+              <p className={styles.featuredSubtitle}>
+                Handpicked selection of our most popular and high-quality products
+              </p>
             </div>
-            <Button asChild variant="outline" className="hidden sm:flex focus-ring">
-              <Link to="/products">
-                View All
-                <ArrowRight className="ml-2 h-4 w-4" />
+            <Button asChild variant="outline" size="lg" className="focus-ring">
+              <Link to="/categories">
+                View All Products
+                <ArrowRight className={styles.iconMedium} aria-hidden="true" />
               </Link>
             </Button>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div className={styles.featuredGrid}>
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -108,86 +253,100 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">Why Choose Us</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="hover-lift">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
-                  <CheckCircle className="h-6 w-6 text-accent" />
+      {/* How It Works Section - New */}
+      <HowItWorks
+        title="How It Works"
+        subtitle="Simple process from inquiry to delivery"
+      />
+
+      {/* FAQ Section - New */}
+      <FAQ
+        faqs={faqData.faqs}
+        title="Frequently Asked Questions"
+        subtitle="Everything you need to know about our products and services"
+      />
+
+      {/* CTA Section - Enhanced with WhatsApp and Phone */}
+      <section className={styles.ctaSection} aria-label="Call to action">
+        <div className={styles.ctaDecorative1} aria-hidden="true"></div>
+        <div className={styles.ctaDecorative2} aria-hidden="true"></div>
+
+        <div className={cn(styles.container, styles.ctaContent)}>
+          <div className={styles.ctaInner}>
+            <Badge variant="secondary" className={styles.badge}>
+              Get Started Today
+            </Badge>
+            <h2 className={styles.ctaTitle}>
+              Ready to Transform Your Packaging?
+            </h2>
+            <p className={styles.ctaSubtitle}>
+              Get a free quote today. Let's discuss your requirements and find the perfect solution for your business needs.
+            </p>
+            <div className={styles.ctaButtonsContainer}>
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className={styles.ctaPrimaryButton}
+                aria-label="Request a quote"
+              >
+                <Link to="/quote">
+                  Request a Quote
+                  <ArrowRight className={styles.iconLarge} aria-hidden="true" />
+                </Link>
+              </Button>
+              <WhatsAppButton
+                phoneNumber={COMPANY_WHATSAPP}
+                message="Hello, I'm interested in your plastic containers. Please share more details."
+                variant="inline"
+                size="lg"
+                className={styles.ctaWhatsAppButton}
+              />
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className={styles.ctaOutlineButton}
+                aria-label="Call us"
+              >
+                <a href={`tel:${COMPANY_PHONE}`}>
+                  <Phone className={cn(styles.iconLarge, styles.iconRight)} aria-hidden="true" />
+                  Call Now
+                </a>
+              </Button>
+            </div>
+
+            {/* Trust indicators - Enhanced */}
+            <div className={styles.trustIndicators}>
+              <div className={styles.trustIndicatorsInner}>
+                <div className={styles.trustIndicator}>
+                  <CheckCircle className={styles.trustIcon} aria-hidden="true" />
+                  <span>Free Consultation</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Quality Materials</h3>
-                <p className="text-muted-foreground">
-                  Food-grade HDPE, PP, and PET plastics. All products meet international safety standards and certifications.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-lift">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Award className="h-6 w-6 text-accent" />
+                <div className={styles.trustIndicator}>
+                  <Clock className={styles.trustIcon} aria-hidden="true" />
+                  <span>Quick Response</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Custom Molding</h3>
-                <p className="text-muted-foreground">
-                  In-house design and tooling capabilities. We can customize dimensions, colors, and features to your specifications.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-lift">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Clock className="h-6 w-6 text-accent" />
+                <div className={styles.trustIndicator}>
+                  <Award className={styles.trustIcon} aria-hidden="true" />
+                  <span>Expert Support</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Fast Turnaround</h3>
-                <p className="text-muted-foreground">
-                  Large inventory of standard items ships within 48 hours. Custom orders completed in 2-4 weeks depending on complexity.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Materials & Compliance */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-6 items-center">
-            <Badge variant="outline" className="text-sm py-2 px-4">HDPE</Badge>
-            <Badge variant="outline" className="text-sm py-2 px-4">PP (Polypropylene)</Badge>
-            <Badge variant="outline" className="text-sm py-2 px-4">PET</Badge>
-            <Badge variant="outline" className="text-sm py-2 px-4">Food Grade Certified</Badge>
-            <Badge variant="outline" className="text-sm py-2 px-4">ISO 9001</Badge>
-            <Badge variant="outline" className="text-sm py-2 px-4">BPA Free</Badge>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="bg-primary text-primary-foreground overflow-hidden">
-            <CardContent className="p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to discuss your requirements?</h2>
-              <p className="text-lg mb-8 opacity-90">
-                Our sales team is ready to help you find the perfect packaging solution
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg" variant="secondary" className="focus-ring">
-                  <Link to="/quote">Request Quote</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="focus-ring border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-                  <Link to="/contact">Contact Sales</Link>
-                </Button>
+                <div className={styles.trustIndicator}>
+                  <MapPin className={styles.trustIcon} aria-hidden="true" />
+                  <span>Serving India</span>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton
+        phoneNumber={COMPANY_WHATSAPP}
+        message="Hello, I'm interested in your plastic containers. Please share more details."
+        variant="floating"
+      />
     </div>
   );
 };

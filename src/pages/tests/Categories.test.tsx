@@ -36,7 +36,7 @@ vi.mock('@/data/categories.json', () => ({
 }));
 
 // Mock CategoryCard component
-vi.mock('@/components/CategoryCard', () => ({
+vi.mock('@/components/common/CategoryCard', () => ({
   default: ({ category }: { category: { id: string; name: string; description: string } }) => (
     <div data-testid={`category-${category.id}`}>
       <h3>{category.name}</h3>

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import CategoryCard from '../CategoryCard';
+import CategoryCard from '../common/CategoryCard';
 
 const mockCategory = {
   id: '1',
@@ -37,7 +37,7 @@ describe('CategoryCard', () => {
     expect(image).toHaveAttribute('src', '/test-image.jpg');
   });
 
-  it('links to the correct products page with category filter', () => {
+  it('links to the correct categories page with category filter', () => {
     render(
       <BrowserRouter>
         <CategoryCard category={mockCategory} />
@@ -45,7 +45,7 @@ describe('CategoryCard', () => {
     );
 
     const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', '/products?category=test-category');
+    expect(link).toHaveAttribute('href', '/categories?category=test-category');
   });
 
   it('displays ArrowRight icon', () => {

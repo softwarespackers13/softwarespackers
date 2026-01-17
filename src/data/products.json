@@ -1,129 +1,4128 @@
 {
   "products": [
     {
-      "id": "pp-jar-001",
-      "name": "500 ml Screw-top Food Jar",
-      "sku": "PP-JAR-500",
-      "slug": "500-ml-screw-top-food-jar",
-      "category": "Food Jars",
-      "material": "PP",
+      "id": "round-container-180",
+      "name": "Round Container 180 ML",
+      "sku": "RC-180",
+      "slug": "round-container-180-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 180,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-180-ml-1.jpg",
+        "/assets/products/round-container-180-ml-2.jpg"
+      ],
+      "short_description": "Round Container 180 ML - PET container perfect for food packaging.",
+      "long_description": "High-quality PET round container 180 ml designed for food safety and freshness. 2000 PCS / CARTON.",
+      "moq": 1000,
+      "packing": "2000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "round-container-200",
+      "name": "Round Container 200 ML",
+      "sku": "RC-200",
+      "slug": "round-container-200-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 200,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-200-ml-1.jpg",
+        "/assets/products/round-container-200-ml-2.jpg"
+      ],
+      "short_description": "Round Container 200 ML - PET container perfect for food packaging.",
+      "long_description": "High-quality PET round container 200 ml designed for food safety and freshness. 1500 PCS / CARTON.",
+      "moq": 1000,
+      "packing": "1500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "round-container-300",
+      "name": "Round Container 300 ML",
+      "sku": "RC-300",
+      "slug": "round-container-300-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 300,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-300-ml-1.jpg",
+        "/assets/products/round-container-300-ml-2.jpg"
+      ],
+      "short_description": "Round Container 300 ML - PET container perfect for food packaging.",
+      "long_description": "High-quality PET round container 300 ml designed for food safety and freshness. 1500 PCS / CARTON.",
+      "moq": 1000,
+      "packing": "1500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "round-container-400",
+      "name": "Round Container 400 ML",
+      "sku": "RC-400",
+      "slug": "round-container-400-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 400,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-400-ml-1.jpg",
+        "/assets/products/round-container-400-ml-2.jpg"
+      ],
+      "short_description": "Round Container 400 ML - PET container perfect for food packaging.",
+      "long_description": "High-quality PET round container 400 ml designed for food safety and freshness. 1500 PCS / CARTON.",
+      "moq": 1000,
+      "packing": "1500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "round-container-500",
+      "name": "Round Container 500 ML",
+      "sku": "RC-500",
+      "slug": "round-container-500-ml",
+      "category": "Round Container",
+      "material": "PET",
       "capacity_ml": 500,
-      "dimensions_mm": { "dia": 78, "height": 110 },
-      "colors": ["clear", "white", "black"],
-      "images": ["/assets/images/product-01-1.jpg", "/assets/images/product-01-2.jpg"],
-      "short_description": "Food-grade polypropylene jar with airtight screw cap. BPA-free and microwave-safe.",
-      "long_description": "Our 500ml PP food jar is perfect for storing dry goods, spices, and kitchen essentials. The airtight screw cap ensures freshness while the wide opening makes filling and cleaning easy. Safe for microwave and dishwasher use.",
-      "moq": 500,
-      "packing": "50 units per carton",
-      "price_range": "INR 12–18 (depends on qty)",
-      "datasheet_url": "/assets/datasheets/PP-JAR-500.pdf",
-      "certifications": ["Food Grade", "ISO 9001", "BPA Free"],
-      "tags": ["food", "jar", "screw-cap"],
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-500-ml-1.jpg",
+        "/assets/products/round-container-500-ml-2.jpg"
+      ],
+      "short_description": "Round Container 500 ML - PET container perfect for food packaging.",
+      "long_description": "High-quality PET round container 500 ml designed for food safety and freshness. 1500 PCS / CARTON.",
+      "moq": 1000,
+      "packing": "1500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
       "featured": true
     },
     {
-      "id": "hdpe-tub-002",
-      "name": "2L Storage Tub with Handle",
-      "sku": "HDPE-TUB-2000",
-      "slug": "2l-storage-tub-with-handle",
-      "category": "Storage Tubs",
-      "material": "HDPE",
-      "capacity_ml": 2000,
-      "dimensions_mm": { "length": 180, "width": 140, "height": 95 },
-      "colors": ["clear", "blue", "green"],
-      "images": ["/assets/images/product-02-1.jpg"],
-      "short_description": "Durable HDPE storage tub with secure lid and carry handle.",
-      "long_description": "Heavy-duty 2-liter storage tub ideal for industrial and household use. Features reinforced handle for easy transport and stackable design for efficient storage.",
-      "moq": 300,
-      "packing": "30 units per carton",
-      "price_range": "INR 35–45",
-      "datasheet_url": "/assets/datasheets/HDPE-TUB-2000.pdf",
-      "certifications": ["ISO 9001"],
-      "tags": ["storage", "tub", "handle"],
-      "featured": true
+      "id": "round-container-750",
+      "name": "Round Container 750 ML",
+      "sku": "RC-750",
+      "slug": "round-container-750-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-750-ml-1.jpg",
+        "/assets/products/round-container-750-ml-2.jpg"
+      ],
+      "short_description": "Round Container 750 ML - PET container perfect for food packaging.",
+      "long_description": "High-quality PET round container 750 ml designed for food safety and freshness. 1000 PCS / CARTON.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
     },
     {
-      "id": "pet-bottle-003",
-      "name": "1L Clear PET Bottle",
-      "sku": "PET-BTL-1000",
-      "slug": "1l-clear-pet-bottle",
-      "category": "Bottles",
+      "id": "round-container-1000",
+      "name": "Round Container 1000 ML",
+      "sku": "RC-1000",
+      "slug": "round-container-1000-ml",
+      "category": "Round Container",
       "material": "PET",
       "capacity_ml": 1000,
-      "dimensions_mm": { "dia": 88, "height": 230 },
-      "colors": ["clear"],
-      "images": ["/assets/images/product-03-1.jpg"],
-      "short_description": "Crystal-clear PET bottle for beverages and liquids.",
-      "long_description": "Premium PET bottle with excellent clarity and strength. Food-grade certified for beverages, oils, and liquid products. Compatible with standard 28mm screw caps.",
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1000-ml-1.jpg",
+        "/assets/products/round-container-1000-ml-2.jpg"
+      ],
+      "short_description": "Round Container 1000 ML - PET container perfect for food packaging.",
+      "long_description": "High-quality PET round container 1000 ml designed for food safety and freshness. 1000 PCS / CARTON.",
       "moq": 1000,
-      "packing": "100 units per carton",
-      "price_range": "INR 8–12",
-      "datasheet_url": "/assets/datasheets/PET-BTL-1000.pdf",
-      "certifications": ["Food Grade", "ISO 9001"],
-      "tags": ["bottle", "beverage", "pet"],
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1200",
+      "name": "Round Container 1200 ML",
+      "sku": "RC-1200",
+      "slug": "round-container-1200-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 1200,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1200-ml-1.jpg",
+        "/assets/products/round-container-1200-ml-2.jpg"
+      ],
+      "short_description": "Round Container 1200 ML - PET container perfect for food packaging.",
+      "long_description": "High-quality PET round container 1200 ml designed for food safety and freshness. 1000 PCS / CARTON.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "biscuit-box",
+      "name": "Biscuit Box",
+      "sku": "PB-BISCUIT",
+      "slug": "biscuit-box",
+      "category": "Partition Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/biscuit-box-1.jpg",
+        "/assets/products/biscuit-box-2.jpg"
+      ],
+      "short_description": "Multi-compartment biscuit box for organizing cookies and snacks.",
+      "long_description": "Multi-compartment biscuit box for organizing cookies and snacks.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "partition-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "2cp-natural-black",
+      "name": "2CP Natural/Black",
+      "sku": "PB-2CP",
+      "slug": "2cp-natural-black",
+      "category": "Partition Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/2cp-natural-black-1.jpg",
+        "/assets/products/2cp-natural-black-2.jpg"
+      ],
+      "short_description": "Two-compartment partition box available in natural and black colors.",
+      "long_description": "Two-compartment partition box available in natural and black colors.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "partition-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "3cp-natural-black",
+      "name": "3CP Natural/Black",
+      "sku": "PB-3CP",
+      "slug": "3cp-natural-black",
+      "category": "Partition Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/3cp-natural-black-1.jpg",
+        "/assets/products/3cp-natural-black-2.jpg"
+      ],
+      "short_description": "Three-compartment partition box available in natural and black colors.",
+      "long_description": "Three-compartment partition box available in natural and black colors.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "partition-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "pasta-box-30-mm",
+      "name": "Pasta Box 30 MM",
+      "sku": "PB-30MM",
+      "slug": "pasta-box-30-mm",
+      "category": "Pasta Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pasta-box-30-mm-1.jpg",
+        "/assets/products/pasta-box-30-mm-2.jpg"
+      ],
+      "short_description": "Pasta box with 30 MM depth, perfect for pasta and similar food items.",
+      "long_description": "Pasta box with 30 MM depth, perfect for pasta and similar food items.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "pasta-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "pasta-box-40-mm",
+      "name": "Pasta Box 40 MM",
+      "sku": "PB-40MM",
+      "slug": "pasta-box-40-mm",
+      "category": "Pasta Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pasta-box-40-mm-1.jpg",
+        "/assets/products/pasta-box-40-mm-2.jpg"
+      ],
+      "short_description": "Pasta box with 40 MM depth, perfect for pasta and similar food items.",
+      "long_description": "Pasta box with 40 MM depth, perfect for pasta and similar food items.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "pasta-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "pasta-box-60-mm",
+      "name": "Pasta Box 60 MM",
+      "sku": "PB-60MM",
+      "slug": "pasta-box-60-mm",
+      "category": "Pasta Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pasta-box-60-mm-1.jpg",
+        "/assets/products/pasta-box-60-mm-2.jpg"
+      ],
+      "short_description": "Pasta box with 60 MM depth, perfect for pasta and similar food items.",
+      "long_description": "Pasta box with 60 MM depth, perfect for pasta and similar food items.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "pasta-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "mini-sweet-box-250",
+      "name": "Mini Sweet Box 250",
+      "sku": "SB-MINI-250",
+      "slug": "mini-sweet-box-250",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/mini-sweet-box-250-1.jpg",
+        "/assets/products/mini-sweet-box-250-2.jpg"
+      ],
+      "short_description": "Mini sweet box 250 - perfect for on-the-go snacking with durable construction and secure lid.",
+      "long_description": "Mini sweet box 250 - perfect for on-the-go snacking with durable construction and secure lid.",
+      "moq": 1000,
+      "packing": "2000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "mini-sweet-box-350",
+      "name": "Mini Sweet Box 350",
+      "sku": "SB-MINI-350",
+      "slug": "mini-sweet-box-350",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 350,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/mini-sweet-box-350-1.jpg",
+        "/assets/products/mini-sweet-box-350-2.jpg"
+      ],
+      "short_description": "Mini sweet box 350 - perfect for on-the-go snacking with durable construction and secure lid.",
+      "long_description": "Mini sweet box 350 - perfect for on-the-go snacking with durable construction and secure lid.",
+      "moq": 1000,
+      "packing": "2000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "mini-sweet-box-450",
+      "name": "Mini Sweet Box 450",
+      "sku": "SB-MINI-450",
+      "slug": "mini-sweet-box-450",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 450,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/mini-sweet-box-450-1.jpg",
+        "/assets/products/mini-sweet-box-450-2.jpg"
+      ],
+      "short_description": "Mini sweet box 450 - perfect for on-the-go snacking with durable construction and secure lid.",
+      "long_description": "Mini sweet box 450 - perfect for on-the-go snacking with durable construction and secure lid.",
+      "moq": 1000,
+      "packing": "2000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sweet-box-400",
+      "name": "Sweet Box 400 ML",
+      "sku": "SB-400",
+      "slug": "sweet-box-400-ml",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 400,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sweet-box-400-ml-1.jpg",
+        "/assets/products/sweet-box-400-ml-2.jpg"
+      ],
+      "short_description": "Sweet box 400ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "long_description": "Sweet box 400ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
       "featured": true
     },
     {
-      "id": "pp-crate-004",
-      "name": "Industrial Stackable Crate 40L",
-      "sku": "PP-CRATE-40L",
-      "slug": "industrial-stackable-crate-40l",
-      "category": "Industrial Crates",
-      "material": "PP",
-      "capacity_ml": 40000,
-      "dimensions_mm": { "length": 600, "width": 400, "height": 300 },
-      "colors": ["blue", "gray", "red"],
-      "images": ["/assets/images/product-04-1.jpg"],
-      "short_description": "Heavy-duty stackable crate for warehouse and logistics.",
-      "long_description": "Robust industrial crate designed for heavy loads and repeated use. Interlocking design allows secure stacking. Ventilated sides for improved airflow.",
-      "moq": 100,
-      "packing": "10 units per pallet",
-      "price_range": "INR 180–220",
-      "datasheet_url": "/assets/datasheets/PP-CRATE-40L.pdf",
-      "certifications": ["ISO 9001"],
-      "tags": ["crate", "industrial", "stackable"],
-      "featured": false
-    },
-    {
-      "id": "pp-cap-005",
-      "name": "28mm Screw Cap - Food Grade",
-      "sku": "PP-CAP-28",
-      "slug": "28mm-screw-cap-food-grade",
-      "category": "Caps & Accessories",
-      "material": "PP",
-      "capacity_ml": null,
-      "dimensions_mm": { "dia": 28, "height": 15 },
-      "colors": ["white", "black", "red", "blue"],
-      "images": ["/assets/images/product-05-1.jpg"],
-      "short_description": "Universal 28mm screw cap for bottles and jars.",
-      "long_description": "Food-grade PP screw cap with tamper-evident band. Compatible with standard 28mm neck bottles. Available in multiple colors for product differentiation.",
-      "moq": 5000,
-      "packing": "500 units per bag",
-      "price_range": "INR 0.80–1.20",
-      "datasheet_url": "/assets/datasheets/PP-CAP-28.pdf",
-      "certifications": ["Food Grade"],
-      "tags": ["cap", "closure", "accessory"],
-      "featured": false
-    },
-    {
-      "id": "hdpe-jar-006",
-      "name": "250ml Wide Mouth Jar",
-      "sku": "HDPE-JAR-250",
-      "slug": "250ml-wide-mouth-jar",
-      "category": "Food Jars",
-      "material": "HDPE",
-      "capacity_ml": 250,
-      "dimensions_mm": { "dia": 68, "height": 85 },
-      "colors": ["white", "natural"],
-      "images": ["/assets/images/product-06-1.jpg"],
-      "short_description": "Compact wide-mouth jar for creams, pastes, and solids.",
-      "long_description": "Perfect for packaging cosmetics, food products, and pharmaceutical items. Wide opening facilitates easy filling and dispensing. Chemical-resistant HDPE construction.",
+      "id": "sweet-box-500",
+      "name": "Sweet Box 500 ML",
+      "sku": "SB-500",
+      "slug": "sweet-box-500-ml",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sweet-box-500-ml-1.jpg",
+        "/assets/products/sweet-box-500-ml-2.jpg"
+      ],
+      "short_description": "Sweet box 500ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "long_description": "Sweet box 500ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
       "moq": 1000,
-      "packing": "100 units per carton",
-      "price_range": "INR 6–9",
-      "datasheet_url": "/assets/datasheets/HDPE-JAR-250.pdf",
-      "certifications": ["Food Grade", "ISO 9001"],
-      "tags": ["jar", "wide-mouth", "small"],
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "sweet-box-750",
+      "name": "Sweet Box 750 ML",
+      "sku": "SB-750",
+      "slug": "sweet-box-750-ml",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sweet-box-750-ml-1.jpg",
+        "/assets/products/sweet-box-750-ml-2.jpg"
+      ],
+      "short_description": "Sweet box 750ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "long_description": "Sweet box 750ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "sweet-box-1000",
+      "name": "Sweet Box 1000 ML",
+      "sku": "SB-1000",
+      "slug": "sweet-box-1000-ml",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sweet-box-1000-ml-1.jpg",
+        "/assets/products/sweet-box-1000-ml-2.jpg"
+      ],
+      "short_description": "Sweet box 1000ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "long_description": "Sweet box 1000ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sweet-box-1250",
+      "name": "Sweet Box 1250 ML",
+      "sku": "SB-1250",
+      "slug": "sweet-box-1250-ml",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 1250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sweet-box-1250-ml-1.jpg",
+        "/assets/products/sweet-box-1250-ml-2.jpg"
+      ],
+      "short_description": "Sweet box 1250ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "long_description": "Sweet box 1250ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sweet-box-1500",
+      "name": "Sweet Box 1500 ML",
+      "sku": "SB-1500",
+      "slug": "sweet-box-1500-ml",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 1500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sweet-box-1500-ml-1.jpg",
+        "/assets/products/sweet-box-1500-ml-2.jpg"
+      ],
+      "short_description": "Sweet box 1500ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "long_description": "Sweet box 1500ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sweet-box-1800",
+      "name": "Sweet Box 1800 ML",
+      "sku": "SB-1800",
+      "slug": "sweet-box-1800-ml",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 1800,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sweet-box-1800-ml-1.jpg",
+        "/assets/products/sweet-box-1800-ml-2.jpg"
+      ],
+      "short_description": "Sweet box 1800ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "long_description": "Sweet box 1800ml - completely recyclable with easy to clean surfaces and tightly-fitting lid.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "pet-box-with-lid-250----8",
+      "name": "PET Box with Lid 250 ML / 8 OZ",
+      "sku": "PET-250",
+      "slug": "pet-box-with-lid-250-ml---8-oz",
+      "category": "Boxes with Lid",
+      "material": "PET",
+      "capacity_ml": 250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pet-box-with-lid-250-ml---8-oz-1.jpg",
+        "/assets/products/pet-box-with-lid-250-ml---8-oz-2.jpg"
+      ],
+      "short_description": "PET box with hinged lid - 250ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "long_description": "PET box with hinged lid - 250ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "boxes-with-lid",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pet-box-with-lid-350----12",
+      "name": "PET Box with Lid 350 ML / 12 OZ",
+      "sku": "PET-350",
+      "slug": "pet-box-with-lid-350-ml---12-oz",
+      "category": "Boxes with Lid",
+      "material": "PET",
+      "capacity_ml": 350,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pet-box-with-lid-350-ml---12-oz-1.jpg",
+        "/assets/products/pet-box-with-lid-350-ml---12-oz-2.jpg"
+      ],
+      "short_description": "PET box with hinged lid - 350ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "long_description": "PET box with hinged lid - 350ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "boxes-with-lid",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pet-box-with-lid-500----18",
+      "name": "PET Box with Lid 500 ML / 18 OZ",
+      "sku": "PET-500",
+      "slug": "pet-box-with-lid-500-ml---18-oz",
+      "category": "Boxes with Lid",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pet-box-with-lid-500-ml---18-oz-1.jpg",
+        "/assets/products/pet-box-with-lid-500-ml---18-oz-2.jpg"
+      ],
+      "short_description": "PET box with hinged lid - 500ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "long_description": "PET box with hinged lid - 500ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "boxes-with-lid",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pet-box-with-lid-750----26",
+      "name": "PET Box with Lid 750 ML / 26 OZ",
+      "sku": "PET-750",
+      "slug": "pet-box-with-lid-750-ml---26-oz",
+      "category": "Boxes with Lid",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pet-box-with-lid-750-ml---26-oz-1.jpg",
+        "/assets/products/pet-box-with-lid-750-ml---26-oz-2.jpg"
+      ],
+      "short_description": "PET box with hinged lid - 750ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "long_description": "PET box with hinged lid - 750ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "boxes-with-lid",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "32-square-pet",
+      "name": "32OZ Square PET",
+      "sku": "PET-32OZ",
+      "slug": "32oz-square-pet",
+      "category": "Boxes with Lid",
+      "material": "PET",
+      "capacity_ml": 946,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/32oz-square-pet-1.jpg",
+        "/assets/products/32oz-square-pet-2.jpg"
+      ],
+      "short_description": "PET box with hinged lid - 946ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "long_description": "PET box with hinged lid - 946ml capacity. Spacious storage design with tight-fitting lid. Sturdy construction, lightweight design, 100% reusable & recyclable.",
+      "moq": 1000,
+      "packing": "300 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "boxes-with-lid",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "5cp-mini-meal",
+      "name": "5CP Mini Meal",
+      "sku": "MB-5CP-MINI",
+      "slug": "5cp-mini-meal",
+      "category": "Meal Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/5cp-mini-meal-1.jpg",
+        "/assets/products/5cp-mini-meal-2.jpg"
+      ],
+      "short_description": "Transparent meal box with 5 compartments. Clear view of your favorite food, prevents spills and leaks, easy to stack.",
+      "long_description": "Transparent meal box with 5 compartments. Clear view of your favorite food, prevents spills and leaks, easy to stack.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "meal-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "5cp-meal-box-sealable",
+      "name": "5CP Meal Box (Sealable)",
+      "sku": "MB-5CP-SEAL",
+      "slug": "5cp-meal-box-sealable",
+      "category": "Meal Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/5cp-meal-box-sealable-1.jpg",
+        "/assets/products/5cp-meal-box-sealable-2.jpg"
+      ],
+      "short_description": "Transparent meal box with 5 compartments and sealable lid. Clear view, prevents spills, easy to stack, consistent portion size.",
+      "long_description": "Transparent meal box with 5 compartments and sealable lid. Clear view, prevents spills, easy to stack, consistent portion size.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "meal-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "8cp-meal-box-sealable",
+      "name": "8CP Meal Box (Sealable)",
+      "sku": "MB-8CP-SEAL",
+      "slug": "8cp-meal-box-sealable",
+      "category": "Meal Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/8cp-meal-box-sealable-1.jpg",
+        "/assets/products/8cp-meal-box-sealable-2.jpg"
+      ],
+      "short_description": "Transparent meal box with 8 compartments and sealable lid. Perfect for complete meals with clear visibility.",
+      "long_description": "Transparent meal box with 8 compartments and sealable lid. Perfect for complete meals with clear visibility.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "meal-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "black-meal-box-5cp",
+      "name": "Black Meal Box 5CP",
+      "sku": "MB-BLACK-5CP",
+      "slug": "black-meal-box-5cp",
+      "category": "Meal Box",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/black-meal-box-5cp-1.jpg",
+        "/assets/products/black-meal-box-5cp-2.jpg"
+      ],
+      "short_description": "Black meal box designed to hold and carry food without risk of spillage or leaks. Perfect for food packaging and presentation.",
+      "long_description": "Black meal box designed to hold and carry food without risk of spillage or leaks. Perfect for food packaging and presentation.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "meal-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sauce-dip-container-35",
+      "name": "Sauce Dip Container 35 ML",
+      "sku": "SDC-35",
+      "slug": "sauce-dip-container-35-ml",
+      "category": "Sauce Dip Container",
+      "material": "PET",
+      "capacity_ml": 35,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sauce-dip-container-35-ml-1.jpg",
+        "/assets/products/sauce-dip-container-35-ml-2.jpg"
+      ],
+      "short_description": "35ml sauce dip container - convenient and mess-free way to serve dips and sauces.",
+      "long_description": "35ml sauce dip container - convenient and mess-free way to serve dips and sauces.",
+      "moq": 1000,
+      "packing": "5000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sauce-dip-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "sauce-dip-container-50",
+      "name": "Sauce Dip Container 50 ML",
+      "sku": "SDC-50",
+      "slug": "sauce-dip-container-50-ml",
+      "category": "Sauce Dip Container",
+      "material": "PET",
+      "capacity_ml": 50,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sauce-dip-container-50-ml-1.jpg",
+        "/assets/products/sauce-dip-container-50-ml-2.jpg"
+      ],
+      "short_description": "50ml sauce dip container - convenient and mess-free way to serve dips and sauces.",
+      "long_description": "50ml sauce dip container - convenient and mess-free way to serve dips and sauces.",
+      "moq": 1000,
+      "packing": "5000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sauce-dip-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sauce-dip-container-70",
+      "name": "Sauce Dip Container 70 ML",
+      "sku": "SDC-70",
+      "slug": "sauce-dip-container-70-ml",
+      "category": "Sauce Dip Container",
+      "material": "PET",
+      "capacity_ml": 70,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/sauce-dip-container-70-ml-1.jpg",
+        "/assets/products/sauce-dip-container-70-ml-2.jpg"
+      ],
+      "short_description": "70ml sauce dip container - convenient and mess-free way to serve dips and sauces.",
+      "long_description": "70ml sauce dip container - convenient and mess-free way to serve dips and sauces.",
+      "moq": 1000,
+      "packing": "5000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sauce-dip-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "leak-proof-container-500",
+      "name": "Leak Proof Container 500 ML",
+      "sku": "LPC-500",
+      "slug": "leak-proof-container-500-ml",
+      "category": "Leak Proof Container",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/leak-proof-container-500-ml-1.jpg",
+        "/assets/products/leak-proof-container-500-ml-2.jpg"
+      ],
+      "short_description": "Leak-proof rectangular container 500ml - made of sturdy materials, keeps food healthy and delicious. Perfect for busy days and on-the-go meals.",
+      "long_description": "Leak-proof rectangular container 500ml - made of sturdy materials, keeps food healthy and delicious. Perfect for busy days and on-the-go meals.",
+      "moq": 1000,
+      "packing": "500+500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "leak-proof-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "leak-proof-container-650",
+      "name": "Leak Proof Container 650 ML",
+      "sku": "LPC-650",
+      "slug": "leak-proof-container-650-ml",
+      "category": "Leak Proof Container",
+      "material": "PET",
+      "capacity_ml": 650,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/leak-proof-container-650-ml-1.jpg",
+        "/assets/products/leak-proof-container-650-ml-2.jpg"
+      ],
+      "short_description": "Leak-proof rectangular container 650ml - made of sturdy materials, keeps food healthy and delicious. Perfect for busy days and on-the-go meals.",
+      "long_description": "Leak-proof rectangular container 650ml - made of sturdy materials, keeps food healthy and delicious. Perfect for busy days and on-the-go meals.",
+      "moq": 1000,
+      "packing": "500+500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "leak-proof-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "leak-proof-container-750",
+      "name": "Leak Proof Container 750 ML",
+      "sku": "LPC-750",
+      "slug": "leak-proof-container-750-ml",
+      "category": "Leak Proof Container",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/leak-proof-container-750-ml-1.jpg",
+        "/assets/products/leak-proof-container-750-ml-2.jpg"
+      ],
+      "short_description": "Leak-proof rectangular container 750ml - made of sturdy materials, keeps food healthy and delicious. Perfect for busy days and on-the-go meals.",
+      "long_description": "Leak-proof rectangular container 750ml - made of sturdy materials, keeps food healthy and delicious. Perfect for busy days and on-the-go meals.",
+      "moq": 1000,
+      "packing": "500+500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "leak-proof-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "leak-proof-container-1000",
+      "name": "Leak Proof Container 1000 ML",
+      "sku": "LPC-1000",
+      "slug": "leak-proof-container-1000-ml",
+      "category": "Leak Proof Container",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/leak-proof-container-1000-ml-1.jpg",
+        "/assets/products/leak-proof-container-1000-ml-2.jpg"
+      ],
+      "short_description": "Leak-proof rectangular container 1000ml - made of sturdy materials, keeps food healthy and delicious. Perfect for busy days and on-the-go meals.",
+      "long_description": "Leak-proof rectangular container 1000ml - made of sturdy materials, keeps food healthy and delicious. Perfect for busy days and on-the-go meals.",
+      "moq": 1000,
+      "packing": "500+500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "leak-proof-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "750-3cp-hined",
+      "name": "750ML 3CP Hinged",
+      "sku": "NHA-750-3CP",
+      "slug": "750ml-3cp-hinged",
+      "category": "New Hinged Additions",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/750ml-3cp-hinged-1.jpg",
+        "/assets/products/750ml-3cp-hinged-2.jpg"
+      ],
+      "short_description": "750ml hinged container with 3 compartments. Foodsafe and hygienic, perfect for Indian sweets and disposable lunch boxes.",
+      "long_description": "750ml hinged container with 3 compartments. Foodsafe and hygienic, perfect for Indian sweets and disposable lunch boxes.",
+      "moq": 1000,
+      "packing": "800 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "new-hinged-additions",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "1000-flat-hined",
+      "name": "1000CC Flat Hinged",
+      "sku": "NHA-1000-FLAT",
+      "slug": "1000cc-flat-hinged",
+      "category": "New Hinged Additions",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/1000cc-flat-hinged-1.jpg",
+        "/assets/products/1000cc-flat-hinged-2.jpg"
+      ],
+      "short_description": "1000cc flat hinged container. Foodsafe and hygienic, perfect for sweets and meals on the go.",
+      "long_description": "1000cc flat hinged container. Foodsafe and hygienic, perfect for sweets and meals on the go.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "new-hinged-additions",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "500-flat-hined",
+      "name": "500CC Flat Hinged",
+      "sku": "NHA-500-FLAT",
+      "slug": "500cc-flat-hinged",
+      "category": "New Hinged Additions",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/500cc-flat-hinged-1.jpg",
+        "/assets/products/500cc-flat-hinged-2.jpg"
+      ],
+      "short_description": "500cc flat hinged container. Foodsafe and hygienic, perfect for sweets and meals on the go.",
+      "long_description": "500cc flat hinged container. Foodsafe and hygienic, perfect for sweets and meals on the go.",
+      "moq": 1000,
+      "packing": "800 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "new-hinged-additions",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "cake-container-swp-261",
+      "name": "Cake Container SWP-261",
+      "sku": "SWP-261",
+      "slug": "cake-container-swp-261",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/cake-container-swp-261-1.jpg",
+        "/assets/products/cake-container-swp-261-2.jpg"
+      ],
+      "short_description": "Cake packaging container SWP-261. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "long_description": "Cake packaging container SWP-261. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "cake-container-swp-262",
+      "name": "Cake Container SWP-262",
+      "sku": "SWP-262",
+      "slug": "cake-container-swp-262",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/cake-container-swp-262-1.jpg",
+        "/assets/products/cake-container-swp-262-2.jpg"
+      ],
+      "short_description": "Cake packaging container SWP-262. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "long_description": "Cake packaging container SWP-262. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "cake-container-swp-264",
+      "name": "Cake Container SWP-264",
+      "sku": "SWP-264",
+      "slug": "cake-container-swp-264",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/cake-container-swp-264-1.jpg",
+        "/assets/products/cake-container-swp-264-2.jpg"
+      ],
+      "short_description": "Cake packaging container SWP-264. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "long_description": "Cake packaging container SWP-264. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "moq": 1000,
+      "packing": "100 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "cake-container-swp-248",
+      "name": "Cake Container SWP-248",
+      "sku": "SWP-248",
+      "slug": "cake-container-swp-248",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/cake-container-swp-248-1.jpg",
+        "/assets/products/cake-container-swp-248-2.jpg"
+      ],
+      "short_description": "Cake packaging container SWP-248. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "long_description": "Cake packaging container SWP-248. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "cake-container-swp-258",
+      "name": "Cake Container SWP-258",
+      "sku": "SWP-258",
+      "slug": "cake-container-swp-258",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/cake-container-swp-258-1.jpg",
+        "/assets/products/cake-container-swp-258-2.jpg"
+      ],
+      "short_description": "Cake packaging container SWP-258. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "long_description": "Cake packaging container SWP-258. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "cake-container-swp-268",
+      "name": "Cake Container SWP-268",
+      "sku": "SWP-268",
+      "slug": "cake-container-swp-268",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/cake-container-swp-268-1.jpg",
+        "/assets/products/cake-container-swp-268-2.jpg"
+      ],
+      "short_description": "Cake packaging container SWP-268. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "long_description": "Cake packaging container SWP-268. Food-safe materials, eco-friendly. Ideal for bakeries, catering, parties, and events.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "65-cup---120-cup",
+      "name": "65ML Cup / 120ML Cup",
+      "sku": "IC-65-120",
+      "slug": "65ml-cup---120ml-cup",
+      "category": "Ice Cream Cups & Glasses",
+      "material": "PET",
+      "capacity_ml": 120,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/65ml-cup---120ml-cup-1.jpg",
+        "/assets/products/65ml-cup---120ml-cup-2.jpg"
+      ],
+      "short_description": "65ml and 120ml ice cream cups. Reliable containers for ice cream shops, catering events, and food trucks.",
+      "long_description": "65ml and 120ml ice cream cups. Reliable containers for ice cream shops, catering events, and food trucks.",
+      "moq": 1000,
+      "packing": "3750 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "ice-cream-cups-&-glasses",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "120-ripple---125-sunday-lass",
+      "name": "120ML Ripple / 125ML Sunday Glass",
+      "sku": "IC-120-125",
+      "slug": "120ml-ripple---125ml-sunday-glass",
+      "category": "Ice Cream Cups & Glasses",
+      "material": "PET",
+      "capacity_ml": 125,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/120ml-ripple---125ml-sunday-glass-1.jpg",
+        "/assets/products/120ml-ripple---125ml-sunday-glass-2.jpg"
+      ],
+      "short_description": "120ml ripple cup and 125ml Sunday glass. Perfect for ice cream presentation.",
+      "long_description": "120ml ripple cup and 125ml Sunday glass. Perfect for ice cream presentation.",
+      "moq": 1000,
+      "packing": "3600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "ice-cream-cups-&-glasses",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "180-lass",
+      "name": "180ML Glass",
+      "sku": "IC-180",
+      "slug": "180ml-glass",
+      "category": "Ice Cream Cups & Glasses",
+      "material": "PET",
+      "capacity_ml": 180,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/180ml-glass-1.jpg",
+        "/assets/products/180ml-glass-2.jpg"
+      ],
+      "short_description": "180ml ice cream glass. Stylish presentation for dessert buffets and parties.",
+      "long_description": "180ml ice cream glass. Stylish presentation for dessert buffets and parties.",
+      "moq": 1000,
+      "packing": "3600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "ice-cream-cups-&-glasses",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "200-milk-badam-bottle",
+      "name": "200ML Milk Badam Bottle",
+      "sku": "IC-200-BOTTLE",
+      "slug": "200ml-milk-badam-bottle",
+      "category": "Ice Cream Cups & Glasses",
+      "material": "PET",
+      "capacity_ml": 200,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/200ml-milk-badam-bottle-1.jpg",
+        "/assets/products/200ml-milk-badam-bottle-2.jpg"
+      ],
+      "short_description": "200ml milk badam bottle with orange screw cap. Perfect for beverages.",
+      "long_description": "200ml milk badam bottle with orange screw cap. Perfect for beverages.",
+      "moq": 1000,
+      "packing": "400 PCS / BAG",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "ice-cream-cups-&-glasses",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "100--matka",
+      "name": "100 ML Matka",
+      "sku": "IC-100-MATKA",
+      "slug": "100-ml-matka",
+      "category": "Ice Cream Cups & Glasses",
+      "material": "PET",
+      "capacity_ml": 100,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/100-ml-matka-1.jpg",
+        "/assets/products/100-ml-matka-2.jpg"
+      ],
+      "short_description": "100ml matka - traditional Indian clay pot style container. Perfect for traditional beverages.",
+      "long_description": "100ml matka - traditional Indian clay pot style container. Perfect for traditional beverages.",
+      "moq": 1000,
+      "packing": "500 PCS / BAG",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "ice-cream-cups-&-glasses",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "7\"-cake",
+      "name": "7\" Cake",
+      "sku": "BMC-7INCH",
+      "slug": "7\"-cake",
+      "category": "Bakery & Muffin Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/7\"-cake-1.jpg",
+        "/assets/products/7\"-cake-2.jpg"
+      ],
+      "short_description": "7 inch cake container. Easy to open and close, excellent protection during transport. 100% recyclable.",
+      "long_description": "7 inch cake container. Easy to open and close, excellent protection during transport. 100% recyclable.",
+      "moq": 1000,
+      "packing": "900 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "bakery-&-muffin-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "9\"-cake",
+      "name": "9\" Cake",
+      "sku": "BMC-9INCH",
+      "slug": "9\"-cake",
+      "category": "Bakery & Muffin Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/9\"-cake-1.jpg",
+        "/assets/products/9\"-cake-2.jpg"
+      ],
+      "short_description": "9 inch cake container. Easy to open and close, excellent protection during transport. 100% recyclable.",
+      "long_description": "9 inch cake container. Easy to open and close, excellent protection during transport. 100% recyclable.",
+      "moq": 1000,
+      "packing": "900 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "bakery-&-muffin-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "muffin-4-pc",
+      "name": "Muffin 4 PC",
+      "sku": "BMC-MUFFIN-4",
+      "slug": "muffin-4-pc",
+      "category": "Bakery & Muffin Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/muffin-4-pc-1.jpg",
+        "/assets/products/muffin-4-pc-2.jpg"
+      ],
+      "short_description": "Muffin container for 4 pieces. Creates enticing displays that highlight delectable delights from every angle.",
+      "long_description": "Muffin container for 4 pieces. Creates enticing displays that highlight delectable delights from every angle.",
+      "moq": 1000,
+      "packing": "900 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "bakery-&-muffin-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "muffin-6-pc",
+      "name": "Muffin 6 PC",
+      "sku": "BMC-MUFFIN-6",
+      "slug": "muffin-6-pc",
+      "category": "Bakery & Muffin Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/muffin-6-pc-1.jpg",
+        "/assets/products/muffin-6-pc-2.jpg"
+      ],
+      "short_description": "Muffin container for 6 pieces. Creates enticing displays that highlight delectable delights from every angle.",
+      "long_description": "Muffin container for 6 pieces. Creates enticing displays that highlight delectable delights from every angle.",
+      "moq": 1000,
+      "packing": "500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "bakery-&-muffin-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "120--4-round-hine-container",
+      "name": "120 CC (4OZ) Round Hinge Container",
+      "sku": "RHC-120",
+      "slug": "120-cc-4oz-round-hinge-container",
+      "category": "Round Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 120,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/120-cc-4oz-round-hinge-container-1.jpg",
+        "/assets/products/120-cc-4oz-round-hinge-container-2.jpg"
+      ],
+      "short_description": "Round hinged container 120cc with round hinge. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "long_description": "Round hinged container 120cc with round hinge. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "moq": 1000,
+      "packing": "2000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "250--8-dome-lid-container",
+      "name": "250 CC (8OZ) Dome Lid Container",
+      "sku": "RHC-250",
+      "slug": "250-cc-8oz-dome-lid-container",
+      "category": "Round Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/250-cc-8oz-dome-lid-container-1.jpg",
+        "/assets/products/250-cc-8oz-dome-lid-container-2.jpg"
+      ],
+      "short_description": "Round hinged container 250cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "long_description": "Round hinged container 250cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "350--12-dome-lid-container",
+      "name": "350 CC (12OZ) Dome Lid Container",
+      "sku": "RHC-350",
+      "slug": "350-cc-12oz-dome-lid-container",
+      "category": "Round Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 350,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/350-cc-12oz-dome-lid-container-1.jpg",
+        "/assets/products/350-cc-12oz-dome-lid-container-2.jpg"
+      ],
+      "short_description": "Round hinged container 350cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "long_description": "Round hinged container 350cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "500--16-dome-lid-container",
+      "name": "500 CC (16OZ) Dome Lid Container",
+      "sku": "RHC-500",
+      "slug": "500-cc-16oz-dome-lid-container",
+      "category": "Round Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/500-cc-16oz-dome-lid-container-1.jpg",
+        "/assets/products/500-cc-16oz-dome-lid-container-2.jpg"
+      ],
+      "short_description": "Round hinged container 500cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "long_description": "Round hinged container 500cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "600--20-dome-lid-container",
+      "name": "600 CC (20OZ) Dome Lid Container",
+      "sku": "RHC-600",
+      "slug": "600-cc-20oz-dome-lid-container",
+      "category": "Round Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 600,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/600-cc-20oz-dome-lid-container-1.jpg",
+        "/assets/products/600-cc-20oz-dome-lid-container-2.jpg"
+      ],
+      "short_description": "Round hinged container 600cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "long_description": "Round hinged container 600cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "750--24-dome-flat-lid-container",
+      "name": "750 CC (24OZ) Dome/Flat Lid Container",
+      "sku": "RHC-750",
+      "slug": "750-cc-24oz-dome-flat-lid-container",
+      "category": "Round Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/750-cc-24oz-dome-flat-lid-container-1.jpg",
+        "/assets/products/750-cc-24oz-dome-flat-lid-container-2.jpg"
+      ],
+      "short_description": "Round hinged container 750cc with dome/flat lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "long_description": "Round hinged container 750cc with dome/flat lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "1000--32-dome-lid-container",
+      "name": "1000 CC (32OZ) Dome Lid Container",
+      "sku": "RHC-1000",
+      "slug": "1000-cc-32oz-dome-lid-container",
+      "category": "Round Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/1000-cc-32oz-dome-lid-container-1.jpg",
+        "/assets/products/1000-cc-32oz-dome-lid-container-2.jpg"
+      ],
+      "short_description": "Round hinged container 1000cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "long_description": "Round hinged container 1000cc with dome lid. Clear view containers keep food fresh and crispy for longer. A clear view of freshness.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "325-round-pet",
+      "name": "325CC Round PET",
+      "sku": "RPET-325",
+      "slug": "325cc-round-pet",
+      "category": "Round PET",
+      "material": "PET",
+      "capacity_ml": 325,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/325cc-round-pet-1.jpg",
+        "/assets/products/325cc-round-pet-2.jpg"
+      ],
+      "short_description": "325cc round PET container. Disposable sweet boxes specially designed for Indian sweets containing ghee, milk, etc. Foodsafe and hygienic.",
+      "long_description": "325cc round PET container. Disposable sweet boxes specially designed for Indian sweets containing ghee, milk, etc. Foodsafe and hygienic.",
+      "moq": 1000,
+      "packing": "500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-pet",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "500-round-pet",
+      "name": "500CC Round PET",
+      "sku": "RPET-500",
+      "slug": "500cc-round-pet",
+      "category": "Round PET",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/500cc-round-pet-1.jpg",
+        "/assets/products/500cc-round-pet-2.jpg"
+      ],
+      "short_description": "500cc round PET container. Disposable sweet boxes specially designed for Indian sweets containing ghee, milk, etc. Foodsafe and hygienic.",
+      "long_description": "500cc round PET container. Disposable sweet boxes specially designed for Indian sweets containing ghee, milk, etc. Foodsafe and hygienic.",
+      "moq": 1000,
+      "packing": "500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-pet",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "750-round-pet",
+      "name": "750CC Round PET",
+      "sku": "RPET-750",
+      "slug": "750cc-round-pet",
+      "category": "Round PET",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/750cc-round-pet-1.jpg",
+        "/assets/products/750cc-round-pet-2.jpg"
+      ],
+      "short_description": "750cc round PET container. Disposable sweet boxes specially designed for Indian sweets containing ghee, milk, etc. Foodsafe and hygienic.",
+      "long_description": "750cc round PET container. Disposable sweet boxes specially designed for Indian sweets containing ghee, milk, etc. Foodsafe and hygienic.",
+      "moq": 1000,
+      "packing": "500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-pet",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "1000-round-pet",
+      "name": "1000CC Round PET",
+      "sku": "RPET-1000",
+      "slug": "1000cc-round-pet",
+      "category": "Round PET",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/1000cc-round-pet-1.jpg",
+        "/assets/products/1000cc-round-pet-2.jpg"
+      ],
+      "short_description": "1000cc round PET container. Disposable sweet boxes specially designed for Indian sweets containing ghee, milk, etc. Foodsafe and hygienic.",
+      "long_description": "1000cc round PET container. Disposable sweet boxes specially designed for Indian sweets containing ghee, milk, etc. Foodsafe and hygienic.",
+      "moq": 1000,
+      "packing": "500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-pet",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-250",
+      "name": "Round Container 250ML",
+      "sku": "RFPC-250",
+      "slug": "round-container-250ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-250ml-1.jpg",
+        "/assets/products/round-container-250ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 250ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 250ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "1200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "round-container-300",
+      "name": "Round Container 300ML",
+      "sku": "RFPC-300",
+      "slug": "round-container-300ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 300,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-300ml-1.jpg",
+        "/assets/products/round-container-300ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 300ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 300ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "1200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "round-container-400",
+      "name": "Round Container 400ML",
+      "sku": "RFPC-400",
+      "slug": "round-container-400ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 400,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-400ml-1.jpg",
+        "/assets/products/round-container-400ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 400ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 400ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "1200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "round-container-500",
+      "name": "Round Container 500ML",
+      "sku": "RFPC-500",
+      "slug": "round-container-500ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-500ml-1.jpg",
+        "/assets/products/round-container-500ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 500ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 500ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "1200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "round-container-675",
+      "name": "Round Container 675ML",
+      "sku": "RFPC-675",
+      "slug": "round-container-675ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 675,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-675ml-1.jpg",
+        "/assets/products/round-container-675ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 675ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 675ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "1200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-750",
+      "name": "Round Container 750ML",
+      "sku": "RFPC-750",
+      "slug": "round-container-750ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-750ml-1.jpg",
+        "/assets/products/round-container-750ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 750ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 750ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "1200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1000",
+      "name": "Round Container 1000ML",
+      "sku": "RFPC-1000",
+      "slug": "round-container-1000ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1000ml-1.jpg",
+        "/assets/products/round-container-1000ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 1000ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 1000ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "1200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1200",
+      "name": "Round Container 1200ML",
+      "sku": "RFPC-1200",
+      "slug": "round-container-1200ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 1200,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1200ml-1.jpg",
+        "/assets/products/round-container-1200ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 1200ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 1200ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "1200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-750-flat",
+      "name": "Round Container 750ML FLAT",
+      "sku": "RFPC-750-FLAT",
+      "slug": "round-container-750ml-flat",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-750ml-flat-1.jpg",
+        "/assets/products/round-container-750ml-flat-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 750ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 750ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1000-flat",
+      "name": "Round Container 1000ML FLAT",
+      "sku": "RFPC-1000-FLAT",
+      "slug": "round-container-1000ml-flat",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1000ml-flat-1.jpg",
+        "/assets/products/round-container-1000ml-flat-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 1000ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 1000ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1200",
+      "name": "Round Container 1200ML",
+      "sku": "RFPC-1200",
+      "slug": "round-container-1200ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 1200,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1200ml-1.jpg",
+        "/assets/products/round-container-1200ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 1200ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 1200ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1500",
+      "name": "Round Container 1500ML",
+      "sku": "RFPC-1500",
+      "slug": "round-container-1500ml",
+      "category": "Round Food Packaging Containers",
+      "material": "PET",
+      "capacity_ml": 1500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1500ml-1.jpg",
+        "/assets/products/round-container-1500ml-2.jpg"
+      ],
+      "short_description": "Top-quality custom disposable food container 1500ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "long_description": "Top-quality custom disposable food container 1500ml. Suitable for lassi cup, dhai cup, rasgula containers. Can be printed with company logo.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-food-packaging-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "hined-container-100",
+      "name": "Hinged Container 100 CC",
+      "sku": "HC-100",
+      "slug": "hinged-container-100-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 100,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-100-cc-1.jpg",
+        "/assets/products/hinged-container-100-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 100cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 100cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "2000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "hined-container-150",
+      "name": "Hinged Container 150 CC",
+      "sku": "HC-150",
+      "slug": "hinged-container-150-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 150,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-150-cc-1.jpg",
+        "/assets/products/hinged-container-150-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 150cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 150cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "2000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "hined-container-250",
+      "name": "Hinged Container 250 CC",
+      "sku": "HC-250",
+      "slug": "hinged-container-250-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-250-cc-1.jpg",
+        "/assets/products/hinged-container-250-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 250cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 250cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "1500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "hined-container-375",
+      "name": "Hinged Container 375 CC",
+      "sku": "HC-375",
+      "slug": "hinged-container-375-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 375,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-375-cc-1.jpg",
+        "/assets/products/hinged-container-375-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 375cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 375cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "1500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "hined-container-500",
+      "name": "Hinged Container 500 CC",
+      "sku": "HC-500",
+      "slug": "hinged-container-500-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-500-cc-1.jpg",
+        "/assets/products/hinged-container-500-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 500cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 500cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "1500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "hined-container-600",
+      "name": "Hinged Container 600 CC",
+      "sku": "HC-600",
+      "slug": "hinged-container-600-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 600,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-600-cc-1.jpg",
+        "/assets/products/hinged-container-600-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 600cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 600cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "800 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "hined-container-750",
+      "name": "Hinged Container 750 CC",
+      "sku": "HC-750",
+      "slug": "hinged-container-750-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-750-cc-1.jpg",
+        "/assets/products/hinged-container-750-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 750cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 750cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "800 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "hined-container-1000",
+      "name": "Hinged Container 1000 CC",
+      "sku": "HC-1000",
+      "slug": "hinged-container-1000-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-1000-cc-1.jpg",
+        "/assets/products/hinged-container-1000-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 1000cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 1000cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "800 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "hined-container-1250",
+      "name": "Hinged Container 1250 CC",
+      "sku": "HC-1250",
+      "slug": "hinged-container-1250-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 1250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-1250-cc-1.jpg",
+        "/assets/products/hinged-container-1250-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 1250cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 1250cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "hined-container-1500",
+      "name": "Hinged Container 1500 CC",
+      "sku": "HC-1500",
+      "slug": "hinged-container-1500-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 1500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-1500-cc-1.jpg",
+        "/assets/products/hinged-container-1500-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 1500cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 1500cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "hined-container-2000",
+      "name": "Hinged Container 2000 CC",
+      "sku": "HC-2000",
+      "slug": "hinged-container-2000-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 2000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-2000-cc-1.jpg",
+        "/assets/products/hinged-container-2000-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 2000cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 2000cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "hined-container-2250",
+      "name": "Hinged Container 2250 CC",
+      "sku": "HC-2250",
+      "slug": "hinged-container-2250-cc",
+      "category": "Hinged Containers",
+      "material": "PET",
+      "capacity_ml": 2250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/hinged-container-2250-cc-1.jpg",
+        "/assets/products/hinged-container-2250-cc-2.jpg"
+      ],
+      "short_description": "Hinged container 2250cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "long_description": "Hinged container 2250cc. PET material delivers superior clarity for optimal product visibility. Tight seal from base to lid keeps food fresh and tasty longer.",
+      "moq": 1000,
+      "packing": "400 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "hinged-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "220-dia-70h",
+      "name": "220 DIA 70H",
+      "sku": "CC-220-70H",
+      "slug": "220-dia-70h",
+      "category": "Cookies Container",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/220-dia-70h-1.jpg",
+        "/assets/products/220-dia-70h-2.jpg"
+      ],
+      "short_description": "Round octa container 220mm diameter, 70mm height. Made from high-grade polypropylene, reusable and recyclable.",
+      "long_description": "Round octa container 220mm diameter, 70mm height. Made from high-grade polypropylene, reusable and recyclable.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cookies-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "220-dia-45h",
+      "name": "220 DIA 45H",
+      "sku": "CC-220-45H",
+      "slug": "220-dia-45h",
+      "category": "Cookies Container",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/220-dia-45h-1.jpg",
+        "/assets/products/220-dia-45h-2.jpg"
+      ],
+      "short_description": "Round octa container 220mm diameter, 45mm height. Made from high-grade polypropylene, reusable and recyclable.",
+      "long_description": "Round octa container 220mm diameter, 45mm height. Made from high-grade polypropylene, reusable and recyclable.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cookies-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "200-cookies-tray",
+      "name": "200GM Cookies Tray",
+      "sku": "CC-200GM",
+      "slug": "200gm-cookies-tray",
+      "category": "Cookies Container",
+      "material": "PET",
+      "capacity_ml": 200,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/200gm-cookies-tray-1.jpg",
+        "/assets/products/200gm-cookies-tray-2.jpg"
+      ],
+      "short_description": "200gm cookies tray. Single-compartment tray for cookies and biscuits.",
+      "long_description": "200gm cookies tray. Single-compartment tray for cookies and biscuits.",
+      "moq": 1000,
+      "packing": "1500 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cookies-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "3cp-pet-cookies-tray-with-pet-lid",
+      "name": "3CP PET Cookies Tray with PET Lid",
+      "sku": "CC-3CP-PET",
+      "slug": "3cp-pet-cookies-tray-with-pet-lid",
+      "category": "Cookies Container",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/3cp-pet-cookies-tray-with-pet-lid-1.jpg",
+        "/assets/products/3cp-pet-cookies-tray-with-pet-lid-2.jpg"
+      ],
+      "short_description": "Three-compartment PET cookies tray with PET lid. Perfect for organizing different types of cookies.",
+      "long_description": "Three-compartment PET cookies tray with PET lid. Perfect for organizing different types of cookies.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cookies-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "100-brownie-box",
+      "name": "100GM Brownie Box",
+      "sku": "DCC-100GM",
+      "slug": "100gm-brownie-box",
+      "category": "Dry Cakes & Cookies Packaging",
+      "material": "PET",
+      "capacity_ml": 100,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/100gm-brownie-box-1.jpg",
+        "/assets/products/100gm-brownie-box-2.jpg"
+      ],
+      "short_description": "100gm brownie box. Clear rectangular container with hinged lid. Ideal for storing and packaging food products.",
+      "long_description": "100gm brownie box. Clear rectangular container with hinged lid. Ideal for storing and packaging food products.",
+      "moq": 1000,
+      "packing": "2700 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "dry-cakes-&-cookies-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "c10-burer-box",
+      "name": "C10 Burger Box",
+      "sku": "DCC-C10",
+      "slug": "c10-burger-box",
+      "category": "Dry Cakes & Cookies Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/c10-burger-box-1.jpg",
+        "/assets/products/c10-burger-box-2.jpg"
+      ],
+      "short_description": "C10 burger box. Clear square container with hinged dome-shaped lid. Perfect for burgers.",
+      "long_description": "C10 burger box. Clear square container with hinged dome-shaped lid. Perfect for burgers.",
+      "moq": 1000,
+      "packing": "1600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "dry-cakes-&-cookies-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "ops-c35",
+      "name": "OPS-C35",
+      "sku": "DCC-OPS-C35",
+      "slug": "ops-c35",
+      "category": "Dry Cakes & Cookies Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/ops-c35-1.jpg",
+        "/assets/products/ops-c35-2.jpg"
+      ],
+      "short_description": "OPS-C35 round container with hinged dome-shaped lid. Clear and robust body, reusable and recyclable.",
+      "long_description": "OPS-C35 round container with hinged dome-shaped lid. Clear and robust body, reusable and recyclable.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "dry-cakes-&-cookies-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "ops-c38",
+      "name": "OPS-C38",
+      "sku": "DCC-OPS-C38",
+      "slug": "ops-c38",
+      "category": "Dry Cakes & Cookies Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/ops-c38-1.jpg",
+        "/assets/products/ops-c38-2.jpg"
+      ],
+      "short_description": "OPS-C38 round container with hinged dome-shaped lid. Clear and robust body, reusable and recyclable.",
+      "long_description": "OPS-C38 round container with hinged dome-shaped lid. Clear and robust body, reusable and recyclable.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "dry-cakes-&-cookies-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "cookies-jar",
+      "name": "Cookies Jar",
+      "sku": "DCC-JAR",
+      "slug": "cookies-jar",
+      "category": "Dry Cakes & Cookies Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/cookies-jar-1.jpg",
+        "/assets/products/cookies-jar-2.jpg"
+      ],
+      "short_description": "Cookies jar set. Cylindrical plastic jars with colored lids. Available in multiple sizes.",
+      "long_description": "Cookies jar set. Cylindrical plastic jars with colored lids. Available in multiple sizes.",
+      "moq": 1000,
+      "packing": "Various sizes: 4\" 83MM, 6\" 86MM, 6\" 96MM",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "dry-cakes-&-cookies-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "swp-253-black",
+      "name": "SWP-253 BLACK",
+      "sku": "RCC-SWP-253",
+      "slug": "swp-253-black",
+      "category": "Rectangle Cookies Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/swp-253-black-1.jpg",
+        "/assets/products/swp-253-black-2.jpg"
+      ],
+      "short_description": "SWP-253 black biscuit tray with three compartments and clear fitted lid. Polypropylene material ensures tensile strength.",
+      "long_description": "SWP-253 black biscuit tray with three compartments and clear fitted lid. Polypropylene material ensures tensile strength.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "rectangle-cookies-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "swp-263-black",
+      "name": "SWP-263 BLACK",
+      "sku": "RCC-SWP-263-BLK",
+      "slug": "swp-263-black",
+      "category": "Rectangle Cookies Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/swp-263-black-1.jpg",
+        "/assets/products/swp-263-black-2.jpg"
+      ],
+      "short_description": "SWP-263 black biscuit tray with three compartments and clear fitted lid. Polypropylene material ensures tensile strength.",
+      "long_description": "SWP-263 black biscuit tray with three compartments and clear fitted lid. Polypropylene material ensures tensile strength.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "rectangle-cookies-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "swp-263-olden",
+      "name": "SWP-263 GOLDEN",
+      "sku": "RCC-SWP-263-GLD",
+      "slug": "swp-263-golden",
+      "category": "Rectangle Cookies Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/swp-263-golden-1.jpg",
+        "/assets/products/swp-263-golden-2.jpg"
+      ],
+      "short_description": "SWP-263 golden biscuit tray with three compartments and clear fitted lid. Honeycomb-like texture on tray base.",
+      "long_description": "SWP-263 golden biscuit tray with three compartments and clear fitted lid. Honeycomb-like texture on tray base.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "rectangle-cookies-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "14l-7-inch-cake-box",
+      "name": "14L 7 Inch Cake Box",
+      "sku": "RCC-14L-7IN",
+      "slug": "14l-7-inch-cake-box",
+      "category": "Rectangle Cookies Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/14l-7-inch-cake-box-1.jpg",
+        "/assets/products/14l-7-inch-cake-box-2.jpg"
+      ],
+      "short_description": "14L 7 inch elongated rectangular cake box with clear lid.",
+      "long_description": "14L 7 inch elongated rectangular cake box with clear lid.",
+      "moq": 1000,
+      "packing": "900 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "rectangle-cookies-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "16l-9-inch-cake-box",
+      "name": "16L 9 Inch Cake Box",
+      "sku": "RCC-16L-9IN",
+      "slug": "16l-9-inch-cake-box",
+      "category": "Rectangle Cookies Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/16l-9-inch-cake-box-1.jpg",
+        "/assets/products/16l-9-inch-cake-box-2.jpg"
+      ],
+      "short_description": "16L 9 inch elongated rectangular cake box with clear lid.",
+      "long_description": "16L 9 inch elongated rectangular cake box with clear lid.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "rectangle-cookies-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "c46-cake-box",
+      "name": "C46 Cake Box",
+      "sku": "RCC-C46",
+      "slug": "c46-cake-box",
+      "category": "Rectangle Cookies Containers",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/c46-cake-box-1.jpg",
+        "/assets/products/c46-cake-box-2.jpg"
+      ],
+      "short_description": "C46 cake box with distinct ribbed base and clear lid.",
+      "long_description": "C46 cake box with distinct ribbed base and clear lid.",
+      "moq": 1000,
+      "packing": "1800 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "rectangle-cookies-containers",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "1-round-box",
+      "name": "1KG Round Box",
+      "sku": "SB-1KG",
+      "slug": "1kg-round-box",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/1kg-round-box-1.jpg",
+        "/assets/products/1kg-round-box-2.jpg"
+      ],
+      "short_description": "1kg round box with decorative patterned lid. Perfect for sweets and general food packaging.",
+      "long_description": "1kg round box with decorative patterned lid. Perfect for sweets and general food packaging.",
+      "moq": 1000,
+      "packing": "300 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "2-round-box",
+      "name": "2KG Round Box",
+      "sku": "SB-2KG",
+      "slug": "2kg-round-box",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 2000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/2kg-round-box-1.jpg",
+        "/assets/products/2kg-round-box-2.jpg"
+      ],
+      "short_description": "2kg round box with decorative patterned lid. Perfect for sweets and general food packaging.",
+      "long_description": "2kg round box with decorative patterned lid. Perfect for sweets and general food packaging.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "1-2-sweet-box",
+      "name": "1/2KG Sweet Box",
+      "sku": "SB-0.5KG",
+      "slug": "1-2kg-sweet-box",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/1-2kg-sweet-box-1.jpg",
+        "/assets/products/1-2kg-sweet-box-2.jpg"
+      ],
+      "short_description": "Half kg sweet box. Transparent rectangular container with clear fitted lid.",
+      "long_description": "Half kg sweet box. Transparent rectangular container with clear fitted lid.",
+      "moq": 1000,
+      "packing": "300 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "1-sweet-box",
+      "name": "1KG Sweet Box",
+      "sku": "SB-1KG-RECT",
+      "slug": "1kg-sweet-box",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/1kg-sweet-box-1.jpg",
+        "/assets/products/1kg-sweet-box-2.jpg"
+      ],
+      "short_description": "1kg sweet box. Transparent rectangular container with clear fitted lid.",
+      "long_description": "1kg sweet box. Transparent rectangular container with clear fitted lid.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "500-oval",
+      "name": "500ML Oval",
+      "sku": "SB-500-OVAL",
+      "slug": "500ml-oval",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/500ml-oval-1.jpg",
+        "/assets/products/500ml-oval-2.jpg"
+      ],
+      "short_description": "500ml oval sweet box. Transparent oval container with clear fitted lid.",
+      "long_description": "500ml oval sweet box. Transparent oval container with clear fitted lid.",
+      "moq": 1000,
+      "packing": "750 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "1200-oval",
+      "name": "1200ML Oval",
+      "sku": "SB-1200-OVAL",
+      "slug": "1200ml-oval",
+      "category": "Sweet Box",
+      "material": "PET",
+      "capacity_ml": 1200,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/1200ml-oval-1.jpg",
+        "/assets/products/1200ml-oval-2.jpg"
+      ],
+      "short_description": "1200ml oval sweet box. Transparent oval container with clear fitted lid.",
+      "long_description": "1200ml oval sweet box. Transparent oval container with clear fitted lid.",
+      "moq": 1000,
+      "packing": "200 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "sweet-box",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "pet-round-80h",
+      "name": "PET Round 80H",
+      "sku": "CC-175-80H",
+      "slug": "pet-round-80h",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pet-round-80h-1.jpg",
+        "/assets/products/pet-round-80h-2.jpg"
+      ],
+      "short_description": "PET round container 175mm diameter, 80mm height. Made from high-grade polypropylene, suitable for hotel industry.",
+      "long_description": "PET round container 175mm diameter, 80mm height. Made from high-grade polypropylene, suitable for hotel industry.",
+      "moq": 1000,
+      "packing": "300 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "pet-round-63h",
+      "name": "PET Round 63H",
+      "sku": "CC-175-63H",
+      "slug": "pet-round-63h",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pet-round-63h-1.jpg",
+        "/assets/products/pet-round-63h-2.jpg"
+      ],
+      "short_description": "PET round container 175mm diameter, 63mm height. Made from high-grade polypropylene, suitable for hotel industry.",
+      "long_description": "PET round container 175mm diameter, 63mm height. Made from high-grade polypropylene, suitable for hotel industry.",
+      "moq": 1000,
+      "packing": "300 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "pet-round-45h",
+      "name": "PET Round 45H",
+      "sku": "CC-175-45H",
+      "slug": "pet-round-45h",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/pet-round-45h-1.jpg",
+        "/assets/products/pet-round-45h-2.jpg"
+      ],
+      "short_description": "PET round container 175mm diameter, 45mm height. Made from high-grade polypropylene, suitable for hotel industry.",
+      "long_description": "PET round container 175mm diameter, 45mm height. Made from high-grade polypropylene, suitable for hotel industry.",
+      "moq": 1000,
+      "packing": "300 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "swp-243-300-cake",
+      "name": "SWP-243 300G Cake",
+      "sku": "CC-SWP-243",
+      "slug": "swp-243-300g-cake",
+      "category": "Cake Packaging",
+      "material": "PET",
+      "capacity_ml": 300,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/swp-243-300g-cake-1.jpg",
+        "/assets/products/swp-243-300g-cake-2.jpg"
+      ],
+      "short_description": "SWP-243 new addition - 300g cake container. Transparent rectangular container with clear lid.",
+      "long_description": "SWP-243 new addition - 300g cake container. Transparent rectangular container with clear lid.",
+      "moq": 1000,
+      "packing": "Contact for details",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "cake-packaging",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "5cp-platter",
+      "name": "5CP Platter",
+      "sku": "PLT-5CP",
+      "slug": "5cp-platter",
+      "category": "Platters",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/5cp-platter-1.jpg",
+        "/assets/products/5cp-platter-2.jpg"
+      ],
+      "short_description": "5 compartment platter. Black rectangular platter with clear lid. Designed for superior stacking and consistent portion control.",
+      "long_description": "5 compartment platter. Black rectangular platter with clear lid. Designed for superior stacking and consistent portion control.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "platters",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "8cp-platter",
+      "name": "8CP Platter",
+      "sku": "PLT-8CP",
+      "slug": "8cp-platter",
+      "category": "Platters",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/8cp-platter-1.jpg",
+        "/assets/products/8cp-platter-2.jpg"
+      ],
+      "short_description": "8 compartment platter. Black rectangular platter with clear lid. Perfect for food delivery and presentation.",
+      "long_description": "8 compartment platter. Black rectangular platter with clear lid. Perfect for food delivery and presentation.",
+      "moq": 1000,
+      "packing": "450 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "platters",
+        "pet",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "5cp-pt",
+      "name": "5CP PT",
+      "sku": "PT-5CP",
+      "slug": "5cp-pt",
+      "category": "Portion Trays",
+      "material": "PET",
+      "capacity_ml": null,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/5cp-pt-1.jpg",
+        "/assets/products/5cp-pt-2.jpg"
+      ],
+      "short_description": "5 compartment portion tray. Designed for consistent serving sizes and easy organization.",
+      "long_description": "5 compartment portion tray. Designed for consistent serving sizes and easy organization.",
+      "moq": 1000,
+      "packing": "600 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "portion-trays",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1000",
+      "name": "Round Container 1000 ML",
+      "sku": "RC-1000",
+      "slug": "round-container-1000-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1000-ml-1.jpg",
+        "/assets/products/round-container-1000-ml-2.jpg"
+      ],
+      "short_description": "Round container 1000ml. Clear view container perfect for storing food items.",
+      "long_description": "Round container 1000ml. Clear view container perfect for storing food items.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1250",
+      "name": "Round Container 1250 ML",
+      "sku": "RC-1250",
+      "slug": "round-container-1250-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 1250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1250-ml-1.jpg",
+        "/assets/products/round-container-1250-ml-2.jpg"
+      ],
+      "short_description": "Round container 1250ml. Clear view container perfect for storing food items.",
+      "long_description": "Round container 1250ml. Clear view container perfect for storing food items.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1500",
+      "name": "Round Container 1500 ML",
+      "sku": "RC-1500",
+      "slug": "round-container-1500-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 1500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1500-ml-1.jpg",
+        "/assets/products/round-container-1500-ml-2.jpg"
+      ],
+      "short_description": "Round container 1500ml. Clear view container perfect for storing food items.",
+      "long_description": "Round container 1500ml. Clear view container perfect for storing food items.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-container-1800",
+      "name": "Round Container 1800 ML",
+      "sku": "RC-1800",
+      "slug": "round-container-1800-ml",
+      "category": "Round Container",
+      "material": "PET",
+      "capacity_ml": 1800,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/products/round-container-1800-ml-1.jpg",
+        "/assets/products/round-container-1800-ml-2.jpg"
+      ],
+      "short_description": "Round container 1800ml. Clear view container perfect for storing food items.",
+      "long_description": "Round container 1800ml. Clear view container perfect for storing food items.",
+      "moq": 1000,
+      "packing": "1000 PCS / CARTON",
+      "price_range": "Contact for pricing",
+      "datasheet_url": null,
+      "certifications": [
+        "Food Grade",
+        "100% Recyclable"
+      ],
+      "tags": [
+        "round-container",
+        "pet",
+        "food-safe"
+      ],
       "featured": false
     }
   ]

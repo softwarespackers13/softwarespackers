@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { render, screen, waitFor, act } from '@testing-library/react';
-import HeroCarousel from '../HeroCarousel';
+import HeroCarousel from '../common/HeroCarousel';
 
 describe('HeroCarousel', () => {
   beforeEach(() => {

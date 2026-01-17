@@ -3,7 +3,7 @@
 ## Main Company Logo
 
 **Required file**: `swp-logo.png`
-- This is the main SwP (Software Packers) logo with the red swoosh and TM mark
+- This is the main SwP (Softwares Packers) logo with the red swoosh and TM mark
 - Used in the website header and footer
 - Recommended size: High resolution (at least 200px height)
 - Format: PNG with transparent background (SVG preferred if available)

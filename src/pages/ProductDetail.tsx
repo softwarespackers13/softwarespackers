@@ -6,8 +6,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, Download, Package, Ruler, CheckCircle } from "lucide-react";
 import productsData from "@/data/products.json";
-import ProductCard from "@/components/ProductCard";
-import OptimizedImage from "@/components/OptimizedImage";
+import ProductCard from "@/components/common/ProductCard";
+import OptimizedImage from "@/components/common/OptimizedImage";
+import WhatsAppButton from "@/components/common/WhatsAppButton";
+import { COMPANY_WHATSAPP } from "@/config/constants";
+import styles from "./css/ProductDetail.module.css";
+import { cn } from "@/lib/utils";
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -16,16 +20,22 @@ const ProductDetail = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Product not found</h1>
+      <div className={styles.emptyState}>
+        <div className={styles.emptyStateContent}>
+          <h1 className={styles.emptyStateTitle}>Product not found</h1>
           <Button asChild>
-            <Link to="/products">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Products
+            <Link to="/categories">
+              <ArrowLeft className={styles.iconMedium} />
+              Back to Categories
             </Link>
           </Button>
         </div>
+        {/* Floating WhatsApp Button */}
+        <WhatsAppButton
+          phoneNumber={COMPANY_WHATSAPP}
+          message="Hello, I'm interested in your plastic containers. Please share more details."
+          variant="floating"
+        />
       </div>
     );
   }
@@ -35,43 +45,45 @@ const ProductDetail = () => {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen py-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className={styles.pageContainer}>
+      <div className={styles.container}>
         {/* Breadcrumb */}
-        <div className="mb-6">
+        <div className={styles.breadcrumb}>
           <Button asChild variant="ghost" className="focus-ring">
-            <Link to="/products">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Products
+            <Link to="/categories">
+              <ArrowLeft className={styles.iconMedium} />
+              Back to Categories
             </Link>
           </Button>
         </div>
 
         {/* Product Hero */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className={styles.productHero}>
           {/* Images */}
-          <div>
+          <div className={styles.imagesContainer}>
             <OptimizedImage
               src={product.images[selectedImage]}
               alt={`${product.name} - view ${selectedImage + 1}`}
-              className="aspect-square bg-secondary rounded-lg overflow-hidden mb-4"
+              className={styles.mainImage}
               loading="eager"
             />
             {product.images.length > 1 && (
-              <div className="flex gap-2">
+              <div className={styles.thumbnailContainer}>
                 {product.images.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
-                    className={`w-20 h-20 rounded border-2 overflow-hidden focus-ring ${
-                      selectedImage === idx ? "border-primary" : "border-border"
-                    }`}
+                    className={cn(
+                      styles.thumbnail,
+                      "focus-ring",
+                      selectedImage === idx ? styles.thumbnailActive : styles.thumbnailInactive
+                    )}
                     aria-label={`View image ${idx + 1}`}
                   >
-                    <OptimizedImage 
-                      src={img} 
-                      alt={`Thumbnail ${idx + 1}`} 
-                      className="w-20 h-20"
+                    <OptimizedImage
+                      src={img}
+                      alt={`Thumbnail ${idx + 1}`}
+                      className={styles.thumbnailImage}
                     />
                   </button>
                 ))}
@@ -80,86 +92,91 @@ const ProductDetail = () => {
           </div>
 
           {/* Info */}
-          <div>
-            <div className="flex gap-2 mb-3">
+          <div className={styles.infoContainer}>
+            <div className={styles.badgesContainer}>
               <Badge variant="secondary">{product.material}</Badge>
               <Badge variant="outline">{product.category}</Badge>
               {product.certifications?.map((cert) => (
-                <Badge key={cert} variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                  <CheckCircle className="h-3 w-3 mr-1" />
+                <Badge key={cert} variant="outline" className={styles.certificationBadge}>
+                  <CheckCircle className={styles.iconSmall} />
                   {cert}
                 </Badge>
               ))}
             </div>
 
-            <h1 className="text-3xl lg:text-4xl font-bold mb-2">{product.name}</h1>
-            <p className="text-muted-foreground mb-4">SKU: {product.sku}</p>
-            <p className="text-lg mb-6">{product.short_description}</p>
+            <h1 className={styles.productTitle}>{product.name}</h1>
+            <p className={styles.sku}>SKU: {product.sku}</p>
+            <p className={styles.shortDescription}>{product.short_description}</p>
 
             {/* Quick Specs */}
-            <Card className="mb-6">
+            <Card className={styles.specsCard}>
               <CardContent className="p-6">
-                <h3 className="font-semibold text-lg mb-4 flex items-center">
-                  <Package className="h-5 w-5 mr-2" />
+                <h3 className={styles.specsTitle}>
+                  <Package className={styles.iconLarge} />
                   Key Specifications
                 </h3>
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className={styles.specsGrid}>
                   <div>
-                    <p className="text-muted-foreground">Capacity</p>
-                    <p className="font-medium">
+                    <p className={styles.specLabel}>Capacity</p>
+                    <p className={styles.specValue}>
                       {product.capacity_ml >= 1000
                         ? `${product.capacity_ml / 1000} L`
                         : `${product.capacity_ml} ml`}
                     </p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground">Material</p>
-                    <p className="font-medium">{product.material}</p>
+                    <p className={styles.specLabel}>Material</p>
+                    <p className={styles.specValue}>{product.material}</p>
                   </div>
-                  {product.dimensions_mm && (
+                  {product.dimensions_mm && Object.keys(product.dimensions_mm).length > 0 && (
                     <div>
-                      <p className="text-muted-foreground">Dimensions</p>
-                      <p className="font-medium">
-                        {product.dimensions_mm.dia && `Ø${product.dimensions_mm.dia}mm`}
-                        {product.dimensions_mm.length && `${product.dimensions_mm.length}mm`}
-                        {product.dimensions_mm.height && ` × H${product.dimensions_mm.height}mm`}
+                      <p className={styles.specLabel}>Dimensions</p>
+                      <p className={styles.specValue}>
+                        {(() => {
+                          const dims = product.dimensions_mm as { dia?: number; length?: number; height?: number };
+                          const parts: string[] = [];
+                          if (dims.dia) parts.push(`Ø${dims.dia}mm`);
+                          if (dims.length) parts.push(`${dims.length}mm`);
+                          if (dims.height) parts.push(`H${dims.height}mm`);
+                          return parts.join(' × ');
+                        })()}
                       </p>
                     </div>
                   )}
                   <div>
-                    <p className="text-muted-foreground">MOQ</p>
-                    <p className="font-medium">{product.moq} units</p>
+                    <p className={styles.specLabel}>MOQ</p>
+                    <p className={styles.specValue}>{product.moq} units</p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground">Packing</p>
-                    <p className="font-medium">{product.packing}</p>
+                    <p className={styles.specLabel}>Packing</p>
+                    <p className={styles.specValue}>{product.packing}</p>
                   </div>
                   <div>
-                    <p className="text-muted-foreground">Price Range</p>
-                    <p className="font-medium">{product.price_range}</p>
+                    <p className={styles.specLabel}>Price Range</p>
+                    <p className={styles.specValue}>{product.price_range}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* CTAs */}
-            <div className="flex gap-3">
-              <Button size="lg" className="flex-1 focus-ring">
+            <div className={styles.ctaButtons}>
+              <Button size="lg" className={cn(styles.buttonFull, "focus-ring")}>
                 Request Sample
               </Button>
-              <Button asChild size="lg" variant="outline" className="flex-1 focus-ring">
+              <Button asChild size="lg" variant="outline" className={cn(styles.buttonFull, "focus-ring")}>
                 <Link to="/quote">Add to Quote</Link>
               </Button>
             </div>
 
             {/* Downloads */}
-            <div className="mt-6 flex gap-3">
+            <div className={styles.downloadButtons}>
               <Button variant="ghost" size="sm" className="focus-ring">
-                <Download className="mr-2 h-4 w-4" />
+                <Download className={styles.iconMedium} />
                 Technical Datasheet
               </Button>
               <Button variant="ghost" size="sm" className="focus-ring">
-                <Download className="mr-2 h-4 w-4" />
+                <Download className={styles.iconMedium} />
                 Packaging Layout
               </Button>
             </div>
@@ -167,8 +184,8 @@ const ProductDetail = () => {
         </div>
 
         {/* Tabs */}
-        <Tabs defaultValue="description" className="mb-12">
-          <TabsList className="w-full justify-start border-b rounded-none h-auto p-0 bg-transparent">
+        <Tabs defaultValue="description" className={styles.tabsContainer}>
+          <TabsList className={styles.tabsList}>
             <TabsTrigger value="description" className="focus-ring">
               Description
             </TabsTrigger>
@@ -180,54 +197,54 @@ const ProductDetail = () => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="description" className="mt-6">
+          <TabsContent value="description" className={styles.tabContent}>
             <Card>
-              <CardContent className="p-6">
-                <p className="text-muted-foreground leading-relaxed">{product.long_description}</p>
+              <CardContent className={styles.tabCard}>
+                <p className={styles.descriptionText}>{product.long_description}</p>
               </CardContent>
             </Card>
           </TabsContent>
 
-          <TabsContent value="specs" className="mt-6">
+          <TabsContent value="specs" className={styles.tabContent}>
             <Card>
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <div className="flex justify-between py-2 border-b">
-                    <span className="font-medium">Material Type</span>
-                    <span className="text-muted-foreground">{product.material}</span>
+              <CardContent className={styles.tabCard}>
+                <div className={styles.specsList}>
+                  <div className={styles.specsRow}>
+                    <span className={styles.specsLabel}>Material Type</span>
+                    <span className={styles.specsValue}>{product.material}</span>
                   </div>
-                  <div className="flex justify-between py-2 border-b">
-                    <span className="font-medium">Capacity</span>
-                    <span className="text-muted-foreground">
+                  <div className={styles.specsRow}>
+                    <span className={styles.specsLabel}>Capacity</span>
+                    <span className={styles.specsValue}>
                       {product.capacity_ml >= 1000
                         ? `${product.capacity_ml / 1000} L`
                         : `${product.capacity_ml} ml`}
                     </span>
                   </div>
-                  <div className="flex justify-between py-2 border-b">
-                    <span className="font-medium">Available Colors</span>
-                    <span className="text-muted-foreground">{product.colors.join(", ")}</span>
+                  <div className={styles.specsRow}>
+                    <span className={styles.specsLabel}>Available Colors</span>
+                    <span className={styles.specsValue}>{product.colors.join(", ")}</span>
                   </div>
-                  <div className="flex justify-between py-2 border-b">
-                    <span className="font-medium">Minimum Order</span>
-                    <span className="text-muted-foreground">{product.moq} units</span>
+                  <div className={styles.specsRow}>
+                    <span className={styles.specsLabel}>Minimum Order</span>
+                    <span className={styles.specsValue}>{product.moq} units</span>
                   </div>
-                  <div className="flex justify-between py-2">
-                    <span className="font-medium">Packing Details</span>
-                    <span className="text-muted-foreground">{product.packing}</span>
+                  <div className={cn(styles.specsRow, styles.specsRowLast)}>
+                    <span className={styles.specsLabel}>Packing Details</span>
+                    <span className={styles.specsValue}>{product.packing}</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </TabsContent>
 
-          <TabsContent value="certifications" className="mt-6">
+          <TabsContent value="certifications" className={styles.tabContent}>
             <Card>
-              <CardContent className="p-6">
-                <div className="flex flex-wrap gap-3">
+              <CardContent className={styles.tabCard}>
+                <div className={styles.certificationsList}>
                   {product.certifications?.map((cert) => (
-                    <Badge key={cert} variant="outline" className="text-base py-2 px-4">
-                      <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                    <Badge key={cert} variant="outline" className={styles.certificationBadgeLarge}>
+                      <CheckCircle className={cn(styles.iconMedium, styles.checkIcon)} />
                       {cert}
                     </Badge>
                   ))}
@@ -239,9 +256,9 @@ const ProductDetail = () => {
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
-          <div>
-            <h2 className="text-2xl font-bold mb-6">Related Products</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className={styles.relatedSection}>
+            <h2 className={styles.relatedTitle}>Related Products</h2>
+            <div className={styles.relatedGrid}>
               {relatedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
@@ -249,6 +266,12 @@ const ProductDetail = () => {
           </div>
         )}
       </div>
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton
+        phoneNumber={COMPANY_WHATSAPP}
+        message={`Hello, I'm interested in ${product.name}. Please share more details.`}
+        variant="floating"
+      />
     </div>
   );
 };

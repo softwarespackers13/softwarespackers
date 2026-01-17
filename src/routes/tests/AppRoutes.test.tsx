@@ -8,10 +8,6 @@ vi.mock('@/pages/Home', () => ({
   default: () => <div data-testid="home-page">Home Page</div>,
 }));
 
-vi.mock('@/pages/Products', () => ({
-  default: () => <div data-testid="products-page">Products Page</div>,
-}));
-
 vi.mock('@/pages/ProductDetail', () => ({
   default: () => <div data-testid="product-detail-page">Product Detail Page</div>,
 }));
@@ -34,18 +30,6 @@ describe('AppRoutes', () => {
 
     await waitFor(() => {
       expect(screen.getByTestId('home-page')).toBeInTheDocument();
-    });
-  });
-
-  it('renders products page on /products path', async () => {
-    render(
-      <BrowserRouter initialEntries={['/products']}>
-        <AppRoutes />
-      </BrowserRouter>
-    );
-
-    await waitFor(() => {
-      expect(screen.getByTestId('products-page')).toBeInTheDocument();
     });
   });
 
@@ -113,13 +97,13 @@ describe('AppRoutes', () => {
     });
 
     rerender(
-      <BrowserRouter initialEntries={['/products']}>
+      <BrowserRouter initialEntries={['/categories']}>
         <AppRoutes />
       </BrowserRouter>
     );
 
     await waitFor(() => {
-      expect(screen.getByTestId('products-page')).toBeInTheDocument();
+      expect(screen.getByTestId('categories-page')).toBeInTheDocument();
     });
   });
 

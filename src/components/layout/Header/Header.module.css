@@ -1,0 +1,260 @@
+/* Header Styles */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: hsl(var(--background) / 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid hsl(var(--border) / 0.5);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+@supports (backdrop-filter: blur(12px)) {
+  .header {
+    background: hsl(var(--background) / 0.95);
+  }
+}
+
+.nav {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .nav {
+    max-width: 640px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    max-width: 768px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    max-width: 1024px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .nav {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .nav {
+    max-width: 1536px;
+  }
+}
+
+.navInner {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.logoWrapper {
+  position: relative;
+}
+
+.logoImage {
+  height: 3rem;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover .logoImage {
+  transform: scale(1.05);
+}
+
+.logoGlow {
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--accent) / 0.2);
+  border-radius: 0.5rem;
+  filter: blur(16px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.logoLink:hover .logoGlow {
+  opacity: 1;
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  display: block;
+  line-height: 1.25;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+  }
+}
+
+.navLink {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: hsl(var(--foreground));
+}
+
+.navLinkActive {
+  color: hsl(var(--foreground));
+}
+
+.navLinkActive::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: hsl(var(--accent));
+  border-radius: 9999px;
+}
+
+
+.ctaButton {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.9));
+}
+
+@media (min-width: 768px) {
+  .ctaButton {
+    display: flex;
+  }
+}
+
+.ctaButton:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  transform: scale(1.05);
+}
+
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  padding: 1rem 0;
+  border-top: 1px solid hsl(var(--border) / 0.5);
+  animation: slideDown 0.2s ease-out;
+}
+
+@media (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+}
+
+.mobileMenuInner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  text-decoration: none;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  background: hsl(var(--accent) / 0.1);
+  color: hsl(var(--foreground));
+}
+
+.mobileNavLinkActive {
+  background: hsl(var(--accent) / 0.1);
+  color: hsl(var(--foreground));
+}
+
+.mobileMenuDivider {
+  padding-top: 0.5rem;
+  border-top: 1px solid hsl(var(--border) / 0.5);
+  margin-top: 0.5rem;
+}
+
+.mobileCtaButton {
+  width: 100%;
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.9));
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -41,7 +41,10 @@ class Analytics {
             this.initPlausible(config.domain);
         }
 
-        console.log(`Analytics initialized with ${provider}`);
+        // Only log in development mode
+        if (import.meta.env.DEV) {
+            console.log(`Analytics initialized with ${provider}`);
+        }
     }
 
     /**
@@ -91,7 +94,10 @@ class Analytics {
             (window as any).plausible('pageview');
         }
 
-        console.log('Page view tracked:', data.path);
+        // Only log in development mode
+        if (import.meta.env.DEV) {
+            console.log('Page view tracked:', data.path);
+        }
     }
 
     /**
@@ -107,7 +113,10 @@ class Analytics {
             (window as any).plausible(event.name, { props: event.properties });
         }
 
-        console.log('Event tracked:', event.name, event.properties);
+        // Only log in development mode
+        if (import.meta.env.DEV) {
+            console.log('Event tracked:', event.name, event.properties);
+        }
     }
 
     /**
@@ -123,7 +132,7 @@ class Analytics {
             message: errorMessage,
             ...context,
         };
-        
+
         if (errorStack) {
             properties.stack = errorStack;
         }
@@ -145,7 +154,7 @@ class Analytics {
             action,
             label,
         };
-        
+
         if (value !== undefined) {
             properties.value = value;
         }
@@ -161,7 +170,10 @@ class Analytics {
      */
     disable(): void {
         this.enabled = false;
-        console.log('Analytics disabled');
+        // Only log in development mode
+        if (import.meta.env.DEV) {
+            console.log('Analytics disabled');
+        }
     }
 
     /**

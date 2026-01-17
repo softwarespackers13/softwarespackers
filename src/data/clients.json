@@ -2,39 +2,57 @@
   "clients": [
     {
       "id": "client-01",
-      "name": "FoodCorp Industries",
-      "logo": "/assets/logos/client-01.svg",
+      "name": "Vandy",
+      "logo": "/assets/brands/vandy.webp",
       "industry": "Food & Beverage"
     },
     {
       "id": "client-02",
-      "name": "ChemTech Solutions",
-      "logo": "/assets/logos/client-02.svg",
-      "industry": "Chemical"
+      "name": "Sita Rams",
+      "logo": "/assets/brands/sita_rams.webp",
+      "industry": "Food & Beverage"
     },
     {
       "id": "client-03",
-      "name": "PharmaPack Ltd",
-      "logo": "/assets/logos/client-03.svg",
-      "industry": "Pharmaceutical"
+      "name": "Super Cremica",
+      "logo": "/assets/brands/super_cremica.webp",
+      "industry": "Food & Beverage"
     },
     {
       "id": "client-04",
-      "name": "AgriStore Co",
-      "logo": "/assets/logos/client-04.svg",
-      "industry": "Agriculture"
+      "name": "Ginni",
+      "logo": "/assets/brands/ginni.webp",
+      "industry": "Food & Beverage"
     },
     {
       "id": "client-05",
-      "name": "HomeGoods Plus",
-      "logo": "/assets/logos/client-05.svg",
-      "industry": "Retail"
+      "name": "Kartar",
+      "logo": "/assets/brands/kartar.webp",
+      "industry": "Food & Beverage"
     },
     {
       "id": "client-06",
-      "name": "LogiFreight Systems",
-      "logo": "/assets/logos/client-06.svg",
-      "industry": "Logistics"
+      "name": "Sartaj",
+      "logo": "/assets/brands/sartaj.webp",
+      "industry": "Food & Beverage"
+    },
+    {
+      "id": "client-07",
+      "name": "Lyallpur",
+      "logo": "/assets/brands/lyallpur.webp",
+      "industry": "Food & Beverage"
+    },
+    {
+      "id": "client-08",
+      "name": "Lovely",
+      "logo": "/assets/brands/lovely.webp",
+      "industry": "Food & Beverage"
+    },
+    {
+      "id": "client-09",
+      "name": "Frontier",
+      "logo": "/assets/brands/frontier.webp",
+      "industry": "Food & Beverage"
     }
   ]
 }

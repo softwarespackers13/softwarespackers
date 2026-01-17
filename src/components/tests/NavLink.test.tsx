@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { NavLink } from '../NavLink';
+import { NavLink } from '../layout/NavLink/NavLink';
 
 describe('NavLink', () => {
   it('renders a link with the correct href', () => {
