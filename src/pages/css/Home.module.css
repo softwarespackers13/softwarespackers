@@ -143,13 +143,19 @@
 }
 
 .heroProducts {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 100%;
   position: relative;
   z-index: 1;
   animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+@media (min-width: 768px) {
+  .heroProducts {
+    display: flex;
+  }
 }
 
 .regionalBadge {
@@ -330,6 +336,12 @@
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.8s ease 0.6s both;
+  z-index: 1;
+}
+
+.primaryButton > * {
+  position: relative;
+  z-index: 2;
 }
 
 .primaryButton::before {
@@ -341,6 +353,7 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, hsl(var(--primary-foreground) / 0.2), transparent);
   transition: left 0.5s ease;
+  z-index: 0;
 }
 
 .primaryButton:hover::before {
@@ -350,6 +363,11 @@
 .primaryButton:hover {
   box-shadow: 0 12px 20px -4px rgb(0 0 0 / 0.15), 0 6px 10px -2px rgb(0 0 0 / 0.08);
   transform: translateY(-2px) scale(1.02);
+  color: hsl(var(--primary-foreground));
+}
+
+.primaryButton:hover > * {
+  color: hsl(var(--primary-foreground));
 }
 
 .primaryButton:active {
@@ -367,6 +385,12 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeInUp 0.8s ease 0.7s both;
   position: relative;
+  z-index: 1;
+}
+
+.outlineButton > * {
+  position: relative;
+  z-index: 2;
 }
 
 .outlineButton::before {
@@ -382,6 +406,7 @@
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 0;
 }
 
 .outlineButton:hover::before {
@@ -392,6 +417,11 @@
   background: hsl(var(--background));
   transform: translateY(-2px);
   box-shadow: 0 8px 12px -2px rgb(0 0 0 / 0.1);
+  color: hsl(var(--foreground));
+}
+
+.outlineButton:hover > * {
+  color: hsl(var(--foreground));
 }
 
 .outlineButton:active {
@@ -518,8 +548,23 @@
 
 .categoriesGrid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
 }
 
 /* Featured Products Section */
@@ -553,8 +598,23 @@
 
 .featuredGrid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .featuredGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .featuredGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
 }
 
 /* Features Section */

@@ -1,6 +1,8 @@
+/* How It Works Section - Modern Redesign */
+
 .howItWorksSection {
-  padding: 3rem 0;
-  background: linear-gradient(135deg, hsl(var(--secondary) / 0.1) 0%, hsl(var(--background)) 50%, hsl(var(--secondary) / 0.05) 100%);
+  padding: 4rem 0;
+  background: hsl(var(--background));
   position: relative;
   overflow: hidden;
 }
@@ -12,7 +14,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.2), transparent);
+  background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.3), transparent);
 }
 
 .container {
@@ -23,9 +25,21 @@
   z-index: 1;
 }
 
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
 .header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .badge {
@@ -35,430 +49,505 @@
   font-weight: 500;
 }
 
-/* Step card group class for hover effects */
-
 .title {
   font-family: 'Poppins', system-ui, sans-serif;
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   letter-spacing: -0.02em;
   color: hsl(var(--foreground));
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: hsl(var(--muted-foreground));
   max-width: 42rem;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* C-Shape Container */
-.stepsContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto auto;
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
+/* Timeline Container */
+.timelineContainer {
   position: relative;
   padding: 2rem 0;
 }
 
-/* Step Wrapper Base */
-.stepWrapper {
+.timelineLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--accent) / 0.2) 10%,
+    hsl(var(--accent) / 0.3) 50%,
+    hsl(var(--accent) / 0.2) 90%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* Steps Grid - Horizontal Layout */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   position: relative;
+  z-index: 1;
+  align-items: start;
+}
+
+.stepItem {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-/* Top Row Steps (1, 2, 3) */
-.stepTop {
-  grid-row: 1;
-}
-
-.stepPosition0 {
-  grid-column: 1;
-}
-
-.stepPosition1 {
-  grid-column: 2;
-}
-
-.stepPosition2 {
-  grid-column: 3;
-}
-
-/* Right Side Step (4) */
-.stepRight {
-  grid-row: 2;
-  grid-column: 3;
-}
-
-/* Bottom Row Steps (5, 6) */
-.stepBottom {
-  grid-row: 3;
-}
-
-.stepBottom.stepPosition0 {
-  grid-column: 1;
-}
-
-.stepBottom.stepPosition1 {
-  grid-column: 2;
-}
-
-/* Step Card - Smaller and More Compact */
-.stepCard {
+.stepCardWrapper {
   width: 100%;
-  max-width: 200px;
-  min-height: 160px;
-  border-width: 2px;
-  border-color: hsl(var(--border));
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 2;
+  overflow: visible;
+}
+
+.stepCard {
+  width: 100%;
+  height: 220px;
+  border-width: 1px;
+  border-color: hsl(var(--border));
+  background: hsl(var(--card));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: visible;
   display: flex;
   flex-direction: column;
-  background: hsl(var(--card));
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .stepCard::before {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(135deg, hsl(var(--accent) / 0.1), transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--accent) / 0.5));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .stepCard:hover {
   border-color: hsl(var(--accent) / 0.5);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
 }
 
 .stepCard:hover::before {
-  opacity: 1;
+  transform: scaleX(1);
 }
 
 .stepContent {
+  padding: 1.25rem 0.875rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  flex: 1;
-  padding: 1rem;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
+  gap: 0.625rem;
+  flex: 1;
+  min-height: 0;
 }
 
-.stepNumber {
-  width: 1.75rem;
-  height: 1.75rem;
-  background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent) / 0.8));
-  color: white;
+.stepHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.stepNumberBadge {
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent) / 0.8));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 0.75rem;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px hsl(var(--accent) / 0.3);
+  box-shadow: 0 4px 12px hsl(var(--accent) / 0.3);
+  position: relative;
+  z-index: 1;
 }
 
-.stepIconContainer {
-  width: 2.5rem;
-  height: 2.5rem;
+.stepNumberBadge::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--accent) / 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.stepCard:hover .stepNumberBadge::after {
+  opacity: 1;
+}
+
+.stepNumber {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stepIconWrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
   background: linear-gradient(135deg, hsl(var(--accent) / 0.1), hsl(var(--accent) / 0.05));
-  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  flex-shrink: 0;
 }
 
-.stepCard:hover .stepIconContainer {
-  transform: scale(1.1) rotate(5deg);
+.stepCard:hover .stepIconWrapper {
   background: linear-gradient(135deg, hsl(var(--accent) / 0.2), hsl(var(--accent) / 0.1));
+  transform: scale(1.1);
 }
 
 .stepIcon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   color: hsl(var(--accent));
   transition: transform 0.3s ease;
 }
 
 .stepCard:hover .stepIcon {
-  transform: scale(1.1);
+  transform: rotate(5deg) scale(1.1);
 }
 
 .stepTitle {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   margin: 0;
   color: hsl(var(--foreground));
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 .stepDescription {
-  font-size: 0.75rem;
-  line-height: 1.4;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: hsl(var(--muted-foreground));
   margin: 0;
-  flex-grow: 1;
+  flex: 1;
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.25rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Arrow Connectors */
+.arrowConnector {
+  position: absolute;
+  top: 2.5rem;
+  right: -0.5rem;
+  width: 1rem;
+  height: 1rem;
+  display: none;
   align-items: center;
-}
-
-/* Connectors for C-Shape Flow */
-.connector {
-  position: absolute;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.connector::before {
-  content: '';
-  position: absolute;
-  background: hsl(var(--accent) / 0.4);
-}
-
-.connector::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-/* Top row connectors (horizontal, right) */
-.connectorTop {
-  width: calc(100% + 1.5rem);
-  height: 2px;
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-}
-
-.connectorTop::before {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, hsl(var(--accent) / 0.5), hsl(var(--accent) / 0.3));
-  border-radius: 1px;
-}
-
-.connectorTop::after {
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-width: 4px 0 4px 6px;
-  border-color: transparent transparent transparent hsl(var(--accent) / 0.5);
-}
-
-/* Right side connector (vertical, down) */
-.connectorRight {
-  width: 2px;
-  height: calc(100% + 1.5rem);
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.connectorRight::before {
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, hsl(var(--accent) / 0.5), hsl(var(--accent) / 0.3));
-  border-radius: 1px;
-}
-
-.connectorRight::after {
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px 4px 0 4px;
-  border-color: hsl(var(--accent) / 0.5) transparent transparent transparent;
-}
-
-/* Special connector from Card 4 (right) to Card 5 (bottom left) - L-shaped */
-.connectorRightToBottom {
-  width: calc(200% + 3rem);
-  height: calc(100% + 1.5rem);
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: 
-    /* Horizontal line */
-    linear-gradient(270deg, hsl(var(--accent) / 0.5) calc(100% - 6px), transparent calc(100% - 6px)),
-    /* Vertical line */
-    linear-gradient(180deg, hsl(var(--accent) / 0.5), hsl(var(--accent) / 0.3));
-  background-size: calc(200% + 3rem) 2px, 2px calc(100% + 1.5rem);
-  background-position: left bottom, left top;
-  background-repeat: no-repeat;
-}
-
-.connectorRightToBottom::before {
-  display: none;
-}
-
-.connectorRightToBottom::after {
-  /* Arrowhead pointing left */
-  content: '';
-  position: absolute;
-  left: calc(200% + 3rem - 6px);
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 4px 6px 4px 0;
-  border-color: transparent hsl(var(--accent) / 0.5) transparent transparent;
-  transform: translateY(-50%);
-  top: 50%;
-}
-
-/* Bottom row connectors (horizontal, left) */
-.connectorBottom {
-  width: calc(100% + 1.5rem);
-  height: 2px;
-  top: 50%;
-  right: 100%;
-  transform: translateY(-50%);
-}
-
-.connectorBottom::before {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, hsl(var(--accent) / 0.5), hsl(var(--accent) / 0.3));
-  border-radius: 1px;
-}
-
-.connectorBottom::after {
-  left: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-width: 4px 6px 4px 0;
-  border-color: transparent hsl(var(--accent) / 0.5) transparent transparent;
-}
-
-/* Hide last connector */
-.stepWrapper:last-child .connector {
-  display: none;
-}
-
-/* Responsive Design */
-@media (max-width: 767px) {
-  .stepsContainer {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto);
-    gap: 1.5rem;
-    max-width: 100%;
-  }
-
-  .stepTop,
-  .stepRight,
-  .stepBottom {
-    grid-row: auto;
-    grid-column: 1;
-  }
-
-  .stepPosition0,
-  .stepPosition1,
-  .stepPosition2 {
-    grid-column: 1;
-  }
-
-  .stepCard {
-    max-width: 100%;
-    min-height: 140px;
-  }
-
-  .connector {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .stepsContainer {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
-    max-width: 600px;
-  }
-
-  .stepTop {
-    grid-row: 1;
-  }
-
-  .stepTop.stepPosition0 {
-    grid-column: 1;
-  }
-
-  .stepTop.stepPosition1 {
-    grid-column: 2;
-  }
-
-  .stepTop.stepPosition2 {
-    grid-row: 2;
-    grid-column: 2;
-  }
-
-  .stepRight {
-    grid-row: 2;
-    grid-column: 1;
-  }
-
-  .stepBottom {
-    grid-row: 3;
-  }
-
-  .stepBottom.stepPosition0 {
-    grid-column: 1;
-  }
-
-  .stepBottom.stepPosition1 {
-    grid-column: 2;
-  }
-
-  .connector {
-    display: none;
-  }
+  justify-content: center;
+  z-index: 3;
 }
 
 @media (min-width: 1024px) {
+  .arrowConnector {
+    display: flex;
+  }
+}
+
+.arrowIcon {
+  width: 1rem;
+  height: 1rem;
+  color: hsl(var(--accent) / 0.4);
+  transition: all 0.3s ease;
+}
+
+.stepItem:hover .arrowIcon {
+  color: hsl(var(--accent));
+  transform: translateX(4px);
+}
+
+/* Responsive Design - Mobile First Approach */
+
+/* Extra Small Mobile (up to 479px) */
+@media (max-width: 479px) {
   .howItWorksSection {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
+  }
+
+  .header {
+    margin-bottom: 2rem;
   }
 
   .title {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
   }
 
-  .stepsContainer {
-    gap: 2rem;
-    padding: 3rem 0;
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .timelineContainer {
+    padding: 1.5rem 0;
+  }
+
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .stepCard {
-    max-width: 220px;
-    min-height: 180px;
+    height: auto;
+    min-height: 160px;
+  }
+
+  .stepContent {
+    padding: 1rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .stepHeader {
+    gap: 0.5rem;
+  }
+
+  .stepNumberBadge {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .stepNumber {
+    font-size: 0.75rem;
+  }
+
+  .stepIconWrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .stepIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .stepTitle {
+    font-size: 0.875rem;
+  }
+
+  .stepDescription {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .timelineLine {
+    display: none;
+  }
+
+  .arrowConnector {
+    display: none;
+  }
+}
+
+/* Small Mobile (480px - 639px) */
+@media (min-width: 480px) and (max-width: 639px) {
+  .howItWorksSection {
+    padding: 3rem 0;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .stepCard {
+    height: 180px;
+  }
+
+  .stepContent {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .stepNumberBadge {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .stepNumber {
+    font-size: 0.75rem;
+  }
+
+  .stepIconWrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .stepIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .stepTitle {
+    font-size: 0.875rem;
+  }
+
+  .stepDescription {
+    font-size: 0.75rem;
+  }
+
+  .timelineLine {
+    display: none;
+  }
+
+  .arrowConnector {
+    display: none;
+  }
+}
+
+/* Tablet (640px - 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1.25rem;
+  }
+
+  .stepCard {
+    height: 190px;
+  }
+
+  .stepContent {
+    padding: 1.25rem 1rem;
+  }
+
+  .timelineLine {
+    display: none;
+  }
+
+  .arrowConnector {
+    display: none;
+  }
+}
+
+/* Small Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .stepsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.25rem;
+  }
+
+  .stepCard {
+    height: 200px;
+  }
+
+  .stepContent {
+    padding: 1.25rem 1rem;
+  }
+
+  .timelineLine {
+    display: none;
+  }
+
+  .arrowConnector {
+    display: none;
+  }
+}
+
+/* Desktop (1024px - 1279px) */
+@media (min-width: 1024px) {
+  .howItWorksSection {
+    padding: 5rem 0;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .stepsGrid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stepCard {
+    height: 220px;
+  }
+
+  .stepContent {
+    padding: 1.25rem 0.875rem;
+  }
+
+  .timelineLine {
+    display: block;
+  }
+
+  .arrowConnector {
+    display: flex;
+  }
+}
+
+/* Large Desktop (1280px - 1535px) */
+@media (min-width: 1280px) {
+  .stepsGrid {
+    gap: 1rem;
+  }
+
+  .stepCard {
+    height: 240px;
+  }
+
+  .stepContent {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Extra Large Desktop (1536px+) */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 90rem;
+  }
+
+  .stepsGrid {
+    gap: 1.25rem;
+  }
+
+  .stepCard {
+    height: 250px;
   }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .stepCard,
-  .stepIconContainer,
-  .stepIcon {
+  .stepIconWrapper,
+  .stepIcon,
+  .arrowIcon,
+  .stepNumberBadge::after {
     transition: none;
   }
 
@@ -466,11 +555,12 @@
     transform: none;
   }
 
-  .stepCard:hover .stepIconContainer {
+  .stepCard:hover .stepIconWrapper,
+  .stepCard:hover .stepIcon {
     transform: none;
   }
 
-  .stepCard:hover .stepIcon {
+  .stepItem:hover .arrowIcon {
     transform: none;
   }
 }

@@ -86,6 +86,15 @@ const Header = () => {
           </div>
         </div>
 
+        {/* Mobile menu backdrop */}
+        {mobileMenuOpen && (
+          <div
+            className={styles.mobileMenuBackdrop}
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className={styles.mobileMenu}>

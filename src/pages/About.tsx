@@ -157,7 +157,7 @@ const About = () => {
                     <CardContent className={styles.missionContent}>
                         <h2 className={styles.missionTitle}>Our Mission</h2>
                         <p className={styles.missionText}>
-                            To be North India's most trusted partner for plastic container solutions, delivering
+                            To be India's most trusted partner for plastic container solutions, delivering
                             exceptional quality, innovative designs, and outstanding customer service. We're committed
                             to helping businesses succeed by providing reliable, cost-effective packaging solutions
                             that protect their products and enhance their brand.

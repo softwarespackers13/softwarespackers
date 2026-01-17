@@ -19,14 +19,9 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    // Gzip compression for production
+    // Compression for production (Gzip and Brotli)
     mode === "production" && compression({
-      algorithm: "gzip",
-      exclude: [/\.(br)$/, /\.(gz)$/],
-    }),
-    // Brotli compression for production
-    mode === "production" && compression({
-      algorithm: "brotliCompress",
+      algorithms: ["gzip", "brotli"],
       exclude: [/\.(br)$/, /\.(gz)$/],
     }),
   ].filter(Boolean),

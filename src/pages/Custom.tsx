@@ -143,24 +143,6 @@ const Custom = () => {
                     </div>
                 </div>
 
-                {/* Benefits Section */}
-                <div className={styles.benefitsSection}>
-                    <div className={styles.benefitsContent}>
-                        <h2 className={styles.sectionTitle}>Why Choose Our Custom Solutions?</h2>
-                        <div className={styles.benefitsGrid}>
-                            {benefits.map((benefit, index) => {
-                                const Icon = benefit.icon;
-                                return (
-                                    <div key={index} className={styles.benefitItem}>
-                                        <Icon className={styles.benefitIcon} />
-                                        <span>{benefit.text}</span>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </div>
-
                 {/* CTA Section */}
                 <Card className={styles.ctaCard}>
                     <CardHeader>
@@ -177,15 +159,16 @@ const Custom = () => {
                                     <ArrowRight className="ml-2 h-5 w-5" />
                                 </Link>
                             </Button>
-                            <Button asChild variant="outline" size="lg">
+                            <Button asChild variant="outline" size="lg" className={styles.outlineButton}>
                                 <Link to="/contact">
-                                    Contact Sales Team
+                                    Contact Us
                                 </Link>
                             </Button>
                         </div>
                     </CardContent>
                 </Card>
             </div>
+
             {/* Floating WhatsApp Button */}
             <WhatsAppButton
                 phoneNumber={COMPANY_WHATSAPP}

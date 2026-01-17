@@ -11,6 +11,12 @@
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
+@media (max-width: 767px) {
+  .header {
+    z-index: 100;
+  }
+}
+
 @supports (backdrop-filter: blur(12px)) {
   .header {
     background: hsl(var(--background) / 0.95);
@@ -198,10 +204,42 @@
   }
 }
 
+.mobileMenuBackdrop {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: hsl(var(--background) / 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 98;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@media (min-width: 768px) {
+  .mobileMenuBackdrop {
+    display: none;
+  }
+}
+
 .mobileMenu {
-  padding: 1rem 0;
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 1rem;
+  background: hsl(var(--background) / 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid hsl(var(--border) / 0.5);
+  border-bottom: 1px solid hsl(var(--border) / 0.5);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+  z-index: 99;
   animation: slideDown 0.2s ease-out;
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
 }
 
 @media (min-width: 768px) {
@@ -256,5 +294,14 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

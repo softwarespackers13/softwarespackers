@@ -1,5 +1,5 @@
-import { lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import LogoLoader from "@/components/common/LogoLoader";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
@@ -30,25 +30,60 @@ const RouteWithErrorBoundary = ({ children }: { children: React.ReactNode }) => 
 );
 
 /**
+ * ScrollToTopHandler - Scrolls to top on route change
+ * Integrated directly into AppRoutes to avoid separate component
+ */
+const ScrollToTopHandler = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Immediate scroll for instant feedback
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+
+    // Also scroll after a brief delay to handle lazy-loaded content
+    const timeoutId = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant",
+      });
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, [pathname]);
+
+  return null;
+};
+
+/**
  * AppRoutes - Application routing configuration
  * All route definitions are centralized here
  * Each route is wrapped with an ErrorBoundary for better error isolation
  */
-const AppRoutes = () => (
-  <Suspense fallback={<PageLoader />}>
-    <Routes>
-      <Route path="/" element={<RouteWithErrorBoundary><Home /></RouteWithErrorBoundary>} />
-      <Route path="/products/:slug" element={<RouteWithErrorBoundary><ProductDetail /></RouteWithErrorBoundary>} />
-      <Route path="/categories" element={<RouteWithErrorBoundary><Categories /></RouteWithErrorBoundary>} />
-      <Route path="/custom" element={<RouteWithErrorBoundary><Custom /></RouteWithErrorBoundary>} />
-      <Route path="/about" element={<RouteWithErrorBoundary><About /></RouteWithErrorBoundary>} />
-      <Route path="/contact" element={<RouteWithErrorBoundary><Contact /></RouteWithErrorBoundary>} />
-      <Route path="/quote" element={<RouteWithErrorBoundary><Quote /></RouteWithErrorBoundary>} />
-      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-      <Route path="*" element={<RouteWithErrorBoundary><NotFound /></RouteWithErrorBoundary>} />
-    </Routes>
-  </Suspense>
+const AppRoutesContent = () => (
+  <>
+    <ScrollToTopHandler />
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        <Route path="/" element={<RouteWithErrorBoundary><Home /></RouteWithErrorBoundary>} />
+        <Route path="/products/:slug" element={<RouteWithErrorBoundary><ProductDetail /></RouteWithErrorBoundary>} />
+        <Route path="/categories" element={<RouteWithErrorBoundary><Categories /></RouteWithErrorBoundary>} />
+        <Route path="/custom" element={<RouteWithErrorBoundary><Custom /></RouteWithErrorBoundary>} />
+        <Route path="/about" element={<RouteWithErrorBoundary><About /></RouteWithErrorBoundary>} />
+        <Route path="/contact" element={<RouteWithErrorBoundary><Contact /></RouteWithErrorBoundary>} />
+        <Route path="/quote" element={<RouteWithErrorBoundary><Quote /></RouteWithErrorBoundary>} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<RouteWithErrorBoundary><NotFound /></RouteWithErrorBoundary>} />
+      </Routes>
+    </Suspense>
+  </>
 );
+
+const AppRoutes = () => <AppRoutesContent />;
 
 export default AppRoutes;
 

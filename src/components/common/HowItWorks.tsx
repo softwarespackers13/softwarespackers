@@ -6,7 +6,8 @@ import {
     FileText,
     Factory,
     Truck,
-    CheckCircle
+    CheckCircle,
+    ArrowRight
 } from 'lucide-react';
 import styles from '../css/HowItWorks.module.css';
 import { cn } from '@/lib/utils';
@@ -70,8 +71,8 @@ interface HowItWorksProps {
 }
 
 /**
- * HowItWorks - Visual process flow showing how customers work with the company
- * Optimized for clarity and conversion
+ * HowItWorks - Modern visual process flow
+ * Clean, horizontal timeline design with smooth animations
  */
 const HowItWorks = ({
     title = "How It Works",
@@ -88,46 +89,42 @@ const HowItWorks = ({
                     {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
                 </div>
 
-                <div className={styles.stepsContainer}>
-                    {STEPS.map((step, index) => {
-                        const Icon = step.icon;
-                        const isLast = index === STEPS.length - 1;
-                        // Determine position in C-shape: 0-2 top, 3 right, 4-5 bottom
-                        const position = index < 3 ? 'top' : index === 3 ? 'right' : 'bottom';
-                        // For bottom row: step 5 (index 4) goes left (col 1), step 6 (index 5) goes right (col 2)
-                        const positionInRow = index < 3 ? index : index === 3 ? 0 : index === 4 ? 0 : 1;
+                <div className={styles.timelineContainer}>
+                    <div className={styles.timelineLine} aria-hidden="true"></div>
 
-                        return (
-                            <div
-                                key={step.id}
-                                className={cn(
-                                    styles.stepWrapper,
-                                    styles[`step${position.charAt(0).toUpperCase() + position.slice(1)}`],
-                                    styles[`stepPosition${positionInRow}`]
-                                )}
-                            >
-                                <Card className={cn(styles.stepCard, styles.stepCardGroup)}>
-                                    <CardContent className={styles.stepContent}>
-                                        <div className={styles.stepNumber}>{step.number}</div>
-                                        <div className={styles.stepIconContainer}>
-                                            <Icon className={styles.stepIcon} aria-hidden="true" />
+                    <div className={styles.stepsGrid}>
+                        {STEPS.map((step, index) => {
+                            const Icon = step.icon;
+                            const isLast = index === STEPS.length - 1;
+
+                            return (
+                                <div key={step.id} className={styles.stepItem}>
+                                    <div className={styles.stepCardWrapper}>
+                                        <Card className={styles.stepCard}>
+                                            <CardContent className={styles.stepContent}>
+                                                <div className={styles.stepHeader}>
+                                                    <div className={styles.stepNumberBadge}>
+                                                        <span className={styles.stepNumber}>{step.number}</span>
+                                                    </div>
+                                                    <div className={styles.stepIconWrapper}>
+                                                        <Icon className={styles.stepIcon} aria-hidden="true" />
+                                                    </div>
+                                                </div>
+                                                <h3 className={styles.stepTitle}>{step.title}</h3>
+                                                <p className={styles.stepDescription}>{step.description}</p>
+                                            </CardContent>
+                                        </Card>
+                                    </div>
+
+                                    {!isLast && (
+                                        <div className={styles.arrowConnector} aria-hidden="true">
+                                            <ArrowRight className={styles.arrowIcon} />
                                         </div>
-                                        <h3 className={styles.stepTitle}>{step.title}</h3>
-                                        <p className={styles.stepDescription}>{step.description}</p>
-                                    </CardContent>
-                                </Card>
-                                {!isLast && (
-                                    <div
-                                        className={cn(
-                                            styles.connector,
-                                            index === 3 ? styles.connectorRightToBottom : styles[`connector${position.charAt(0).toUpperCase() + position.slice(1)}`]
-                                        )}
-                                        aria-hidden="true"
-                                    />
-                                )}
-                            </div>
-                        );
-                    })}
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </section>
@@ -135,4 +132,3 @@ const HowItWorks = ({
 };
 
 export default HowItWorks;
-
