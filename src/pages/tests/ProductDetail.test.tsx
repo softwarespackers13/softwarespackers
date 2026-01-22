@@ -25,6 +25,9 @@ vi.mock('@/data/products.json', () => ({
         images: ['/test1.jpg', '/test2.jpg'],
         dimensions_mm: { dia: 50, height: 150 },
         certifications: ['FDA', 'ISO'],
+        tags: ['bottle', 'hDPE'],
+        featured: false,
+        datasheet_url: null,
       },
       {
         id: '2',
@@ -41,21 +44,34 @@ vi.mock('@/data/products.json', () => ({
         packing: '50 pcs/carton',
         price_range: '$1.00 - $2.00',
         images: ['/related1.jpg'],
+        dimensions_mm: {},
+        certifications: [],
+        tags: ['bottle', 'pet'],
+        featured: false,
+        datasheet_url: null,
       },
     ],
   },
 }));
 
-vi.mock('@/components/ProductCard', () => ({
+vi.mock('@/components/common/ProductCard', () => ({
   default: ({ product }: { product: { id: string; name: string } }) => (
     <div data-testid={`product-card-${product.id}`}>{product.name}</div>
   ),
 }));
 
-vi.mock('@/components/OptimizedImage', () => ({
+vi.mock('@/components/common/OptimizedImage', () => ({
   default: ({ src, alt, className }: { src: string; alt: string; className?: string }) => (
     <img src={src} alt={alt} className={className} />
   ),
+}));
+
+vi.mock('@/components/common/WhatsAppButton', () => ({
+  default: () => null,
+}));
+
+vi.mock('@/config/constants', () => ({
+  COMPANY_WHATSAPP: '+1234567890',
 }));
 
 describe('ProductDetail Page', () => {
@@ -117,7 +133,7 @@ describe('ProductDetail Page', () => {
 
   it('allows switching between product images', async () => {
     const user = userEvent.setup();
-    
+
     render(
       <BrowserRouter initialEntries={['/products/test-bottle']}>
         <Routes>
@@ -130,7 +146,7 @@ describe('ProductDetail Page', () => {
     expect(thumbnailButtons).toHaveLength(2);
 
     await user.click(thumbnailButtons[1]);
-    
+
     // The main image should now be the second image
     const mainImage = screen.getByAltText(/Test Bottle - view 2/);
     expect(mainImage).toBeInTheDocument();
@@ -189,7 +205,9 @@ describe('ProductDetail Page', () => {
     expect(screen.getByText('Add to Quote')).toBeInTheDocument();
   });
 
-  it('renders download buttons', () => {
+  // Note: Download buttons test removed as they don't exist in current implementation
+
+  it('displays back to categories button', () => {
     render(
       <BrowserRouter initialEntries={['/products/test-bottle']}>
         <Routes>
@@ -198,20 +216,7 @@ describe('ProductDetail Page', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText('Technical Datasheet')).toBeInTheDocument();
-    expect(screen.getByText('Packaging Layout')).toBeInTheDocument();
-  });
-
-  it('displays back to products button', () => {
-    render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
-        <Routes>
-          <Route path="/products/:slug" element={<ProductDetail />} />
-        </Routes>
-      </BrowserRouter>
-    );
-
-    const backButtons = screen.getAllByText('Back to Products');
+    const backButtons = screen.getAllByText('Back to Categories');
     expect(backButtons.length).toBeGreaterThan(0);
   });
 

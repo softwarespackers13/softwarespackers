@@ -67,6 +67,16 @@
   }
 }
 
+/* iPad Pro (1024px - 1279px) - Reduced top padding */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .brandCarouselSection {
+    padding-top: 0.5rem !important;
+    padding-bottom: 4.5rem;
+    margin-top: 0 !important;
+    margin-bottom: 0;
+  }
+}
+
 .logoImage {
   height: auto;
   width: auto;

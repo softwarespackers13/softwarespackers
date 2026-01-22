@@ -23,7 +23,7 @@ interface BrandCarouselProps {
 const BrandCarousel = ({
     clients,
     title = "Trusted by Industry Leaders",
-    subtitle = "Serving businesses across North India"
+    subtitle = "Serving businesses across India"
 }: BrandCarouselProps) => {
     // Memoize to prevent unnecessary re-renders
     const validClients = useMemo(() =>

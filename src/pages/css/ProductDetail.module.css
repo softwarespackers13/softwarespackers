@@ -172,8 +172,8 @@
 }
 
 .specsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
   font-size: 0.875rem;
 }
@@ -272,9 +272,32 @@
 }
 
 .relatedGrid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted)) transparent;
+}
+
+.relatedGrid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.relatedGrid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.relatedGrid::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+.relatedGrid > * {
+  flex: 0 0 auto;
+  min-width: 280px;
+  max-width: 280px;
 }
 
 .emptyState {
@@ -304,14 +327,16 @@
     font-size: 2.25rem;
   }
   
-  .relatedGrid {
-    grid-template-columns: repeat(3, 1fr);
+  .relatedGrid > * {
+    min-width: 300px;
+    max-width: 300px;
   }
 }
 
 @media (min-width: 768px) {
-  .relatedGrid {
-    grid-template-columns: repeat(2, 1fr);
+  .relatedGrid > * {
+    min-width: 320px;
+    max-width: 320px;
   }
 }
 

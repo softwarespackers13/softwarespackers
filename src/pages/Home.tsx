@@ -1,16 +1,12 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle,
   Clock,
   Award,
   ArrowRight,
-  Truck,
-  Factory,
-  Users,
   Phone,
   MapPin
 } from "lucide-react";
@@ -20,7 +16,7 @@ import clientsData from "@/data/clients.json";
 import faqData from "@/data/faq.json";
 import ProductCard from "@/components/common/ProductCard";
 import CategoryCard from "@/components/common/CategoryCard";
-import ProductCarouselCard from "@/components/common/ProductCarouselCard";
+import CategoryOverlapCard from "@/components/common/CategoryOverlapCard";
 import BrandCarousel from "@/components/common/BrandCarousel";
 import FAQ from "@/components/common/FAQ";
 import HowItWorks from "@/components/common/HowItWorks";
@@ -37,66 +33,19 @@ const Home = () => {
     [] // Static data - safe to use empty array
   );
 
-  // Memoize hero products - split into 3 groups for different carousel positions
-  // Note: Empty dependency array is safe here because productsData is imported statically
-  const allProducts = useMemo(
-    () => productsData.products.filter(p => p.featured),
-    [] // Static data - safe to use empty array
-  );
-
-  // Helper function to distribute products evenly across 3 carousels
-  // Each carousel needs at least 2 products to rotate
-  const distributeProducts = useMemo(() => {
-    if (allProducts.length === 0) return { large: [], small1: [], small2: [] };
-
-    // If we have 3 or more products, distribute them with overlap to ensure rotation
-    if (allProducts.length >= 3) {
-      // Each carousel gets 2+ products in different orders for variety
-      return {
-        large: [allProducts[0], allProducts[1], allProducts[2]],
-        small1: [allProducts[1], allProducts[2], allProducts[0]],
-        small2: [allProducts[2], allProducts[0], allProducts[1]],
-      };
-    }
-
-    // If we have 2 products, duplicate them in different orders
-    if (allProducts.length === 2) {
-      return {
-        large: [allProducts[0], allProducts[1]],
-        small1: [allProducts[1], allProducts[0]],
-        small2: [allProducts[0], allProducts[1]],
-      };
-    }
-
-    // If we only have 1 product, duplicate it for all carousels
-    return {
-      large: [allProducts[0], allProducts[0]],
-      small1: [allProducts[0], allProducts[0]],
-      small2: [allProducts[0], allProducts[0]],
-    };
-  }, [allProducts]);
-
-  // Large card products (first position)
-  const largeCardProducts = useMemo(
-    () => distributeProducts.large.length > 0 ? distributeProducts.large : allProducts,
-    [distributeProducts, allProducts]
-  );
-
-  // Small card products (second position)
-  const smallCardProducts1 = useMemo(
-    () => distributeProducts.small1.length > 0 ? distributeProducts.small1 : allProducts,
-    [distributeProducts, allProducts]
-  );
-
-  // Small card products (third position)
-  const smallCardProducts2 = useMemo(
-    () => distributeProducts.small2.length > 0 ? distributeProducts.small2 : allProducts,
-    [distributeProducts, allProducts]
-  );
-
   // Memoize categories for consistency
   // Note: Empty dependency array is safe here because categoriesData is imported statically
   const categories = useMemo(() => categoriesData.categories, []); // Static data - safe to use empty array
+
+  // Get first 5 categories for overlapping layout
+  const overlapCategories = useMemo(() => {
+    const cats = categories.slice(0, 5);
+    // If we have fewer than 5, cycle through available categories
+    while (cats.length < 5 && categories.length > 0) {
+      cats.push(...categories.slice(0, 5 - cats.length));
+    }
+    return cats.slice(0, 5);
+  }, [categories]);
 
   return (
     <div className={styles.pageContainer}>
@@ -118,16 +67,16 @@ const Home = () => {
               {/* Main Heading */}
               <h1 className={styles.mainHeading}>
                 <span className={styles.mainHeadingBlock}>
-                  Premium Plastic Containers
+                  Manufacturing Certainty 
                 </span>
-                <span className={styles.mainHeadingGradient}>
-                  That Keep Your Products Fresh & Safe
+                <span className={styles.mainHeadingBlock}>
+                  Into Every Mould.
                 </span>
               </h1>
 
               {/* Subtitle */}
               <p className={styles.subtitle}>
-                Quality containers for food, storage, and industry. Custom sizes, bulk pricing, and fast delivery across North India.
+                Quality containers for food, storage, and industry. Custom sizes, bulk pricing, and fast delivery across India.
               </p>
 
               {/* CTA Buttons */}
@@ -155,36 +104,54 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Column - Product Showcase with Carousels */}
+            {/* Right Column - Category Showcase with Dynamic Overlapping Layout */}
             <div className={styles.heroProducts}>
-              <div className={styles.productGrid}>
-                {/* Large Card Carousel */}
-                <div className={styles.productCardLarge}>
-                  <ProductCarouselCard
-                    products={largeCardProducts}
-                    cardSize="large"
-                    interval={4500}
-                    startDelay={0}
-                  />
-                </div>
-                {/* Small Card Carousel - First */}
-                <div className={styles.productCardSmall}>
-                  <ProductCarouselCard
-                    products={smallCardProducts1}
-                    cardSize="small"
-                    interval={4000}
-                    startDelay={1500}
-                  />
-                </div>
-                {/* Small Card Carousel - Second */}
-                <div className={styles.productCardSmall}>
-                  <ProductCarouselCard
-                    products={smallCardProducts2}
-                    cardSize="small"
-                    interval={4200}
-                    startDelay={3000}
-                  />
-                </div>
+              <div className={styles.overlapContainer}>
+                {/* Card 1: Small report preview card - Top-right */}
+                {overlapCategories[0] && (
+                  <div className={styles.overlapCard1}>
+                    <CategoryOverlapCard
+                      category={overlapCategories[0]}
+                      variant="small-report"
+                    />
+                  </div>
+                )}
+                {/* Card 2: Large blue visualization card - Upper-middle, most prominent */}
+                {overlapCategories[1] && (
+                  <div className={styles.overlapCard2}>
+                    <CategoryOverlapCard
+                      category={overlapCategories[1]}
+                      variant="large-blue"
+                    />
+                  </div>
+                )}
+                {/* Card 3: Large green grid/chart card - Middle-right */}
+                {overlapCategories[2] && (
+                  <div className={styles.overlapCard3}>
+                    <CategoryOverlapCard
+                      category={overlapCategories[2]}
+                      variant="large-green"
+                    />
+                  </div>
+                )}
+                {/* Card 4: Medium image/photo card - Bottom-left with overlap */}
+                {overlapCategories[3] && (
+                  <div className={styles.overlapCard4}>
+                    <CategoryOverlapCard
+                      category={overlapCategories[3]}
+                      variant="medium"
+                    />
+                  </div>
+                )}
+                {/* Card 5: Medium video/interview card - Bottom-right with overlap */}
+                {overlapCategories[4] && (
+                  <div className={styles.overlapCard5}>
+                    <CategoryOverlapCard
+                      category={overlapCategories[4]}
+                      variant="medium"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

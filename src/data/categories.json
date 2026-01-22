@@ -1,94 +1,58 @@
 {
   "categories": [
     {
-      "id": "round-container",
-      "name": "Round Container",
-      "slug": "round-container",
-      "description": "See-through containers for easy viewing and organized storage.",
+      "id": "pet-container",
+      "name": "PET Container",
+      "slug": "pet-container",
+      "description": "High-quality PET containers for food packaging and storage.",
       "icon": "container",
-      "product_count": 12,
-      "image": "/assets/images/category-round-container.jpg"
+      "product_count": 9,
+      "image": "/assets/images/category-pet-container.jpg"
     },
     {
-      "id": "partition-box",
-      "name": "Partition Box",
-      "slug": "partition-box",
-      "description": "Multi-compartment containers for organizing different food items.",
-      "icon": "box",
-      "product_count": 3,
-      "image": "/assets/images/category-partition-box.jpg"
+      "id": "container",
+      "name": "Container",
+      "slug": "container",
+      "description": "Versatile containers for various storage and packaging needs.",
+      "icon": "container",
+      "product_count": 31,
+      "image": "/assets/images/category-container.jpg"
     },
     {
-      "id": "pasta-box",
-      "name": "Pasta Box",
-      "slug": "pasta-box",
-      "description": "Specialized containers for pasta and similar food items.",
-      "icon": "box",
-      "product_count": 3,
-      "image": "/assets/images/category-pasta-box.jpg"
-    },
-    {
-      "id": "sweet-box",
-      "name": "Sweet Box",
-      "slug": "sweet-box",
+      "id": "sweet-boxes",
+      "name": "Sweet Boxes",
+      "slug": "sweet-boxes",
       "description": "Perfect containers to keep your sweet treats fresh and organized.",
       "icon": "box",
       "product_count": 16,
-      "image": "/assets/images/category-sweet-box.jpg"
+      "image": "/assets/images/category-sweet-boxes.jpg"
     },
     {
-      "id": "boxes-with-lid",
-      "name": "Boxes with Lid",
-      "slug": "boxes-with-lid",
-      "description": "PET boxes with tight-fitting lids for secure food storage.",
-      "icon": "box",
-      "product_count": 5,
-      "image": "/assets/images/category-boxes-with-lid.jpg"
-    },
-    {
-      "id": "meal-box",
-      "name": "Meal Box",
-      "slug": "meal-box",
+      "id": "meal-boxes",
+      "name": "Meal Boxes",
+      "slug": "meal-boxes",
       "description": "Sleek meal boxes for preserving and packaging all types of food.",
       "icon": "box",
-      "product_count": 4,
-      "image": "/assets/images/category-meal-box.jpg"
+      "product_count": 6,
+      "image": "/assets/images/category-meal-boxes.jpg"
     },
     {
-      "id": "sauce-dip-container",
-      "name": "Sauce Dip Container",
-      "slug": "sauce-dip-container",
-      "description": "Convenient containers for serving dips and sauces mess-free.",
-      "icon": "container",
-      "product_count": 3,
-      "image": "/assets/images/category-sauce-dip-container.jpg"
-    },
-    {
-      "id": "leak-proof-container",
-      "name": "Leak Proof Container",
-      "slug": "leak-proof-container",
-      "description": "Leak-proof containers perfect for on-the-go meals and busy days.",
-      "icon": "container",
-      "product_count": 4,
-      "image": "/assets/images/category-leak-proof-container.jpg"
-    },
-    {
-      "id": "new-hinged-additions",
-      "name": "New Hinged Additions",
-      "slug": "new-hinged-additions",
-      "description": "Food-safe disposable boxes perfect for Indian sweets and on-the-go meals.",
+      "id": "bakery-products",
+      "name": "Bakery Products",
+      "slug": "bakery-products",
+      "description": "Containers designed for bakery items, muffins, and confectionery products.",
       "icon": "box",
-      "product_count": 3,
-      "image": "/assets/images/category-new-hinged-additions.jpg"
+      "product_count": 27,
+      "image": "/assets/images/category-bakery-products.jpg"
     },
     {
-      "id": "cake-packaging",
-      "name": "Cake Packaging",
-      "slug": "cake-packaging",
-      "description": "Food-safe cake packaging ideal for bakeries and events.",
+      "id": "hinge-boxes",
+      "name": "Hinge Boxes",
+      "slug": "hinge-boxes",
+      "description": "Hinged containers with tight seals to keep food fresh and organized.",
       "icon": "box",
-      "product_count": 10,
-      "image": "/assets/images/category-cake-packaging.jpg"
+      "product_count": 4,
+      "image": "/assets/images/category-hinge-boxes.jpg"
     },
     {
       "id": "ice-cream-cups-glasses",
@@ -97,106 +61,7 @@
       "description": "Reliable containers perfect for ice cream shops and takeout service.",
       "icon": "cup",
       "product_count": 5,
-      "image": "/assets/images/category-ice-cream-cups.jpg"
-    },
-    {
-      "id": "bakery-muffin-containers",
-      "name": "Bakery & Muffin Containers",
-      "slug": "bakery-muffin-containers",
-      "description": "Easy-to-use containers offering excellent protection for muffins and bakery items.",
-      "icon": "box",
-      "product_count": 4,
-      "image": "/assets/images/category-bakery-muffin.jpg"
-    },
-    {
-      "id": "round-hinged-containers",
-      "name": "Round Hinged Containers",
-      "slug": "round-hinged-containers",
-      "description": "Clear round hinge containers that keep food fresh and organized.",
-      "icon": "container",
-      "product_count": 7,
-      "image": "/assets/images/category-round-hinged.jpg"
-    },
-    {
-      "id": "round-pet",
-      "name": "Round PET",
-      "slug": "round-pet",
-      "description": "Food-safe disposable boxes designed specifically for Indian sweets.",
-      "icon": "container",
-      "product_count": 4,
-      "image": "/assets/images/category-round-pet.jpg"
-    },
-    {
-      "id": "round-food-packaging",
-      "name": "Round Food Packaging Containers",
-      "slug": "round-food-packaging",
-      "description": "Custom disposable containers for lassi, dhai, rasgula, and more.",
-      "icon": "container",
-      "product_count": 12,
-      "image": "/assets/images/category-round-food-packaging.jpg"
-    },
-    {
-      "id": "hinged-containers",
-      "name": "Hinged Containers",
-      "slug": "hinged-containers",
-      "description": "Hinged containers with tight seals to keep fruits, salads, and nuts fresh.",
-      "icon": "container",
-      "product_count": 12,
-      "image": "/assets/images/category-hinged-containers.jpg"
-    },
-    {
-      "id": "cookies-container",
-      "name": "Cookies Container",
-      "slug": "cookies-container",
-      "description": "Reusable and recyclable containers perfect for biscuits and sweets.",
-      "icon": "box",
-      "product_count": 4,
-      "image": "/assets/images/category-cookies-container.jpg"
-    },
-    {
-      "id": "disposable-lids",
-      "name": "Disposable Lids",
-      "slug": "disposable-lids",
-      "description": "Reusable lids made from sturdy materials to prevent messy spills.",
-      "icon": "cap",
-      "product_count": 0,
-      "image": "/assets/images/category-disposable-lids.jpg"
-    },
-    {
-      "id": "dry-cakes-cookies-packaging",
-      "name": "Dry Cakes & Cookies Packaging",
-      "slug": "dry-cakes-cookies-packaging",
-      "description": "Clear and robust containers ideal for hotel food storage and packaging.",
-      "icon": "box",
-      "product_count": 5,
-      "image": "/assets/images/category-dry-cakes.jpg"
-    },
-    {
-      "id": "rectangle-cookies-containers",
-      "name": "Rectangle Cookies Containers",
-      "slug": "rectangle-cookies-containers",
-      "description": "Three-compartment trays for storing assortments of cookies and biscuits.",
-      "icon": "box",
-      "product_count": 6,
-      "image": "/assets/images/category-rectangle-cookies.jpg"
-    },
-    {
-      "id": "platters",
-      "name": "Platters",
-      "slug": "platters",
-      "description": "Multi-compartment platters designed for superior stacking and consistent portion control. Perfect for food delivery and presentation.",
-      "icon": "box",
-      "product_count": 2,
-      "image": "/assets/images/category-platters.jpg"
-    },
-    {
-      "id": "portion-trays",
-      "name": "Portion Trays",
-      "slug": "portion-trays",
-      "description": "Portion trays designed for consistent serving sizes and easy organization.",
-      "icon": "box",
-      "product_count": 1,
-      "image": "/assets/images/category-portion-trays.jpg"
+      "image": "/assets/images/category-ice-cream-cups-glasses.jpg"
     }
   ]
 }

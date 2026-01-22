@@ -69,20 +69,18 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
+          <div className={styles.mobileMenuButtonWrapper}>
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={cn("focus-ring", styles.mobileMenuButton)}
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className={styles.mobileMenuIcon} />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className={styles.mobileMenuIcon} />
               )}
-            </Button>
+            </button>
           </div>
         </div>
 

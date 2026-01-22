@@ -9,9 +9,6 @@ import {
     CheckCircle,
     ArrowRight,
     Factory,
-    Zap,
-    Shield,
-    Clock
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import WhatsAppButton from "@/components/common/WhatsAppButton";

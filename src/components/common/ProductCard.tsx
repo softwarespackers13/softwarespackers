@@ -15,9 +15,7 @@ interface ProductCardProps {
     material: string;
     capacity_ml: number;
     short_description: string;
-    price_range: string;
     images: string[];
-    certifications?: string[];
   };
 }
 
@@ -28,7 +26,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <div className={styles.imageContainer}>
           <OptimizedImage
             src={product.images[0]}
-            alt={`${product.name} - ${product.material} container`}
+            alt={`${product.name}${product.material && product.material.trim() !== "" ? ` - ${product.material} container` : " container"}`}
             className={styles.productImage}
             loading="lazy"
           />
@@ -37,14 +35,18 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
         <CardContent className={styles.cardContent}>
           <div className={styles.badgesContainer}>
-            <Badge variant="secondary" className={styles.badge}>
-              {product.material}
-            </Badge>
-            <Badge variant="outline" className={styles.badge}>
-              {product.capacity_ml >= 1000
-                ? `${product.capacity_ml / 1000}L`
-                : `${product.capacity_ml}ml`}
-            </Badge>
+            {product.material && product.material.trim() !== "" && (
+              <Badge variant="secondary" className={styles.badge}>
+                {product.material}
+              </Badge>
+            )}
+            {product.capacity_ml > 0 && (
+              <Badge variant="outline" className={styles.badge}>
+                {product.capacity_ml >= 1000
+                  ? `${product.capacity_ml / 1000}L`
+                  : `${product.capacity_ml}ml`}
+              </Badge>
+            )}
           </div>
 
           <div className={styles.headerRow}>
@@ -62,7 +64,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
           <div className={styles.footer}>
             <div className={styles.priceInfo}>
-              <p className={styles.priceRange}>{product.price_range}</p>
               <p className={styles.sku}>SKU: {product.sku}</p>
             </div>
             <span className={styles.viewText}>

@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import {
     Calculator,
@@ -21,9 +21,13 @@ import { COMPANY_PHONE, COMPANY_WHATSAPP, IS_DEV } from "@/config/constants";
 import { logError } from "@/lib/errorHandler";
 import { ErrorSeverity } from "@/lib/errorHandler";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
+import productsData from "@/data/products.json";
 import styles from "./css/Quote.module.css";
 
 const Quote = () => {
+    const [searchParams] = useSearchParams();
+    const productSlug = searchParams.get("product");
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -39,6 +43,57 @@ const Quote = () => {
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Pre-fill form when product is passed via URL
+    useEffect(() => {
+        if (productSlug) {
+            const product = productsData.products.find((p) => p.slug === productSlug);
+            if (product) {
+                setFormData(prev => {
+                    // Only pre-fill if form is empty (hasn't been filled yet)
+                    if (prev.productType) {
+                        return prev; // Form already has data, don't overwrite
+                    }
+
+                    // Map product category to productType
+                    const categoryToProductType: Record<string, string> = {
+                        "Sweet Boxes": "Containers & Tubs",
+                        "PET Container": "Containers & Tubs",
+                        "Container": "Containers & Tubs",
+                        "Meal Boxes": "Containers & Tubs",
+                        "Bakery Products": "Containers & Tubs",
+                        "Hinge Boxes": "Containers & Tubs",
+                        "Ice Cream Cups & Glasses": "Containers & Tubs",
+                    };
+
+                    const mappedProductType = categoryToProductType[product.category] || "Containers & Tubs";
+
+                    // Set material if it matches available options
+                    const availableMaterials = ["HDPE", "PP", "PET", "Not Sure"];
+                    const productMaterial = availableMaterials.includes(product.material)
+                        ? product.material
+                        : "";
+
+                    // Build custom requirements text with product details
+                    const productDetails = [
+                        `Product: ${product.name}`,
+                        `SKU: ${product.sku}`,
+                        `Category: ${product.category}`,
+                        `Capacity: ${product.capacity_ml >= 1000 ? `${product.capacity_ml / 1000}L` : `${product.capacity_ml}ml`}`,
+                        `Material: ${product.material}`,
+                        `Packing: ${product.packing}`
+                    ].join("\n");
+
+                    return {
+                        ...prev,
+                        productType: mappedProductType,
+                        material: productMaterial,
+                        customRequirements: productDetails
+                    };
+                });
+            }
+        }
+    }, [productSlug]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;

@@ -3,10 +3,9 @@ import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowLeft, Download, Package, Ruler, CheckCircle } from "lucide-react";
+import { ArrowLeft, Package } from "lucide-react";
 import productsData from "@/data/products.json";
-import ProductCard from "@/components/common/ProductCard";
+import RelatedProductCard from "@/components/common/RelatedProductCard";
 import OptimizedImage from "@/components/common/OptimizedImage";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
 import { COMPANY_WHATSAPP } from "@/config/constants";
@@ -94,14 +93,10 @@ const ProductDetail = () => {
           {/* Info */}
           <div className={styles.infoContainer}>
             <div className={styles.badgesContainer}>
-              <Badge variant="secondary">{product.material}</Badge>
+              {product.material && product.material.trim() !== "" && (
+                <Badge variant="secondary">{product.material}</Badge>
+              )}
               <Badge variant="outline">{product.category}</Badge>
-              {product.certifications?.map((cert) => (
-                <Badge key={cert} variant="outline" className={styles.certificationBadge}>
-                  <CheckCircle className={styles.iconSmall} />
-                  {cert}
-                </Badge>
-              ))}
             </div>
 
             <h1 className={styles.productTitle}>{product.name}</h1>
@@ -116,18 +111,22 @@ const ProductDetail = () => {
                   Key Specifications
                 </h3>
                 <div className={styles.specsGrid}>
-                  <div>
-                    <p className={styles.specLabel}>Capacity</p>
-                    <p className={styles.specValue}>
-                      {product.capacity_ml >= 1000
-                        ? `${product.capacity_ml / 1000} L`
-                        : `${product.capacity_ml} ml`}
-                    </p>
-                  </div>
-                  <div>
-                    <p className={styles.specLabel}>Material</p>
-                    <p className={styles.specValue}>{product.material}</p>
-                  </div>
+                  {product.capacity_ml > 0 && (
+                    <div>
+                      <p className={styles.specLabel}>Capacity</p>
+                      <p className={styles.specValue}>
+                        {product.capacity_ml >= 1000
+                          ? `${product.capacity_ml / 1000} L`
+                          : `${product.capacity_ml} ml`}
+                      </p>
+                    </div>
+                  )}
+                  {product.material && product.material.trim() !== "" && (
+                    <div>
+                      <p className={styles.specLabel}>Material</p>
+                      <p className={styles.specValue}>{product.material}</p>
+                    </div>
+                  )}
                   {product.dimensions_mm && Object.keys(product.dimensions_mm).length > 0 && (
                     <div>
                       <p className={styles.specLabel}>Dimensions</p>
@@ -137,23 +136,19 @@ const ProductDetail = () => {
                           const parts: string[] = [];
                           if (dims.dia) parts.push(`Ø${dims.dia}mm`);
                           if (dims.length) parts.push(`${dims.length}mm`);
-                          if (dims.height) parts.push(`H${dims.height}mm`);
+                          if (dims.height) parts.push(`${dims.height}mm`);
                           return parts.join(' × ');
                         })()}
                       </p>
                     </div>
                   )}
                   <div>
-                    <p className={styles.specLabel}>MOQ</p>
-                    <p className={styles.specValue}>{product.moq} units</p>
+                    <p className={styles.specLabel}>Colors</p>
+                    <p className={styles.specValue}>{product.colors.join(", ")}</p>
                   </div>
                   <div>
                     <p className={styles.specLabel}>Packing</p>
                     <p className={styles.specValue}>{product.packing}</p>
-                  </div>
-                  <div>
-                    <p className={styles.specLabel}>Price Range</p>
-                    <p className={styles.specValue}>{product.price_range}</p>
                   </div>
                 </div>
               </CardContent>
@@ -165,94 +160,21 @@ const ProductDetail = () => {
                 Request Sample
               </Button>
               <Button asChild size="lg" variant="outline" className={cn(styles.buttonFull, "focus-ring")}>
-                <Link to="/quote">Add to Quote</Link>
-              </Button>
-            </div>
-
-            {/* Downloads */}
-            <div className={styles.downloadButtons}>
-              <Button variant="ghost" size="sm" className="focus-ring">
-                <Download className={styles.iconMedium} />
-                Technical Datasheet
-              </Button>
-              <Button variant="ghost" size="sm" className="focus-ring">
-                <Download className={styles.iconMedium} />
-                Packaging Layout
+                <Link to={`/quote?product=${product.slug}`}>Add to Quote</Link>
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Tabs */}
-        <Tabs defaultValue="description" className={styles.tabsContainer}>
-          <TabsList className={styles.tabsList}>
-            <TabsTrigger value="description" className="focus-ring">
-              Description
-            </TabsTrigger>
-            <TabsTrigger value="specs" className="focus-ring">
-              Technical Specs
-            </TabsTrigger>
-            <TabsTrigger value="certifications" className="focus-ring">
-              Certifications
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="description" className={styles.tabContent}>
-            <Card>
-              <CardContent className={styles.tabCard}>
-                <p className={styles.descriptionText}>{product.long_description}</p>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="specs" className={styles.tabContent}>
-            <Card>
-              <CardContent className={styles.tabCard}>
-                <div className={styles.specsList}>
-                  <div className={styles.specsRow}>
-                    <span className={styles.specsLabel}>Material Type</span>
-                    <span className={styles.specsValue}>{product.material}</span>
-                  </div>
-                  <div className={styles.specsRow}>
-                    <span className={styles.specsLabel}>Capacity</span>
-                    <span className={styles.specsValue}>
-                      {product.capacity_ml >= 1000
-                        ? `${product.capacity_ml / 1000} L`
-                        : `${product.capacity_ml} ml`}
-                    </span>
-                  </div>
-                  <div className={styles.specsRow}>
-                    <span className={styles.specsLabel}>Available Colors</span>
-                    <span className={styles.specsValue}>{product.colors.join(", ")}</span>
-                  </div>
-                  <div className={styles.specsRow}>
-                    <span className={styles.specsLabel}>Minimum Order</span>
-                    <span className={styles.specsValue}>{product.moq} units</span>
-                  </div>
-                  <div className={cn(styles.specsRow, styles.specsRowLast)}>
-                    <span className={styles.specsLabel}>Packing Details</span>
-                    <span className={styles.specsValue}>{product.packing}</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="certifications" className={styles.tabContent}>
-            <Card>
-              <CardContent className={styles.tabCard}>
-                <div className={styles.certificationsList}>
-                  {product.certifications?.map((cert) => (
-                    <Badge key={cert} variant="outline" className={styles.certificationBadgeLarge}>
-                      <CheckCircle className={cn(styles.iconMedium, styles.checkIcon)} />
-                      {cert}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+        {/* Description Section */}
+        <div className={styles.tabsContainer}>
+          <Card>
+            <CardContent className={styles.tabCard}>
+              <h3 className={styles.specsTitle}>Description</h3>
+              <p className={styles.descriptionText}>{product.long_description}</p>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
@@ -260,7 +182,7 @@ const ProductDetail = () => {
             <h2 className={styles.relatedTitle}>Related Products</h2>
             <div className={styles.relatedGrid}>
               {relatedProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <RelatedProductCard key={product.id} product={product} />
               ))}
             </div>
           </div>

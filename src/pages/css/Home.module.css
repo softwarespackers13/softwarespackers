@@ -31,6 +31,14 @@
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .container {
+    max-width: 1200px;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -52,7 +60,7 @@
 .heroSection {
   position: relative;
   min-height: 85vh;
-  padding-top: 2rem;
+  padding-top: 15px;
   padding-bottom: 4rem;
   background: linear-gradient(
     to bottom,
@@ -108,6 +116,38 @@
   z-index: 10;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heroContainer {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    align-items: flex-start;
+    padding-top: 0;
+    min-height: auto;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroContainer {
+    height: auto;
+    min-height: auto;
+    max-height: 625px;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 1.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    overflow: visible;
+  }
 }
 
 /* Subtle grid pattern overlay */
@@ -130,6 +170,7 @@
   gap: 3rem;
   align-items: center;
   width: 100%;
+  max-width: 100%;
   position: relative;
   z-index: 1;
 }
@@ -140,16 +181,18 @@
   justify-content: center;
   text-align: center;
   width: 100%;
+  min-height: auto;
 }
 
-.heroProducts {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  animation: fadeInUp 0.8s ease 0.5s both;
+  .heroProducts {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease 0.5s both;
+    height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -158,11 +201,294 @@
   }
 }
 
+/* Absolute Positioning - 5-Card Layout with Equal Gaps */
+
+/* Gap constant - equal spacing between all cards */
+:root {
+  --card-gap: 16px;
+  --card1-left-gap: 20px; /* Flexible left gap for Card 1 - adjust as needed */
+}
+
+/* Card 1: Small report preview - Top-left, positioned relative to Card 2 */
+.overlapCard1 {
+  position: absolute;
+  top: 40px;
+  right: calc(180px + var(--card-gap)); /* Positioned to the left of Card 2 */
+  width: 100px;
+  height: 110px;
+  animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+/* Card 2: Large blue visualization - Top-right, right-aligned */
+.overlapCard2 {
+  position: absolute;
+  top: 0;
+  right: 0; /* Right-aligned */
+  width: 180px;
+  height: 190px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+/* Card 3: Medium - Bottom-left, positioned relative to Card 5 */
+.overlapCard3 {
+  position: absolute;
+  top: calc(190px + var(--card-gap));
+  right: calc(140px + var(--card-gap) + 120px + var(--card-gap)); /* Positioned to the left of Card 4 */
+  width: 140px;
+  height: 160px;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+/* Card 4: Medium - Bottom-center, positioned relative to Card 5 */
+.overlapCard4 {
+  position: absolute;
+  top: calc(190px + var(--card-gap));
+  right: calc(140px + var(--card-gap)); /* Positioned to the left of Card 5 */
+  width: 120px;
+  height: 160px;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+/* Card 5: Large - Bottom-right, right-aligned */
+.overlapCard5 {
+  position: absolute;
+  top: calc(190px + var(--card-gap));
+  right: 0; /* Right-aligned */
+  width: 140px;
+  height: 160px;
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+/* iPad breakpoint (768px - 1023px) - Full width layout with larger Card 1 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .overlapContainer {
+    max-width: 100%;
+    width: 100%;
+    min-height: 480px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+  }
+
+  :root {
+    --card-gap: 12px;
+    --card1-left-gap: 0px;
+  }
+
+  .overlapCard1 {
+    top: 0;
+    left: 0;
+    width: calc(50% - var(--card-gap) / 2);
+    height: 280px;
+    right: auto;
+  }
+
+  .overlapCard2 {
+    top: 0;
+    right: 0;
+    left: auto;
+    width: calc(50% - var(--card-gap) / 2);
+    height: 280px;
+  }
+
+  .overlapCard3 {
+    top: calc(280px + var(--card-gap));
+    left: 0;
+    width: calc(33.333% - var(--card-gap) * 2 / 3);
+    height: 180px;
+    right: auto;
+  }
+
+  .overlapCard4 {
+    top: calc(280px + var(--card-gap));
+    left: calc(33.333% + var(--card-gap) / 3);
+    width: calc(33.333% - var(--card-gap) * 2 / 3);
+    height: 180px;
+    right: auto;
+  }
+
+  .overlapCard5 {
+    top: calc(280px + var(--card-gap));
+    right: 0;
+    left: auto;
+    width: calc(33.333% - var(--card-gap) * 2 / 3);
+    height: 180px;
+  }
+}
+
+/* iPad Pro (1024px - 1279px) - Reduced overlap card sizes, desktop alignment, no overlap */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .overlapContainer {
+    max-width: 100%;
+    min-height: calc(10px + 220px + 14px + 142px);
+    height: auto;
+    margin: 0;
+    margin-top: 180px;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow: visible;
+    display: block;
+  }
+
+  :root {
+    --card-gap: 14px;
+    --card1-left-gap: 0px;
+  }
+
+  /* Top row: 2 equal cards side by side, perfectly aligned */
+  /* Card sizes: 220px each, total width: 220 + 14 + 220 = 454px */
+  /* Positioned left (right: 20px offset) and up (top: 10px) */
+  .overlapCard1 {
+    top: 10px;
+    right: calc(220px + var(--card-gap) + 20px);
+    left: auto;
+    width: 220px;
+    height: 220px;
+  }
+
+  .overlapCard2 {
+    top: 10px;
+    right: 20px;
+    left: auto;
+    width: 220px;
+    height: 220px;
+  }
+
+  /* Bottom row: 3 equal cards side by side, perfectly aligned */
+  /* Total width must match top row: 454px */
+  /* With 3 cards and 2 gaps: 3w + 2*14 = 454, so 3w = 426, w = 142px */
+  /* Card sizes: 142px each, total: 142 + 14 + 142 + 14 + 142 = 454px */
+  /* Positioned left (right: 20px offset) and up (top: calc(220px + 14px + 10px)) */
+  .overlapCard3 {
+    top: calc(220px + var(--card-gap) + 10px);
+    right: calc(142px + var(--card-gap) + 142px + var(--card-gap) + 20px);
+    left: auto;
+    width: 142px;
+    height: 142px;
+  }
+
+  .overlapCard4 {
+    top: calc(220px + var(--card-gap) + 10px);
+    right: calc(142px + var(--card-gap) + 20px);
+    left: auto;
+    width: 142px;
+    height: 142px;
+  }
+
+  .overlapCard5 {
+    top: calc(220px + var(--card-gap) + 10px);
+    right: 20px;
+    left: auto;
+    width: 142px;
+    height: 142px;
+  }
+}
+
+/* Desktop breakpoint (1280px+) */
+@media (min-width: 1280px) {
+  .overlapContainer {
+    max-width: 40rem;
+    min-height: 510px;
+  }
+
+  :root {
+    --card-gap: 24px;
+    --card1-left-gap: 110px;
+  }
+
+  .overlapCard1 {
+    top: 140px;
+    right: calc(280px + var(--card-gap));
+    width: 130px;
+    height: 140px;
+  }
+
+  .overlapCard2 {
+    right: 0;
+    width: 280px;
+    height: 280px;
+  }
+
+  .overlapCard3 {
+    top: calc(280px + var(--card-gap));
+    right: calc(210px + var(--card-gap) + 160px + var(--card-gap));
+    width: 220px;
+    height: 200px;
+  }
+
+  .overlapCard4 {
+    top: calc(280px + var(--card-gap));
+    right: calc(210px + var(--card-gap));
+    width: 160px;
+    height: 200px;
+  }
+
+  .overlapCard5 {
+    top: calc(280px + var(--card-gap));
+    right: 0;
+    width: 210px;
+    height: 200px;
+  }
+}
+
+/* Large desktop breakpoint (1440px+) */
+@media (min-width: 1440px) {
+  .overlapContainer {
+    max-width: 40rem;
+    min-height: 550px;
+  }
+
+  :root {
+    --card-gap: 28px;
+    --card1-left-gap: 130px;
+  }
+
+  .overlapCard1 {
+    top: 150px;
+    right: calc(300px + var(--card-gap)); /* Positioned to the left of Card 2 */
+    width: 140px;
+    height: 150px;
+  }
+
+  .overlapCard2 {
+    right: 0; /* Right-aligned */
+    width: 300px;
+    height: 300px;
+  }
+
+  .overlapCard3 {
+    top: calc(300px + var(--card-gap));
+    right: calc(220px + var(--card-gap) + 170px + var(--card-gap)); /* Positioned to the left of Card 4 */
+    width: 230px;
+    height: 215px;
+  }
+
+  .overlapCard4 {
+    top: calc(300px + var(--card-gap));
+    right: calc(220px + var(--card-gap)); /* Positioned to the left of Card 5 */
+    width: 170px;
+    height: 215px;
+  }
+
+  .overlapCard5 {
+    top: calc(300px + var(--card-gap));
+    right: 0; /* Right-aligned */
+    width: 220px;
+    height: 215px;
+  }
+}
+
 .regionalBadge {
   display: inline-flex;
   align-items: center;
   animation: fadeInDown 0.6s ease;
-  margin-bottom: 1rem;
+  margin-bottom: 0px;
   padding: 0.375rem 1rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -214,21 +540,33 @@
 }
 
 .mainHeading {
-  font-family: 'Poppins', system-ui, sans-serif;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: hsl(var(--foreground));
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(2rem, 8vw, 96.0913px);
+  font-weight: 400;
+  color: oklch(0.226 0 0);
+  margin-top: 40px;
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.05em;
   letter-spacing: -0.02em;
   animation: fadeInUp 0.8s ease 0.2s both;
   text-shadow: 0 2px 4px rgb(0 0 0 / 0.02);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mainHeading {
+    margin-top: 0;
+  }
 }
 
 .mainHeadingBlock {
   display: block;
   margin-bottom: 0.5rem;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(1.75rem, 7vw, 85px);
 }
 
 .mainHeadingGradient {
@@ -262,13 +600,22 @@
 .subtitle {
   font-size: 1.125rem;
   color: hsl(var(--muted-foreground));
+  margin-top: 40px;
   margin-bottom: 2.5rem;
-  max-width: 36rem;
+  max-width: 25.625rem;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
   font-weight: 400;
   animation: fadeInUp 0.8s ease 0.4s both;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .subtitle {
+    margin-top: 0;
+  }
 }
 
 .ctaButtons {
@@ -279,7 +626,32 @@
   margin-bottom: 2.5rem;
 }
 
-/* Product Showcase Grid - 3 carousels: 1 large, 2 small */
+/* Absolute Positioning Card Container - 5-Card Custom Layout */
+.overlapContainer {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  margin: -8rem auto 0 auto; /* Negative top margin to move component up */
+  min-height: 370px; /* Adjusted for larger bottom cards */
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .overlapContainer {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .overlapContainer {
+    display: none; /* Hidden on mobile */
+  }
+}
+
+/* Product Showcase Grid - 3 carousels: 1 large, 2 small (Legacy) */
 .productGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -326,9 +698,10 @@
 }
 
 .primaryButton {
-  height: 3rem;
-  padding: 0 1.75rem;
-  font-size: 1rem;
+  width: 12.5rem !important;
+  height: 2.5rem !important;
+  padding: 0 1.25rem;
+  font-size: 0.8125rem !important;
   font-weight: 600;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -375,9 +748,9 @@
 }
 
 .outlineButton {
-  height: 3rem;
-  padding: 0 1.75rem;
-  font-size: 1rem;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
   font-weight: 600;
   border-width: 2px;
   background: hsl(var(--background) / 0.9);
@@ -438,6 +811,12 @@
   animation: bounce 2s infinite;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .scrollIndicator {
+    display: none;
+  }
+}
+
 .scrollIndicatorInner {
   width: 1.5rem;
   height: 2.5rem;
@@ -490,7 +869,8 @@
 
 /* Stats Section - Moved Below Hero */
 .statsSection {
-  padding: 2rem 0;
+  padding-top: 15px;
+  padding-bottom: 2rem;
   background: hsl(var(--background));
   border-top: 1px solid hsl(var(--border) / 0.5);
 }
@@ -522,7 +902,8 @@
 
 /* Categories Section */
 .categoriesSection {
-  padding: 2.5rem 0;
+  padding-top: 15px;
+  padding-bottom: 2.5rem;
   background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--secondary) / 0.3));
 }
 
@@ -532,10 +913,12 @@
 }
 
 .categoriesTitle {
-  font-family: 'Poppins', system-ui, sans-serif;
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(2rem, 8vw, 96.0913px);
+  font-weight: 800;
+  color: oklch(0.226 0 0);
   margin-bottom: 0.75rem;
+  line-height: 1.05em;
   letter-spacing: -0.02em;
 }
 
@@ -555,13 +938,6 @@
 
 @media (min-width: 768px) {
   .categoriesGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .categoriesGrid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
@@ -569,7 +945,8 @@
 
 /* Featured Products Section */
 .featuredSection {
-  padding: 2.5rem 0;
+  padding-top: 15px;
+  padding-bottom: 2.5rem;
   background: hsl(var(--background));
 }
 
@@ -605,13 +982,6 @@
 
 @media (min-width: 768px) {
   .featuredGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .featuredGrid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
   }
@@ -619,7 +989,8 @@
 
 /* Features Section */
 .featuresSection {
-  padding: 2.5rem 0;
+  padding-top: 15px;
+  padding-bottom: 2.5rem;
   background: linear-gradient(to bottom, hsl(var(--secondary) / 0.3), hsl(var(--background)));
 }
 
@@ -692,7 +1063,8 @@
 
 /* Materials Section */
 .materialsSection {
-  padding: 2rem 0;
+  padding-top: 15px;
+  padding-bottom: 2rem;
   background: hsl(var(--secondary) / 0.5);
 }
 
@@ -739,7 +1111,8 @@
 
 /* CTA Section */
 .ctaSection {
-  padding: 3rem 0;
+  padding-top: 15px;
+  padding-bottom: 3rem;
   background: linear-gradient(to bottom right, hsl(var(--primary)), hsl(var(--primary) / 0.95), hsl(var(--primary)));
   color: hsl(var(--primary-foreground));
   position: relative;
@@ -815,9 +1188,9 @@
 }
 
 .ctaPrimaryButton {
-  height: 3rem;
-  padding: 0 1.75rem;
-  font-size: 1rem;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
   font-weight: 600;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   transition: all 0.2s ease;
@@ -829,9 +1202,9 @@
 }
 
 .ctaOutlineButton {
-  height: 3rem;
-  padding: 0 1.75rem;
-  font-size: 1rem;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
   font-weight: 600;
   border-width: 2px;
   border-color: hsl(var(--primary-foreground) / 0.3);
@@ -868,10 +1241,64 @@
 }
 
 /* Responsive Design - Mobile First */
+@media (max-width: 639px) {
+  .heroSection {
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .mainHeading {
+    font-size: clamp(1.75rem, 10vw, 3rem);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .mainHeadingBlock {
+    font-size: clamp(1.5rem, 9vw, 2.5rem);
+    width: 100%;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .primaryButton,
+  .outlineButton {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .categoriesTitle {
+    font-size: clamp(1.75rem, 10vw, 3rem);
+  }
+
+  .featuredTitle {
+    font-size: 1.5rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+
+  .heroContent {
+    padding: 0 1rem;
+  }
+}
+
 @media (min-width: 640px) {
   .heroSection {
     min-height: 80vh;
-    padding-top: 2.5rem;
+    padding-top: 15px;
     padding-bottom: 5rem;
   }
 
@@ -879,25 +1306,42 @@
     gap: 4rem;
     min-height: calc(80vh - 10rem);
   }
+  
+  .heroContent {
+    min-height: auto;
+  }
 
   .mainHeading {
-    font-size: 3rem;
+    font-family: 'Phonic', sans-serif;
+    font-size: clamp(2.5rem, 10vw, 96.0913px);
+    color: oklch(0.226 0 0);
+    line-height: 1.05em;
+  }
+  
+  .mainHeadingBlock {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2rem, 8vw, 85px);
   }
   
   .subtitle {
-    font-size: 1.25rem;
-    max-width: 42rem;
+    font-size: 1.125rem;
+    max-width: 25.625rem;
   }
 
   .ctaButtons {
     gap: 1.25rem;
   }
   
+  .primaryButton {
+    width: 12.5rem !important;
+    height: 2.5rem !important;
+    font-size: 0.8125rem !important;
+  }
+  
   .primaryButton,
   .outlineButton {
-    height: 3.5rem;
-    padding: 0 2rem;
-    font-size: 1.0625rem;
+    padding: 0 1.5rem;
   }
 
   .productGrid {
@@ -927,57 +1371,154 @@
   }
 }
 
-@media (min-width: 768px) {
+/* iPad Mini (768px - 820px) - Compact but refined */
+@media (min-width: 768px) and (max-width: 820px) {
   .heroSection {
-    min-height: 85vh;
-    padding-top: 3rem;
+    min-height: auto;
+    max-height: none;
+    padding-top: 0.5rem;
     padding-bottom: 5rem;
+    overflow: visible;
+    display: flex;
+    align-items: flex-start;
   }
 
   .heroGrid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: auto;
+    margin-top: 0;
   }
+  
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* iPad Air (821px - 1023px) - Spacious, balanced layout */
+@media (min-width: 821px) and (max-width: 1023px) {
+  .heroSection {
+    min-height: auto;
+    max-height: none;
+    padding-top: 0.75rem;
+    padding-bottom: 5rem;
+    overflow: visible;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    align-items: stretch;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: auto;
+    margin-top: 0;
+  }
+  
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Shared iPad styles (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
 
   .heroContent {
     text-align: left;
     align-items: flex-start;
+    min-height: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 0;
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+  
+  .heroProducts {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    position: relative;
   }
 
   .regionalBadge {
     align-self: flex-start;
+    margin-bottom: 0.75rem;
   }
 
   .mainHeading {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.15;
+    margin-top: 0;
+    font-family: 'Phonic', sans-serif;
+    font-size: clamp(3rem, 7.5vw, 4.5rem);
+    color: oklch(0.226 0 0);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .mainHeadingBlock {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.125rem;
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.75rem, 7vw, 4rem);
+    word-wrap: break-word;
+    line-height: 1.1;
   }
   
   .subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
     max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.7;
+    color: hsl(var(--muted-foreground));
   }
 
   .ctaButtons {
     justify-content: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    gap: 0.875rem;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    margin-top: 0;
   }
 
+  .primaryButton {
+    width: auto !important;
+    min-width: 12rem !important;
+    height: 3rem !important;
+    font-size: 0.9375rem !important;
+    font-weight: 600;
+  }
+  
   .primaryButton,
   .outlineButton {
-    height: 3.75rem;
-    padding: 0 2.25rem;
-    font-size: 1.125rem;
+    padding: 0 1.75rem;
+    font-size: 0.9375rem;
+    height: 3rem;
+    font-weight: 600;
+  }
+  
+  .outlineButton {
+    height: 3rem;
   }
 
   .heroTrustIndicators {
@@ -986,7 +1527,299 @@
 
   .productGrid {
     max-width: 100%;
-    gap: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .productCardLarge {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+
+  .productCardSmall {
+    grid-column: span 1;
+    aspect-ratio: 1;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .categoriesTitle {
+    font-family: 'Phonic', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 5rem);
+    color: oklch(0.226 0 0);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .featuredTitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+  
+  .featuredGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .featuresTitle {
+    font-size: 2.75rem;
+  }
+  
+  .materialsTitle {
+    font-size: 2.25rem;
+  }
+
+  .ctaTitle {
+    font-size: 2.25rem;
+  }
+  
+  .statsSection {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .categoriesSection,
+  .featuredSection,
+  .featuresSection {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .materialsSection {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .ctaSection {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  .categoriesHeader,
+  .featuredHeader {
+    margin-bottom: 2.5rem;
+  }
+  
+  .categoriesSubtitle,
+  .featuredSubtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+}
+
+/* iPad Pro (1024px - 1279px) - Reduced sizes, desktop alignment, no overlap */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heroSection {
+    min-height: auto;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    overflow: visible;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 1150px;
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .heroContent {
+    text-align: left;
+    align-items: flex-start;
+    min-height: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 1.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .regionalBadge {
+    align-self: flex-start;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding: 0.375rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .mainHeading {
+    margin-top: 0.25rem;
+    font-family: 'Phonic', sans-serif;
+    font-size: clamp(3.5rem, 7vw, 4.75rem);
+    color: oklch(0.226 0 0);
+    margin-bottom: 1.25rem;
+    line-height: 1.05em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mainHeadingBlock {
+    margin-bottom: 0.25rem;
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(3rem, 6vw, 4rem);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .subtitle {
+    font-size: 0.9375rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 22rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .ctaButtons {
+    justify-content: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .primaryButton {
+    width: auto !important;
+    min-width: 11rem !important;
+    height: 2.5rem !important;
+    font-size: 0.8125rem !important;
+  }
+  
+  .primaryButton,
+  .outlineButton {
+    padding: 0 1.375rem;
+    font-size: 0.875rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+  }
+  
+  .heroProducts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    padding-left: 0.5rem;
+    padding-top: 0;
+    margin-top: 180px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    overflow: visible;
+  }
+}
+
+/* Desktop breakpoint (1280px+) - Full desktop styles */
+@media (min-width: 1280px) {
+  .heroSection {
+    min-height: 90vh;
+    padding-top: 15px;
+    padding-bottom: 6rem;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .heroContent {
+    text-align: left;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .regionalBadge {
+    align-self: flex-start;
+  }
+
+  .mainHeading {
+    margin-top: 1rem;
+    font-family: 'Phonic', sans-serif;
+    font-size: 96.0913px;
+    color: oklch(0.226 0 0);
+    margin-bottom: 2rem;
+    line-height: 1.05em;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .mainHeadingBlock {
+    margin-bottom: 1rem;
+    width: 1100px;
+    max-width: 1100px;
+    font-size: 85px;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 25.625rem;
+  }
+
+  .ctaButtons {
+    justify-content: flex-start;
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .primaryButton {
+    width: 12.5rem !important;
+    height: 2.5rem !important;
+    font-size: 0.8125rem !important;
+  }
+  
+  .primaryButton,
+  .outlineButton {
+    padding: 0 1.625rem;
+  }
+
+  .heroTrustIndicators {
+    justify-content: flex-start;
+  }
+
+  .productGrid {
+    max-width: 100%;
+    gap: 1.75rem;
   }
 
   .productCardLarge {
@@ -1004,11 +1837,24 @@
   }
   
   .categoriesTitle {
-    font-size: 3rem;
+    font-family: 'Phonic', sans-serif;
+    font-size: 96.0913px;
+    color: oklch(0.226 0 0);
+    line-height: 1.05em;
+  }
+  
+  .categoriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
   
   .featuredTitle {
     font-size: 2.5rem;
+  }
+  
+  .featuredGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
   }
   
   .featuresTitle {
@@ -1020,76 +1866,29 @@
   }
 
   .ctaTitle {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   
   .statsSection {
-    padding: 2.5rem 0;
+    padding-top: 15px;
+    padding-bottom: 2.5rem;
   }
 
   .categoriesSection,
   .featuredSection,
   .featuresSection {
-    padding: 3rem 0;
+    padding-top: 15px;
+    padding-bottom: 3rem;
   }
 
   .materialsSection {
-    padding: 2.5rem 0;
+    padding-top: 15px;
+    padding-bottom: 2.5rem;
   }
 
   .ctaSection {
-    padding: 3rem 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .heroSection {
-    min-height: 90vh;
-    padding-top: 3.5rem;
-    padding-bottom: 6rem;
-  }
-
-  .heroGrid {
-    gap: 5rem;
-  }
-
-  .mainHeading {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-  }
-
-  .mainHeadingBlock {
-    margin-bottom: 1rem;
-  }
-  
-  .subtitle {
-    font-size: 1.375rem;
-    margin-bottom: 3rem;
-    max-width: 32rem;
-  }
-
-  .ctaButtons {
-    gap: 1.75rem;
-  }
-
-  .productGrid {
-    gap: 1.75rem;
-  }
-  
-  .categoriesGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .featuredGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .categoriesTitle {
-    font-size: 3.5rem;
-  }
-  
-  .ctaTitle {
-    font-size: 3rem;
+    padding-top: 15px;
+    padding-bottom: 3rem;
   }
 }
 

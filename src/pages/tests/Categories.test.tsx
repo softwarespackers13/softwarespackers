@@ -104,17 +104,6 @@ describe('Categories Page', () => {
     expect(screen.getByText('Bottle caps and closures')).toBeInTheDocument();
   });
 
-  it('applies correct grid layout classes', () => {
-    const { container } = render(
-      <BrowserRouter>
-        <Categories />
-      </BrowserRouter>
-    );
-
-    const grid = container.querySelector('.grid');
-    expect(grid).toHaveClass('grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-3');
-  });
-
   it('has proper container structure', () => {
     const { container } = render(
       <BrowserRouter>
@@ -122,8 +111,12 @@ describe('Categories Page', () => {
       </BrowserRouter>
     );
 
-    expect(container.querySelector('.min-h-screen')).toBeInTheDocument();
-    expect(container.querySelector('.container')).toBeInTheDocument();
+    // Check for CSS module classes (they have hashed names)
+    const pageContainer = container.querySelector('[class*="pageContainer"]');
+    const mainContainer = container.querySelector('[class*="container"]');
+
+    expect(pageContainer).toBeInTheDocument();
+    expect(mainContainer).toBeInTheDocument();
   });
 });
 

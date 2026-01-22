@@ -1,229 +1,165 @@
-import { useState, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
-import { Input } from "@/components/ui/input";
+import { useMemo, useEffect } from "react";
+import { useSearchParams, Link, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { Search } from "lucide-react";
 import categoriesData from "@/data/categories.json";
 import productsData from "@/data/products.json";
 import CategoryCard from "@/components/common/CategoryCard";
 import ProductCard from "@/components/common/ProductCard";
-import { sanitizeInput } from "@/lib/validation";
+import Pagination from "@/components/common/Pagination";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
 import styles from "./css/Categories.module.css";
-import { cn } from "@/lib/utils";
 
 // Import company constants from config
 import { COMPANY_WHATSAPP } from "@/config/constants";
 
+const PRODUCTS_PER_PAGE = 9;
+
 const Categories = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState("");
-  const [sortBy, setSortBy] = useState("featured");
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const categorySlug = searchParams.get("category");
+  const currentPage = parseInt(searchParams.get("page") || "1", 10);
 
-  const categoryFilter = searchParams.get("category");
-  const categories = categoriesData.categories;
+  const categories = useMemo(() => categoriesData.categories, []);
 
-  // Filter categories by search
-  const filteredCategories = useMemo(() => {
-    let filtered = [...categories];
+  // Get selected category
+  const selectedCategory = useMemo(
+    () => categories.find((cat) => cat.slug === categorySlug),
+    [categories, categorySlug]
+  );
 
-    if (searchQuery) {
-      const sanitizedQuery = sanitizeInput(searchQuery).toLowerCase();
-      filtered = filtered.filter(
-        (cat) =>
-          cat.name.toLowerCase().includes(sanitizedQuery) ||
-          cat.description.toLowerCase().includes(sanitizedQuery)
+  // Filter products by category
+  // Special case: PET Container category shows all PET products regardless of their category
+  const categoryProducts = useMemo(() => {
+    if (!categorySlug || !selectedCategory) return [];
+
+    // If viewing PET Container category, show all PET products
+    if (selectedCategory.slug === "pet-container") {
+      return productsData.products.filter(
+        (product) => product.material === "PET"
       );
     }
 
-    return filtered;
-  }, [searchQuery, categories]);
+    // Otherwise, filter by category name
+    return productsData.products.filter(
+      (product) => product.category === selectedCategory.name
+    );
+  }, [categorySlug, selectedCategory]);
 
-  // Filter products if category is selected
-  const filteredProducts = useMemo(() => {
-    if (!categoryFilter) return [];
+  // Calculate pagination
+  const totalPages = useMemo(() => {
+    return Math.ceil(categoryProducts.length / PRODUCTS_PER_PAGE);
+  }, [categoryProducts.length]);
 
-    let filtered = [...productsData.products];
-    const categoryName = categories.find(c => c.slug === categoryFilter)?.name;
+  // Get paginated products (only render current page's products for performance)
+  const paginatedProducts = useMemo(() => {
+    const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+    const endIndex = startIndex + PRODUCTS_PER_PAGE;
+    return categoryProducts.slice(startIndex, endIndex);
+  }, [categoryProducts, currentPage]);
 
-    if (categoryName) {
-      filtered = filtered.filter((p) => p.category === categoryName);
-    }
-
-    // Search filter with sanitization
-    if (searchQuery) {
-      const sanitizedQuery = sanitizeInput(searchQuery).toLowerCase();
-      filtered = filtered.filter(
-        (p) =>
-          p.name.toLowerCase().includes(sanitizedQuery) ||
-          p.sku.toLowerCase().includes(sanitizedQuery) ||
-          p.category.toLowerCase().includes(sanitizedQuery)
-      );
-    }
-
-    // Sort
-    if (sortBy === "name-asc") {
-      filtered.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortBy === "capacity-asc") {
-      filtered.sort((a, b) => (a.capacity_ml || 0) - (b.capacity_ml || 0));
-    } else if (sortBy === "capacity-desc") {
-      filtered.sort((a, b) => (b.capacity_ml || 0) - (a.capacity_ml || 0));
-    }
-
-    return filtered;
-  }, [searchQuery, categoryFilter, sortBy, categories]);
-
-  const clearFilters = () => {
-    setSearchQuery("");
-    setSearchParams({});
-    setSortBy("featured");
+  // Handle page change
+  const handlePageChange = (page: number) => {
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set("page", page.toString());
+    navigate(`/categories?${newSearchParams.toString()}`, { replace: true });
+    // Scroll to top of products section
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const hasActiveFilters = searchQuery || categoryFilter;
-  const showProducts = categoryFilter !== null;
+  // Reset to page 1 if current page is invalid
+  useEffect(() => {
+    if (categorySlug && selectedCategory && currentPage > totalPages && totalPages > 0) {
+      const newSearchParams = new URLSearchParams(searchParams);
+      newSearchParams.set("page", "1");
+      navigate(`/categories?${newSearchParams.toString()}`, { replace: true });
+    }
+  }, [categorySlug, selectedCategory, currentPage, totalPages, searchParams, navigate]);
 
   return (
     <div className={styles.pageContainer}>
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <h1 className={styles.title}>
-            {showProducts
-              ? categories.find(c => c.slug === categoryFilter)?.name || "Products"
-              : "Product Categories"}
-          </h1>
-          <p className={styles.subtitle}>
-            {showProducts
-              ? `Browse products in ${categories.find(c => c.slug === categoryFilter)?.name || "this category"}`
-              : "Explore our comprehensive range of plastic packaging solutions organized by application and industry"}
-          </p>
-        </div>
-
-        {/* Filter Bar */}
-        <div className={styles.filterBar}>
-          <div className={styles.filterGrid}>
-            {/* Search */}
-            <div className={cn(styles.searchContainer, "md:col-span-4")}>
-              <Search className={styles.searchIcon} aria-hidden="true" />
-              <Input
-                placeholder="Search products, SKU..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className={cn(styles.searchInput, "focus-ring")}
-                aria-label="Search products"
-                type="search"
-                autoComplete="off"
-              />
-            </div>
-
-            {/* Category */}
-            <div className="md:col-span-3">
-              <Select
-                value={categoryFilter || "all"}
-                onValueChange={(value) =>
-                  value === "all" ? setSearchParams({}) : setSearchParams({ category: value })
-                }
-              >
-                <SelectTrigger className="focus-ring">
-                  <SelectValue placeholder="All Categories" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Categories</SelectItem>
-                  {categories.map((cat) => (
-                    <SelectItem key={cat.id} value={cat.slug}>
-                      {cat.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Sort */}
-            <div className="md:col-span-3">
-              <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="focus-ring">
-                  <SelectValue placeholder="Sort by" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="featured">Featured</SelectItem>
-                  <SelectItem value="name-asc">Name (A-Z)</SelectItem>
-                  <SelectItem value="capacity-asc">Capacity (Low-High)</SelectItem>
-                  <SelectItem value="capacity-desc">Capacity (High-Low)</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Clear */}
-            <div className="md:col-span-2">
-              <Button
-                variant="outline"
-                onClick={clearFilters}
-                disabled={!hasActiveFilters}
-                className={cn(styles.fullWidth, "focus-ring")}
-              >
-                Clear Filters
-              </Button>
-            </div>
-          </div>
-
-          {/* Active Filters */}
-          {hasActiveFilters && (
-            <div className={styles.activeFilters}>
-              {categoryFilter && (
-                <Badge variant="secondary" className="cursor-pointer" onClick={clearFilters}>
-                  {categories.find(c => c.slug === categoryFilter)?.name} ×
-                </Badge>
+          {categorySlug && selectedCategory ? (
+            <>
+              <div className={styles.backButtonContainer}>
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="sm"
+                  className={styles.backButton}
+                >
+                  <Link to="/categories">
+                    <ArrowLeft className={styles.backIcon} />
+                    Back to Categories
+                  </Link>
+                </Button>
+              </div>
+              <h1 className={styles.title}>
+                {selectedCategory.name}
+              </h1>
+              <p className={styles.subtitle}>
+                {selectedCategory.description}
+              </p>
+              {categoryProducts.length > 0 && (
+                <p className={styles.resultsCount}>
+                  {categoryProducts.length} {categoryProducts.length === 1 ? "product" : "products"} found
+                </p>
               )}
-            </div>
+            </>
+          ) : (
+            <>
+              <h1 className={styles.title}>Product Categories</h1>
+              <p className={styles.subtitle}>
+                Explore our comprehensive range of plastic packaging solutions organized by application and industry
+              </p>
+            </>
           )}
         </div>
 
-        {/* Show Products if category is selected, otherwise show Categories */}
-        {showProducts ? (
+        {/* Products Grid - Show when category is selected */}
+        {categorySlug && selectedCategory && (
           <>
-            {/* Results Count */}
-            <div className={styles.resultsCount}>
-              {filteredProducts.length > 0 ? (
-                <>Showing {filteredProducts.length} product{filteredProducts.length !== 1 ? "s" : ""} in {categories.find(c => c.slug === categoryFilter)?.name}</>
-              ) : (
-                <>No products found in {categories.find(c => c.slug === categoryFilter)?.name}</>
-              )}
-            </div>
-
-            {/* Products Grid */}
-            {filteredProducts.length > 0 ? (
-              <div className={styles.productsGrid}>
-                {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
-              </div>
+            {categoryProducts.length > 0 ? (
+              <>
+                <div className={styles.productsGrid}>
+                  {paginatedProducts.map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
+                {totalPages > 1 && (
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                  />
+                )}
+              </>
             ) : (
               <div className={styles.emptyState}>
-                <p className={styles.emptyStateText}>No products found matching your criteria</p>
-                <Button onClick={clearFilters} variant="outline" className="focus-ring">
-                  Clear all filters
+                <p className={styles.emptyStateText}>
+                  No products found in this category.
+                </p>
+                <Button asChild variant="outline" className={styles.backButton}>
+                  <Link to="/categories">
+                    <ArrowLeft className={styles.backIcon} />
+                    Back to Categories
+                  </Link>
                 </Button>
               </div>
             )}
           </>
-        ) : (
-          <>
-            {/* Results Count */}
-            {searchQuery && (
-              <div className={styles.resultsCount}>
-                Showing {filteredCategories.length} categor{filteredCategories.length !== 1 ? "ies" : "y"}
-              </div>
-            )}
+        )}
 
-            {/* Categories Grid */}
-            <div className={styles.categoriesGrid}>
-              {filteredCategories.map((category) => (
-                <CategoryCard key={category.id} category={category} />
-              ))}
-            </div>
-          </>
+        {/* Categories Grid - Show when no category is selected */}
+        {!categorySlug && (
+          <div className={styles.categoriesGrid}>
+            {categories.map((category) => (
+              <CategoryCard key={category.id} category={category} />
+            ))}
+          </div>
         )}
       </div>
       {/* Floating WhatsApp Button */}
