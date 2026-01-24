@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
     Wrench,
     Package,
@@ -80,10 +79,6 @@ const Custom = () => {
             <div className={styles.container}>
                 {/* Hero Section */}
                 <div className={styles.hero}>
-                    <Badge className={styles.badge} variant="secondary">
-                        <Wrench className="h-3.5 w-3.5 mr-1.5" />
-                        Custom Solutions
-                    </Badge>
                     <h1 className={styles.title}>Custom Plastic Container Solutions</h1>
                     <p className={styles.subtitle}>
                         Need containers that don't exist in our catalog? We design and manufacture custom plastic containers

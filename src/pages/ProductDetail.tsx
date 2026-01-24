@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Package } from "lucide-react";
 import productsData from "@/data/products.json";
+import categoriesData from "@/data/categories.json";
 import RelatedProductCard from "@/components/common/RelatedProductCard";
 import OptimizedImage from "@/components/common/OptimizedImage";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
@@ -25,7 +26,7 @@ const ProductDetail = () => {
           <Button asChild>
             <Link to="/categories">
               <ArrowLeft className={styles.iconMedium} />
-              Back to Categories
+              Back to Products
             </Link>
           </Button>
         </div>
@@ -39,6 +40,17 @@ const ProductDetail = () => {
     );
   }
 
+  // Find the category slug for the product's category
+  const categorySlug = useMemo(() => {
+    const category = categoriesData.categories.find(
+      (cat) => cat.name === product.category
+    );
+    return category?.slug || null;
+  }, [product.category]);
+
+  // Build the back link - if we have a category slug, go to that category page, otherwise go to categories
+  const backLink = categorySlug ? `/categories?category=${categorySlug}` : "/categories";
+
   const relatedProducts = productsData.products
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 3);
@@ -49,9 +61,9 @@ const ProductDetail = () => {
         {/* Breadcrumb */}
         <div className={styles.breadcrumb}>
           <Button asChild variant="ghost" className="focus-ring">
-            <Link to="/categories">
+            <Link to={backLink}>
               <ArrowLeft className={styles.iconMedium} />
-              Back to Categories
+              Back to Products
             </Link>
           </Button>
         </div>

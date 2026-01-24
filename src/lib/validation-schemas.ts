@@ -22,17 +22,15 @@ export const contactFormSchema = z.object({
         .max(255, "Email must be less than 255 characters"),
     phone: z
         .string()
-        .optional()
+        .min(1, "Phone number is required")
         .refine(
             (val) => !val || val === "" || /^\+?[\d\s\-()]+$/.test(val),
             { message: "Invalid phone number format" }
-        )
-        .transform((val) => val || ""),
-    company: z
+        ),
+    interest: z
         .string()
-        .max(200, "Company name must be less than 200 characters")
-        .optional()
-        .transform((val) => val || ""),
+        .min(1, "Please select an interest option")
+        .max(200, "Interest option must be less than 200 characters"),
     message: z
         .string()
         .min(1, "Message is required")

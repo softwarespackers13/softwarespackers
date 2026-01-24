@@ -48,8 +48,8 @@ const BrandCarousel = ({
 
     // Logos that should be larger
     const largerLogos = ['Super Cremica', 'Ginni', 'Lovely'];
-    const largerLogoHeight = 72; // 28% larger than default 56px
-    const defaultLogoHeight = 56;
+    const largerLogoHeight = 95; // 28% larger than default 56px
+    const defaultLogoHeight = 70;
 
     // Custom render function to apply different sizes
     const renderLogoItem = useCallback((item: { src?: string; alt?: string; title?: string; name?: string }, key: string) => {
@@ -93,7 +93,7 @@ const BrandCarousel = ({
                     direction="left"
                     logoHeight={defaultLogoHeight}
                     gap={40}
-                    hoverSpeed={0}
+                    hoverSpeed={10}
                     scaleOnHover
                     fadeOut
                     fadeOutColor="hsl(var(--background))"

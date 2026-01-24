@@ -1,8 +1,20 @@
-/* About Page Styles */
+/* About Page Styles - World-Class UI */
+
+/* Scroll Fade Animation */
+.scrollFade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scrollFade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .pageContainer {
   min-height: 100vh;
-  padding: 3rem 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .container {
@@ -49,7 +61,175 @@
   }
 }
 
-.hero {
+/* Hero Section */
+.heroSection {
+  position: relative;
+  padding: 4rem 1rem 3rem;
+  background: 
+    url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&h=1080&fit=crop&q=80') center/cover no-repeat;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%),
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroContent {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.heroBadgeIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.heroTitle {
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.heroSubheading {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* Know Who We Are Section */
+.knowWhoWeAreSection {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.knowWhoWeAreContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.knowWhoWeAreText {
+  max-width: 100%;
+}
+
+.knowWhoWeAreBadge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.knowWhoWeAreBadgeLine {
+  width: 3rem;
+  height: 2px;
+  background: hsl(var(--primary));
+  flex-shrink: 0;
+}
+
+.knowWhoWeAreBadge span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.knowWhoWeAreTitle {
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
+}
+
+.knowWhoWeAreDescription {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+  max-width: 36rem;
+}
+
+.knowWhoWeAreImages {
+  width: 100%;
+}
+
+.knowWhoWeAreImageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.knowWhoWeAreImageItem {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: #f8f9fa;
+}
+
+.knowWhoWeAreImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* What Makes Us Different Section */
+.whatMakesUsDifferentSection {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.whatMakesUsDifferentHeader {
   text-align: center;
   margin-bottom: 4rem;
   max-width: 48rem;
@@ -57,282 +237,695 @@
   margin-right: auto;
 }
 
-.badge {
-  margin-bottom: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-
-.subtitle {
-  font-size: 1.125rem;
-  color: hsl(var(--muted-foreground));
-  line-height: 1.7;
-}
-
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 5rem;
-}
-
-.statCard {
-  text-align: center;
-  border: 1px solid hsl(var(--border));
-}
-
-.statContent {
-  padding: 2rem 1.5rem;
+.whatMakesUsDifferentAccent {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.statIcon {
-  width: 2.5rem;
-  height: 2.5rem;
-  color: hsl(var(--accent));
+.whatMakesUsDifferentAccentLine {
+  width: 2rem;
+  height: 1px;
+  background: hsl(var(--primary));
+  border-top: 1px dashed hsl(var(--primary));
 }
 
-.statValue {
-  font-size: 2.5rem;
+.whatMakesUsDifferentAccent span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.whatMakesUsDifferentTitle {
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
   color: hsl(var(--foreground));
 }
 
-.statLabel {
-  font-size: 0.9375rem;
+.whatMakesUsDifferentSubtitle {
+  font-size: 1.125rem;
   color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+}
+
+.whatMakesUsDifferentContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.whatMakesUsDifferentImageColumn {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.whatMakesUsDifferentImageWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 0.75rem;
+  overflow: visible;
+}
+
+.whatMakesUsDifferentMainImage {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.75rem;
+}
+
+.whatMakesUsDifferentCard {
+  position: absolute;
+  bottom: -2.5rem;
+  right: 0.25rem;
+  background: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary));
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 2;
+}
+
+.whatMakesUsDifferentCardTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.storySection {
-  margin-bottom: 5rem;
+.whatMakesUsDifferentProgressCircle {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.storyContent {
-  max-width: 48rem;
-  margin: 0 auto;
+.whatMakesUsDifferentProgressSvg {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
 }
 
-.sectionTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.sectionSubtitle {
-  font-size: 1.125rem;
-  color: hsl(var(--muted-foreground));
-  margin-bottom: 3rem;
-  text-align: center;
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.storyText {
+.whatMakesUsDifferentProgressContent {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.storyText p {
+.whatMakesUsDifferentProgressValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.whatMakesUsDifferentProgressLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.25rem;
+}
+
+.whatMakesUsDifferentProgressBar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.whatMakesUsDifferentProgressBarFill {
+  width: 98%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.whatMakesUsDifferentTextColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.whatMakesUsDifferentTextBlock {
+  max-width: 100%;
+}
+
+.whatMakesUsDifferentTextHeading {
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: hsl(var(--foreground));
+}
+
+.whatMakesUsDifferentTextParagraph {
   font-size: 1.0625rem;
   line-height: 1.8;
   color: hsl(var(--muted-foreground));
 }
 
-.valuesSection {
-  margin-bottom: 5rem;
-  text-align: center;
+/* Stats Section */
+.statsSection {
+  position: relative;
+  padding: 6rem 1rem;
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 100%),
+    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=600&fit=crop&q=80') center/cover no-repeat;
+  color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.valuesGrid {
+.statsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.statsGrid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-top: 3rem;
-}
-
-.valueCard {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.valueCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1);
-}
-
-.valueContent {
-  padding: 2rem;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.valueIconWrapper {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 0.75rem;
-  background: hsl(var(--accent) / 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
-}
-
-.valueIcon {
-  width: 2rem;
-  height: 2rem;
-  color: hsl(var(--accent));
-}
-
-.valueTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.valueDescription {
-  font-size: 0.9375rem;
-  color: hsl(var(--muted-foreground));
-  line-height: 1.6;
-}
-
-.milestonesSection {
-  margin-bottom: 5rem;
-  text-align: center;
-}
-
-.milestonesTimeline {
-  max-width: 42rem;
-  margin: 3rem auto 0;
+.statItem {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  position: relative;
-}
-
-.milestonesTimeline::before {
-  content: '';
-  position: absolute;
-  left: 1.25rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: hsl(var(--border));
-}
-
-.milestoneItem {
-  display: flex;
   align-items: center;
-  gap: 2rem;
-  position: relative;
-  text-align: left;
+  justify-content: center;
 }
 
-.milestoneYear {
-  font-size: 1.5rem;
+.statValue {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 700;
-  color: hsl(var(--primary));
-  min-width: 4rem;
-  text-align: right;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1;
 }
 
-.milestoneEvent {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  background: hsl(var(--accent) / 0.05);
-  border-radius: 0.5rem;
-  flex: 1;
-  font-size: 1rem;
-  color: hsl(var(--foreground));
+.statLabel {
+  font-size: clamp(0.9375rem, 2vw, 1.125rem);
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: 0.02em;
 }
 
-.milestoneIcon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: hsl(var(--accent));
-  flex-shrink: 0;
-}
-
-.missionCard {
-  background: hsl(var(--accent) / 0.05);
-  border: 1px solid hsl(var(--border));
+/* Our Mission Section */
+.missionSection {
+  padding: 6rem 0;
+  background: #ffffff;
 }
 
 .missionContent {
-  padding: 3rem 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
   text-align: center;
+}
+
+.missionBadge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.missionBadgeLine {
+  width: 2rem;
+  height: 2px;
+  background: hsl(var(--primary));
+  flex-shrink: 0;
+}
+
+.missionBadge span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.missionTitle {
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: hsl(var(--foreground));
+}
+
+.missionText {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
   max-width: 48rem;
   margin: 0 auto;
 }
 
-.missionTitle {
-  font-size: 2rem;
-  font-weight: 700;
+/* Our Infrastructure Section */
+.infrastructureSection {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.infrastructureContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.infrastructureBadge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 
-.missionText {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: hsl(var(--muted-foreground));
+.infrastructureBadgeLine {
+  width: 2rem;
+  height: 2px;
+  background: hsl(var(--primary));
+  flex-shrink: 0;
 }
 
-/* Responsive Design */
-@media (min-width: 640px) {
-  .title {
-    font-size: 3rem;
-  }
+.infrastructureBadge span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
-  .statsGrid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.infrastructureTitle {
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: hsl(var(--foreground));
+  text-align: left;
+}
 
-  .valuesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.infrastructureLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: start;
+}
 
-  .milestonesTimeline::before {
-    left: 2rem;
-  }
-
-  .milestoneItem {
+@media (min-width: 768px) {
+  .infrastructureLayout {
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 3rem;
+    align-items: start;
   }
+}
 
-  .milestoneYear {
-    min-width: 5rem;
+.infrastructureTextColumn {
+  text-align: left;
+}
+
+.infrastructureDescription {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.infrastructureCarouselColumn {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .infrastructureCarouselColumn {
+    height: 350px;
   }
 }
 
 @media (min-width: 1024px) {
-  .pageContainer {
-    padding: 4rem 0;
-  }
-
-  .title {
-    font-size: 3.5rem;
-  }
-
-  .valuesGrid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .milestonesTimeline {
-    max-width: 56rem;
+  .infrastructureCarouselColumn {
+    height: 400px;
   }
 }
 
+.infrastructureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.infrastructureItem {
+  padding: 2rem 1.5rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.infrastructureNumber {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: hsl(var(--primary));
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.infrastructureLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.25rem;
+}
+
+.infrastructureDetail {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Companies Section */
+.companiesSection {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.companiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.companyCard {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  overflow: hidden;
+}
+
+.companyContent {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.companyIconWrapper {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companyIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #ffffff;
+}
+
+.companyName {
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: hsl(var(--foreground));
+}
+
+.companyDescription {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Services Section */
+.servicesSection {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.servicesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.servicesContent {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.servicesTitle {
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.servicesText {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* Mission Section */
+.missionSection {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.missionCard {
+  max-width: 56rem;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+.missionContent {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.missionIconWrapper {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missionIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #ffffff;
+}
+
+.missionTitle {
+  font-family: 'Phonic', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
+}
+
+.missionText {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .heroSection {
+    padding: 5rem 1rem 3.5rem;
+  }
+
+  .knowWhoWeAreImageGrid {
+    gap: 2rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .statsContainer {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .statsSection {
+    padding: 6rem 1rem;
+  }
+
+  .statsContainer {
+    padding: 0 1rem;
+  }
+
+  .statsGrid {
+    gap: 1rem;
+  }
+
+  .statValue {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .knowWhoWeAreContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .knowWhoWeAreText {
+    max-width: none;
+  }
+
+  .whatMakesUsDifferentContent {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+  }
+
+  .whatMakesUsDifferentImageColumn {
+    max-width: 550px;
+    margin: 0;
+  }
+
+  .whatMakesUsDifferentMainImage {
+    max-height: 450px;
+  }
+
+  .whatMakesUsDifferentCard {
+    bottom: -3rem;
+    right: 0.5rem;
+    min-width: 220px;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 6rem 1rem 4rem;
+  }
+
+  .companiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .companyContent {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .missionContent {
+    padding: 5rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroSection {
+    padding: 7rem 1rem 5rem;
+  }
+
+  .statsSection {
+    padding: 8rem 2rem;
+  }
+
+  .statsContainer {
+    padding: 0 2rem;
+  }
+
+  .statsGrid {
+    gap: 2.5rem;
+  }
+
+  .missionSection,
+  .infrastructureSection {
+    padding: 6rem 0;
+  }
+
+  .infrastructureGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .heroSection {
+    padding: 8rem 1rem 6rem;
+  }
+}

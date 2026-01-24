@@ -2,7 +2,7 @@
 
 .pageContainer {
   min-height: 100vh;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 .container {
@@ -55,12 +55,6 @@
   max-width: 48rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.badge {
-  margin-bottom: 1.5rem;
-  display: inline-flex;
-  align-items: center;
 }
 
 .title {
@@ -249,10 +243,6 @@
 }
 
 @media (min-width: 1024px) {
-  .pageContainer {
-    padding: 4rem 0;
-  }
-
   .title {
     font-size: 3.5rem;
   }

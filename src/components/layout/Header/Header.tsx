@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import styles from "./Header.module.css";
 import { cn } from "@/lib/utils";
+import categoriesData from "@/data/categories.json";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const categories = categoriesData.categories;
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Categories", href: "/categories" },
+    { name: "Categories", href: "/categories", hasDropdown: true },
     { name: "Custom Solutions", href: "/custom" },
-    { name: "About", href: "/about" },
+    { name: "About Us", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -47,15 +49,41 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className={styles.desktopNav}>
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={cn(styles.navLink, isActive(item.href) && styles.navLinkActive)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              if (item.hasDropdown && item.name === "Categories") {
+                return (
+                  <div key={item.name} className={styles.dropdownContainer}>
+                    <Link
+                      to={item.href}
+                      className={cn(styles.navLink, styles.navLinkWithDropdown, isActive(item.href) && styles.navLinkActive)}
+                    >
+                      {item.name}
+                      <ChevronDown className={styles.dropdownIcon} />
+                    </Link>
+                    <div className={styles.dropdown}>
+                      {categories.map((category) => (
+                        <Link
+                          key={category.id}
+                          to={`/categories?category=${category.slug}`}
+                          className={styles.dropdownItem}
+                        >
+                          {category.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={cn(styles.navLink, isActive(item.href) && styles.navLinkActive)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Desktop Actions */}
@@ -97,16 +125,43 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className={styles.mobileMenu}>
             <div className={styles.mobileMenuInner}>
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={cn(styles.mobileNavLink, isActive(item.href) && styles.mobileNavLinkActive)}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                if (item.hasDropdown && item.name === "Categories") {
+                  return (
+                    <div key={item.name}>
+                      <Link
+                        to={item.href}
+                        className={cn(styles.mobileNavLink, isActive(item.href) && styles.mobileNavLinkActive)}
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                      <div className={styles.mobileDropdown}>
+                        {categories.map((category) => (
+                          <Link
+                            key={category.id}
+                            to={`/categories?category=${category.slug}`}
+                            className={styles.mobileDropdownItem}
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {category.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={cn(styles.mobileNavLink, isActive(item.href) && styles.mobileNavLinkActive)}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
               <div className={styles.mobileMenuDivider}>
                 <Button asChild className={styles.mobileCtaButton}>
                   <Link to="/quote" onClick={() => setMobileMenuOpen(false)}>

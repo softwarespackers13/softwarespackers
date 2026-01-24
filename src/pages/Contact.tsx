@@ -1,22 +1,26 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import {
     Phone,
     Mail,
     MapPin,
-    Clock,
     Send,
-    MessageSquare,
     CheckCircle,
-    AlertCircle
+    AlertCircle,
+    ChevronDown,
+    Facebook,
+    Instagram,
+    Linkedin,
+    Youtube,
+    Twitter
 } from "lucide-react";
 import { sanitizeInput } from "@/lib/validation";
 import { contactFormSchema, type ContactFormData } from "@/lib/validation-schemas";
-import { COMPANY_PHONE, COMPANY_EMAIL, COMPANY_ADDRESS, COMPANY_WHATSAPP, IS_DEV } from "@/config/constants";
+import { COMPANY_PHONE, COMPANY_PHONE_SECONDARY, COMPANY_EMAIL, COMPANY_ADDRESS, COMPANY_WHATSAPP, IS_DEV, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "@/config/constants";
+import emailjs from "@emailjs/browser";
 import { logError } from "@/lib/errorHandler";
 import { ErrorSeverity } from "@/lib/errorHandler";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
@@ -27,18 +31,18 @@ const Contact = () => {
         name: "",
         email: "",
         phone: "",
-        company: "",
+        interest: "",
         message: ""
     });
     const [submitted, setSubmitted] = useState(false);
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
-            [name]: sanitizeInput(value)
+            [name]: value
         }));
         // Clear error for this field when user starts typing
         if (errors[name]) {
@@ -56,19 +60,55 @@ const Contact = () => {
         setErrors({});
 
         try {
+            // Sanitize form data before validation
+            const sanitizedData = {
+                name: sanitizeInput(formData.name),
+                email: sanitizeInput(formData.email),
+                phone: sanitizeInput(formData.phone),
+                interest: sanitizeInput(formData.interest),
+                message: sanitizeInput(formData.message)
+            };
+
             // Validate form data
-            const validatedData = contactFormSchema.parse(formData);
+            const validatedData = contactFormSchema.parse(sanitizedData);
 
             // Log in development mode only
             if (IS_DEV) {
                 console.log("Form submitted:", validatedData);
             }
 
-            // In a real app, this would send data to an API
-            // await submitContactForm(validatedData);
-
-            // Log successful submission
-            logError("Contact form submitted successfully", { component: 'Contact' }, ErrorSeverity.INFO);
+            // Send email to admin using EmailJS
+            if (EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY) {
+                try {
+                    await emailjs.send(
+                        EMAILJS_SERVICE_ID,
+                        EMAILJS_TEMPLATE_ID,
+                        {
+                            from_name: validatedData.name,
+                            from_email: validatedData.email,
+                            phone: validatedData.phone || "Not provided",
+                            interest: validatedData.interest || "Not specified",
+                            message: validatedData.message,
+                            to_email: COMPANY_EMAIL,
+                        },
+                        EMAILJS_PUBLIC_KEY
+                    );
+                    
+                    // Log successful submission
+                    logError("Contact form submitted successfully", { component: 'Contact' }, ErrorSeverity.INFO);
+                } catch (emailError) {
+                    // Log email error but don't fail the form submission
+                    logError(emailError as Error, { component: 'Contact', action: 'email_send' });
+                    console.error("Failed to send email:", emailError);
+                    // Still show success to user, but log the error
+                }
+            } else {
+                // EmailJS not configured - log warning
+                if (IS_DEV) {
+                    console.warn("EmailJS not configured. Please set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY");
+                }
+                logError("Contact form submitted successfully (EmailJS not configured)", { component: 'Contact' }, ErrorSeverity.INFO);
+            }
 
             setSubmitted(true);
             setTimeout(() => {
@@ -77,7 +117,7 @@ const Contact = () => {
                     name: "",
                     email: "",
                     phone: "",
-                    company: "",
+                    interest: "",
                     message: ""
                 });
             }, 3000);
@@ -101,31 +141,12 @@ const Contact = () => {
         }
     };
 
-    const contactInfo = [
-        {
-            icon: Phone,
-            title: "Phone",
-            content: COMPANY_PHONE.replace(/(\d{2})(\d{5})(\d{5})/, "+$1-$2-$3"), // Format: +91-88728-32012
-            link: `tel:${COMPANY_PHONE}`
-        },
-        {
-            icon: Mail,
-            title: "Email",
-            content: COMPANY_EMAIL,
-            link: `mailto:${COMPANY_EMAIL}`
-        },
-        {
-            icon: MapPin,
-            title: "Address",
-            content: COMPANY_ADDRESS,
-            link: null
-        },
-        {
-            icon: Clock,
-            title: "Business Hours",
-            content: "Mon - Sat: 9:00 AM - 6:00 PM",
-            link: null
-        }
+    const interestOptions = [
+        "Product Inquiry",
+        "Custom Solutions",
+        "Bulk Orders",
+        "Partnership",
+        "General Inquiry"
     ];
 
     return (
@@ -133,225 +154,217 @@ const Contact = () => {
             <div className={styles.container}>
                 {/* Hero Section */}
                 <div className={styles.hero}>
-                    <Badge className={styles.badge} variant="secondary">
-                        <MessageSquare className={styles.iconSmall} />
-                        Get in Touch
-                    </Badge>
-                    <h1 className={styles.title}>Contact Us</h1>
+                    <h1 className={styles.title}>Contact us.</h1>
                     <p className={styles.subtitle}>
-                        Have questions about our products or services? We're here to help.
-                        Reach out to our team and we'll get back to you as soon as possible.
+                        Get in touch and ask us anything. Questions about our products, custom solutions, bulk orders, or partnership opportunities - we answer it all.
                     </p>
                 </div>
 
-                <div className={styles.contentGrid}>
-                    {/* Contact Form */}
-                    <Card className={styles.formCard}>
-                        <CardHeader>
-                            <CardTitle>Send us a Message</CardTitle>
-                            <CardDescription>
-                                Fill out the form below and we'll respond as soon as possible
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            {submitted ? (
-                                <div className={styles.successMessage}>
-                                    <CheckCircle className={styles.successIcon} />
-                                    <p>Thank you! Your message has been sent. We'll get back to you soon.</p>
-                                </div>
-                            ) : (
-                                <form onSubmit={handleSubmit} className={styles.form}>
-                                    <div className={styles.formGroup}>
-                                        <label htmlFor="name" className={styles.label}>
-                                            Name <span className={styles.required}>*</span>
-                                        </label>
-                                        <Input
-                                            id="name"
-                                            name="name"
-                                            type="text"
-                                            required
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            placeholder="Your full name"
-                                            className={styles.input}
-                                            aria-invalid={errors.name ? "true" : "false"}
-                                            aria-describedby={errors.name ? "name-error" : undefined}
-                                        />
-                                        {errors.name && (
-                                            <p id="name-error" className={styles.errorMessage} role="alert">
-                                                <AlertCircle className={styles.errorIcon} />
-                                                {errors.name}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    <div className={styles.formGroup}>
-                                        <label htmlFor="email" className={styles.label}>
-                                            Email <span className={styles.required}>*</span>
-                                        </label>
-                                        <Input
-                                            id="email"
-                                            name="email"
-                                            type="email"
-                                            required
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            placeholder="your.email@example.com"
-                                            className={styles.input}
-                                            aria-invalid={errors.email ? "true" : "false"}
-                                            aria-describedby={errors.email ? "email-error" : undefined}
-                                        />
-                                        {errors.email && (
-                                            <p id="email-error" className={styles.errorMessage} role="alert">
-                                                <AlertCircle className={styles.errorIcon} />
-                                                {errors.email}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    <div className={styles.formGroup}>
-                                        <label htmlFor="phone" className={styles.label}>
-                                            Phone
-                                        </label>
-                                        <Input
-                                            id="phone"
-                                            name="phone"
-                                            type="tel"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            placeholder="+91-8872832012"
-                                            className={styles.input}
-                                            aria-invalid={errors.phone ? "true" : "false"}
-                                            aria-describedby={errors.phone ? "phone-error" : undefined}
-                                        />
-                                        {errors.phone && (
-                                            <p id="phone-error" className={styles.errorMessage} role="alert">
-                                                <AlertCircle className={styles.errorIcon} />
-                                                {errors.phone}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    <div className={styles.formGroup}>
-                                        <label htmlFor="company" className={styles.label}>
-                                            Company
-                                        </label>
-                                        <Input
-                                            id="company"
-                                            name="company"
-                                            type="text"
-                                            value={formData.company}
-                                            onChange={handleChange}
-                                            placeholder="Your company name"
-                                            className={styles.input}
-                                        />
-                                    </div>
-
-                                    <div className={styles.formGroup}>
-                                        <label htmlFor="message" className={styles.label}>
-                                            Message <span className={styles.required}>*</span>
-                                        </label>
-                                        <Textarea
-                                            id="message"
-                                            name="message"
-                                            required
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            placeholder="Tell us about your requirements..."
-                                            rows={6}
-                                            className={styles.textarea}
-                                            aria-invalid={errors.message ? "true" : "false"}
-                                            aria-describedby={errors.message ? "message-error" : undefined}
-                                        />
-                                        {errors.message && (
-                                            <p id="message-error" className={styles.errorMessage} role="alert">
-                                                <AlertCircle className={styles.errorIcon} />
-                                                {errors.message}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    {errors.submit && (
-                                        <div className={styles.alertMessage} role="alert">
-                                            <p className={styles.alertText}>
-                                                <AlertCircle className={styles.alertIcon} />
-                                                {errors.submit}
-                                            </p>
-                                        </div>
+                {/* Contact Form */}
+                <div className={styles.formSection}>
+                    {submitted ? (
+                        <div className={styles.successMessage}>
+                            <CheckCircle className={styles.successIcon} />
+                            <p>Thank you! Your message has been sent. We'll get back to you soon.</p>
+                        </div>
+                    ) : (
+                        <form onSubmit={handleSubmit} className={styles.form}>
+                            <div className={styles.formRow}>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="name" className={styles.label}>
+                                        Your name <span className={styles.required}>*</span>
+                                    </label>
+                                    <Input
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        required
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        placeholder="Your name"
+                                        className={styles.input}
+                                        aria-invalid={errors.name ? "true" : "false"}
+                                    />
+                                    {errors.name && (
+                                        <p className={styles.errorMessage} role="alert">
+                                            {errors.name}
+                                        </p>
                                     )}
-
-                                    <Button
-                                        type="submit"
-                                        size="lg"
-                                        className={styles.submitButton}
-                                        disabled={isSubmitting}
-                                        aria-busy={isSubmitting}
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <span className="mr-2">Sending...</span>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <Send className={styles.iconMedium} />
-                                                Send Message
-                                            </>
-                                        )}
-                                    </Button>
-                                </form>
-                            )}
-                        </CardContent>
-                    </Card>
-
-                    {/* Contact Information */}
-                    <div className={styles.infoSection}>
-                        <Card className={styles.infoCard}>
-                            <CardHeader>
-                                <CardTitle>Contact Information</CardTitle>
-                                <CardDescription>
-                                    Reach out to us through any of these channels
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <div className={styles.infoGrid}>
-                                    {contactInfo.map((info, index) => {
-                                        const Icon = info.icon;
-                                        const content = info.link ? (
-                                            <a href={info.link} className={styles.infoLink}>
-                                                {info.content}
-                                            </a>
-                                        ) : (
-                                            <span>{info.content}</span>
-                                        );
-
-                                        return (
-                                            <div key={index} className={styles.infoItem}>
-                                                <div className={styles.infoIconWrapper}>
-                                                    <Icon className={styles.infoIcon} />
-                                                </div>
-                                                <div className={styles.infoContent}>
-                                                    <h3 className={styles.infoTitle}>{info.title}</h3>
-                                                    <p className={styles.infoText}>{content}</p>
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
                                 </div>
-                            </CardContent>
-                        </Card>
 
-                        <Card className={styles.helpCard}>
-                            <CardContent className={styles.helpContent}>
-                                <h3 className={styles.helpTitle}>Need Immediate Assistance?</h3>
-                                <p className={styles.helpText}>
-                                    For urgent inquiries or bulk orders, call us directly or use WhatsApp for faster response.
-                                </p>
-                                <Button asChild size="lg" className={styles.helpButton}>
-                                    <a href={`tel:${COMPANY_PHONE}`}>
-                                        <Phone className={styles.iconMedium} />
-                                        Call Now
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="email" className={styles.label}>
+                                        Email address <span className={styles.required}>*</span>
+                                    </label>
+                                    <Input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        required
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="Email address"
+                                        className={styles.input}
+                                        aria-invalid={errors.email ? "true" : "false"}
+                                    />
+                                    {errors.email && (
+                                        <p className={styles.errorMessage} role="alert">
+                                            {errors.email}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+
+                            <div className={styles.formRow}>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="phone" className={styles.label}>
+                                        Phone number <span className={styles.required}>*</span>
+                                    </label>
+                                    <Input
+                                        id="phone"
+                                        name="phone"
+                                        type="tel"
+                                        required
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        placeholder="+91 98140 82012"
+                                        className={styles.input}
+                                        aria-invalid={errors.phone ? "true" : "false"}
+                                    />
+                                    {errors.phone && (
+                                        <p className={styles.errorMessage} role="alert">
+                                            {errors.phone}
+                                        </p>
+                                    )}
+                                </div>
+
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="interest" className={styles.label}>
+                                        Interested in <span className={styles.required}>*</span>
+                                    </label>
+                                    <div className={styles.selectWrapper}>
+                                        <select
+                                            id="interest"
+                                            name="interest"
+                                            required
+                                            value={formData.interest}
+                                            onChange={handleChange}
+                                            className={styles.select}
+                                        >
+                                            <option value="">Select an option</option>
+                                            {interestOptions.map((option) => (
+                                                <option key={option} value={option}>
+                                                    {option}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <ChevronDown className={styles.selectIcon} />
+                                    </div>
+                                    {errors.interest && (
+                                        <p className={styles.errorMessage} role="alert">
+                                            {errors.interest}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label htmlFor="message" className={styles.label}>
+                                    How can we help? <span className={styles.required}>*</span>
+                                </label>
+                                <Textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    placeholder="How can we help?"
+                                    rows={6}
+                                    className={styles.textarea}
+                                    aria-invalid={errors.message ? "true" : "false"}
+                                />
+                                {errors.message && (
+                                    <p className={styles.errorMessage} role="alert">
+                                        {errors.message}
+                                    </p>
+                                )}
+                            </div>
+
+                            {errors.submit && (
+                                <div className={styles.alertMessage} role="alert">
+                                    <p className={styles.alertText}>
+                                        <AlertCircle className={styles.alertIcon} />
+                                        {errors.submit}
+                                    </p>
+                                </div>
+                            )}
+
+                            <Button
+                                type="submit"
+                                size="lg"
+                                className={styles.submitButton}
+                                disabled={isSubmitting}
+                                aria-busy={isSubmitting}
+                            >
+                                {isSubmitting ? "Sending..." : "Send your message"}
+                            </Button>
+
+
+                        </form>
+                    )}
+                </div>
+
+                {/* Map and Contact Info Section */}
+                <div className={styles.mapContactSection}>
+                    <div className={styles.mapColumn}>
+                        <div className={styles.map}>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1710.5549722632534!2d75.8182403!3d30.9674139!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a85075f9c5067%3A0xfc0b1866caa4bea2!2sVishal%20enterprises!5e0!3m2!1sen!2sin!4v1769291101273!5m2!1sen!2sin"
+                                loading="lazy"
+                                title="Head Office Location"
+                            ></iframe>
+                        </div>
+                    </div>
+
+                    <div className={styles.contactInfoColumn}>
+                        <Card className={styles.contactInfoCard}>
+                            <CardContent className={styles.contactInfoContent}>
+                                <div className={styles.contactInfoItem}>
+                                    <span className={styles.contactInfoLabel}>Address</span>
+                                    <p className={styles.contactInfoValue}>{COMPANY_ADDRESS}</p>
+                                </div>
+                                <div className={styles.contactInfoItem}>
+                                    <span className={styles.contactInfoLabel}>Email</span>
+                                    <a href={`mailto:${COMPANY_EMAIL}`} className={styles.contactInfoValue}>
+                                        {COMPANY_EMAIL}
                                     </a>
-                                </Button>
+                                </div>
+                                <div className={styles.contactInfoItem}>
+                                    <span className={styles.contactInfoLabel}>Phone</span>
+                                    <a href={`tel:${COMPANY_PHONE}`} className={styles.contactInfoValue}>
+                                        {COMPANY_PHONE.replace(/(\d{2})(\d{5})(\d{5})/, "+$1 $2 $3")}
+                                    </a>
+                                </div>
+                                <div className={styles.socialIcons}>
+                                    <a
+                                        href="https://www.facebook.com/SoftwaresPackers12"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.socialIcon}
+                                        aria-label="Facebook"
+                                    >
+                                        <Facebook className={styles.socialIconSvg} />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/softwares_packers/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.socialIcon}
+                                        aria-label="Instagram"
+                                    >
+                                        <Instagram className={styles.socialIconSvg} />
+                                    </a>
+                                </div>
                             </CardContent>
                         </Card>
                     </div>

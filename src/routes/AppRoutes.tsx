@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import LogoLoader from "@/components/common/LogoLoader";
+import LoadingAnimation from "@/components/common/LoadingAnimation";
 import ErrorBoundary from "@/components/common/ErrorBoundary";
 
 // Lazy load pages for code splitting
@@ -16,7 +16,7 @@ const NotFound = lazy(() => import("@/pages/NotFound"));
 // Loading component - Professional logo-based loader
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-screen bg-background">
-    <LogoLoader size="lg" showText={true} />
+    <LoadingAnimation size="lg" showText={true} />
   </div>
 );
 

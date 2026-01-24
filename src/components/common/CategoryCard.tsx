@@ -12,6 +12,7 @@ interface CategoryCardProps {
     description: string;
     product_count: number;
     image: string;
+    hover_image?: string;
   };
 }
 
@@ -26,8 +27,14 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
             className={styles.categoryImage}
             loading="lazy"
           />
-          {/* Gradient overlay on hover */}
-          <div className={styles.gradientOverlay}></div>
+          {category.hover_image && (
+            <OptimizedImage
+              src={category.hover_image}
+              alt={`${category.name} category hover`}
+              className={styles.categoryImageHover}
+              loading="lazy"
+            />
+          )}
         </div>
         <CardContent className={styles.cardContent}>
           <div className={styles.headerRow}>
