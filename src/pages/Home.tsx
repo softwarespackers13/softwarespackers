@@ -3,12 +3,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  CheckCircle,
-  Clock,
-  Award,
   ArrowRight,
-  Phone,
-  MapPin
+  ChevronDown,
+  Check,
 } from "lucide-react";
 import categoriesData from "@/data/categories.json";
 import clientsData from "@/data/clients.json";
@@ -37,14 +34,29 @@ const Home = () => {
   // Note: Empty dependency array is safe here because categoriesData is imported statically
   const categories = useMemo(() => categoriesData.categories, []); // Static data - safe to use empty array
 
-  // Get first 5 categories for showcase layout
+  // Mapping function for hero section images
+  const getHeroImage = (categorySlug: string): string => {
+    const heroImageMap: Record<string, string> = {
+      'pet-container': '/assets/home-hero/pet.jpeg',
+      'container': '/assets/home-hero/containers.jpg',
+      'sweet-boxes': '/assets/home-hero/sweet-box.webp',
+      'meal-boxes': '/assets/home-hero/meal-box.jpeg',
+      'bakery-products': '/assets/home-hero/bakery.jpeg',
+    };
+    return heroImageMap[categorySlug] || '';
+  };
+
+  // Get first 5 categories for showcase layout with hero images
   const showcaseCategories = useMemo(() => {
     const cats = categories.slice(0, 5);
     // If we have fewer than 5, cycle through available categories
     while (cats.length < 5 && categories.length > 0) {
       cats.push(...categories.slice(0, 5 - cats.length));
     }
-    return cats.slice(0, 5);
+    return cats.slice(0, 5).map(cat => ({
+      ...cat,
+      heroImage: getHeroImage(cat.slug) || cat.image // Use hero image if available, fallback to regular image
+    }));
   }, [categories]);
 
   return (
@@ -59,7 +71,7 @@ const Home = () => {
               {/* Main Heading */}
               <h1 className={styles.mainHeading}>
                 <span className={styles.mainHeadingBlock}>
-                  Complete Packaging Solution
+                  Complete <span className={styles.mainHeadingRed}>Packaging</span> Solutions
                 </span>
                 <span className={styles.mainHeadingBlock}>
                   Under One Roof
@@ -68,9 +80,17 @@ const Home = () => {
               </h1>
 
               {/* Subtitle */}
-              <p className={styles.subtitle}>
-                Quality containers for food, storage, and industry. Custom sizes, bulk pricing, and fast delivery across India
-              </p>
+              <div className={styles.subtitle}>
+                <p className={styles.subtitleLine}>
+                  <Check className={styles.subtitleTick} aria-hidden="true" />
+                  Quality containers for food, storage, and industry.
+                </p>
+                <p className={styles.subtitleLine}>
+                  <Check className={styles.subtitleTick} aria-hidden="true" />
+                  Custom sizes, bulk pricing, and fast delivery across India
+                </p>
+              </div>
+
 
               {/* CTA Buttons */}
               <div className={styles.ctaButtons}>
@@ -152,9 +172,7 @@ const Home = () => {
 
         {/* Scroll Indicator */}
         <div className={styles.scrollIndicator}>
-          <div className={styles.scrollIndicatorInner}>
-            <div className={styles.scrollIndicatorDot}></div>
-          </div>
+          <ChevronDown className={styles.scrollIndicatorArrow} />
         </div>
       </section>
 
@@ -198,23 +216,23 @@ const Home = () => {
         <IndustriesCarousel
           industries={[
             {
-              image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&h=600&fit=crop&q=80",
+              image: "/assets/industries/bakery.jpg",
               name: "Bakeries"
             },
             {
-              image: "https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=1200&h=600&fit=crop&q=80",
+              image: "/assets/industries/restaurant.jpg",
               name: "Restaurants"
             },
             {
-              image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=1200&h=600&fit=crop&q=80",
+              image: "/assets/industries/ice-cream-parlour.jpg",
               name: "Ice-Cream Parlours"
             },
             {
-              image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1200&h=600&fit=crop&q=80",
+              image: "/assets/industries/sweet-shops.jpg",
               name: "Sweet Shops"
             },
             {
-              image: "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=1200&h=600&fit=crop&q=80",
+              image: "/assets/industries/confectionery.jpg",
               name: "Confectionery"
             }
           ]}
@@ -275,14 +293,16 @@ const Home = () => {
               <p className={styles.aboutUsDescription}>
                 Softwares Packers is a leading manufacturer of premium <strong>plastic containers</strong> and packaging solutions, specializing in food-grade containers, storage solutions, and industrial packaging. We are committed to delivering <strong>quality products</strong> that meet the highest standards for food safety, durability, and functionality. Our comprehensive range includes containers for food service, storage applications, and industrial use, all designed with precision and manufactured using advanced techniques. At Softwares Packers, we focus on providing <strong>complete packaging solutions</strong> that help businesses across various industries thrive. Our dedication to excellence, innovation, and customer satisfaction makes us a trusted partner for all your packaging needs.
               </p>
-              <Button
-                asChild
-                size="lg"
+              <Link
+                to="/about"
                 className={styles.aboutUsButton}
                 aria-label="Learn more about us"
               >
-                <Link to="/about">Know More</Link>
-              </Button>
+                <span className={styles.learnMoreCircle} aria-hidden="true">
+                  <span className={`${styles.learnMoreIcon} ${styles.arrow}`}></span>
+                </span>
+                <span className={styles.learnMoreText}>Know More</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -294,7 +314,8 @@ const Home = () => {
         className={`${styles.ctaSection} scroll-fade ${ctaFade.isVisible ? 'visible' : ''}`}
         aria-label="Call to action"
       >
-        <div className={styles.ctaBackgroundPattern} aria-hidden="true"></div>
+        <div className={styles.ctaBackgroundImage} aria-hidden="true"></div>
+        <div className={styles.ctaProductLeft} aria-hidden="true"></div>
         <div className={cn(styles.container, styles.ctaContent)}>
           <div className={styles.ctaInner}>
             <div className={styles.ctaTextWrapper}>
@@ -324,8 +345,34 @@ const Home = () => {
                 className={styles.ctaSecondaryButton}
                 aria-label="Learn more"
               >
-                <Link to="/about">Learn More</Link>
+                <Link to="/about">
+                  Learn More
+                  <ArrowRight className={styles.ctaButtonIcon} aria-hidden="true" />
+                </Link>
               </Button>
+            </div>
+          </div>
+        </div>
+        <div className={styles.ctaFeatures}>
+          <div className={styles.ctaFeaturesContainer}>
+            <div className={styles.ctaFeatureItem}>
+              <Check className={styles.ctaFeatureCheck} aria-hidden="true" />
+              <span>Custom Sizes</span>
+            </div>
+            <div className={styles.ctaFeatureSeparator} aria-hidden="true"></div>
+            <div className={styles.ctaFeatureItem}>
+              <Check className={styles.ctaFeatureCheck} aria-hidden="true" />
+              <span>Bulk Pricing</span>
+            </div>
+            <div className={styles.ctaFeatureSeparator} aria-hidden="true"></div>
+            <div className={styles.ctaFeatureItem}>
+              <Check className={styles.ctaFeatureCheck} aria-hidden="true" />
+              <span>Fast Delivery Across India</span>
+            </div>
+            <div className={styles.ctaFeatureSeparator} aria-hidden="true"></div>
+            <div className={styles.ctaFeatureItem}>
+              <Check className={styles.ctaFeatureCheck} aria-hidden="true" />
+              <span>Food-Grade & Leakproof</span>
             </div>
           </div>
         </div>

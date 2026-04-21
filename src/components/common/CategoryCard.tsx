@@ -27,14 +27,6 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
             className={styles.categoryImage}
             loading="lazy"
           />
-          {category.hover_image && (
-            <OptimizedImage
-              src={category.hover_image}
-              alt={`${category.name} category hover`}
-              className={styles.categoryImageHover}
-              loading="lazy"
-            />
-          )}
         </div>
         <CardContent className={styles.cardContent}>
           <div className={styles.headerRow}>
@@ -45,9 +37,6 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
               <ArrowRight className={styles.icon} />
             </div>
           </div>
-          <p className={styles.description}>
-            {category.description}
-          </p>
           <div className={styles.footer}>
             <span className={styles.productCount}>
               {category.product_count} Products

@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useState, useMemo, useEffect } from "react";
+import { useParams, Link, useSearchParams, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,15 +10,53 @@ import RelatedProductCard from "@/components/common/RelatedProductCard";
 import OptimizedImage from "@/components/common/OptimizedImage";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
 import { COMPANY_WHATSAPP } from "@/config/constants";
+import { groupProductsByConfig, getProductGroup, formatCapacity, formatVariantDisplay, type Product, type GroupedProduct } from "@/lib/productUtils";
 import styles from "./css/ProductDetail.module.css";
 import { cn } from "@/lib/utils";
 
 const ProductDetail = () => {
   const { slug } = useParams();
-  const product = productsData.products.find((p) => p.slug === slug);
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  
+  // Group all products using config
+  const allGroupedProducts = useMemo(() => {
+    return groupProductsByConfig(productsData.products as Product[], {
+      productGroups: productsData.productGroups || [],
+      standaloneProducts: productsData.standaloneProducts || []
+    });
+  }, []);
+
+  // Find product - check if slug matches a base slug or individual product slug
+  const product = useMemo(() => {
+    // First try to find by exact slug
+    let found = productsData.products.find((p) => p.slug === slug) as Product | undefined;
+    
+    // If not found, check if it's a base slug
+    if (!found) {
+      const group = allGroupedProducts.find((g) => g.baseSlug === slug);
+      if (group) {
+        found = group.representative;
+      }
+    }
+    
+    return found;
+  }, [slug, allGroupedProducts]);
+
+  // Get product group if this product is part of a group
+  const productGroup = useMemo(() => {
+    if (!product) return null;
+    return getProductGroup(product, allGroupedProducts);
+  }, [product, allGroupedProducts]);
+
+  // Always show the representative product (variants are just for info display)
+  const displayProduct = useMemo(() => {
+    return productGroup?.representative || product;
+  }, [productGroup, product]);
+
   const [selectedImage, setSelectedImage] = useState(0);
 
-  if (!product) {
+  if (!product || !displayProduct) {
     return (
       <div className={styles.emptyState}>
         <div className={styles.emptyStateContent}>
@@ -40,20 +78,53 @@ const ProductDetail = () => {
     );
   }
 
-  // Find the category slug for the product's category
-  const categorySlug = useMemo(() => {
+
+  // Determine which category to use for backlink
+  // Priority: 1) URL param (from), 2) Product's category, 3) Default to categories
+  const backLink = useMemo(() => {
+    // Check if category was passed via URL param (from query string)
+    const fromCategory = searchParams.get('from');
+    if (fromCategory) {
+      return `/categories?category=${fromCategory}`;
+    }
+    
+    // Check if we came from a category page (via referrer or state)
+    const referrer = document.referrer;
+    if (referrer.includes('/categories?category=')) {
+      const match = referrer.match(/category=([^&]+)/);
+      if (match) {
+        return `/categories?category=${match[1]}`;
+      }
+    }
+    
+    // Fallback to product's category
     const category = categoriesData.categories.find(
-      (cat) => cat.name === product.category
+      (cat) => cat.name === displayProduct.category
     );
-    return category?.slug || null;
-  }, [product.category]);
+    return category?.slug ? `/categories?category=${category.slug}` : "/categories";
+  }, [searchParams, displayProduct.category]);
 
-  // Build the back link - if we have a category slug, go to that category page, otherwise go to categories
-  const backLink = categorySlug ? `/categories?category=${categorySlug}` : "/categories";
-
-  const relatedProducts = productsData.products
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, 3);
+  // Get related products (excluding variants of the same product)
+  const relatedProducts = useMemo(() => {
+    if (!product) return [];
+    
+    const baseName = productGroup?.baseName || product.name;
+    const excludedIds = productGroup?.variants.map(v => v.id) || [product.id];
+    
+    return productsData.products
+      .filter((p) => {
+        // Exclude variants of the same product
+        if (excludedIds.includes(p.id)) return false;
+        
+        // Get base name for comparison
+        const pGroup = getProductGroup(p as Product, allGroupedProducts);
+        const pBaseName = pGroup?.baseName || p.name;
+        
+        // Include if same category and different base name
+        return p.category === product.category && pBaseName !== baseName;
+      })
+      .slice(0, 3) as Product[];
+  }, [product, productGroup, allGroupedProducts]);
 
   return (
     <div className={styles.pageContainer}>
@@ -73,14 +144,14 @@ const ProductDetail = () => {
           {/* Images */}
           <div className={styles.imagesContainer}>
             <OptimizedImage
-              src={product.images[selectedImage]}
-              alt={`${product.name} - view ${selectedImage + 1}`}
+              src={displayProduct.images[selectedImage]}
+              alt={`${displayProduct.name} - view ${selectedImage + 1}`}
               className={styles.mainImage}
               loading="eager"
             />
-            {product.images.length > 1 && (
+            {displayProduct.images.length > 1 && (
               <div className={styles.thumbnailContainer}>
-                {product.images.map((img, idx) => (
+                {displayProduct.images.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setSelectedImage(idx)}
@@ -105,15 +176,34 @@ const ProductDetail = () => {
           {/* Info */}
           <div className={styles.infoContainer}>
             <div className={styles.badgesContainer}>
-              {product.material && product.material.trim() !== "" && (
-                <Badge variant="secondary">{product.material}</Badge>
+              {displayProduct.material && displayProduct.material.trim() !== "" && (
+                <Badge variant="secondary">{displayProduct.material}</Badge>
               )}
-              <Badge variant="outline">{product.category}</Badge>
+              <Badge variant="outline">{displayProduct.category}</Badge>
             </div>
 
-            <h1 className={styles.productTitle}>{product.name}</h1>
-            <p className={styles.sku}>SKU: {product.sku}</p>
-            <p className={styles.shortDescription}>{product.short_description}</p>
+            <h1 className={styles.productTitle}>
+              {productGroup && productGroup.variants.length > 1 
+                ? productGroup.baseName 
+                : displayProduct.name}
+            </h1>
+            
+            {/* Size Variants Info (Not Selectable) */}
+            {productGroup && productGroup.variants.length > 1 && (
+              <div className={styles.sizeInfo}>
+                <p className={styles.sizeInfoLabel}>Available Sizes:</p>
+                <div className={styles.sizeList}>
+                  {productGroup.variants.map((variant) => (
+                    <div key={variant.id} className={styles.sizeBadge}>
+                      {formatVariantDisplay(variant)}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <p className={styles.sku}>SKU: {displayProduct.sku}</p>
+            <p className={styles.shortDescription}>{displayProduct.short_description}</p>
 
             {/* Quick Specs */}
             <Card className={styles.specsCard}>
@@ -123,28 +213,28 @@ const ProductDetail = () => {
                   Key Specifications
                 </h3>
                 <div className={styles.specsGrid}>
-                  {product.capacity_ml > 0 && (
+                  {displayProduct.capacity_ml > 0 && (
                     <div>
                       <p className={styles.specLabel}>Capacity</p>
                       <p className={styles.specValue}>
-                        {product.capacity_ml >= 1000
-                          ? `${product.capacity_ml / 1000} L`
-                          : `${product.capacity_ml} ml`}
+                        {displayProduct.capacity_ml >= 1000
+                          ? `${displayProduct.capacity_ml / 1000} L`
+                          : `${displayProduct.capacity_ml} ml`}
                       </p>
                     </div>
                   )}
-                  {product.material && product.material.trim() !== "" && (
+                  {displayProduct.material && displayProduct.material.trim() !== "" && (
                     <div>
                       <p className={styles.specLabel}>Material</p>
-                      <p className={styles.specValue}>{product.material}</p>
+                      <p className={styles.specValue}>{displayProduct.material}</p>
                     </div>
                   )}
-                  {product.dimensions_mm && Object.keys(product.dimensions_mm).length > 0 && (
+                  {displayProduct.dimensions_mm && Object.keys(displayProduct.dimensions_mm).length > 0 && (
                     <div>
                       <p className={styles.specLabel}>Dimensions</p>
                       <p className={styles.specValue}>
                         {(() => {
-                          const dims = product.dimensions_mm as { dia?: number; length?: number; height?: number };
+                          const dims = displayProduct.dimensions_mm as { dia?: number; length?: number; height?: number };
                           const parts: string[] = [];
                           if (dims.dia) parts.push(`Ø${dims.dia}mm`);
                           if (dims.length) parts.push(`${dims.length}mm`);
@@ -156,11 +246,11 @@ const ProductDetail = () => {
                   )}
                   <div>
                     <p className={styles.specLabel}>Colors</p>
-                    <p className={styles.specValue}>{product.colors.join(", ")}</p>
+                    <p className={styles.specValue}>{displayProduct.colors.join(", ")}</p>
                   </div>
                   <div>
                     <p className={styles.specLabel}>Packing</p>
-                    <p className={styles.specValue}>{product.packing}</p>
+                    <p className={styles.specValue}>{displayProduct.packing}</p>
                   </div>
                 </div>
               </CardContent>
@@ -172,7 +262,7 @@ const ProductDetail = () => {
                 Request Sample
               </Button>
               <Button asChild size="lg" variant="outline" className={cn(styles.buttonFull, "focus-ring")}>
-                <Link to={`/quote?product=${product.slug}`}>Add to Quote</Link>
+                <Link to={`/quote?product=${displayProduct.slug}`}>Add to Quote</Link>
               </Button>
             </div>
           </div>
@@ -183,7 +273,7 @@ const ProductDetail = () => {
           <Card>
             <CardContent className={styles.tabCard}>
               <h3 className={styles.specsTitle}>Description</h3>
-              <p className={styles.descriptionText}>{product.long_description}</p>
+              <p className={styles.descriptionText}>{displayProduct.long_description}</p>
             </CardContent>
           </Card>
         </div>
@@ -193,9 +283,17 @@ const ProductDetail = () => {
           <div className={styles.relatedSection}>
             <h2 className={styles.relatedTitle}>Related Products</h2>
             <div className={styles.relatedGrid}>
-              {relatedProducts.map((product) => (
-                <RelatedProductCard key={product.id} product={product} />
-              ))}
+              {relatedProducts.map((product) => {
+                const categoryMatch = backLink.match(/category=([^&]+)/);
+                const categorySlug = categoryMatch ? categoryMatch[1] : undefined;
+                return (
+                  <RelatedProductCard 
+                    key={product.id} 
+                    product={product}
+                    currentCategorySlug={categorySlug}
+                  />
+                );
+              })}
             </div>
           </div>
         )}
@@ -203,7 +301,7 @@ const ProductDetail = () => {
       {/* Floating WhatsApp Button */}
       <WhatsAppButton
         phoneNumber={COMPANY_WHATSAPP}
-        message={`Hello, I'm interested in ${product.name}. Please share more details.`}
+        message={`Hello, I'm interested in ${displayProduct.name}. Please share more details.`}
         variant="floating"
       />
     </div>

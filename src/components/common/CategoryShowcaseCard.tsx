@@ -10,6 +10,7 @@ interface CategoryShowcaseCardProps {
     description: string;
     product_count: number;
     image: string;
+    heroImage?: string;
   };
   variant?: "small-report" | "large-blue" | "large-green" | "medium";
 }
@@ -33,11 +34,14 @@ const CategoryShowcaseCard = ({
       className={`${styles.cardLink} ${styles[variant]}`}
     >
       <OptimizedImage
-        src={category.image}
+        src={category.heroImage || category.image}
         alt={category.name}
         className={styles.categoryImage}
         loading="lazy"
       />
+      <div className={styles.categoryOverlay}>
+        <span className={styles.categoryName}>{category.name}</span>
+      </div>
     </Link>
   );
 };

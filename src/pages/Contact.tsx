@@ -4,18 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
-    Phone,
-    Mail,
-    MapPin,
-    Send,
     CheckCircle,
     AlertCircle,
     ChevronDown,
-    Facebook,
+    FacebookIcon,
     Instagram,
-    Linkedin,
-    Youtube,
-    Twitter
 } from "lucide-react";
 import { sanitizeInput } from "@/lib/validation";
 import { contactFormSchema, type ContactFormData } from "@/lib/validation-schemas";
@@ -24,9 +17,15 @@ import emailjs from "@emailjs/browser";
 import { logError } from "@/lib/errorHandler";
 import { ErrorSeverity } from "@/lib/errorHandler";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
+import { cn } from "@/lib/utils";
 import styles from "./css/Contact.module.css";
 
 const Contact = () => {
+    const heroFade = useScrollFade();
+    const formFade = useScrollFade();
+    const mapFade = useScrollFade();
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -93,7 +92,7 @@ const Contact = () => {
                         },
                         EMAILJS_PUBLIC_KEY
                     );
-                    
+
                     // Log successful submission
                     logError("Contact form submitted successfully", { component: 'Contact' }, ErrorSeverity.INFO);
                 } catch (emailError) {
@@ -151,17 +150,29 @@ const Contact = () => {
 
     return (
         <div className={styles.pageContainer}>
-            <div className={styles.container}>
-                {/* Hero Section */}
-                <div className={styles.hero}>
+            {/* Hero Section */}
+            <div
+                ref={heroFade.elementRef}
+                className={cn(styles.hero, 'scroll-fade', heroFade.isVisible ? 'visible' : '')}
+            >
+                <div className={styles.heroContent}>
                     <h1 className={styles.title}>Contact us.</h1>
                     <p className={styles.subtitle}>
                         Get in touch and ask us anything. Questions about our products, custom solutions, bulk orders, or partnership opportunities - we answer it all.
                     </p>
                 </div>
+            </div>
 
+            <div className={styles.container}>
                 {/* Contact Form */}
-                <div className={styles.formSection}>
+                <div
+                    ref={formFade.elementRef}
+                    className={cn(styles.formSection, 'scroll-fade', formFade.isVisible ? 'visible' : '')}
+                >
+                    <h2 className={styles.formHeading}>Drop us a mail</h2>
+                    <p className={styles.formSubheading}>
+                        Fill out the form below and we'll get back to you as soon as possible.
+                    </p>
                     {submitted ? (
                         <div className={styles.successMessage}>
                             <CheckCircle className={styles.successIcon} />
@@ -315,7 +326,10 @@ const Contact = () => {
                 </div>
 
                 {/* Map and Contact Info Section */}
-                <div className={styles.mapContactSection}>
+                <div
+                    ref={mapFade.elementRef}
+                    className={cn(styles.mapContactSection, 'scroll-fade', mapFade.isVisible ? 'visible' : '')}
+                >
                     <div className={styles.mapColumn}>
                         <div className={styles.map}>
                             <iframe
@@ -353,7 +367,7 @@ const Contact = () => {
                                         className={styles.socialIcon}
                                         aria-label="Facebook"
                                     >
-                                        <Facebook className={styles.socialIconSvg} />
+                                        <FacebookIcon className={styles.socialIconSvg} />
                                     </a>
                                     <a
                                         href="https://www.instagram.com/softwares_packers/"

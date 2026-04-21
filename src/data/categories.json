@@ -7,8 +7,7 @@
       "description": "High-quality PET containers for food packaging and storage.",
       "icon": "container",
       "product_count": 9,
-      "image": "/assets/temp/category-pet-container-1.webp",
-      "hover_image": "/assets/temp/category-pet-container-hover-8.webp"
+      "image": "/assets/temp/pet-containers-base-image.jpeg"
     },
     {
       "id": "container",
@@ -17,8 +16,7 @@
       "description": "Versatile containers for various storage and packaging needs.",
       "icon": "container",
       "product_count": 31,
-      "image": "/assets/temp/category-container-2.webp",
-      "hover_image": "/assets/temp/category-container-hover-9.webp"
+      "image": "/assets/temp/containers-base-image.jpeg"
     },
     {
       "id": "sweet-boxes",
@@ -27,8 +25,7 @@
       "description": "Perfect containers to keep your sweet treats fresh and organized.",
       "icon": "box",
       "product_count": 16,
-      "image": "/assets/temp/category-sweet-boxes-3.webp",
-      "hover_image": "/assets/temp/category-sweet-boxes-hover-10.webp"
+      "image": "/assets/temp/sweet-box-base-image.jpg"
     },
     {
       "id": "meal-boxes",
@@ -37,8 +34,7 @@
       "description": "Sleek meal boxes for preserving and packaging all types of food.",
       "icon": "box",
       "product_count": 6,
-      "image": "/assets/temp/category-meal-boxes-4.webp",
-      "hover_image": "/assets/temp/category-meal-boxes-hover-11.webp"
+      "image": "/assets/temp/meal-box-base-image.jpeg"
     },
     {
       "id": "bakery-products",
@@ -47,8 +43,7 @@
       "description": "Containers designed for bakery items, muffins, and confectionery products.",
       "icon": "box",
       "product_count": 27,
-      "image": "/assets/temp/category-bakery-products-5.webp",
-      "hover_image": "/assets/temp/category-bakery-products-hover-12.webp"
+      "image": "/assets/temp/bakery-base-image.webp"
     },
     {
       "id": "hinge-boxes",
@@ -57,8 +52,7 @@
       "description": "Hinged containers with tight seals to keep food fresh and organized.",
       "icon": "box",
       "product_count": 4,
-      "image": "/assets/temp/category-hinge-boxes-6.webp",
-      "hover_image": "/assets/temp/category-hinge-boxes-hover-13.webp"
+      "image": "/assets/temp/hingebox-base-image.jpeg"
     },
     {
       "id": "ice-cream-cups-glasses",
@@ -67,8 +61,7 @@
       "description": "Reliable containers perfect for ice cream shops and takeout service.",
       "icon": "cup",
       "product_count": 5,
-      "image": "/assets/temp/category-ice-cream-cups-glasses-7.webp",
-      "hover_image": "/assets/temp/category-ice-cream-cups-glasses-hover-14.webp"
+      "image": "/assets/temp/ice-cream-base-image.jpeg"
     }
   ]
 }

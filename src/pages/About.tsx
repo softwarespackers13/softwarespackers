@@ -9,6 +9,7 @@ import { useScrollFade } from "@/hooks/use-scroll-fade";
 import styles from "./css/About.module.css";
 
 const About = () => {
+    const heroFade = useScrollFade();
     const knowWhoWeAreFade = useScrollFade();
     const whatMakesUsDifferentFade = useScrollFade();
     const statsFade = useScrollFade();
@@ -33,15 +34,14 @@ const About = () => {
     return (
         <div className={styles.pageContainer}>
             {/* Hero Section */}
-            <section className={styles.heroSection}>
+            <section
+                ref={heroFade.elementRef}
+                className={`${styles.heroSection} ${styles.scrollFade} ${heroFade.isVisible ? styles.visible : ''}`}
+            >
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>
                         Premium Plastic Containers & Packaging Solutions
                     </h1>
-                    <p className={styles.heroSubtitle}>
-                        Softwares Packers is a leading manufacturer of premium plastic containers and packaging solutions,
-                        specializing in food-grade containers, storage solutions, and industrial packaging for businesses across India.
-                    </p>
                 </div>
             </section>
 
@@ -217,7 +217,7 @@ const About = () => {
             <section
                 ref={missionFade.elementRef}
                 className={`${styles.missionSection} ${styles.scrollFade} ${missionFade.isVisible ? styles.visible : ''}`}
-            >
+                >
                 <div className={styles.container}>
                     <div className={styles.missionContent}>
                         <div className={styles.missionBadge}>

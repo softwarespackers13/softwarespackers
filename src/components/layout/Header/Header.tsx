@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Download, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import styles from "./Header.module.css";
 import { cn } from "@/lib/utils";
@@ -89,9 +89,9 @@ const Header = () => {
           {/* Desktop Actions */}
           <div className={styles.desktopNav}>
             <Button asChild className={styles.ctaButton}>
-              <Link to="/quote">
-                <Phone className="h-4 w-4 mr-2" />
-                Get Quote
+              <Link to="#">
+                <Download className="h-4 w-4 mr-2" />
+                Download Brochure
               </Link>
             </Button>
           </div>
@@ -164,9 +164,9 @@ const Header = () => {
               })}
               <div className={styles.mobileMenuDivider}>
                 <Button asChild className={styles.mobileCtaButton}>
-                  <Link to="/quote" onClick={() => setMobileMenuOpen(false)}>
-                    <Phone className="h-4 w-4 mr-2" />
-                    Get Quote
+                  <Link to="#" onClick={() => setMobileMenuOpen(false)}>
+                    <Download className="h-4 w-4 mr-2" />
+                    Download Brochure
                   </Link>
                 </Button>
               </div>

@@ -1,4 +1,252 @@
 {
+  "productGroups": [
+    {
+      "id": "mini-sweet-box-group",
+      "displayName": "Mini Sweet Box",
+      "baseSlug": "mini-sweet-box",
+      "productIds": [
+        "mini-sweet-box-250",
+        "mini-sweet-box-350",
+        "mini-sweet-box-450"
+      ]
+    },
+    {
+      "id": "regular-sweet-box-group",
+      "displayName": "Regular Sweet Box",
+      "baseSlug": "regular-sweet-box",
+      "productIds": [
+        "sweet-box-400ml",
+        "sweet-box-500ml",
+        "sweet-box-750ml",
+        "sweet-box-1000ml",
+        "sweet-box-1250ml",
+        "sweet-box-1500ml",
+        "sweet-box-1800ml"
+      ]
+    },
+    {
+      "id": "round-sweet-box-group",
+      "displayName": "Round Sweet Box",
+      "baseSlug": "round-sweet-box",
+      "productIds": [
+        "round-sweet-box-1kg",
+        "round-sweet-box-2kg"
+      ]
+    },
+    {
+      "id": "rectangular-sweet-box-group",
+      "displayName": "Rectangular Sweet Box",
+      "baseSlug": "rectangular-sweet-box",
+      "productIds": [
+        "rectangular-sweet-box-half-kg",
+        "rectangular-sweet-box-1kg"
+      ]
+    },
+    {
+      "id": "oval-sweet-box-group",
+      "displayName": "Oval Sweet Box",
+      "baseSlug": "oval-sweet-box",
+      "productIds": [
+        "oval-sweet-box-500ml",
+        "oval-sweet-box-1200ml"
+      ]
+    },
+    {
+      "id": "cake-container-group",
+      "displayName": "Loaf Cake Containers",
+      "baseSlug": "cake-container",
+      "productIds": [
+        "cake-container-7inch",
+        "cake-container-9inch"
+      ]
+    },
+    {
+      "id": "pet-round-bakery-containers-group",
+      "displayName": "PET Round Bakery Containers",
+      "baseSlug": "pet-round-bakery-containers",
+      "productIds": [
+        "pet-round-45h",
+        "pet-round-63h",
+        "pet-round-80h"
+      ]
+    },
+    {
+      "id": "pet-round-containers-group",
+      "displayName": "PET Round Containers",
+      "baseSlug": "pet-round-containers",
+      "productIds": [
+        "pet-round-container-325cc",
+        "pet-round-container-500cc",
+        "pet-round-container-750cc",
+        "pet-round-container-1000cc"
+      ]
+    },
+    {
+      "id": "round-containers-group",
+      "displayName": "Round Containers",
+      "baseSlug": "round-containers",
+      "productIds": [
+        "round-container-180ml",
+        "round-container-200ml",
+        "round-container-300ml",
+        "round-container-400ml",
+        "round-container-500ml",
+        "round-container-750ml",
+        "round-container-1000ml",
+        "round-container-1200ml"
+      ]
+    },
+    {
+      "id": "sauce-containers-group",
+      "displayName": "Sauce Containers",
+      "baseSlug": "sauce-containers",
+      "productIds": [
+        "sauce-container-35ml",
+        "sauce-container-50ml",
+        "sauce-container-70ml"
+      ]
+    },
+    {
+      "id": "leak-proof-containers-group",
+      "displayName": "Leak Proof Containers",
+      "baseSlug": "leak-proof-containers",
+      "productIds": [
+        "leak-proof-container-500ml",
+        "leak-proof-container-650ml",
+        "leak-proof-container-750ml",
+        "leak-proof-container-1000ml"
+      ]
+    },
+    {
+      "id": "containers-with-lid-group",
+      "displayName": "Containers with Lid",
+      "baseSlug": "containers-with-lid",
+      "productIds": [
+        "pet-container-250ml-8oz",
+        "pet-container-350ml-12oz",
+        "pet-container-500ml-18oz",
+        "pet-container-750ml-24oz",
+        "pet-container-950ml-32oz"
+      ]
+    },
+    {
+      "id": "partition-boxes-group",
+      "displayName": "Partition Boxes",
+      "baseSlug": "partition-boxes",
+      "productIds": [
+        "biscuit-box-partition-pet",
+        "partition-box-2cp-pet",
+        "partition-box-3cp-pet"
+      ]
+    },
+    {
+      "id": "pasta-box-group",
+      "displayName": "Pasta Box",
+      "baseSlug": "pasta-box",
+      "productIds": [
+        "pasta-box-30mm-pet",
+        "pasta-box-40mm-pet",
+        "pasta-box-60mm-pet"
+      ]
+    },
+    {
+      "id": "mini-meal-box-group",
+      "displayName": "Mini Meal Box",
+      "baseSlug": "mini-meal-box",
+      "productIds": [
+        "5-cp-mini-meal-pet"
+      ]
+    },
+    {
+      "id": "meal-box-sealable-group",
+      "displayName": "Meal Box (Sealable)",
+      "baseSlug": "meal-box-sealable",
+      "productIds": [
+        "5-cp-meal-box-sealable-pet",
+        "8-cp-meal-box-sealable-pet"
+      ]
+    },
+    {
+      "id": "meal-box-black-group",
+      "displayName": "Meal Box and Platters (Black)",
+      "baseSlug": "meal-box-black",
+      "productIds": [
+        "8-cp-meal-box-sealable-black",
+        "5-cp-platter-black",
+        "8-cp-platter-black"
+      ]
+    },
+    {
+      "id": "round-cookie-containers-group",
+      "displayName": "Round Cookie Containers",
+      "baseSlug": "round-cookie-containers",
+      "productIds": [
+        "cookie-container-220dia-70h",
+        "cookie-container-220dia-45h"
+      ]
+    },
+    {
+      "id": "muffin-containers-group",
+      "displayName": "Muffin Containers",
+      "baseSlug": "muffin-containers",
+      "productIds": [
+        "muffin-container-4pc",
+        "muffin-container-6pc"
+      ]
+    },
+    {
+      "id": "cookie-jar-group",
+      "displayName": "Cookie Jar",
+      "baseSlug": "cookie-jar",
+      "productIds": [
+        "cookies-jar-4inch",
+        "cookies-jar-6inch"
+      ]
+    },
+    {
+      "id": "rectangular-hinge-boxes-group",
+      "displayName": "Rectangular Hinge Boxes",
+      "baseSlug": "rectangular-hinge-boxes",
+      "productIds": [
+        "rectangular-hinge-box-100cc",
+        "rectangular-hinge-box-150cc",
+        "rectangular-hinge-box-250cc",
+        "rectangular-hinge-box-375cc",
+        "rectangular-hinge-box-500cc",
+        "rectangular-hinge-box-600cc",
+        "rectangular-hinge-box-750cc",
+        "rectangular-hinge-box-1000cc",
+        "rectangular-hinge-box-1250cc",
+        "rectangular-hinge-box-1500cc",
+        "rectangular-hinge-box-2000cc",
+        "rectangular-hinge-box-2250cc"
+      ]
+    },
+    {
+      "id": "round-hinge-boxes-group",
+      "displayName": "Round Hinge Boxes",
+      "baseSlug": "round-hinge-boxes",
+      "productIds": [
+        "round-hinge-box-120cc-pet",
+        "round-hinge-box-250cc",
+        "round-hinge-box-350cc",
+        "round-hinge-box-500cc",
+        "round-hinge-box-600cc",
+        "round-hinge-box-750cc",
+        "round-hinge-box-1000cc"
+      ]
+    },
+    {
+      "id": "flat-hinge-boxes-group",
+      "displayName": "Flat Hinge Boxes",
+      "baseSlug": "flat-hinge-boxes",
+      "productIds": [
+        "flat-hinged-box-500cc-pet",
+        "flat-hinged-box-1000cc-pet"
+      ]
+    }
+  ],
+  "standaloneProducts": [],
   "products": [
     {
       "id": "mini-sweet-box-250",
@@ -1740,7 +1988,7 @@
       "sku": "PET-250-8OZ",
       "slug": "pet-container-250ml-8oz",
       "category": "Container",
-      "material": "",
+      "material": "PET",
       "capacity_ml": 250,
       "dimensions_mm": {},
       "colors": [
@@ -1766,7 +2014,7 @@
       "sku": "PET-350-12OZ",
       "slug": "pet-container-350ml-12oz",
       "category": "Container",
-      "material": "",
+      "material": "PET",
       "capacity_ml": 350,
       "dimensions_mm": {},
       "colors": [
@@ -1786,41 +2034,14 @@
       ],
       "featured": false
     },
-    {
-      "id": "pet-square-container-32oz",
-      "name": "32 Oz Square PET Container",
-      "sku": "PET-SQ-32OZ",
-      "slug": "pet-square-container-32oz",
-      "category": "Container",
-      "material": "PET",
-      "capacity_ml": 946,
-      "dimensions_mm": {},
-      "colors": [
-        "clear"
-      ],
-      "images": [
-        "/assets/temp2/product-pet-square-container-32oz-0.webp",
-        "/assets/temp2/product-pet-square-container-32oz-1.webp"
-      ],
-      "short_description": "Square PET container with 32oz capacity.",
-      "long_description": "Square clear PET container perfect for food packaging. Features 32oz capacity with square design for efficient storage.",
-      "packing": "300 PCS / CARTON",
-      "datasheet_url": null,
-      "tags": [
-        "square",
-        "container",
-        "pet",
-        "food-safe"
-      ],
-      "featured": true
-    },
+    
     {
       "id": "pet-container-500ml-18oz",
       "name": "500 ML / 18 Oz Container with Lid",
       "sku": "PET-500-18OZ",
       "slug": "pet-container-500ml-18oz",
       "category": "Container",
-      "material": "",
+      "material": "PET",
       "capacity_ml": 500,
       "dimensions_mm": {},
       "colors": [
@@ -1846,7 +2067,7 @@
       "sku": "PET-750-24OZ",
       "slug": "pet-container-750ml-24oz",
       "category": "Container",
-      "material": "",
+      "material": "PET",
       "capacity_ml": 750,
       "dimensions_mm": {},
       "colors": [
@@ -1867,10 +2088,36 @@
       "featured": false
     },
     {
-      "id": "scp-mini-meal-pet",
-      "name": "SCP Mini Meal Box",
-      "sku": "SCP-MINI-MEAL",
-      "slug": "scp-mini-meal-pet",
+      "id": "pet-container-950ml-32oz",
+      "name": "950 ML / 32 Oz Square Container with Lid",
+      "sku": "PET-SQ-32OZ",
+      "slug": "pet-container-950ml-32oz",
+      "category": "Container",
+      "material": "PET",
+      "capacity_ml": 950,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-pet-square-container-32oz-0.webp",
+        "/assets/temp2/product-pet-square-container-32oz-1.webp"
+      ],
+      "short_description": "Square container with lid, 950ml / 32oz capacity.",
+      "long_description": "Square clear container with secure lid perfect for food packaging. Features 950ml (32oz) capacity with square design for efficient storage.",
+      "packing": "1000 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "container",
+        "food-safe"
+      ],
+      "featured": true
+    },
+    {
+      "id": "5-cp-mini-meal-pet",
+      "name": "5-CP Mini Meal Box",
+      "sku": "5-CP-MINI-MEAL",
+      "slug": "5-cp-mini-meal-pet",
       "category": "Meal Boxes",
       "material": "",
       "capacity_ml": 0,
@@ -1879,8 +2126,8 @@
         "clear"
       ],
       "images": [
-        "/assets/temp2/product-scp-mini-meal-pet-0.webp",
-        "/assets/temp2/product-scp-mini-meal-pet-1.webp"
+        "/assets/temp/5-cp-base-image-2.jpeg",
+        "/assets/temp/5cp-1.jpeg"
       ],
       "short_description": "Transparent mini meal box with multiple compartments.",
       "long_description": "Transparent mini meal box perfect for small meals. Features multiple compartments to keep different food items separated and organized.",
@@ -1894,10 +2141,10 @@
       "featured": true
     },
     {
-      "id": "scp-meal-box-sealable-pet",
-      "name": "SCP Meal Box Sealable",
-      "sku": "SCP-MEAL-SEAL",
-      "slug": "scp-meal-box-sealable-pet",
+      "id": "5-cp-meal-box-sealable-pet",
+      "name": "5-CP Meal Box Sealable",
+      "sku": "5-CP-MEAL-SEAL",
+      "slug": "5-cp-meal-box-sealable-pet",
       "category": "Meal Boxes",
       "material": "",
       "capacity_ml": 0,
@@ -1906,8 +2153,8 @@
         "clear"
       ],
       "images": [
-        "/assets/temp2/product-scp-meal-box-sealable-pet-0.webp",
-        "/assets/temp2/product-scp-meal-box-sealable-pet-1.webp"
+        "/assets/temp/5-cp-base-image-3.jpeg",
+        "/assets/temp/5-cp-2.jpeg"
       ],
       "short_description": "Transparent sealable meal box with multiple compartments.",
       "long_description": "Transparent sealable meal box perfect for snacks and small dishes. Features multiple compartments and sealable lid to keep food fresh.",
@@ -1922,10 +2169,10 @@
       "featured": true
     },
     {
-      "id": "bcp-meal-box-sealable-pet",
-      "name": "BCP Meal Box Sealable",
-      "sku": "BCP-MEAL-SEAL",
-      "slug": "bcp-meal-box-sealable-pet",
+      "id": "8-cp-meal-box-sealable-pet",
+      "name": "8-CP Meal Box Sealable",
+      "sku": "8-CP-MEAL-SEAL",
+      "slug": "8-cp-meal-box-sealable-pet",
       "category": "Meal Boxes",
       "material": "",
       "capacity_ml": 0,
@@ -1934,8 +2181,8 @@
         "clear"
       ],
       "images": [
-        "/assets/temp2/product-bcp-meal-box-sealable-pet-0.webp",
-        "/assets/temp2/product-bcp-meal-box-sealable-pet-1.webp"
+        "/assets/temp2/product-8-cp-meal-box-sealable-pet-0.webp",
+        "/assets/temp2/product-8-cp-meal-box-sealable-pet-1.webp"
       ],
       "short_description": "Transparent sealable meal box with multiple compartments for full meals.",
       "long_description": "Transparent sealable meal box perfect for full meals. Features multiple compartments for rice, main dish, and side dishes with sealable lid to keep food fresh.",
@@ -1950,10 +2197,10 @@
       "featured": true
     },
     {
-      "id": "bcp-meal-box-sealable-black",
-      "name": "BCP Meal Box Sealable Black",
-      "sku": "BCP-MEAL-BLK",
-      "slug": "bcp-meal-box-sealable-black",
+      "id": "8-cp-meal-box-sealable-black",
+      "name": "8-CP Meal Box Sealable Black",
+      "sku": "8-CP-MEAL-BLK",
+      "slug": "8-cp-meal-box-sealable-black",
       "category": "Meal Boxes",
       "material": "",
       "capacity_ml": 0,
@@ -1962,8 +2209,8 @@
         "black"
       ],
       "images": [
-        "/assets/temp2/product-bcp-meal-box-sealable-black-0.webp",
-        "/assets/temp2/product-bcp-meal-box-sealable-black-1.webp"
+        "/assets/temp2/product-8-cp-meal-box-sealable-black-0.webp",
+        "/assets/temp2/product-8-cp-meal-box-sealable-black-1.webp"
       ],
       "short_description": "Black sealable meal box with multiple compartments for full meals.",
       "long_description": "Black sealable meal box perfect for full meals. Features multiple compartments for rice, main dish, and side dishes with sealable lid to keep food fresh.",
@@ -1978,10 +2225,10 @@
       "featured": false
     },
     {
-      "id": "scp-platter-black",
-      "name": "SCP Platter Black",
-      "sku": "SCP-PLATTER-BLK",
-      "slug": "scp-platter-black",
+      "id": "5-cp-platter-black",
+      "name": "5-CP Platter Black",
+      "sku": "5-CP-PLATTER-BLK",
+      "slug": "5-cp-platter-black",
       "category": "Meal Boxes",
       "material": "",
       "capacity_ml": 0,
@@ -1990,8 +2237,8 @@
         "black"
       ],
       "images": [
-        "/assets/temp2/product-scp-platter-black-0.webp",
-        "/assets/temp2/product-scp-platter-black-1.webp"
+        "/assets/temp/5-cp-base-image.jpeg",
+        "/assets/temp/5-cp-black.jpeg"
       ],
       "short_description": "Black platter-style container for food presentation.",
       "long_description": "Black platter-style container perfect for food presentation. Features shallow design ideal for arranging food items attractively.",
@@ -2006,10 +2253,10 @@
       "featured": false
     },
     {
-      "id": "bcp-platter-black",
-      "name": "BCP Platter Black",
-      "sku": "BCP-PLATTER-BLK",
-      "slug": "bcp-platter-black",
+      "id": "8-cp-platter-black",
+      "name": "8-CP Platter Black",
+      "sku": "8-CP-PLATTER-BLK",
+      "slug": "8-cp-platter-black",
       "category": "Meal Boxes",
       "material": "",
       "capacity_ml": 0,
@@ -2018,8 +2265,8 @@
         "black"
       ],
       "images": [
-        "/assets/temp2/product-bcp-platter-black-0.webp",
-        "/assets/temp2/product-bcp-platter-black-1.webp"
+        "/assets/temp2/product-8-cp-platter-black-0.webp",
+        "/assets/temp2/product-8-cp-platter-black-1.webp"
       ],
       "short_description": "Black platter-style container for food presentation.",
       "long_description": "Black platter-style container perfect for food presentation. Features shallow design ideal for arranging food items attractively.",
@@ -2200,6 +2447,175 @@
       "featured": true
     },
     {
+      "id": "round-hinge-box-250cc",
+      "name": "250 CC (8OZ) Round Hinge Box",
+      "sku": "HINGE-RND-250CC",
+      "slug": "round-hinge-box-250cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-round-hinge-box-250cc-0.webp",
+        "/assets/temp2/product-round-hinge-box-250cc-1.webp"
+      ],
+      "short_description": "Round container with dome lid, 250cc (8oz) capacity.",
+      "long_description": "Round container with dome lid perfect for desserts, snacks, and medium portions. Features secure dome lid closure for easy access.",
+      "packing": "1000 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "round",
+        "dome-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-hinge-box-350cc",
+      "name": "350 CC (12OZ) Round Hinge Box",
+      "sku": "HINGE-RND-350CC",
+      "slug": "round-hinge-box-350cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 350,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-round-hinge-box-350cc-0.webp",
+        "/assets/temp2/product-round-hinge-box-350cc-1.webp"
+      ],
+      "short_description": "Round container with dome lid, 350cc (12oz) capacity.",
+      "long_description": "Round container with dome lid perfect for desserts, snacks, and medium portions. Features secure dome lid closure for easy access.",
+      "packing": "1000 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "round",
+        "dome-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-hinge-box-500cc",
+      "name": "500 CC (16OZ) Round Hinge Box",
+      "sku": "HINGE-RND-500CC",
+      "slug": "round-hinge-box-500cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-round-hinge-box-500cc-0.webp",
+        "/assets/temp2/product-round-hinge-box-500cc-1.webp"
+      ],
+      "short_description": "Round container with dome lid, 500cc (16oz) capacity.",
+      "long_description": "Round container with dome lid perfect for desserts, snacks, and larger portions. Features secure dome lid closure for easy access.",
+      "packing": "1000 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "round",
+        "dome-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-hinge-box-600cc",
+      "name": "600 CC (20OZ) Round Hinge Box",
+      "sku": "HINGE-RND-600CC",
+      "slug": "round-hinge-box-600cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 600,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-round-hinge-box-600cc-0.webp",
+        "/assets/temp2/product-round-hinge-box-600cc-1.webp"
+      ],
+      "short_description": "Round container with dome lid, 600cc (20oz) capacity.",
+      "long_description": "Round container with dome lid perfect for desserts, snacks, and larger portions. Features secure dome lid closure for easy access.",
+      "packing": "400 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "round",
+        "dome-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-hinge-box-750cc",
+      "name": "750 CC (24OZ) Round Hinge Box",
+      "sku": "HINGE-RND-750CC",
+      "slug": "round-hinge-box-750cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-round-hinge-box-750cc-0.webp",
+        "/assets/temp2/product-round-hinge-box-750cc-1.webp"
+      ],
+      "short_description": "Round container with dome/flat lid, 750cc (24oz) capacity.",
+      "long_description": "Round container with dome or flat lid perfect for desserts, snacks, and extra-large portions. Features secure lid closure for easy access.",
+      "packing": "400 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "round",
+        "dome-lid",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "round-hinge-box-1000cc",
+      "name": "1000 CC (32OZ) Round Hinge Box",
+      "sku": "HINGE-RND-1000CC",
+      "slug": "round-hinge-box-1000cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-round-hinge-box-1000cc-0.webp",
+        "/assets/temp2/product-round-hinge-box-1000cc-1.webp"
+      ],
+      "short_description": "Round container with dome lid, 1000cc (32oz) capacity.",
+      "long_description": "Round container with dome lid perfect for desserts, snacks, and extra-large portions. Features secure dome lid closure for easy access.",
+      "packing": "400 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "round",
+        "dome-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
       "id": "hinged-box-750ml-3cp-pet",
       "name": "750ML 3CP Hinged Box",
       "sku": "HINGE-750-3CP",
@@ -2274,6 +2690,342 @@
       "short_description": "Rectangular hinged container with flat lid, 500cc capacity.",
       "long_description": "Rectangular hinged container with flat lid perfect for food packaging. Features secure hinged closure and compact design.",
       "packing": "800 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-100cc",
+      "name": "100 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-100CC",
+      "slug": "rectangular-hinge-box-100cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 100,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-100cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-100cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 100cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for small food portions. Features secure hinged closure and compact design ideal for snacks and small items.",
+      "packing": "2000 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-150cc",
+      "name": "150 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-150CC",
+      "slug": "rectangular-hinge-box-150cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 150,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-150cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-150cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 150cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for small food portions. Features secure hinged closure and compact design ideal for snacks and small items.",
+      "packing": "2000 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-250cc",
+      "name": "250 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-250CC",
+      "slug": "rectangular-hinge-box-250cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-250cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-250cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 250cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for medium food portions. Features secure hinged closure and spacious design ideal for various food items.",
+      "packing": "1500 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-375cc",
+      "name": "375 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-375CC",
+      "slug": "rectangular-hinge-box-375cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 375,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-375cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-375cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 375cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for medium food portions. Features secure hinged closure and spacious design ideal for various food items.",
+      "packing": "1500 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-500cc",
+      "name": "500 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-500CC",
+      "slug": "rectangular-hinge-box-500cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-500cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-500cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 500cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for medium food portions. Features secure hinged closure and spacious design ideal for various food items.",
+      "packing": "1500 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-600cc",
+      "name": "600 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-600CC",
+      "slug": "rectangular-hinge-box-600cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 600,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-600cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-600cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 600cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for larger food portions. Features secure hinged closure and spacious design ideal for meals and larger items.",
+      "packing": "800 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-750cc",
+      "name": "750 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-750CC",
+      "slug": "rectangular-hinge-box-750cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 750,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-750cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-750cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 750cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for larger food portions. Features secure hinged closure and spacious design ideal for meals and larger items.",
+      "packing": "800 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-1000cc",
+      "name": "1000 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-1000CC",
+      "slug": "rectangular-hinge-box-1000cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 1000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-1000cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-1000cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 1000cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for larger food portions. Features secure hinged closure and spacious design ideal for meals and larger items.",
+      "packing": "800 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-1250cc",
+      "name": "1250 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-1250CC",
+      "slug": "rectangular-hinge-box-1250cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 1250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-1250cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-1250cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 1250cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for extra-large food portions. Features secure hinged closure and spacious design ideal for large meals and bulk items.",
+      "packing": "400 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-1500cc",
+      "name": "1500 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-1500CC",
+      "slug": "rectangular-hinge-box-1500cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 1500,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-1500cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-1500cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 1500cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for extra-large food portions. Features secure hinged closure and spacious design ideal for large meals and bulk items.",
+      "packing": "400 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-2000cc",
+      "name": "2000 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-2000CC",
+      "slug": "rectangular-hinge-box-2000cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 2000,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-2000cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-2000cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 2000cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for extra-large food portions. Features secure hinged closure and spacious design ideal for large meals and bulk items.",
+      "packing": "400 PCS / CARTON",
+      "datasheet_url": null,
+      "tags": [
+        "hinged",
+        "rectangular",
+        "flat-lid",
+        "food-safe"
+      ],
+      "featured": false
+    },
+    {
+      "id": "rectangular-hinge-box-2250cc",
+      "name": "2250 CC Rectangular Hinge Box",
+      "sku": "HINGE-RECT-2250CC",
+      "slug": "rectangular-hinge-box-2250cc",
+      "category": "Hinge Boxes",
+      "material": "",
+      "capacity_ml": 2250,
+      "dimensions_mm": {},
+      "colors": [
+        "clear"
+      ],
+      "images": [
+        "/assets/temp2/product-rectangular-hinge-box-2250cc-0.webp",
+        "/assets/temp2/product-rectangular-hinge-box-2250cc-1.webp"
+      ],
+      "short_description": "Rectangular hinged container with flat lid, 2250cc capacity.",
+      "long_description": "Rectangular hinged container with flat lid perfect for extra-large food portions. Features secure hinged closure and spacious design ideal for large meals and bulk items.",
+      "packing": "400 PCS / CARTON",
       "datasheet_url": null,
       "tags": [
         "hinged",
@@ -2374,7 +3126,7 @@
       "sku": "PASTA-30MM",
       "slug": "pasta-box-30mm-pet",
       "category": "Container",
-      "material": "",
+      "material": "PET",
       "capacity_ml": 0,
       "dimensions_mm": {
         "height": 30
@@ -2404,7 +3156,7 @@
       "sku": "PASTA-40MM",
       "slug": "pasta-box-40mm-pet",
       "category": "Container",
-      "material": "",
+      "material": "PET",
       "capacity_ml": 0,
       "dimensions_mm": {
         "height": 40
@@ -2434,7 +3186,7 @@
       "sku": "PASTA-60MM",
       "slug": "pasta-box-60mm-pet",
       "category": "Container",
-      "material": "",
+      "material": "PET",
       "capacity_ml": 0,
       "dimensions_mm": {
         "height": 60

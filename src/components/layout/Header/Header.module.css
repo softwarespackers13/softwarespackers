@@ -150,7 +150,9 @@
 }
 
 .navLinkActive {
-  color: #000000;
+  color: #c92a2a;
+  font-weight: 600;
+  position: relative;
 }
 
 .navLinkActive::after {
@@ -159,9 +161,9 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  width: 70%;
   height: 2px;
-  background: hsl(var(--accent));
+  background: #c92a2a;
   border-radius: 9999px;
 }
 
@@ -177,7 +179,20 @@
 }
 
 .navLinkWithDropdown::after {
-  display: none;
+  display: none !important;
+}
+
+.navLinkActive.navLinkWithDropdown::after {
+  display: block !important;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 2px;
+  background: #c92a2a;
+  border-radius: 9999px;
 }
 
 .dropdownIcon {
@@ -380,8 +395,22 @@
 }
 
 .mobileNavLinkActive {
-  background: hsl(var(--accent) / 0.1);
-  color: #000000;
+  color: #c92a2a;
+  font-weight: 600;
+  position: relative;
+  background: rgba(201, 42, 42, 0.08);
+}
+
+.mobileNavLinkActive::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: #c92a2a;
+  border-radius: 0 2px 2px 0;
 }
 
 .mobileMenuDivider {

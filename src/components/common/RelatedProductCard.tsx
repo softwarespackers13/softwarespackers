@@ -16,11 +16,16 @@ interface RelatedProductCardProps {
     short_description: string;
     images: string[];
   };
+  currentCategorySlug?: string;
 }
 
-const RelatedProductCard = ({ product }: RelatedProductCardProps) => {
+const RelatedProductCard = ({ product, currentCategorySlug }: RelatedProductCardProps) => {
+  const productUrl = currentCategorySlug 
+    ? `/products/${product.slug}?from=${currentCategorySlug}`
+    : `/products/${product.slug}`;
+
   return (
-    <Link to={`/products/${product.slug}`}>
+    <Link to={productUrl}>
       <Card className={styles.relatedCard}>
         {/* Image Section - Left Half */}
         <div className={styles.imageSection}>

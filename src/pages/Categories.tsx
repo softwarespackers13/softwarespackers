@@ -8,6 +8,7 @@ import CategoryCard from "@/components/common/CategoryCard";
 import ProductCard from "@/components/common/ProductCard";
 import Pagination from "@/components/common/Pagination";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
+import { getDisplayProducts, type Product } from "@/lib/productUtils";
 import styles from "./css/Categories.module.css";
 
 // Import company constants from config
@@ -34,17 +35,25 @@ const Categories = () => {
   const categoryProducts = useMemo(() => {
     if (!categorySlug || !selectedCategory) return [];
 
+    let filtered: Product[];
+
     // If viewing PET Container category, show all PET products
     if (selectedCategory.slug === "pet-container") {
-      return productsData.products.filter(
+      filtered = productsData.products.filter(
         (product) => product.material === "PET"
-      );
+      ) as Product[];
+    } else {
+      // Otherwise, filter by category name
+      filtered = productsData.products.filter(
+        (product) => product.category === selectedCategory.name
+      ) as Product[];
     }
 
-    // Otherwise, filter by category name
-    return productsData.products.filter(
-      (product) => product.category === selectedCategory.name
-    );
+    // Get display products using manual grouping configuration
+    return getDisplayProducts(filtered, {
+      productGroups: productsData.productGroups || [],
+      standaloneProducts: productsData.standaloneProducts || []
+    });
   }, [categorySlug, selectedCategory]);
 
   // Calculate pagination
@@ -126,7 +135,11 @@ const Categories = () => {
               <>
                 <div className={styles.productsGrid}>
                   {paginatedProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard 
+                      key={product.id} 
+                      product={product}
+                      currentCategorySlug={categorySlug || undefined}
+                    />
                   ))}
                 </div>
                 {totalPages > 1 && (
