@@ -1,8 +1,7 @@
-import { useMemo, useEffect, useState } from "react";
+import { useMemo, useEffect } from "react";
 import { useSearchParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import categoriesData from "@/data/categories.json";
 import productsData from "@/data/products.json";
 import CategoryCard from "@/components/common/CategoryCard";
@@ -168,7 +167,7 @@ const Categories = () => {
         <div className={styles.heroImageContainer}>
           <div className={styles.heroOverlay}></div>
           <img
-            src="/assets/categories-hero-bg.png"
+            src="/assets/categories-hero-bg.webp"
             alt="Premium Industrial Background"
             className={styles.heroImg}
           />

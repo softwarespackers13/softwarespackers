@@ -68,7 +68,7 @@ const LoadingAnimation = ({
                 {/* Logo container with refined animation */}
                 <div className={styles.logoContainer}>
                     <img
-                        src="/assets/logos/swp-logo.png"
+                        src="/assets/logos/swp-logo.webp"
                         alt="Softwares Packers"
                         className={styles.logo}
                         loading="eager"

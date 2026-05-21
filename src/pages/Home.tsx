@@ -17,7 +17,7 @@ import WhatsAppButton from "@/components/common/WhatsAppButton";
 import { useScrollFade } from "@/hooks/use-scroll-fade";
 import styles from "./css/Home.module.css";
 import { cn } from "@/lib/utils";
-import { COMPANY_PHONE, COMPANY_WHATSAPP } from "@/config/constants";
+import { COMPANY_WHATSAPP } from "@/config/constants";
 
 const Home = () => {
   const [currentHeroIdx, setCurrentHeroIdx] = useState(0);
@@ -55,7 +55,7 @@ const Home = () => {
         {/* Slide 1: Restaurant Focus - Cluster View */}
         <div className={cn(styles.heroSlide, currentHeroIdx === 0 ? styles.heroSlideActive : styles.heroSlideInactive)}>
           <div className={styles.heroBg}>
-            <img alt="Sophisticated restaurant kitchen" className={styles.heroBgImg} src="/assets/temp3/kitchen.jpg" />
+            <img alt="Sophisticated restaurant kitchen" className={styles.heroBgImg} src="/assets/temp3/kitchen.webp" />
             <div className={styles.heroGradient}></div>
           </div>
           <div className={styles.heroContentWrapper}>
@@ -85,13 +85,13 @@ const Home = () => {
               </div>
               <div className={cn(styles.heroImgCluster, currentHeroIdx === 0 ? styles.animateSlideUp : "", styles.delay400)}>
                 <div className={cn(styles.heroFloatingImg, styles.floatDelay0)}>
-                  <img alt="Primary packaging unit" className={styles.heroClusterImg} src="/assets/temp3/container.jpg" />
+                  <img alt="Primary packaging unit" className={styles.heroClusterImg} src="/assets/temp3/container.webp" />
                 </div>
                 <div className={cn(styles.heroFloatingImg, styles.floatDelay2)}>
-                  <img alt="Secondary packaging unit" className={styles.heroClusterImg} src="/assets/temp3/container2.png" />
+                  <img alt="Secondary packaging unit" className={styles.heroClusterImg} src="/assets/temp3/container2.webp" />
                 </div>
                 <div className={cn(styles.heroFloatingImg, styles.floatDelay4)}>
-                  <img alt="Complementary product" className={cn(styles.heroClusterImg, styles.width50)} src="/assets/temp3/container3.png" />
+                  <img alt="Complementary product" className={cn(styles.heroClusterImg, styles.width50)} src="/assets/temp3/container3.webp" />
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ const Home = () => {
         {/* Slide 2: Process & Infrastructure */}
         <div className={cn(styles.heroSlide, currentHeroIdx === 1 ? styles.heroSlideActive : styles.heroSlideInactive)}>
           <div className={styles.heroBg}>
-            <img alt="Industrial automation" className={styles.heroBgImg} src="/assets/temp3/industrial.jpg" />
+            <img alt="Industrial automation" className={styles.heroBgImg} src="/assets/temp3/industrial.webp" />
             <div className={styles.heroGradient}></div>
           </div>
           <div className={styles.heroContentWrapper}>
@@ -120,13 +120,13 @@ const Home = () => {
               </div>
               <div className={cn(styles.heroImgCluster, currentHeroIdx === 1 ? styles.animateSlideUp : "", styles.delay400)}>
                 <div className={cn(styles.heroFloatingImg, styles.floatDelay0)}>
-                  <img alt="Advanced packaging printing process line" className={styles.heroClusterImg} src="/assets/home-hero/factory_process.png" />
+                  <img alt="Advanced packaging printing process line" className={styles.heroClusterImg} src="/assets/home-hero/factory_process.webp" />
                 </div>
                 <div className={cn(styles.heroFloatingImg, styles.floatDelay2)}>
-                  <img alt="Thermoforming packaging production line" className={styles.heroClusterImg} src="/assets/home-hero/factory_thermoform.png" />
+                  <img alt="Thermoforming packaging production line" className={styles.heroClusterImg} src="/assets/home-hero/factory_thermoform.webp" />
                 </div>
                 <div className={cn(styles.heroFloatingImg, styles.floatDelay4)}>
-                  <img alt="QC scanner scanning food packaging containers" className={cn(styles.heroClusterImg, styles.width50)} src="/assets/home-hero/factory_quality.png" />
+                  <img alt="QC scanner scanning food packaging containers" className={cn(styles.heroClusterImg, styles.width50)} src="/assets/home-hero/factory_quality.webp" />
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@ const Home = () => {
         {/* Slide 3: Bakery Focus */}
         <div className={cn(styles.heroSlide, currentHeroIdx === 2 ? styles.heroSlideActive : styles.heroSlideInactive)}>
           <div className={styles.heroBg}>
-            <img alt="Modern bakery interior" className={styles.heroBgImg} src="/assets/temp3/bakery.jpg" />
+            <img alt="Modern bakery interior" className={styles.heroBgImg} src="/assets/temp3/bakery.webp" />
             <div className={styles.heroGradient}></div>
           </div>
           <div className={styles.heroContentWrapper}>
@@ -155,15 +155,15 @@ const Home = () => {
               </div>
               <div className={cn(styles.heroGridSplit, currentHeroIdx === 2 ? styles.animateSlideUp : "", styles.delay400)}>
                 <div className={cn(styles.heroSplitCard, styles.splitDelay1)}>
-                  <img alt="Clear container A" className={styles.splitImg75} src="/assets/temp3/container.jpg" />
+                  <img alt="Clear container A" className={styles.splitImg75} src="/assets/temp3/container.webp" />
                   <p className={styles.splitLabel}>Vented Solutions</p>
                 </div>
                 <div className={cn(styles.heroSplitCard, styles.splitDelay3)}>
-                  <img alt="Clear container B" className={styles.splitImg75} src="/assets/temp3/container.jpg" />
+                  <img alt="Clear container B" className={styles.splitImg75} src="/assets/temp3/container.webp" />
                   <p className={styles.splitLabel}>Stackable Design</p>
                 </div>
                 <div className={cn(styles.heroSplitCardWide, styles.splitDelay5)}>
-                  <img alt="Clear container C" className={styles.splitImgH8} src="/assets/temp3/container.jpg" />
+                  <img alt="Clear container C" className={styles.splitImgH8} src="/assets/temp3/container.webp" />
                   <div>
                     <p className={styles.splitTitle}>Ultra-Clarity™</p>
                     <p className={styles.splitSub}>Industrial Grade Polymer</p>
@@ -251,11 +251,11 @@ const Home = () => {
           </div>
           <div className={styles.indGrid}>
             {[
-              { name: "Bakeries", desc: "Muffin trays & display cases", image: "/assets/industries/bakery.jpg" },
-              { name: "Restaurants", desc: "Chef-grade prep containers", image: "/assets/industries/restaurant.jpg" },
-              { name: "Ice-Cream Parlours", desc: "Sturdy cups & glasses", image: "/assets/industries/ice-cream-parlour.jpg" },
-              { name: "Sweet Shops", desc: "Premium mithai packaging", image: "/assets/industries/sweet-shops.jpg" },
-              { name: "Confectionery", desc: "High-clarity display boxes", image: "/assets/industries/confectionery.jpg" }
+              { name: "Bakeries", desc: "Muffin trays & display cases", image: "/assets/industries/bakery.webp" },
+              { name: "Restaurants", desc: "Chef-grade prep containers", image: "/assets/industries/restaurant.webp" },
+              { name: "Ice-Cream Parlours", desc: "Sturdy cups & glasses", image: "/assets/industries/ice-cream-parlour.webp" },
+              { name: "Sweet Shops", desc: "Premium mithai packaging", image: "/assets/industries/sweet-shops.webp" },
+              { name: "Confectionery", desc: "High-clarity display boxes", image: "/assets/industries/confectionery.webp" }
             ].map((ind, idx) => (
               <div key={idx} className={styles.indCard}>
                 <img alt={ind.name} className={styles.indImg} src={ind.image} />

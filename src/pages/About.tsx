@@ -1,7 +1,3 @@
-import {
-    Award,
-    Users
-} from "lucide-react";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
 import FactoryCarousel from "@/components/common/FactoryCarousel";
 import { COMPANY_WHATSAPP } from "@/config/constants";
@@ -12,7 +8,6 @@ const About = () => {
     const heroFade = useScrollFade();
     const knowWhoWeAreFade = useScrollFade();
     const whatMakesUsDifferentFade = useScrollFade();
-    const statsFade = useScrollFade();
     const missionFade = useScrollFade();
     const infrastructureFade = useScrollFade();
 

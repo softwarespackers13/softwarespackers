@@ -11,8 +11,8 @@ import {
     Instagram,
 } from "lucide-react";
 import { sanitizeInput } from "@/lib/validation";
-import { contactFormSchema, type ContactFormData } from "@/lib/validation-schemas";
-import { COMPANY_PHONE, COMPANY_PHONE_SECONDARY, COMPANY_EMAIL, COMPANY_ADDRESS, COMPANY_WHATSAPP, IS_DEV, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "@/config/constants";
+import { contactFormSchema } from "@/lib/validation-schemas";
+import { COMPANY_PHONE, COMPANY_EMAIL, COMPANY_ADDRESS, COMPANY_WHATSAPP, IS_DEV, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "@/config/constants";
 import emailjs from "@emailjs/browser";
 import { logError } from "@/lib/errorHandler";
 import { ErrorSeverity } from "@/lib/errorHandler";

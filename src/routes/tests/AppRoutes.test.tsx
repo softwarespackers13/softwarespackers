@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import AppRoutes from '../AppRoutes';
 
 // Mock all page components
@@ -23,9 +23,9 @@ vi.mock('@/pages/NotFound', () => ({
 describe('AppRoutes', () => {
   it('renders home page on root path', async () => {
     render(
-      <BrowserRouter initialEntries={['/']}>
+      <MemoryRouter initialEntries={['/']}>
         <AppRoutes />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     await waitFor(() => {
@@ -35,9 +35,9 @@ describe('AppRoutes', () => {
 
   it('renders product detail page on /products/:slug path', async () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-product']}>
+      <MemoryRouter initialEntries={['/products/test-product']}>
         <AppRoutes />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     await waitFor(() => {
@@ -47,9 +47,9 @@ describe('AppRoutes', () => {
 
   it('renders categories page on /categories path', async () => {
     render(
-      <BrowserRouter initialEntries={['/categories']}>
+      <MemoryRouter initialEntries={['/categories']}>
         <AppRoutes />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     await waitFor(() => {
@@ -59,9 +59,9 @@ describe('AppRoutes', () => {
 
   it('renders 404 page for unknown routes', async () => {
     render(
-      <BrowserRouter initialEntries={['/non-existent-route']}>
+      <MemoryRouter initialEntries={['/non-existent-route']}>
         <AppRoutes />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     await waitFor(() => {
@@ -71,9 +71,9 @@ describe('AppRoutes', () => {
 
   it('shows loading spinner while lazy loading', () => {
     render(
-      <BrowserRouter initialEntries={['/']}>
+      <MemoryRouter initialEntries={['/']}>
         <AppRoutes />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     // The loading spinner should be shown initially
@@ -87,9 +87,9 @@ describe('AppRoutes', () => {
 
   it('handles multiple route changes', async () => {
     const { rerender } = render(
-      <BrowserRouter initialEntries={['/']}>
+      <MemoryRouter key="home" initialEntries={['/']}>
         <AppRoutes />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     await waitFor(() => {
@@ -97,9 +97,9 @@ describe('AppRoutes', () => {
     });
 
     rerender(
-      <BrowserRouter initialEntries={['/categories']}>
+      <MemoryRouter key="categories" initialEntries={['/categories']}>
         <AppRoutes />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     await waitFor(() => {
@@ -109,9 +109,9 @@ describe('AppRoutes', () => {
 
   it('handles nested product routes correctly', async () => {
     render(
-      <BrowserRouter initialEntries={['/products/hdpe-bottle-500ml']}>
+      <MemoryRouter initialEntries={['/products/hdpe-bottle-500ml']}>
         <AppRoutes />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     await waitFor(() => {
@@ -129,9 +129,9 @@ describe('AppRoutes', () => {
 
     for (const route of unmatchedRoutes) {
       const { unmount } = render(
-        <BrowserRouter initialEntries={[route]}>
+        <MemoryRouter initialEntries={[route]}>
           <AppRoutes />
-        </BrowserRouter>
+        </MemoryRouter>
       );
 
       await waitFor(() => {
@@ -142,4 +142,3 @@ describe('AppRoutes', () => {
     }
   });
 });
-

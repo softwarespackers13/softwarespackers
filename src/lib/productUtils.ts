@@ -195,17 +195,6 @@ export function getDisplayProducts(
   return displayProducts;
 }
 
-/**
- * Checks if a product is part of a group (has variants)
- */
-export function isGroupedProduct(
-  product: Product,
-  groupedProducts: GroupedProduct[]
-): boolean {
-  const baseName = getBaseProductName(product.name);
-  const group = groupedProducts.find((g) => g.baseName === baseName);
-  return group ? group.variants.length > 1 : false;
-}
 
 /**
  * Gets the group for a specific product by ID

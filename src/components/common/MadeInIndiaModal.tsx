@@ -95,13 +95,13 @@ const MadeInIndiaModal = ({ isOpen, onClose }: MadeInIndiaModalProps) => {
           {/* Logo Stack: SWP Logo and Made in India Logo side-by-side */}
           <div className={styles.logoStack}>
             <img
-              src="/assets/logos/swp-logo.png"
+              src="/assets/logos/swp-logo.webp"
               alt="Softwares Packers Logo"
               className={styles.swpLogo}
             />
             <div className={styles.logoDivider} />
             <img
-              src="/assets/made-in-india.jpg"
+              src="/assets/made-in-india.webp"
               alt="Made in India Badge"
               className={styles.indiaLogo}
             />

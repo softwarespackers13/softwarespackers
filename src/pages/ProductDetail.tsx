@@ -1,5 +1,5 @@
-import { useState, useMemo, useEffect } from "react";
-import { useParams, Link, useSearchParams, useLocation } from "react-router-dom";
+import { useState, useMemo } from "react";
+import { useParams, Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,14 +10,13 @@ import RelatedProductCard from "@/components/common/RelatedProductCard";
 import OptimizedImage from "@/components/common/OptimizedImage";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
 import { COMPANY_WHATSAPP } from "@/config/constants";
-import { groupProductsByConfig, getProductGroup, formatCapacity, formatVariantDisplay, type Product, type GroupedProduct } from "@/lib/productUtils";
+import { groupProductsByConfig, getProductGroup, formatVariantDisplay, type Product } from "@/lib/productUtils";
 import styles from "./css/ProductDetail.module.css";
 import { cn } from "@/lib/utils";
 
 const ProductDetail = () => {
   const { slug } = useParams();
   const [searchParams] = useSearchParams();
-  const location = useLocation();
   
   // Group all products using config
   const allGroupedProducts = useMemo(() => {

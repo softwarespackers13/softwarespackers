@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Download, ChevronDown, Search, Globe } from "lucide-react";
+import { Menu, X, Download, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import styles from "./Header.module.css";
 import { cn } from "@/lib/utils";
@@ -64,13 +64,13 @@ const Header = () => {
                 {/* Both logos always in DOM — crossfade via opacity, no src swap flash */}
                 <div className={styles.logoStack}>
                   <img
-                    src="/assets/logos/swp-logo-white.png"
+                    src="/assets/logos/swp-logo-white.webp"
                     alt=""
                     aria-hidden="true"
                     className={cn(styles.logoImage, styles.logoWhite, showTransparent && styles.logoVisible)}
                   />
                   <img
-                    src="/assets/logos/swp-logo.png"
+                    src="/assets/logos/swp-logo.webp"
                     alt="Softwares Packers Logo"
                     className={cn(styles.logoImage, styles.logoDark, !showTransparent && styles.logoVisible)}
                   />
@@ -128,7 +128,7 @@ const Header = () => {
               aria-label="Learn about our Made in India manufacturing"
             >
               <img
-                src="/assets/made-in-india.jpg"
+                src="/assets/made-in-india.webp"
                 alt="Made in India"
                 className={styles.madeInIndiaImage}
               />

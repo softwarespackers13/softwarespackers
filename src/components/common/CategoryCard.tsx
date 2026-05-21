@@ -68,7 +68,6 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
     icon: Box
   };
 
-  const IconComponent = details.icon;
 
   return (
     <Link to={`/categories?category=${category.slug}`} className={styles.catCard}>

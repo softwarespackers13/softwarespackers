@@ -16,7 +16,7 @@ import {
     AlertCircle
 } from "lucide-react";
 import { sanitizeInput } from "@/lib/validation";
-import { quoteFormSchema, type QuoteFormData } from "@/lib/validation-schemas";
+import { quoteFormSchema } from "@/lib/validation-schemas";
 import { COMPANY_PHONE, COMPANY_WHATSAPP, IS_DEV } from "@/config/constants";
 import { logError } from "@/lib/errorHandler";
 import { ErrorSeverity } from "@/lib/errorHandler";
@@ -124,13 +124,6 @@ const Quote = () => {
                 return newErrors;
             });
         }
-    };
-
-    const handleCheckboxChange = (checked: boolean) => {
-        setFormData(prev => ({
-            ...prev,
-            urgent: checked
-        }));
     };
 
     const handleSubmit = async (e: React.FormEvent) => {

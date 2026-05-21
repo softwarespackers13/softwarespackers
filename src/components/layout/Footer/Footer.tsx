@@ -4,7 +4,6 @@ import { COMPANY_PHONE, COMPANY_PHONE_SECONDARY, COMPANY_EMAIL, COMPANY_ADDRESS,
 import categoriesData from "@/data/categories.json";
 import styles from "./Footer.module.css";
 
-const COMPANY_GSTIN = "27AAQCS1234Q125";
 
 const Footer = () => {
   return (
@@ -15,7 +14,7 @@ const Footer = () => {
           <div className={styles.leftSection}>
             <div className={styles.logoContainer}>
               <img
-                src="/assets/logos/swp-logo.png"
+                src="/assets/logos/swp-logo.webp"
                 alt="Softwares Packers"
                 className={styles.logoImage}
               />

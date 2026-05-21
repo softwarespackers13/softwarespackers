@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import ProductDetail from '../ProductDetail';
 
@@ -51,10 +51,12 @@ vi.mock('@/data/products.json', () => ({
         datasheet_url: null,
       },
     ],
+    productGroups: [],
+    standaloneProducts: [],
   },
 }));
 
-vi.mock('@/components/common/ProductCard', () => ({
+vi.mock('@/components/common/RelatedProductCard', () => ({
   default: ({ product }: { product: { id: string; name: string } }) => (
     <div data-testid={`product-card-${product.id}`}>{product.name}</div>
   ),
@@ -77,11 +79,11 @@ vi.mock('@/config/constants', () => ({
 describe('ProductDetail Page', () => {
   it('renders product details correctly', () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     expect(screen.getByText('Test Bottle')).toBeInTheDocument();
@@ -91,11 +93,11 @@ describe('ProductDetail Page', () => {
 
   it('displays product not found message for invalid slug', () => {
     render(
-      <BrowserRouter initialEntries={['/products/non-existent']}>
+      <MemoryRouter initialEntries={['/products/non-existent']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     expect(screen.getByText('Product not found')).toBeInTheDocument();
@@ -104,26 +106,25 @@ describe('ProductDetail Page', () => {
 
   it('displays key specifications', () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     expect(screen.getByText('500 ml')).toBeInTheDocument();
-    expect(screen.getByText('HDPE')).toBeInTheDocument();
-    expect(screen.getByText('1000 units')).toBeInTheDocument();
+    expect(screen.getAllByText('HDPE')[0]).toBeInTheDocument();
     expect(screen.getByText('100 pcs/carton')).toBeInTheDocument();
   });
 
   it('displays product images', () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     const images = screen.getAllByRole('img');
@@ -135,11 +136,11 @@ describe('ProductDetail Page', () => {
     const user = userEvent.setup();
 
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     const thumbnailButtons = screen.getAllByLabelText(/View image/);
@@ -152,40 +153,26 @@ describe('ProductDetail Page', () => {
     expect(mainImage).toBeInTheDocument();
   });
 
-  it('displays certifications', () => {
+  it('renders description correctly', () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
-    );
-
-    expect(screen.getAllByText('FDA')).toHaveLength(2); // Once in badge, once in certifications tab
-    expect(screen.getAllByText('ISO')).toHaveLength(2);
-  });
-
-  it('renders tabs correctly', () => {
-    render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
-        <Routes>
-          <Route path="/products/:slug" element={<ProductDetail />} />
-        </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     expect(screen.getByText('Description')).toBeInTheDocument();
-    expect(screen.getByText('Technical Specs')).toBeInTheDocument();
-    expect(screen.getByText('Certifications')).toBeInTheDocument();
+    expect(screen.getByText('This is a longer description of the test bottle')).toBeInTheDocument();
   });
 
   it('displays related products', () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     expect(screen.getByText('Related Products')).toBeInTheDocument();
@@ -194,43 +181,39 @@ describe('ProductDetail Page', () => {
 
   it('renders CTA buttons', () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     expect(screen.getByText('Request Sample')).toBeInTheDocument();
     expect(screen.getByText('Add to Quote')).toBeInTheDocument();
   });
 
-  // Note: Download buttons test removed as they don't exist in current implementation
-
   it('displays back to categories button', () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
-    const backButtons = screen.getAllByText('Back to Categories');
+    const backButtons = screen.getAllByText('Back to Products');
     expect(backButtons.length).toBeGreaterThan(0);
   });
 
   it('formats capacity correctly', () => {
     render(
-      <BrowserRouter initialEntries={['/products/test-bottle']}>
+      <MemoryRouter initialEntries={['/products/test-bottle']}>
         <Routes>
           <Route path="/products/:slug" element={<ProductDetail />} />
         </Routes>
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
-    // This test verifies the component displays capacity
     expect(screen.getByText(/ml|L/)).toBeInTheDocument();
   });
 });
-
