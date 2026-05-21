@@ -131,7 +131,7 @@ const ProductDetail = () => {
       <div className={styles.container}>
         {/* Breadcrumb */}
         <div className={styles.breadcrumb}>
-          <Button asChild variant="ghost" className="focus-ring">
+          <Button asChild variant="ghost" className={cn("focus-ring", styles.backButton)}>
             <Link to={backLink}>
               <ArrowLeft className={styles.iconMedium} />
               Back to Products

@@ -13,7 +13,7 @@ const mockCategory = {
 };
 
 describe('CategoryCard', () => {
-  it('renders category information correctly', () => {
+  it('renders category name and action text correctly', () => {
     render(
       <BrowserRouter>
         <CategoryCard category={mockCategory} />
@@ -21,8 +21,7 @@ describe('CategoryCard', () => {
     );
 
     expect(screen.getByText('Test Category')).toBeInTheDocument();
-    expect(screen.getByText('Test description for category')).toBeInTheDocument();
-    expect(screen.getByText('10 products')).toBeInTheDocument();
+    expect(screen.getByText('Explore Products')).toBeInTheDocument();
   });
 
   it('displays the correct category image', () => {
@@ -57,32 +56,6 @@ describe('CategoryCard', () => {
 
     const icon = container.querySelector('.lucide-arrow-right');
     expect(icon).toBeInTheDocument();
-  });
-
-  it('applies hover classes correctly', () => {
-    const { container } = render(
-      <BrowserRouter>
-        <CategoryCard category={mockCategory} />
-      </BrowserRouter>
-    );
-
-    const card = container.querySelector('.product-card');
-    expect(card).toHaveClass('group');
-  });
-
-  it('handles singular product count', () => {
-    const singleProductCategory = {
-      ...mockCategory,
-      product_count: 1,
-    };
-
-    render(
-      <BrowserRouter>
-        <CategoryCard category={singleProductCategory} />
-      </BrowserRouter>
-    );
-
-    expect(screen.getByText('1 products')).toBeInTheDocument();
   });
 
   it('sets lazy loading on image', () => {

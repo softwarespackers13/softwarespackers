@@ -1,7 +1,8 @@
-import { useMemo, useEffect } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { useSearchParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import categoriesData from "@/data/categories.json";
 import productsData from "@/data/products.json";
 import CategoryCard from "@/components/common/CategoryCard";
@@ -86,95 +87,128 @@ const Categories = () => {
     }
   }, [categorySlug, selectedCategory, currentPage, totalPages, searchParams, navigate]);
 
-  return (
-    <div className={styles.pageContainer}>
-      <div className={styles.container}>
-        {/* Header */}
-        <div className={styles.header}>
-          {categorySlug && selectedCategory ? (
-            <>
-              <div className={styles.backButtonContainer}>
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="sm"
-                  className={styles.backButton}
-                >
-                  <Link to="/categories">
-                    <ArrowLeft className={styles.backIcon} />
-                    Back to Categories
-                  </Link>
-                </Button>
-              </div>
-              <h1 className={styles.title}>
-                {selectedCategory.name}
-              </h1>
-              <p className={styles.subtitle}>
-                {selectedCategory.description}
+  // If a category slug is selected, show its products
+  if (categorySlug && selectedCategory) {
+    return (
+      <div className={styles.detailPageContainer}>
+        <div className={styles.container}>
+          {/* Header */}
+          <div className={styles.header}>
+            <div className={styles.backButtonContainer}>
+              <Button
+                asChild
+                variant="ghost"
+                size="sm"
+                className={styles.backButton}
+              >
+                <Link to="/categories">
+                  <ArrowLeft className={styles.backIcon} />
+                  Back to Categories
+                </Link>
+              </Button>
+            </div>
+            <h1 className={styles.title}>{selectedCategory.name}</h1>
+            <p className={styles.subtitle}>{selectedCategory.description}</p>
+            {categoryProducts.length > 0 && (
+              <p className={styles.resultsCount}>
+                {categoryProducts.length} {categoryProducts.length === 1 ? "product" : "products"} found
               </p>
-              {categoryProducts.length > 0 && (
-                <p className={styles.resultsCount}>
-                  {categoryProducts.length} {categoryProducts.length === 1 ? "product" : "products"} found
-                </p>
+            )}
+          </div>
+
+          {/* Products Grid */}
+          {categoryProducts.length > 0 ? (
+            <>
+              <div className={styles.productsGrid}>
+                {paginatedProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    currentCategorySlug={categorySlug || undefined}
+                  />
+                ))}
+              </div>
+              {totalPages > 1 && (
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
+                />
               )}
             </>
           ) : (
-            <>
-              <h1 className={styles.title}>Product Categories</h1>
-              <p className={styles.subtitle}>
-                Explore our comprehensive range of plastic packaging solutions organized by application and industry
+            <div className={styles.emptyState}>
+              <p className={styles.emptyStateText}>
+                No products found in this category.
               </p>
-            </>
+              <Button asChild variant="outline" className={styles.backButton}>
+                <Link to="/categories">
+                  <ArrowLeft className={styles.backIcon} />
+                  Back to Categories
+                </Link>
+              </Button>
+            </div>
           )}
         </div>
+        {/* Floating WhatsApp Button */}
+        <WhatsAppButton
+          phoneNumber={COMPANY_WHATSAPP}
+          message="Hello, I'm interested in your plastic containers. Please share more details."
+          variant="floating"
+        />
+      </div>
+    );
+  }
 
-        {/* Products Grid - Show when category is selected */}
-        {categorySlug && selectedCategory && (
-          <>
-            {categoryProducts.length > 0 ? (
-              <>
-                <div className={styles.productsGrid}>
-                  {paginatedProducts.map((product) => (
-                    <ProductCard 
-                      key={product.id} 
-                      product={product}
-                      currentCategorySlug={categorySlug || undefined}
-                    />
-                  ))}
-                </div>
-                {totalPages > 1 && (
-                  <Pagination
-                    currentPage={currentPage}
-                    totalPages={totalPages}
-                    onPageChange={handlePageChange}
-                  />
-                )}
-              </>
-            ) : (
-              <div className={styles.emptyState}>
-                <p className={styles.emptyStateText}>
-                  No products found in this category.
-                </p>
-                <Button asChild variant="outline" className={styles.backButton}>
-                  <Link to="/categories">
-                    <ArrowLeft className={styles.backIcon} />
-                    Back to Categories
-                  </Link>
-                </Button>
-              </div>
-            )}
-          </>
-        )}
+  // Otherwise, show the Premium Categories Grid (Stitch Layout)
+  return (
+    <div className={styles.pageContainer}>
+      {/* Hero Section */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroImageContainer}>
+          <div className={styles.heroOverlay}></div>
+          <img
+            src="/assets/categories-hero-bg.png"
+            alt="Premium Industrial Background"
+            className={styles.heroImg}
+          />
+        </div>
+        <div className={styles.heroContentContainer}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroAccentBar}></div>
+            <h1 className={styles.heroTitle}>Premium Packaging Categories</h1>
+            <p className={styles.heroSubtitle}>
+              Precision polymer manufacturing for global industry standards. Engineering excellence delivered in every container.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Categories Grid - Show when no category is selected */}
-        {!categorySlug && (
+      {/* Grid Section */}
+      <section className={styles.gridSection}>
+        <div className={styles.gridContainer}>
           <div className={styles.categoriesGrid}>
             {categories.map((category) => (
               <CategoryCard key={category.id} category={category} />
             ))}
           </div>
-        )}
-      </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaContainer}>
+          <h2 className={styles.ctaTitle}>Need a custom dimension?</h2>
+          <p className={styles.ctaSubtitle}>
+            Our R&D team specializes in custom polymer formulation and mold design tailored to specific industrial workflows.
+          </p>
+          <div className={styles.ctaButtons}>
+            <button className={styles.ctaBtnRed}>Consult with Engineering</button>
+            <button className={styles.ctaBtnOutline}>Download Catalog (PDF)</button>
+          </div>
+        </div>
+      </section>
+
       {/* Floating WhatsApp Button */}
       <WhatsAppButton
         phoneNumber={COMPANY_WHATSAPP}

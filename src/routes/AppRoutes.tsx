@@ -7,7 +7,6 @@ import ErrorBoundary from "@/components/common/ErrorBoundary";
 const Home = lazy(() => import("@/pages/Home"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
 const Categories = lazy(() => import("@/pages/Categories"));
-const Custom = lazy(() => import("@/pages/Custom"));
 const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Quote = lazy(() => import("@/pages/Quote"));
@@ -72,7 +71,6 @@ const AppRoutesContent = () => (
         <Route path="/" element={<RouteWithErrorBoundary><Home /></RouteWithErrorBoundary>} />
         <Route path="/products/:slug" element={<RouteWithErrorBoundary><ProductDetail /></RouteWithErrorBoundary>} />
         <Route path="/categories" element={<RouteWithErrorBoundary><Categories /></RouteWithErrorBoundary>} />
-        <Route path="/custom" element={<RouteWithErrorBoundary><Custom /></RouteWithErrorBoundary>} />
         <Route path="/about" element={<RouteWithErrorBoundary><About /></RouteWithErrorBoundary>} />
         <Route path="/contact" element={<RouteWithErrorBoundary><Contact /></RouteWithErrorBoundary>} />
         <Route path="/quote" element={<RouteWithErrorBoundary><Quote /></RouteWithErrorBoundary>} />

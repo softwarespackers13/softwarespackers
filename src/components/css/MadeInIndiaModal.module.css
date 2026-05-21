@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap');
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  opacity: 0;
+  transition: opacity 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+  pointer-events: none;
+  padding: 1.25rem;
+}
+
+.backdrop.isOpen {
+  opacity: 1;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: auto;
+}
+
+.modalWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  /* Reduced width for a more compact, minimal B2B look */
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  /* Matches roundness: Large/8px-12px from design system */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 0 30px rgba(185, 28, 28, 0.06);
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  transition: opacity 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.backdrop.isOpen .modalWrapper {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Saffron, White, Green top accent strip */
+.accentStrip {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, #FF9933 0%, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%, #138808 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.875rem;
+  right: 0.875rem;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.375rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  background-color: rgba(241, 245, 249, 0.9);
+  color: #1e293b;
+  transform: rotate(90deg);
+}
+
+.modalContent {
+  padding: 2.25rem 1.75rem 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Side-by-side logo layout */
+.logoStack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.75rem;
+  padding: 0.75rem 1.75rem;
+  background-color: #f8fafc;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.swpLogo {
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.logoDivider {
+  height: 2rem;
+  width: 1px;
+  background-color: #cbd5e1;
+}
+
+.indiaLogo {
+  height: 3rem;
+  width: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(185, 28, 28, 0.15);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #171717;
+  /* Rich Black from Stitch DS */
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+  /* Technical B2B density */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.description {
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
+  font-size: 0.85rem;
+  /* Sora is slightly wider, so 0.85rem looks cleaner */
+  color: #5f5e5b;
+  /* Utilitarian secondary gray */
+  line-height: 1.625;
+  /* Generous line height for readability */
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.actionButton {
+  width: 100%;
+  background-color: #b91c1c;
+  /* Brand primary deep red */
+  color: #ffffff;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  /* blueprint/technical small-caps style */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.875rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  /* Precision 4px rounded radius */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(185, 28, 28, 0.15);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.actionButton:hover {
+  background-color: rgba(185, 28, 28, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px rgba(185, 28, 28, 0.2);
+}
+
+.actionButton:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 640px) {
+  .backdrop {
+    padding: 0.75rem;
+  }
+
+  .modalWrapper {
+    border-radius: 0.5rem;
+  }
+
+  .modalContent {
+    padding: 2rem 1.25rem 1.5rem 1.25rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .description {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+}

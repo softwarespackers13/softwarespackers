@@ -153,9 +153,9 @@ const Contact = () => {
             {/* Hero Section */}
             <div
                 ref={heroFade.elementRef}
-                className={cn(styles.hero, 'scroll-fade', heroFade.isVisible ? 'visible' : '')}
+                className={cn(styles.hero, 'scroll-fade', heroFade.isVisible ? 'visible' : '', '-mt-[5rem]')}
             >
-                <div className={styles.heroContent}>
+                <div className={cn(styles.heroContent, 'pt-[5rem]')}>
                     <h1 className={styles.title}>Contact us.</h1>
                     <p className={styles.subtitle}>
                         Get in touch and ask us anything. Questions about our products, custom solutions, bulk orders, or partnership opportunities - we answer it all.

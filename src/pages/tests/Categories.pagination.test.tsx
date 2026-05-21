@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 
 // Create mock products - must be defined before mocks
-const createMockProducts = (count: number, category: string, material = '') => 
+const createMockProducts = (count: number, category: string, material = '') =>
   Array.from({ length: count }, (_, i) => ({
     id: `${category.toLowerCase().replace(/\s+/g, '-')}-product-${i + 1}`,
     name: `${category} Product ${i + 1}`,
@@ -26,7 +26,7 @@ const createMockProducts = (count: number, category: string, material = '') =>
 
 // Mock products.json - define products inline to avoid hoisting issues
 vi.mock('@/data/products.json', () => {
-  const createMockProducts = (count: number, category: string, material = '') => 
+  const createMockProducts = (count: number, category: string, material = '') =>
     Array.from({ length: count }, (_, i) => ({
       id: `${category.toLowerCase().replace(/\s+/g, '-')}-product-${i + 1}`,
       name: `${category} Product ${i + 1}`,
@@ -310,7 +310,7 @@ describe('Categories Page - Regression Tests', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText('Product Categories')).toBeInTheDocument();
+    expect(screen.getByText('Premium Packaging Categories')).toBeInTheDocument();
   });
 
   it('still filters products by category correctly', async () => {

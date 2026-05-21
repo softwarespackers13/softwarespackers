@@ -2,7 +2,7 @@
 
 .pageContainer {
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 8rem 0 4rem 0;
 }
 
 .container {
@@ -375,5 +375,23 @@
     min-width: 320px;
     max-width: 320px;
   }
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #5f5e5b !important;
+  transition: color 0.3s ease;
+}
+
+.backButton:hover {
+  color: #b91c1c !important;
+  background-color: transparent !important;
 }
 

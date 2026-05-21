@@ -73,7 +73,6 @@ const Footer = () => {
                 { name: "Home", href: "/" },
                 { name: "Categories", href: "/categories" },
                 { name: "About Us", href: "/about" },
-                { name: "Custom Solutions", href: "/custom" },
                 { name: "Get Quote", href: "/quote" },
                 { name: "Contact", href: "/contact" },
               ].map((item) => (

@@ -36,9 +36,9 @@ const About = () => {
             {/* Hero Section */}
             <section
                 ref={heroFade.elementRef}
-                className={`${styles.heroSection} ${styles.scrollFade} ${heroFade.isVisible ? styles.visible : ''}`}
+                className={`${styles.heroSection} ${styles.scrollFade} ${heroFade.isVisible ? styles.visible : ''} -mt-[5rem]`}
             >
-                <div className={styles.heroContent}>
+                <div className={`${styles.heroContent} pt-[5rem]`}>
                     <h1 className={styles.heroTitle}>
                         Premium Plastic Containers & Packaging Solutions
                     </h1>

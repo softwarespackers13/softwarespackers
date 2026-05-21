@@ -7,7 +7,7 @@
       "description": "High-quality PET containers for food packaging and storage.",
       "icon": "container",
       "product_count": 9,
-      "image": "/assets/temp/pet-containers-base-image.jpeg"
+      "image": "/assets/temp/pet-containers-base-image.png"
     },
     {
       "id": "container",
@@ -16,7 +16,7 @@
       "description": "Versatile containers for various storage and packaging needs.",
       "icon": "container",
       "product_count": 31,
-      "image": "/assets/temp/containers-base-image.jpeg"
+      "image": "/assets/temp/containers-base-image.jpg"
     },
     {
       "id": "sweet-boxes",
@@ -34,7 +34,7 @@
       "description": "Sleek meal boxes for preserving and packaging all types of food.",
       "icon": "box",
       "product_count": 6,
-      "image": "/assets/temp/meal-box-base-image.jpeg"
+      "image": "/assets/temp/meal-box-base-image.jpg"
     },
     {
       "id": "bakery-products",
@@ -43,7 +43,7 @@
       "description": "Containers designed for bakery items, muffins, and confectionery products.",
       "icon": "box",
       "product_count": 27,
-      "image": "/assets/temp/bakery-base-image.webp"
+      "image": "/assets/temp/bakery-base-image.jpg"
     },
     {
       "id": "hinge-boxes",
@@ -52,7 +52,7 @@
       "description": "Hinged containers with tight seals to keep food fresh and organized.",
       "icon": "box",
       "product_count": 4,
-      "image": "/assets/temp/hingebox-base-image.jpeg"
+      "image": "/assets/temp/hingebox-base-image.jpg"
     },
     {
       "id": "ice-cream-cups-glasses",
@@ -61,7 +61,7 @@
       "description": "Reliable containers perfect for ice cream shops and takeout service.",
       "icon": "cup",
       "product_count": 5,
-      "image": "/assets/temp/ice-cream-base-image.jpeg"
+      "image": "/assets/temp/ice-cream-base-image.jpg"
     }
   ]
 }

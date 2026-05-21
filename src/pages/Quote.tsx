@@ -215,7 +215,7 @@ const Quote = () => {
         <div className={styles.pageContainer}>
             <div className={styles.container}>
                 {/* Hero Section */}
-                <div className={styles.hero}>
+                <div className={`${styles.hero} -mt-[5rem] pt-[7rem] pb-[2rem]`}>
                     <Badge className={styles.badge} variant="secondary">
                         <Calculator className={styles.iconSmall} />
                         Get a Quote

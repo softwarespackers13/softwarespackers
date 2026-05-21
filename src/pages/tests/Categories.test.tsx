@@ -53,7 +53,7 @@ describe('Categories Page', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText('Product Categories')).toBeInTheDocument();
+    expect(screen.getByText('Premium Packaging Categories')).toBeInTheDocument();
   });
 
   it('renders the page description', () => {
@@ -64,7 +64,7 @@ describe('Categories Page', () => {
     );
 
     expect(
-      screen.getByText(/Explore our comprehensive range of plastic packaging solutions/i)
+      screen.getByText(/Precision polymer manufacturing for global industry standards/i)
     ).toBeInTheDocument();
   });
 

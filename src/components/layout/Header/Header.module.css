@@ -1,77 +1,51 @@
-/* Header Styles */
-
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
-  background: #EDEDED;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid hsl(var(--border) / 0.5);
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.5s ease, padding-top 0.5s ease, padding-bottom 0.5s ease, box-shadow 0.5s ease;
+  background-color: #fbf9f9;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: var(--scrollbar-width, 0px);
+  --swp-text-color: #1b1c1c;
 }
 
-@media (max-width: 767px) {
-  .header {
-    z-index: 100;
-  }
-}
-
-@supports (backdrop-filter: blur(12px)) {
-  .header {
-    background: #EDEDED;
-  }
+.headerTop {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  --swp-text-color: #ffffff;
 }
 
 .nav {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (min-width: 640px) {
-  .nav {
-    max-width: 640px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .nav {
-    max-width: 768px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .nav {
-    max-width: 1024px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .nav {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .nav {
-    max-width: 1536px;
-  }
 }
 
 .navInner {
   display: flex;
-  height: 5rem;
   align-items: center;
   justify-content: space-between;
+  max-width: 1536px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+@media (min-width: 1024px) {
+  .navInner {
+    padding: 0 64px;
+  }
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 .logoContainer {
@@ -80,93 +54,180 @@
 }
 
 .logoLink {
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  position: relative;
 }
 
-.logoWrapper {
+.logoStack {
   position: relative;
+  height: 2.5rem;
+  width: auto;
+  /* min-width keeps layout stable while both imgs load */
+  min-width: 4rem;
 }
 
 .logoImage {
-  height: 3rem;
+  height: 2.5rem;
   width: auto;
-  transition: transform 0.3s ease;
+  object-fit: contain;
+  /* crossfade — matches the header background transition speed */
+  transition: opacity 0.5s ease;
 }
 
-.logoLink:hover .logoImage {
-  transform: scale(1.05);
-}
-
-.logoGlow {
+/* Both logos sit on top of each other */
+.logoWhite,
+.logoDark {
   position: absolute;
-  inset: 0;
-  background: hsl(var(--accent) / 0.2);
-  border-radius: 0.5rem;
-  filter: blur(16px);
+  top: 0;
+  left: 0;
   opacity: 0;
-  z-index: -1;
-  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
-.logoLink:hover .logoGlow {
+/* The second (dark) logo also needs to size the stack, so give it relative flow */
+.logoDark {
+  position: relative;
+}
+
+.logoVisible {
   opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+  .logoStack  { height: 2rem; min-width: 3rem; }
+  .logoImage  { height: 2rem; }
 }
 
 .logoText {
-  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
   font-weight: 700;
-  color: #000000;
-  display: block;
-  line-height: 1.25;
+  letter-spacing: -0.05em;
+  transition: color 0.5s ease;
+  color: #1b1c1c;
+}
+
+.headerTop .logoText {
+  color: #ffffff;
 }
 
 .desktopNav {
   display: none;
   align-items: center;
-  gap: 0.5rem;
+  gap: 3.25rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .desktopNav {
     display: flex;
   }
 }
 
 .navLink {
-  position: relative;
-  padding: 0.5rem 1rem;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: #000000;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  color: #1b1c1c;
   text-decoration: none;
-  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.headerTop .navLink {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .navLink:hover {
-  color: #000000;
+  color: #b91c1c;
+}
+
+.headerTop .navLink:hover {
+  color: #ffffff;
 }
 
 .navLinkActive {
-  color: #c92a2a;
-  font-weight: 600;
-  position: relative;
+  border-bottom: 2px solid #b91c1c;
+  color: #1b1c1c;
+}
+
+.headerTop .navLinkActive {
+  color: #ffffff;
 }
 
 .navLinkActive::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 2px;
-  background: #c92a2a;
-  border-radius: 9999px;
+  display: none !important;
 }
 
+.desktopActions {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .desktopActions {
+    display: flex;
+  }
+}
+
+.navIconBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navIcon {
+  width: 24px;
+  height: 24px;
+  color: rgba(27, 28, 28, 0.7);
+  transition: color 0.5s ease;
+}
+
+.navIconBtn:hover .navIcon {
+  color: #b91c1c;
+}
+
+.headerTop .navIcon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.headerTop .navIconBtn:hover .navIcon {
+  color: #ffffff;
+}
+
+.navCtaBtn {
+  background-color: #b91c1c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.navCtaBtn:hover {
+  background-color: rgba(185, 28, 28, 0.9);
+}
+
+/* --------------------------------- */
+/* PRESERVED MOBILE & DROPDOWN STYLES */
+/* --------------------------------- */
 /* Dropdown Styles */
 .dropdownContainer {
   position: relative;
@@ -180,19 +241,6 @@
 
 .navLinkWithDropdown::after {
   display: none !important;
-}
-
-.navLinkActive.navLinkWithDropdown::after {
-  display: block !important;
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 2px;
-  background: #c92a2a;
-  border-radius: 9999px;
 }
 
 .dropdownIcon {
@@ -212,9 +260,9 @@
   left: 0;
   min-width: 240px;
   background: #FFFFFF;
-  border: 1px solid hsl(var(--border) / 0.3);
+  border: 1px solid rgba(185, 28, 28, 0.05);
   border-radius: 0.75rem;
-  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.05), 0 4px 6px -2px rgb(0 0 0 / 0.025);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
@@ -235,8 +283,8 @@
   width: 12px;
   height: 12px;
   background: #FFFFFF;
-  border-left: 1px solid hsl(var(--border) / 0.3);
-  border-top: 1px solid hsl(var(--border) / 0.3);
+  border-left: 1px solid rgba(185, 28, 28, 0.05);
+  border-top: 1px solid rgba(185, 28, 28, 0.05);
   transform: rotate(45deg);
 }
 
@@ -279,9 +327,11 @@
   display: none;
   align-items: center;
   gap: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+  background: #b91c1c;
+  color: white;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(185, 28, 28, 0.2), 0 2px 4px -1px rgba(185, 28, 28, 0.1);
   transition: all 0.3s ease;
-  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.9));
 }
 
 @media (min-width: 1024px) {
@@ -354,12 +404,12 @@
   right: 0;
   width: 100%;
   padding: 1rem;
-  background: #EDEDED;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid hsl(var(--border) / 0.5);
-  border-bottom: 1px solid hsl(var(--border) / 0.5);
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+  border-top: 1px solid rgba(185, 28, 28, 0.05);
+  border-bottom: 1px solid rgba(185, 28, 28, 0.05);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -1px rgb(0 0 0 / 0.03);
   z-index: 99;
   animation: slideDown 0.2s ease-out;
   max-height: calc(100vh - 5rem);
@@ -395,10 +445,10 @@
 }
 
 .mobileNavLinkActive {
-  color: #c92a2a;
+  color: #b91c1c;
   font-weight: 600;
   position: relative;
-  background: rgba(201, 42, 42, 0.08);
+  background: rgba(185, 28, 28, 0.05);
 }
 
 .mobileNavLinkActive::before {
@@ -409,7 +459,7 @@
   transform: translateY(-50%);
   width: 3px;
   height: 60%;
-  background: #c92a2a;
+  background: #b91c1c;
   border-radius: 0 2px 2px 0;
 }
 
@@ -421,7 +471,10 @@
 
 .mobileCtaButton {
   width: 100%;
-  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.9));
+  background: #b91c1c;
+  color: white;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(185, 28, 28, 0.2), 0 2px 4px -1px rgba(185, 28, 28, 0.1);
 }
 
 .mobileDropdown {
@@ -474,3 +527,205 @@
     opacity: 1;
   }
 }
+
+/* Made in India Badge */
+.madeInIndiaBadge {
+  display: none;
+  align-items: center;
+  margin-left: 1rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.madeInIndiaBadge:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+@media (min-width: 768px) {
+  .madeInIndiaBadge {
+    display: flex;
+  }
+}
+
+.madeInIndiaText {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.indiaFlag {
+  font-size: 0.9rem;
+}
+
+
+.desktopActions {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .desktopActions {
+    display: flex;
+  }
+}
+
+.navIconBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: rgba(27, 28, 28, 0.7);
+  transition: color 0.5s ease;
+}
+
+.navIconBtn:hover .navIcon {
+  color: #b91c1c;
+}
+
+.headerTop .navIcon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navCtaBtn {
+  background-color: #b91c1c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+}
+
+.navCtaBtn:hover {
+  background-color: rgba(185, 28, 28, 0.9);
+}
+
+/* Fix text colors based on scroll state */
+.headerTop .navLink {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.headerTop .navLink:hover {
+  color: #b91c1c;
+}
+
+.headerTop .logoText {
+  color: #ffffff;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.headerTop .dropdownIcon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.madeInIndiaContainer {
+  display: flex;
+  align-items: center;
+}
+
+.madeInIndiaButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.madeInIndiaImage {
+  height: 2.75rem;
+  width: 2.75rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1.5px solid rgba(185, 28, 28, 0.25);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.madeInIndiaImage:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 15px -3px rgba(185, 28, 28, 0.15);
+  border-color: rgba(185, 28, 28, 0.6);
+}
+
+.madeInIndiaButton:focus-visible .madeInIndiaImage {
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
+}
+
+/* Mobile Menu Brand Trigger */
+.mobileIndiaButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  background-color: rgba(19, 136, 8, 0.05);
+  border: 1px dashed rgba(19, 136, 8, 0.25);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s ease;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  box-sizing: border-box;
+}
+
+.mobileIndiaButton:hover {
+  background-color: rgba(19, 136, 8, 0.1);
+  border-color: rgba(19, 136, 8, 0.45);
+}
+
+.mobileIndiaButton:focus-visible {
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
+}
+
+.mobileIndiaFlag {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.mobileIndiaText {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #138808;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
