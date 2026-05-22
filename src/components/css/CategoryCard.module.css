@@ -69,7 +69,7 @@
 }
 
 .badgeText {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -78,7 +78,7 @@
 }
 
 .catName {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-display);
   font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
@@ -87,7 +87,7 @@
 }
 
 .catDesc {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 0.875rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
@@ -103,7 +103,7 @@
   align-items: center;
   gap: 0.5rem;
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;

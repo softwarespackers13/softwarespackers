@@ -102,10 +102,10 @@
 }
 
 .logoText {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-display);
   font-size: 28px;
   font-weight: 700;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
   transition: color 0.5s ease;
   color: #1b1c1c;
 }
@@ -127,7 +127,7 @@
 }
 
 .navLink {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -721,7 +721,7 @@
 }
 
 .mobileIndiaText {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 0.875rem;
   font-weight: 700;
   color: #138808;

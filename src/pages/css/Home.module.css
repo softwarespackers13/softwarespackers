@@ -69,7 +69,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-sans);
 }
 
 /* Decorative background elements */
@@ -553,7 +553,7 @@
 }
 
 .mainHeading {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   font-size: clamp(2rem, 7.5vw, 82px);
   font-weight: 500;
   color: oklch(0.226 0 0);
@@ -574,7 +574,7 @@
 }
 
 .mainHeadingBlock {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   font-weight: 500;
   display: block;
   margin-bottom: 0.5rem;
@@ -624,7 +624,7 @@
 }
 
 .subtitle {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 1.125rem;
   color: hsl(var(--muted-foreground));
   margin-top: 40px;
@@ -746,7 +746,7 @@
 }
 
 .primaryButton {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   width: 12.5rem !important;
   height: 2.5rem !important;
   padding: 0 1.25rem;
@@ -797,7 +797,7 @@
 }
 
 .outlineButton {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   height: 2.5rem;
   padding: 0 1.25rem;
   font-size: 0.875rem;
@@ -937,7 +937,7 @@
 }
 
 .categoriesTitle {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -986,7 +986,7 @@
 }
 
 .featuresTitle {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -1099,7 +1099,7 @@
 }
 
 .industriesWeServeTitle {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   font-size: clamp(2rem, 8vw, 80px);
   font-weight: 800;
   color: #FFFFFF;
@@ -1183,7 +1183,7 @@
 }
 
 .aboutUsTitle {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 700;
   line-height: 1.3;
@@ -1192,7 +1192,7 @@
 }
 
 .aboutUsSubtitle {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 600;
   line-height: 1.4;
@@ -1524,7 +1524,7 @@
 }
 
 .ctaTitle {
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-display);
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 700;
   margin: 0;
@@ -1913,7 +1913,7 @@
   }
 
   .mainHeading {
-    font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-display);
     font-size: clamp(2.5rem, 8.5vw, 82px);
     font-weight: 500;
     color: oklch(0.226 0 0);
@@ -2056,7 +2056,7 @@
 
   .mainHeading {
     margin-top: 0;
-    font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-display);
     font-size: clamp(2.75rem, 7vw, 3.75rem);
     font-weight: 500;
     color: oklch(0.226 0 0);
@@ -2143,7 +2143,7 @@
   }
 
   .categoriesTitle {
-    font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-display);
     font-size: clamp(3.5rem, 8vw, 4rem);
     color: oklch(0.226 0 0);
     line-height: 1.1;
@@ -2151,7 +2151,7 @@
   }
 
   .industriesWeServeTitle {
-    font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-display);
     font-size: clamp(3.5rem, 8vw, 4rem);
     color: #FFFFFF;
     line-height: 1.1;
@@ -2274,7 +2274,7 @@
 
   .mainHeading {
     margin-top: 0.25rem;
-    font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-display);
     font-size: clamp(3rem, 6.5vw, 4rem);
     color: oklch(0.226 0 0);
     margin-bottom: 1.25rem;
@@ -2375,7 +2375,7 @@
 
   .mainHeading {
     margin-top: 1rem;
-    font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-display);
     font-size: 82px;
     color: oklch(0.226 0 0);
     margin-bottom: 2rem;
@@ -2440,14 +2440,14 @@
   }
 
   .categoriesTitle {
-    font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-display);
     font-size: 80px;
     color: oklch(0.226 0 0);
     line-height: 1.05em;
   }
 
   .industriesWeServeTitle {
-    font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-family-display);
     font-size: 80px;
     color: #FFFFFF;
     line-height: 1.05em;
@@ -2560,7 +2560,7 @@
   background-color: #FAF5EF;
   margin-top: -5rem;
   /* pull up behind header */
-  font-family: 'Avenir', 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-sans);
 }
 
 .modernHeroSlide {
@@ -3160,7 +3160,7 @@
 }
 
 .heroActionPrompt {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -3466,7 +3466,7 @@
 
 .catLabel {
   color: #b91c1c;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -3476,7 +3476,7 @@
 
 .catName {
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-display);
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -3729,7 +3729,7 @@
   top: -3rem;
   left: -3rem;
   color: rgba(27, 28, 28, 0.05);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-weight: 900;
   font-size: 5rem;
   line-height: 1;
@@ -3781,7 +3781,7 @@
 }
 
 .aboutBadgeTitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-display);
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: 600;
@@ -3790,7 +3790,7 @@
 }
 
 .aboutBadgeSubtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
@@ -3813,7 +3813,7 @@
 
 .aboutLabel {
   color: #b91c1c;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -3823,7 +3823,7 @@
 }
 
 .aboutTitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-display);
   font-size: 2.25rem;
   font-weight: 700;
   color: #1b1c1c;
@@ -3839,7 +3839,7 @@
 }
 
 .aboutDesc {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 1.125rem;
   color: rgba(27, 28, 28, 0.7);
   margin-bottom: 2rem;
@@ -3869,7 +3869,7 @@
 }
 
 .aboutFeatureTitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -3879,7 +3879,7 @@
 }
 
 .aboutFeatureDesc {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   color: rgba(27, 28, 28, 0.6);
   margin: 0;
 }
@@ -3888,7 +3888,7 @@
   margin-top: 3rem;
   background-color: #1b1c1c;
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family-sans);
   padding: 1rem 2rem;
   font-size: 0.75rem;
   font-weight: 700;

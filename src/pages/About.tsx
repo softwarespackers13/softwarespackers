@@ -1,273 +1,298 @@
+import { useRef } from "react";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
-import FactoryCarousel from "@/components/common/FactoryCarousel";
 import { COMPANY_WHATSAPP } from "@/config/constants";
 import { useScrollFade } from "@/hooks/use-scroll-fade";
+import { ArrowRight, Cpu, Plus } from "lucide-react";
+import { Link } from "react-router-dom";
 import styles from "./css/About.module.css";
 
 const About = () => {
     const heroFade = useScrollFade();
-    const knowWhoWeAreFade = useScrollFade();
-    const whatMakesUsDifferentFade = useScrollFade();
-    const missionFade = useScrollFade();
-    const infrastructureFade = useScrollFade();
+    const bentoFade = useScrollFade();
+    const infraFade = useScrollFade();
+    const journeyFade = useScrollFade();
+    const specsFade = useScrollFade();
 
-    const stats = [
-        { label: "Quality Products", value: "100%" },
-        { label: "Happy customers", value: "10k+" },
-        { label: "Product Range", value: "Wide" },
-        { label: "Customer Satisfaction", value: "Premium" }
-    ];
+    const bentoRef = useRef<HTMLDivElement>(null);
+    const specsRef = useRef<HTMLDivElement>(null);
+    const journeyRef = useRef<HTMLDivElement>(null);
 
-    const factoryImages = [
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop&q=80",
-        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop&q=80",
-    ];
-
+    const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    };
 
     return (
         <div className={styles.pageContainer}>
-            {/* Hero Section */}
+            {/* Chapter I: Engineering Precision (Hero Section) */}
             <section
                 ref={heroFade.elementRef}
-                className={`${styles.heroSection} ${styles.scrollFade} ${heroFade.isVisible ? styles.visible : ''} -mt-[5rem]`}
+                className={`${styles.heroSection} ${styles.scrollFade} ${heroFade.isVisible ? styles.visible : ""}`}
             >
-                <div className={`${styles.heroContent} pt-[5rem]`}>
-                    <h1 className={styles.heroTitle}>
-                        Premium Plastic Containers & Packaging Solutions
-                    </h1>
+                <div className={styles.heroImageWrapper}>
+                    <img
+                        alt="Industrial plastic manufacturing plant automation"
+                        className={styles.heroImage}
+                        src="/assets/temp3/industrial.webp"
+                    />
+                    <div className={styles.heroGradient}></div>
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.heroContent}>
+                        <span className={styles.heroBadge}>Chapter I: Engineering Precision</span>
+                        <h1 className={styles.heroTitle}>
+                            Precision Engineered Container Solutions.
+                        </h1>
+                        <p className={styles.heroDescription}>
+                            Architecting premium packaging configurations that serve as the structural backbone of high-volume food service, storage, and industrial operations.
+                        </p>
+                        <div className={styles.heroButtons}>
+                            <Link to="/categories">
+                                <button className={styles.btnPrimary}>
+                                    Explore Systems
+                                </button>
+                            </Link>
+                            <button
+                                className={styles.btnSecondary}
+                                onClick={() => scrollToRef(bentoRef)}
+                            >
+                                Our Process
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            {/* Know Who We Are Section */}
-            <section
-                ref={knowWhoWeAreFade.elementRef}
-                className={`${styles.knowWhoWeAreSection} ${styles.scrollFade} ${knowWhoWeAreFade.isVisible ? styles.visible : ''}`}
-            >
-                <div className={styles.container}>
-                    <div className={styles.knowWhoWeAreContent}>
-                        {/* Left Column - Text */}
-                        <div className={styles.knowWhoWeAreText}>
-                            <div className={styles.knowWhoWeAreBadge}>
-                                <div className={styles.knowWhoWeAreBadgeLine}></div>
-                                <span>Know who we are</span>
-                            </div>
-                            <h2 className={styles.knowWhoWeAreTitle}>
-                                It all started with a simple idea.
-                            </h2>
-                            <p className={styles.knowWhoWeAreDescription}>
-                                Backed by experience, teamwork, and a drive for excellence, Softwares Packers was founded
-                                to revolutionize plastic packaging solutions. Today, we work with brands across industries
-                                to deliver innovative packaging that turns challenges into measurable results. We specialize
-                                in manufacturing premium plastic containers for food service, storage, and industrial applications,
-                                ensuring quality and reliability in every product we create.
+            {/* Chapter II: Our Works & Engineering Standards (Bento Grid) */}
+            <div ref={bentoRef} style={{ scrollMarginTop: "2rem" }}>
+                <section
+                    ref={bentoFade.elementRef}
+                    className={`${styles.bentoSection} ${styles.scrollFade} ${bentoFade.isVisible ? styles.visible : ""}`}
+                >
+                    <div className={styles.container}>
+                        <div className={styles.sectionHeader}>
+                            <span className={styles.specsTag} style={{ display: "inline-block", marginBottom: "0.5rem" }}>Chapter II: Our Works</span>
+                            <h2 className={styles.sectionTitle}>Works &amp; Engineering Standards</h2>
+                            <p className={styles.sectionSubtitle}>
+                                From custom mold designs to high-speed automated production, our packaging systems guarantee product safety and structural integrity.
                             </p>
                         </div>
-                        {/* Right Column - Image Grid */}
-                        <div className={styles.knowWhoWeAreImages}>
-                            <div className={styles.knowWhoWeAreImageGrid}>
-                                <div className={styles.knowWhoWeAreImageItem}>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80"
-                                        alt="Manufacturing growth and data"
-                                        className={styles.knowWhoWeAreImage}
-                                    />
+
+                        <div className={styles.bentoGrid}>
+                            {/* Bento Item 1: Large Image (Our Works - Printing & Assembly) */}
+                            <div className={styles.bentoItemLarge}>
+                                <img
+                                    alt="Advanced packaging printing and process line"
+                                    className={styles.bentoItemLargeImg}
+                                    src="/assets/home-hero/factory_process.webp"
+                                />
+                                <div className={styles.bentoOverlay}>
+                                    <span className={styles.bentoTag}>Manufacturing Excellence</span>
+                                    <h3 className={styles.bentoItemTitle}>Thermally Optimized Polymer Systems</h3>
+                                    <p className={styles.bentoItemDesc}>
+                                        Engineering thermal stability and high-adhesion moisture barriers for safe preservation across food-service and logistics networks.
+                                    </p>
                                 </div>
-                                <div className={styles.knowWhoWeAreImageItem}>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=600&fit=crop&q=80"
-                                        alt="Modern manufacturing technology"
-                                        className={styles.knowWhoWeAreImage}
-                                    />
+                            </div>
+
+                            {/* Bento Item 2: Text Card (Works details) */}
+                            <div className={styles.bentoItemText}>
+                                <Cpu className={styles.bentoIcon} />
+                                <h4 className={styles.bentoHeadingSmall}>Precision Thermoforming</h4>
+                                <p className={styles.bentoParaSmall}>
+                                    State-of-the-art thermoforming production lines calibrated to the micron, producing durable, leak-proof, and stackable clear plastic containers.
+                                </p>
+                                <button
+                                    onClick={() => scrollToRef(specsRef)}
+                                    className={styles.bentoLink}
+                                    style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
+                                >
+                                    Technical Specs <ArrowRight size={16} />
+                                </button>
+                            </div>
+
+                            {/* Bento Item 3: Aesthetic Image (Thermoforming Production line) */}
+                            <div className={styles.bentoItemImage}>
+                                <img
+                                    alt="Thermoforming packaging production line"
+                                    className={styles.bentoItemImageInner}
+                                    src="/assets/home-hero/factory_thermoform.webp"
+                                />
+                                <div className={styles.bentoImageOverlay}></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            {/* Chapter III: Global Scale */}
+            <section
+                ref={infraFade.elementRef}
+                className={`${styles.infrastructureSection} ${styles.scrollFade} ${infraFade.isVisible ? styles.visible : ""}`}
+            >
+                <div className={styles.container}>
+                    <div className={styles.infraGrid}>
+                        {/* Left Column: Stats */}
+                        <div className={styles.infraLeft}>
+                            <span className={styles.heroBadge} style={{ color: "var(--about-outline-variant)", display: "block", marginBottom: "1rem" }}>Chapter III: Global Scale</span>
+                            <h2 className={styles.infraTitle}>Infrastructure for Modern Distribution.</h2>
+                            <div className={styles.statsList}>
+                                <div className={styles.statItem}>
+                                    <h3 className={styles.statHeading}>99.9% Integrity Rate</h3>
+                                    <p className={styles.statDesc}>
+                                        Our vacuum-sealing protocols are the gold standard for global distribution chains.
+                                    </p>
                                 </div>
-                                <div className={styles.knowWhoWeAreImageItem}>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=600&fit=crop&q=80"
-                                        alt="Quality control and planning"
-                                        className={styles.knowWhoWeAreImage}
-                                    />
+                                <div className={styles.statItem}>
+                                    <h3 className={styles.statHeading}>Sustainable Materials</h3>
+                                    <p className={styles.statDesc}>
+                                        Bio-derived polymers that maintain structural rigidity without environmental cost.
+                                    </p>
                                 </div>
-                                <div className={styles.knowWhoWeAreImageItem}>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=600&fit=crop&q=80"
-                                        alt="Innovation and ideas"
-                                        className={styles.knowWhoWeAreImage}
-                                    />
+                                <div className={styles.statItem}>
+                                    <h3 className={styles.statHeading}>Smart Monitoring</h3>
+                                    <p className={styles.statDesc}>
+                                        IoT-integrated containers that report thermal stability in real-time during transit.
+                                    </p>
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Image with Overlay */}
+                        <div className={styles.infraRight}>
+                            <img
+                                alt="Automated packaging lines and facility machinery"
+                                className={styles.infraImage}
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNbdXbjAm9p49KP4RLv3IlkNk7AqR9Q8EU3KUQgZK5Ajtq5_v6MGAAVr_rDxDf55zHQAO0ipDeJVh8NVgKCPeL592mB032lwcCTvC6FZxhsKisuLsiFVg6MCqTMhbpk80jHyQAwv26g64yFt00MQvveNLZAiZwf-GPMiJWGCXHIm3YfoAdWvbj5lPQ_d1dpPJFTw-e1bmPY1EPWxZqTii5llnhQzmNI2QYa0X7qlzPjDIQ2THT8ziA8EpzJjpbH58Dff6uynsgg3HL"
+                            />
+                            <div className={`${styles.caseStudyOverlay} ${styles.glassPanel}`}>
+                                <div>
+                                    <p className={styles.caseTag}>Case Study 042</p>
+                                    <h4 className={styles.caseTitle}>High-Volume Food Containers</h4>
+                                </div>
+                                <Link to="/contact">
+                                    <button className={styles.btnCaseStudy}>
+                                        Read Full Narrative
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* What Makes Us Different Section */}
-            <section
-                ref={whatMakesUsDifferentFade.elementRef}
-                className={`${styles.whatMakesUsDifferentSection} ${styles.scrollFade} ${whatMakesUsDifferentFade.isVisible ? styles.visible : ''}`}
-            >
-                <div className={styles.container}>
-                    {/* Header Section */}
-                    <div className={styles.whatMakesUsDifferentHeader}>
-                        <div className={styles.whatMakesUsDifferentAccent}>
-                            <div className={styles.whatMakesUsDifferentAccentLine}></div>
-                            <span>We're different</span>
-                        </div>
-                        <h2 className={styles.whatMakesUsDifferentTitle}>
-                            What Makes Us Different
-                        </h2>
-                        <p className={styles.whatMakesUsDifferentSubtitle}>
-                            We're not here for surface-level solutions.
-                        </p>
-                    </div>
-
-                    {/* Content Section - Two Column Layout */}
-                    <div className={styles.whatMakesUsDifferentContent}>
-                        {/* Left Column - Image with Overlay Card */}
-                        <div className={styles.whatMakesUsDifferentImageColumn}>
-                            <div className={styles.whatMakesUsDifferentImageWrapper}>
-                                <img
-                                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=1000&fit=crop&q=80"
-                                    alt="Professional business consultation"
-                                    className={styles.whatMakesUsDifferentMainImage}
-                                />
-                                {/* Overlay Card */}
-                                <div className={styles.whatMakesUsDifferentCard}>
-                                    <div className={styles.whatMakesUsDifferentCardTitle}>Engagements</div>
-                                    <div className={styles.whatMakesUsDifferentProgressCircle}>
-                                        <svg className={styles.whatMakesUsDifferentProgressSvg} viewBox="0 0 120 120">
-                                            <circle
-                                                cx="60"
-                                                cy="60"
-                                                r="54"
-                                                fill="none"
-                                                stroke="rgba(255, 255, 255, 0.3)"
-                                                strokeWidth="12"
-                                            />
-                                            <circle
-                                                cx="60"
-                                                cy="60"
-                                                r="54"
-                                                fill="none"
-                                                stroke="#ffffff"
-                                                strokeWidth="12"
-                                                strokeDasharray="332.5 339.29"
-                                                strokeDashoffset="0"
-                                                transform="rotate(-90 60 60)"
-                                                strokeLinecap="round"
-                                            />
-                                        </svg>
-                                        <div className={styles.whatMakesUsDifferentProgressContent}>
-                                            <div className={styles.whatMakesUsDifferentProgressValue}>98%</div>
-                                            <div className={styles.whatMakesUsDifferentProgressLabel}>success</div>
+            {/* Chapter V: Our Journey & Inception */}
+            <div ref={journeyRef} style={{ scrollMarginTop: "2rem" }}>
+                <section
+                    ref={journeyFade.elementRef}
+                    className={`${styles.journeySection} ${styles.scrollFade} ${journeyFade.isVisible ? styles.visible : ""}`}
+                >
+                    <div className={styles.container}>
+                        <div className={styles.journeyGrid}>
+                            {/* Left Column: Journey timeline */}
+                            <div className={styles.journeyLeft}>
+                                <span className={styles.specsTag} style={{ display: "block", marginBottom: "1rem" }}>Chapter V: Journey &amp; Inception</span>
+                                <h2 className={styles.sectionTitle} style={{ textAlign: "left" }}>Our Evolution &amp; Journey</h2>
+                                <p className={styles.sectionSubtitle} style={{ marginLeft: 0, textAlign: "left" }}>
+                                    Softwares Packers was founded to revolutionize packaging reliability, scaling manufacturing limits to meet global distribution needs.
+                                </p>
+                                <div className={styles.journeyTimeline}>
+                                    <div className={styles.timelineItem}>
+                                        <div className={styles.timelineYear}>2012</div>
+                                        <div className={styles.timelineTitle}>Inception &amp; Vision</div>
+                                        <div className={styles.timelineDesc}>
+                                            Established as a boutique container manufacturer, investing in our first thermoforming system to supply food-grade safe storage.
                                         </div>
                                     </div>
-                                    <div className={styles.whatMakesUsDifferentProgressBar}>
-                                        <div className={styles.whatMakesUsDifferentProgressBarFill}></div>
+                                    <div className={styles.timelineItem}>
+                                        <div className={styles.timelineYear}>2018</div>
+                                        <div className={styles.timelineTitle}>Automation &amp; Scaling</div>
+                                        <div className={styles.timelineDesc}>
+                                            Transitioned to advanced cleanroom environments, introducing high-speed automated extrusion lines and computer-vision QC checking.
+                                        </div>
+                                    </div>
+                                    <div className={styles.timelineItem}>
+                                        <div className={styles.timelineYear}>2024</div>
+                                        <div className={styles.timelineTitle}>Global Certification &amp; Scale</div>
+                                        <div className={styles.timelineDesc}>
+                                            Attained ISO-9001 certificates and launched IoT smart container systems, scaling container distributions globally.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Right Column: Mission Block */}
+                            <div className={styles.journeyRight}>
+                                <div className={styles.missionBlock}>
+                                    <h3 className={styles.missionHeading}>Our Core Mission</h3>
+                                    <p className={styles.missionPara}>
+                                        We are driven by a commitment to deliver unmatched container quality, safety, and functionality. We research, test, and innovate to ensure our polymer configurations provide absolute preservation.
+                                    </p>
+                                    <p className={styles.missionPara}>
+                                        Our engineers design and test every layout to ensure stackability, thermal persistence, and structural adherence under high loading.
+                                    </p>
+                                    <div className={styles.missionQuote}>
+                                        "Challenging our own manufacturing boundaries daily to serve customer packaging demands with zero-compromise precision."
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        {/* Right Column - Text Blocks */}
-                        <div className={styles.whatMakesUsDifferentTextColumn}>
-                            <div className={styles.whatMakesUsDifferentTextBlock}>
-                                <h3 className={styles.whatMakesUsDifferentTextHeading}>
-                                    We focus on quality and reliability, not just products.
-                                </h3>
-                                <p className={styles.whatMakesUsDifferentTextParagraph}>
-                                    Our commitment extends beyond manufacturing — we ensure every container meets the highest
-                                    standards of quality, safety, and functionality to help your business succeed.
-                                </p>
-                            </div>
-                            <div className={styles.whatMakesUsDifferentTextBlock}>
-                                <h3 className={styles.whatMakesUsDifferentTextHeading}>
-                                    Premium materials, precision manufacturing, and customer-focused solutions.
-                                </h3>
-                                <p className={styles.whatMakesUsDifferentTextParagraph}>
-                                    Everything we create is designed with your needs in mind, using premium materials and
-                                    advanced manufacturing techniques to deliver packaging solutions that make a difference.
-                                </p>
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
 
-            {/* Stats Section */}
-            <section className={styles.statsSection}>
-                <div className={styles.statsContainer}>
-                    <div className={styles.statsGrid}>
-                        {stats.map((stat, index) => (
-                            <div key={index} className={styles.statItem}>
-                                <div className={styles.statValue}>{stat.value}</div>
-                                <div className={styles.statLabel}>{stat.label}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Our Mission Section */}
-            <section
-                ref={missionFade.elementRef}
-                className={`${styles.missionSection} ${styles.scrollFade} ${missionFade.isVisible ? styles.visible : ''}`}
+            {/* Chapter IV: Technical Specs */}
+            <div ref={specsRef} style={{ scrollMarginTop: "2rem" }}>
+                <section
+                    ref={specsFade.elementRef}
+                    className={`${styles.specsSection} ${styles.scrollFade} ${specsFade.isVisible ? styles.visible : ""}`}
                 >
-                <div className={styles.container}>
-                    <div className={styles.missionContent}>
-                        <div className={styles.missionBadge}>
-                            <div className={styles.missionBadgeLine}></div>
-                            <span>Our Mission</span>
+                    <div className={styles.container}>
+                        <div className={styles.specsHeader}>
+                            <div className={styles.specsHeaderLeft}>
+                                <span className={styles.specsTag}>Chapter IV: Precision List</span>
+                                <h2 className={styles.specsTitle}>The Technical Standard</h2>
+                            </div>
+                            <p className={styles.specsSubtitle}>
+                                Data-driven performance for high-volume hospitality and retail.
+                            </p>
                         </div>
-                        <h2 className={styles.missionTitle}>
-                            Excellence in Every Container
-                        </h2>
-                        <p className={styles.missionText}>
-                            Our mission is to continue challenging our own standards and to serve our esteemed customers with the best of our products, always. We strive to deliver the best product quality and customer service in the packaging industry. Driven by innovation and powered by our dedicated team, we're here to provide complete packaging solutions that help your business thrive. At Softwares Packers, we believe in excellence in every container we manufacture, ensuring that our products meet the highest standards of quality, safety, and functionality.
-                        </p>
-                    </div>
-                </div>
-            </section>
 
-            {/* Our Infrastructure Section */}
-            <section
-                ref={infrastructureFade.elementRef}
-                className={`${styles.infrastructureSection} ${styles.scrollFade} ${infrastructureFade.isVisible ? styles.visible : ''}`}
-            >
-                <div className={styles.container}>
-                    <div className={styles.infrastructureContent}>
-                        <div className={styles.infrastructureLayout}>
-                            <div className={styles.infrastructureTextColumn}>
-                                <div className={styles.infrastructureBadge}>
-                                    <div className={styles.infrastructureBadgeLine}></div>
-                                    <span>Our Infrastructure</span>
+                        <div className={styles.specsList}>
+                            <div className={styles.specRow}>
+                                <div className={styles.specRowLeft}>
+                                    <span className={styles.specIndex}>01</span>
+                                    <h3 className={styles.specName}>Poly-Barrier 7</h3>
                                 </div>
-                                <h2 className={styles.infrastructureTitle}>
-                                    State-of-the-Art Manufacturing Facilities
-                                </h2>
-                                <p className={styles.infrastructureDescription}>
-                                    Softwares Packers operates state-of-the-art manufacturing facilities equipped with the latest
-                                    technology and quality control systems. Our facilities are designed to produce high-quality
-                                    plastic containers that meet stringent quality standards. With a focus on innovation and continuous improvement, we regularly upgrade our manufacturing
-                                    capabilities and invest in new technologies to stay ahead in the industry. Our commitment to
-                                    excellence is reflected in our ISO-certified processes and our dedication to sustainable
-                                    manufacturing practices.
-
-                                </p>
-
+                                <span className={styles.specDesc}>Heat-resistant up to 240°C</span>
+                                <Plus className={styles.specIcon} size={24} />
                             </div>
-                            <div className={styles.infrastructureCarouselColumn}>
-                                <FactoryCarousel images={factoryImages} autoPlayInterval={5000} />
+
+                            <div className={styles.specRow}>
+                                <div className={styles.specRowLeft}>
+                                    <span className={styles.specIndex}>02</span>
+                                    <h3 className={styles.specName}>Flexi-Grip Sealant</h3>
+                                </div>
+                                <span className={styles.specDesc}>Molecular adhesion for moisture locking</span>
+                                <Plus className={styles.specIcon} size={24} />
+                            </div>
+
+                            <div className={styles.specRow}>
+                                <div className={styles.specRowLeft}>
+                                    <span className={styles.specIndex}>03</span>
+                                    <h3 className={styles.specName}>Static-Shield Liner</h3>
+                                </div>
+                                <span className={styles.specDesc}>Prevents particle adherence in dry goods</span>
+                                <Plus className={styles.specIcon} size={24} />
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
 
             {/* Floating WhatsApp Button */}
             <WhatsAppButton
                 phoneNumber={COMPANY_WHATSAPP}
-                message="Hello, I'm interested in your plastic containers. Please share more details."
+                message="Hello, I'm interested in your premium packaging systems. Please share more details."
                 variant="floating"
             />
         </div>

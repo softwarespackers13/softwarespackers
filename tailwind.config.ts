@@ -54,8 +54,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Avenir", "Avenir Next", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-        display: ["Avenir", "Avenir Next", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        sans: ["var(--font-family-sans)", "Inter", "sans-serif"],
+        display: ["var(--font-family-display)", "Plus Jakarta Sans", "sans-serif"],
       },
       boxShadow: {
         sm: "var(--shadow-sm)",

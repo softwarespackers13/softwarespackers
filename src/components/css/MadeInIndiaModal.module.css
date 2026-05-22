@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap');
+
 
 .backdrop {
   position: fixed;
@@ -121,23 +121,22 @@
 }
 
 .title {
-  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family-display);
   font-size: 1.5rem;
   font-weight: 700;
   color: #171717;
   /* Rich Black from Stitch DS */
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   /* Technical B2B density */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .description {
-  font-family: 'Sora', system-ui, -apple-system, sans-serif;
-  font-size: 0.85rem;
-  /* Sora is slightly wider, so 0.85rem looks cleaner */
+  font-family: var(--font-family-sans);
+  font-size: 0.875rem;
   color: #5f5e5b;
   /* Utilitarian secondary gray */
   line-height: 1.625;
@@ -153,7 +152,7 @@
   background-color: #b91c1c;
   /* Brand primary deep red */
   color: #ffffff;
-  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-family-sans);
   font-weight: 700;
   font-size: 0.75rem;
   /* blueprint/technical small-caps style */
