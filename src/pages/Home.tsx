@@ -188,7 +188,7 @@ const Home = () => {
                 Product <span className={styles.textPrimaryItalic}>Range</span>
               </h2>
               <p className={styles.catsSubtitle}>
-                Premium solutions tailored for your industry. Discover our comprehensive range of packaging solutions for every need.
+                Premium solutions tailored for your industry. 90+ products engineered for food service, bakery, sweets, and industrial packaging.
               </p>
             </div>
             <div className={styles.catsControls}>
@@ -295,10 +295,10 @@ const Home = () => {
           <div className={styles.aboutContent}>
             <span className={styles.aboutLabel}>About Us</span>
             <h2 className={styles.aboutTitle}>
-              Premium Plastic Containers & Packaging Solutions in <span className={styles.textPrimaryItalic}>India</span>
+              Precision Is Our Standard. Compromise Is Not.
             </h2>
             <p className={styles.aboutDesc}>
-              Softwares Packers is a leading manufacturer of premium plastic containers and packaging solutions, specializing in food-grade containers, storage solutions, and industrial packaging. We are committed to delivering quality products that meet the highest standards for food safety, durability, and functionality.
+              Softwares Packers manufactures premium plastic containers with a singular obsession — eliminating the gaps between what the industry accepts and what your business actually needs. Twenty-five years of ISO-certified engineering. Trusted by 10,000+ businesses across food service, bakery, and retail.
             </p>
             <div className={styles.aboutFeatures}>
               <div className={styles.aboutFeature}>
