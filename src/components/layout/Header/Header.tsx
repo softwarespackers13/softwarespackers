@@ -133,9 +133,9 @@ const Header = () => {
                 className={styles.madeInIndiaImage}
               />
             </button>
-            <a href="/products.pdf" target="_blank" rel="noopener noreferrer" className={styles.navCtaBtn}>
+            <Link to="/catalogue" className={styles.navCtaBtn}>
               Catalogue
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -216,10 +216,10 @@ const Header = () => {
               </button>
               <div className={styles.mobileMenuDivider}>
                 <Button asChild className={styles.mobileCtaButton}>
-                  <a href="/products.pdf" download onClick={() => setMobileMenuOpen(false)}>
+                  <Link to="/catalogue" onClick={() => setMobileMenuOpen(false)}>
                     <Download className="h-4 w-4 mr-2" />
-                    Download Catalogue
-                  </a>
+                    Catalogue Viewer
+                  </Link>
                 </Button>
               </div>
             </div>

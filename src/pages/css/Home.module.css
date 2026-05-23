@@ -3982,3 +3982,89 @@
   font-size: 14px;
   margin: 0;
 }
+
+/* About Section Overlapping Images Layout */
+.aboutVisualOverlapping {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+.aboutMainImgContainer {
+  width: 80%;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  z-index: 10;
+  border: 8px solid #efeded;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.aboutMainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutSecondaryImgContainer {
+  width: 50%;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  border: 6px solid #ffffff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.aboutSecondaryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutOverlappingBadge {
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  background-color: #b91c1c;
+  padding: 1.5rem 2rem;
+  color: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.aboutOverlappingBadgeTitle {
+  font-family: var(--font-family-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.aboutOverlappingBadgeSubtitle {
+  font-family: var(--font-family-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .aboutVisualOverlapping {
+    padding-bottom: 2rem;
+    margin-top: 3rem;
+  }
+  .aboutOverlappingBadge {
+    top: -3rem;
+    padding: 1rem 1.5rem;
+  }
+}

@@ -335,10 +335,8 @@
 
 /* CTA Section */
 .ctaSection {
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #181819 0%, #252526 100%);
-  border-top: 4px solid #b91c1c;
-  text-align: center;
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #222225 0%, #0a0a0c 100%);
   color: #ffffff;
 }
 
@@ -346,68 +344,87 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 
 .ctaTitle {
   font-family: var(--font-family-display);
-  font-size: 3rem;
-  font-weight: 700;
-  margin: 0 0 1.25rem 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+  color: #ffffff;
+  text-align: left;
   letter-spacing: -0.02em;
-}
-
-.ctaSubtitle {
-  font-family: var(--font-family-sans);
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 40rem;
-  margin: 0 auto 2.5rem auto;
-  line-height: 1.75;
 }
 
 .ctaButtons {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
-.ctaBtnRed {
-  background-color: #b91c1c;
-  color: #ffffff;
+.ctaBtnGetStarted {
+  background-color: #ffffff;
+  color: #09090b;
   border: none;
-  padding: 1.25rem 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.ctaBtnRed:hover {
-  background-color: #a11818;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(185, 28, 28, 0.25);
+.ctaBtnGetStarted:hover {
+  background-color: #e4e4e7;
 }
 
-.ctaBtnOutline {
-  background-color: transparent;
+.ctaBtnTalkSales {
+  background-color: #1f1f23;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1.25rem 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  border: 1px solid #2e2e33;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.ctaBtnOutline:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: #ffffff;
-  transform: translateY(-2px);
+.ctaBtnTalkSales:hover {
+  background-color: #2e2e33;
+  border-color: #3f3f46;
+}
+
+@media (max-width: 768px) {
+  .ctaContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 2rem;
+    gap: 1.5rem;
+  }
+  .ctaTitle {
+    font-size: 2rem;
+  }
+  .ctaButtons {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 
 /* ==========================================================================

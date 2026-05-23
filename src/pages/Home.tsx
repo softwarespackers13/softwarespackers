@@ -153,21 +153,15 @@ const Home = () => {
                   <Link to="/categories" className={styles.btnSecondaryGlass}>Explore Products</Link>
                 </div>
               </div>
-              <div className={cn(styles.heroGridSplit, currentHeroIdx === 2 ? styles.animateSlideUp : "", styles.delay400)}>
-                <div className={cn(styles.heroSplitCard, styles.splitDelay1)}>
-                  <img alt="Clear container A" className={styles.splitImg75} src="/assets/temp3/container.webp" />
-                  <p className={styles.splitLabel}>Vented Solutions</p>
+              <div className={cn(styles.heroImgCluster, currentHeroIdx === 2 ? styles.animateSlideUp : "", styles.delay400)}>
+                <div className={cn(styles.heroFloatingImg, styles.floatDelay0)}>
+                  <img alt="Clear container A" className={styles.heroClusterImg} src="/assets/temp3/container4.webp" />
                 </div>
-                <div className={cn(styles.heroSplitCard, styles.splitDelay3)}>
-                  <img alt="Clear container B" className={styles.splitImg75} src="/assets/temp3/container.webp" />
-                  <p className={styles.splitLabel}>Stackable Design</p>
+                <div className={cn(styles.heroFloatingImg, styles.floatDelay2)}>
+                  <img alt="Clear container B" className={styles.heroClusterImg} src="/assets/temp3/container5.webp" />
                 </div>
-                <div className={cn(styles.heroSplitCardWide, styles.splitDelay5)}>
-                  <img alt="Clear container C" className={styles.splitImgH8} src="/assets/temp3/container.webp" />
-                  <div>
-                    <p className={styles.splitTitle}>Ultra-Clarity™</p>
-                    <p className={styles.splitSub}>Industrial Grade Polymer</p>
-                  </div>
+                <div className={cn(styles.heroFloatingImg, styles.floatDelay4)}>
+                  <img alt="Clear container C" className={cn(styles.heroClusterImg, styles.width50)} src="/assets/temp3/container6.webp" />
                 </div>
               </div>
             </div>
@@ -277,14 +271,25 @@ const Home = () => {
       {/* About Us Section */}
       <section className={styles.aboutSection}>
         <div className={cn(styles.sectionContainer, styles.aboutGrid)}>
-          <div className={styles.aboutVisual}>
+          <div className={styles.aboutVisualOverlapping}>
             <div className={styles.aboutBgText}>PRECISION</div>
-            <div className={styles.aboutImgWrapper}>
-              <img alt="Manufacturing facility" className={styles.aboutImg} src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNbdXbjAm9p49KP4RLv3IlkNk7AqR9Q8EU3KUQgZK5Ajtq5_v6MGAAVr_rDxDf55zHQAO0ipDeJVh8NVgKCPeL592mB032lwcCTvC6FZxhsKisuLsiFVg6MCqTMhbpk80jHyQAwv26g64yFt00MQvveNLZAiZwf-GPMiJWGCXHIm3YfoAdWvbj5lPQ_d1dpPJFTw-e1bmPY1EPWxZqTii5llnhQzmNI2QYa0X7qlzPjDIQ2THT8ziA8EpzJjpbH58Dff6uynsgg3HL" />
+            <div className={styles.aboutMainImgContainer}>
+              <img
+                alt="State-of-the-art robotic production facility"
+                className={styles.aboutMainImg}
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlIucRji09T8w8ixAzdP2DECEHI-YME9dGkAV_C6GzPssPMrhWzOv1pfkaqSWoNOxczMHVrwCwsFSJXvB83ePHBK5o84BcoPuga-L8fD8HWL88WcSikmCU42zYFaTsDV0kmjZYcEPraGQmLzfkor4o_Nze2UwuI9LEbKFeOvWIhv4kALKN-wM5VZ4niXGbERfjT1Rxt_K6-14BtXfPD_IWeUJm_4GnsKX3Jty9VyTAF_Yio4Lpzs807E--77jWPQzbHb_jPZQk3OWh"
+              />
             </div>
-            <div className={styles.aboutBadge}>
-              <div className={styles.aboutBadgeTitle}>25+ Years</div>
-              <div className={styles.aboutBadgeSubtitle}>Engineering Mastery</div>
+            <div className={styles.aboutSecondaryImgContainer}>
+              <img
+                alt="Premium crystal-clear plastic containers stacked"
+                className={styles.aboutSecondaryImg}
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCotjtmYEof4MwlV7uj8gUkNpF6mwvy0ykwCEq7jcDzowYsadKwjQD8pD78KNvIVApxPHCBh2CvttpkQ5UpzAtVdS18p_E-2WAJeXdDuINx6HYxCfxtE3bYvUhhlpgJLLhUScPkrMPKaHqu1I5zrQwIk9cJOrI5MXGxs7M7tpWLWEOSEBFAMd7gGYpG_I7G3QOZAqdnfjJCi-GI1exOANecXh5xYbkO1d941OpfmgNSOojZF1ls8lmBcsC4jVcsQqBdIw1nxejM_hLp"
+              />
+            </div>
+            <div className={styles.aboutOverlappingBadge}>
+              <div className={styles.aboutOverlappingBadgeTitle}>25+ Years</div>
+              <div className={styles.aboutOverlappingBadgeSubtitle}>Engineering Mastery</div>
             </div>
           </div>
           <div className={styles.aboutContent}>

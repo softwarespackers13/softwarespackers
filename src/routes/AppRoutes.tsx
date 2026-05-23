@@ -10,6 +10,7 @@ const Categories = lazy(() => import("@/pages/Categories"));
 const About = lazy(() => import("@/pages/About"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Quote = lazy(() => import("@/pages/Quote"));
+const Catalogue = lazy(() => import("@/pages/Catalogue"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 // Loading component - Professional logo-based loader
@@ -74,6 +75,7 @@ const AppRoutesContent = () => (
         <Route path="/about" element={<RouteWithErrorBoundary><About /></RouteWithErrorBoundary>} />
         <Route path="/contact" element={<RouteWithErrorBoundary><Contact /></RouteWithErrorBoundary>} />
         <Route path="/quote" element={<RouteWithErrorBoundary><Quote /></RouteWithErrorBoundary>} />
+        <Route path="/catalogue" element={<RouteWithErrorBoundary><Catalogue /></RouteWithErrorBoundary>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<RouteWithErrorBoundary><NotFound /></RouteWithErrorBoundary>} />
       </Routes>

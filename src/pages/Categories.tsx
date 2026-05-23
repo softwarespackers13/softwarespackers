@@ -197,13 +197,12 @@ const Categories = () => {
       {/* CTA Section */}
       <section className={styles.ctaSection}>
         <div className={styles.ctaContainer}>
-          <h2 className={styles.ctaTitle}>Need a custom dimension?</h2>
-          <p className={styles.ctaSubtitle}>
-            Our R&D team specializes in custom polymer formulation and mold design tailored to specific industrial workflows.
-          </p>
+          <h2 className={styles.ctaTitle}>
+            Plan the present.<br />Build the future.
+          </h2>
           <div className={styles.ctaButtons}>
-            <button className={styles.ctaBtnRed}>Consult with Engineering</button>
-            <button className={styles.ctaBtnOutline}>Download Catalog (PDF)</button>
+            <Link to="/quote" className={styles.ctaBtnGetStarted}>Get started</Link>
+            <Link to="/contact" className={styles.ctaBtnTalkSales}>Talk to sales</Link>
           </div>
         </div>
       </section>

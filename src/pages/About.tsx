@@ -195,6 +195,22 @@ const About = () => {
                                 />
                                 <div className={styles.bentoImageOverlay}></div>
                             </div>
+
+                            {/* Bento Item 4: Quality Control & Validation */}
+                            <div className={styles.bentoItemLarge}>
+                                <img
+                                    alt="Precision quality control and molecular validation testing"
+                                    className={styles.bentoItemLargeImg}
+                                    src="/assets/home-hero/factory_quality.webp"
+                                />
+                                <div className={styles.bentoOverlay}>
+                                    <span className={styles.bentoTag}>Quality Assurance</span>
+                                    <h3 className={styles.bentoItemTitle}>Molecular Validation &amp; Zero-Leak Testing</h3>
+                                    <p className={styles.bentoItemDesc}>
+                                        Every production batch undergoes strict stress-testing and molecular validation under ISO 9001:2015 standards to guarantee absolute structural integrity.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -389,10 +405,10 @@ const About = () => {
                             {/* Value 1 */}
                             <div className={styles.valueCard}>
                                 <span className={styles.valueMeta}>CORE_TENET / 01</span>
-                                <h3 className={styles.valueTitle}>
-                                    <Settings className={styles.valueIcon} size={24} />
-                                    Precision Engineering
-                                </h3>
+                                <div className={styles.valueIconWrapper}>
+                                    <Settings className={styles.valueIcon} size={32} />
+                                </div>
+                                <h3 className={styles.valueTitle}>Precision Engineering</h3>
                                 <p className={styles.valueDesc}>
                                     An obsessive focus on microns. Every component is measured against aerospace-grade tolerances to ensure perfect structural integrity under extreme pressure.
                                 </p>
@@ -401,10 +417,10 @@ const About = () => {
                             {/* Value 2 */}
                             <div className={styles.valueCard}>
                                 <span className={styles.valueMeta}>MATERIAL_SCIENCE / 02</span>
-                                <h3 className={styles.valueTitle}>
-                                    <Layers className={styles.valueIcon} size={24} />
-                                    Material Integrity
-                                </h3>
+                                <div className={styles.valueIconWrapper}>
+                                    <Layers className={styles.valueIcon} size={32} />
+                                </div>
+                                <h3 className={styles.valueTitle}>Material Integrity</h3>
                                 <p className={styles.valueDesc}>
                                     Proprietary durable polymers designed for chemical resistance and thermal stability. Our materials don't just hold; they protect the soul of your product.
                                 </p>
@@ -413,10 +429,10 @@ const About = () => {
                             {/* Value 3 */}
                             <div className={styles.valueCard}>
                                 <span className={styles.valueMeta}>ECOLOGY / 03</span>
-                                <h3 className={styles.valueTitle}>
-                                    <Recycle className={styles.valueIcon} size={24} />
-                                    Circular Economy
-                                </h3>
+                                <div className={styles.valueIconWrapper}>
+                                    <Recycle className={styles.valueIcon} size={32} />
+                                </div>
+                                <h3 className={styles.valueTitle}>Circular Economy</h3>
                                 <p className={styles.valueDesc}>
                                     100% recyclable technology that minimizes environmental footprint without compromising on industrial strength. Engineered for a closed-loop future.
                                 </p>
@@ -425,10 +441,10 @@ const About = () => {
                             {/* Value 4 */}
                             <div className={styles.valueCard}>
                                 <span className={styles.valueMeta}>LOGISTICS_SEC / 04</span>
-                                <h3 className={styles.valueTitle}>
-                                    <ShieldCheck className={styles.valueIcon} size={24} />
-                                    Transit Security
-                                </h3>
+                                <div className={styles.valueIconWrapper}>
+                                    <ShieldCheck className={styles.valueIcon} size={32} />
+                                </div>
+                                <h3 className={styles.valueTitle}>Transit Security</h3>
                                 <p className={styles.valueDesc}>
                                     Zero-leak vacuum seals and impact-absorption geometry. We provide the final layer of defense between your assets and the uncertainties of global transit.
                                 </p>
