@@ -223,7 +223,7 @@
 
 .bentoItemLarge {
   grid-column: span 8;
-  grid-row: span 1;
+  grid-row: span 2;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
